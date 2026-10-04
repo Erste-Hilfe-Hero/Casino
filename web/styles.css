@@ -4340,3 +4340,6 @@ h3 {
   [data-brand="noirva"] .status-bar .status-item:first-child { display: inline-flex; font-size: 10px; }
   [data-brand="noirva"] .status-bar .status-item:last-child { font-size: 10px; }
 }
+
+/* The compact utility row uses three real flex items rather than legacy reserved grid tracks. */
+[data-brand="noirva"] .top-actions { display: flex; }
