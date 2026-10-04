@@ -1,0 +1,145 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+  # Permit the bounded duration-profile publisher to qualify its GITHUB_TOKEN-authored branch.
+  workflow_dispatch:
+# Cancel superseded runs for the same pull request; pushes and dispatches keep unique groups.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    services:
+      # Provide an isolated disposable database for storage-provider transaction evidence.
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: casino_ci_root_password
+          MYSQL_ROOT_HOST: "%"
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -pcasino_ci_root_password"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+    env:
+      CASINO_STORAGE_PROVIDER: json
+      # Mark this job's newly created MySQL service as disposable before migration tests may connect.
+      CASINO_MYSQL_DISPOSABLE_TEST: 1
+      # Supply a synthetic ephemeral administrator only to the isolated live-test harness.
+      CASINO_MYSQL_TEST_ADMIN_HOST: 127.0.0.1
+      CASINO_MYSQL_TEST_ADMIN_PORT: 3306
+      CASINO_MYSQL_TEST_ADMIN_USER: root
+      CASINO_MYSQL_TEST_ADMIN_PASSWORD: casino_ci_root_password
+      # Supply a separate synthetic deployment-only migration identity.
+      CASINO_MYSQL_MIGRATION_HOST: 127.0.0.1
+      CASINO_MYSQL_MIGRATION_PORT: 3306
+      CASINO_MYSQL_MIGRATION_USER: casino_migrator_204
+      CASINO_MYSQL_MIGRATION_PASSWORD: casino_ci_migrator_password
+      CASINO_MYSQL_MIGRATION_DATABASE: casino_base_204
+      # Use a CI-only HMAC key that is distinct from every database password.
+      CASINO_MYSQL_MIGRATION_TARGET_BINDING_KEY: casino_ci_target_binding_key_material_204_only
+      # Supply the DDL-free synthetic runtime identity created by the live matrix.
+      CASINO_MYSQL_HOST: 127.0.0.1
+      CASINO_MYSQL_PORT: 3306
+      CASINO_MYSQL_USER: casino_runtime_204
+      CASINO_MYSQL_PASSWORD: casino_ci_runtime_password
+      CASINO_MYSQL_DATABASE: casino_base_204
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dev requirements
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python -m pip install -e ".[mysql,recovery]"
+      - name: Run checks
+        env:
+          # Authorize only issue #1040's disposable production-stack qualification.
+          CASINO_1040_DISPOSABLE: 1
+          # Run the ordinary CI profile with a few dozen independent authenticated sessions.
+          CASINO_1040_LOAD_USERS: 32
+          # Keep the JSON aggregate outside the exact source checkout.
+          CASINO_1040_JSON_LOAD_REPORT: ${{ runner.temp }}/gunicorn-load-json.json
+          # Keep the MySQL aggregate outside the exact source checkout.
+          CASINO_1040_LOAD_REPORT: ${{ runner.temp }}/gunicorn-load-mysql.json
+        run: |
+          python -m py_compile run.py verify_rules.py tests/run_tests.py $(find casino scripts -name "*.py")
+          python scripts/validate_pr_issue_lifecycle.py
+          # Prove both PR-side closure declarations and completed-issue rollout-link enforcement. (TEST-179)
+          python -m unittest tests.issue_lifecycle_tests tests.issue_rollout_link_tests
+          python verify_rules.py
+          python -m unittest tests.test_progress
+          # Capture the exact-source JSON baseline before the disposable MySQL lifecycle.
+          python tests/run_tests.py --request-latency json --request-latency-output "$RUNNER_TEMP/request-latency-json.json"
+          # Capture MySQL evidence inside the existing guarded migration and cleanup boundary.
+          python tests/run_tests.py --storage --mysql-migrations-live --request-latency mysql --request-latency-output "$RUNNER_TEMP/request-latency-mysql.json"
+          # Fail closed unless both complete provider grids satisfy issue #323 targets.
+          python tests/performance_target_gate.py --json-evidence "$RUNNER_TEMP/request-latency-json.json" --mysql-evidence "$RUNNER_TEMP/request-latency-mysql.json" --output "$RUNNER_TEMP/performance-target-acceptance.json"
+          python tests/run_tests.py --api
+          python scripts/validate_game_catalog.py
+          # Fail closed on missing games, stale production economics sources, or absent proof selectors. (TEST-175)
+          python -m tests.game_economics_registry_tests
+          python scripts/validate_agent_memory.py
+          python scripts/validate_requirements.py
+          # Compare every module generically with the exact pull-request base; protected-main pushes retain ordinary validation. (TEST-184)
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.event.pull_request.base.sha }}"
+            git show "${{ github.event.pull_request.base.sha }}:modules/module-manifest.json" > "$RUNNER_TEMP/module-manifest-base.json"
+            python scripts/validate_versions.py --baseline-manifest "$RUNNER_TEMP/module-manifest-base.json"
+            # Bind innerHTML debt to the same immutable event-base SHA after the first reviewed baseline lands. (SEC-017)
+            if git cat-file -e "${{ github.event.pull_request.base.sha }}:tests/inner_html_template_baseline.json"; then
+              git show "${{ github.event.pull_request.base.sha }}:tests/inner_html_template_baseline.json" > "$RUNNER_TEMP/inner-html-template-base.json"
+              python scripts/validate_inner_html_templates.py --previous-baseline "$RUNNER_TEMP/inner-html-template-base.json"
+            else
+              # Permit only this first exact source-matched baseline introduction; every successor uses immutable comparison.
+              python scripts/validate_inner_html_templates.py
+            fi
+          else
+            python scripts/validate_versions.py
+          fi
+      # Retain only aggregate exact-source timing and the bounded acceptance decision. (issue #323, TEST-170)
+      - name: Upload request-latency evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: request-latency-evidence-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/request-latency-json.json
+            ${{ runner.temp }}/request-latency-mysql.json
+            ${{ runner.temp }}/performance-target-acceptance.json
+            ${{ runner.temp }}/gunicorn-load-json.json
+            ${{ runner.temp }}/gunicorn-load-mysql.json
+          if-no-files-found: error
+          retention-days: 14
+      # Provide a JavaScript runtime for the frontend contract suites. (issue #413)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # Execute complete per-game and embedded Python discovery in the dependency-complete CI environment. (issues #413, #434)
+      - name: Per-game and embedded Python suites
+        run: |
+          python -m unittest discover -s tests/games -p "test_*.py" -t .
+          python -m unittest discover -s casino/games -p "test_*.py" -t .
+      # Execute every tracked frontend .mjs suite that no workflow previously ran. (issue #413)
+      - name: Frontend module suites
+        run: |
+          node --test "tests/games/**/test_frontend.mjs" "tests/unit/*.test.mjs" "tests/security/test_browser_api.mjs" "casino/games/**/tests/*.mjs"
+          # Exercise the pure injectable native transport, lifecycle, config, and deep-link suites without platform SDKs. (TEST-172)
+          node --test "mobile/tests/*.test.mjs"
+      # Pin the declared package manager independently from the runner's changing Corepack bundle. (issue #183, TEST-172)
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+          run_install: false
+      # Prove the checked native projects remain reproducibly synchronized. (issue #183, TEST-172)
+      - name: Mobile deterministic build and sync
+        run: |
+          pnpm --dir mobile install --frozen-lockfile
+          pnpm --dir mobile run check
+          git diff --exit-code -- mobile/android mobile/ios
