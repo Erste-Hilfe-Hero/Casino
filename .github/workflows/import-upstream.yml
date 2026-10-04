@@ -28,8 +28,4 @@ jobs:
           git push origin main
           cd ../source.git
           git config credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
-          while read -r ref; do
-            if [ "$ref" != "refs/heads/main" ]; then
-              git push https://github.com/Erste-Hilfe-Hero/Casino.git "$ref:$ref"
-            fi
-          done < <(git for-each-ref --format='%(refname)' refs/heads refs/tags)
+          git push https://github.com/Erste-Hilfe-Hero/Casino.git --tags
