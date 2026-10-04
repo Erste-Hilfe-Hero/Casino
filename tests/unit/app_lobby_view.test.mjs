@@ -56,12 +56,12 @@ test("CORE-007 preserves the searchable Lobby after extraction", () => {
     {
       id: "roulette", label: "Roulette", description: "Wheel game", tags: ["classic"],
       categories: ["table"], featured: true, wide: false, artClass: "roulette-art",
-      symbol: "R", kicker: "Table",
+      symbol: "&#9824;", kicker: "Table",
     },
     {
       id: "slots", label: "Slots", description: "Reel game", tags: ["reels"],
       categories: ["slots"], featured: false, wide: false, artClass: "slots-art",
-      symbol: "S", kicker: "Slots",
+      symbol: "<svg onload=alert(1)>", kicker: "Slots",
     },
   ];
   // Create the production renderer around deterministic catalog and brand seams.
@@ -96,6 +96,10 @@ test("CORE-007 preserves the searchable Lobby after extraction", () => {
     // Require every accepted Lobby surface.
     assert.ok(view.innerHTML.includes(marker), marker);
   }
+  // Catalog entity glyphs render as text while markup-like metadata stays escaped. (UX-007)
+  assert.ok(view.innerHTML.includes('<span class="game-symbol">♠</span>'));
+  assert.ok(view.innerHTML.includes('&lt;svg onload=alert(1)&gt;'));
+  assert.ok(!view.innerHTML.includes('&amp;#9824;'));
   assert.equal(typeof search.oninput, "function");
   assert.equal(typeof category.onclick, "function");
   assert.equal(typeof openGame.onclick, "function");

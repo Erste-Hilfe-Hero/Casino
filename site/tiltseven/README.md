@@ -1,10 +1,10 @@
-# TiltSeven marketing site
+# HERO Casino marketing site
 
 This folder contains a repository-only static website scaffold for a future
-TiltSeven root-domain experience.
+HERO Casino root-domain experience.
 
 The gaming simulator remains a separate application at
-`https://casino.tiltseven.com`.
+`http://127.0.0.1:8765`.
 
 Nothing in this directory authorizes upload, hosting, DNS, TLS, provider,
 billing, public-launch, or deployment changes. The checked files are review
@@ -12,7 +12,7 @@ artifacts until a separate owner-approved publication packet is completed.
 
 ## Current scope
 
-- Brand-forward landing page for TiltSeven in English and Russian.
+- Brand-forward landing page for HERO Casino in English and Russian.
 - Static HTML/CSS only; no build step, JavaScript, trackers, payment widgets, or third-party runtime dependencies.
 - Hard safety language: play tokens only, no cash value, no deposits, no purchases, no withdrawals, no redemptions, no prizes, and no transferable value.
 - Repository evidence only; no live hosting target is selected or changed here.

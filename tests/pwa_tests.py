@@ -24,7 +24,7 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 # Name the exact public static paths permitted in the service-worker cache.
 EXPECTED_SHELL_ASSETS = {
-    "/index.html", "/styles.css", "/app.js", "/brands/tiltseven.js", "/manifest.webmanifest", "/assets/favicon.svg",
+    "/index.html", "/styles.css", "/app.js", "/brands/hero.js", "/manifest.webmanifest", "/assets/favicon.svg",
     "/assets/pwa-icon-192.png", "/assets/pwa-icon-512.png", "/assets/pwa-maskable-192.png", "/assets/pwa-maskable-512.png",
     "/core/api.js", "/core/app_bootstrap.js", "/core/app_router.js", "/core/brand.js", "/core/celebrate.js", "/core/feedback.js", "/core/wellness.js", "/core/i18n.js", "/core/pwa.js", "/core/pwa_version.js", "/core/ui.js", "/core/voice.js",
     "/views/invitation.js", "/views/lobby.js", "/views/login.js", "/views/reset.js", "/views/settings.js", "/views/signup.js", "/views/terms.js", "/views/verification.js", "/views/whats_new.js",

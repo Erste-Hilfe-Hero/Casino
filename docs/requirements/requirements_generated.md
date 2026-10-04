@@ -6,15 +6,15 @@ Historical source baseline: 9.1.0
 
 ## Independent module revisions
 
-- application: 9.75.0
-- core: 10.20.0
-- mobile: 1.0.0
+- application: 9.76.0
+- core: 10.20.1
+- mobile: 1.0.1
 - ledger: 9.1.2
 - players: 9.1.4
 - bots: 1.1.1
 - autoplay: 1.1.6
 - audio: 9.1.3
-- admin: 1.21.0
+- admin: 1.21.1
 - operations: 1.2.0
 - marketing_site: 1.0.2
 - roulette: 9.7.6
@@ -51,8 +51,8 @@ Historical source baseline: 9.1.0
 - texas_holdem_practice_table: 1.1.5
 - pai_gow_poker: 1.1.6
 - teen_patti: 1.1.7
-- tests: 1.126.3
-- docs: 1.119.1
+- tests: 1.126.4
+- docs: 1.119.2
 - contracts: 1.63.2
 - tooling: 1.50.4
 - commenting_policy: 2.1.0
@@ -446,7 +446,7 @@ Historical source baseline: 9.1.0
 - **TEST-101** (Tests) - PASS: Localization foundation tests lock all 25 metadata identities and RTL membership, require installed-resource key and placeholder parity across catalog-discovered domains, validate every configured translation and formatter tag and each complete bundled native-script label including fullwidth punctuation in the browser runtime, reject selection of unfinished locales, prove browser-local persistence, and capture the Admin foundation in both installed locales at all four governed viewports.
 - **UX-019** (Application) - PASS: Problem reporting and Admin triage remain keyboard-operable, focus-visible, scroll-contained, touch-sized, readable at 200 percent zoom, reduced-motion safe, and responsive across all governed viewports with paste, drop, file, preview-removal, retry, filter, draft, export, and deletion states.
 - **TEST-094** (Tests) - PASS: Provider-neutral unit, API, JSON-process, and disposable MySQL tests prove recoverable submission, single idempotent winners, durable rates, malformed-state preservation, atomic triage, privacy deletion and retention, metadata-only export, frozen-v1 compatibility, and manual-only publication; browser tests prove complete bilingual player and Admin states across governed viewports.
-- **PWA-001** (Application) - PASS: The restricted-preview browser application publishes a TiltSeven-branded standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.
+- **PWA-001** (Application) - PASS: The restricted-preview browser application publishes a active-brand standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.
 - **PWA-002** (Application) - PASS: A single canonical browser release module versions a root-scope module service worker whose exact credential-free public static-shell allowlist covers the complete startup import closure and every installed locale shell, while every other shared-core file has an explicit network-only reason; the worker never intercepts non-GET, API, Admin, authenticated, private, wallet, ledger, outcome, invitation, OAuth, or provider traffic and preserves the previous complete worker until an explicit update. Offline server actions fail closed, offline game routes show an honest non-actionable connection boundary, and reconnect revalidates session, wallet, catalog, game state, and route before actions are released.
 - **TEST-095** (Tests) - PASS: Browser-free policy tests prove the single canonical cache identity, exact public-static allowlisting equal to the complete static application import closure, explicit disposition for every shared-core file, installed-locale shell coverage, seeded missing-file and removed-row failures, complete TiltSeven manifest metadata plus PNG and maskable assets, credential-free cache writes, fail-open request exclusion for non-GET/API/Admin/private traffic, explicit update rollback and cache cleanup, message-lifetime ownership of skipWaiting, and requirement/version alignment; exact-head browser tests prove cold and warm branded shell, an honest localized offline game-route panel, offline fail-closed actions, reconnect, a real one-click multi-tab update with zero waiting/banner residue, update failure, stale-client, expired-session, and route-restoration states in en-US and ru-RU at all four governed viewports with exact evidence provenance and listener cleanup.
 - **TEST-096** (Tests) - PASS: The Roulette refund browser regression proves the logged deployment-closeout bugs for Clear bets and wager debit timing by placing a visible open wager, requiring the authoritative balance to debit on placement, activating the visible Clear bets control, and requiring the exact stake to be refunded before normal Roulette browser acceptance continues.

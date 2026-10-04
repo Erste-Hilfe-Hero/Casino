@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 // Active-brand selection and runtime application so the whole app is one config swap.
 
-// Import the default brand descriptor; a second brand is imported and swapped here.
-import { tiltseven } from "../brands/tiltseven.js";
+// Keep the upstream descriptor available while selecting the downstream HERO identity.
+import { hero } from "../brands/hero.js";
 
 // Expose the single active brand consumed by the shell and PWA metadata.
-export const activeBrand = tiltseven;
+export const activeBrand = hero;
 
 // Apply one brand's design tokens and identity to the live document.
 export function applyBrand(brand = activeBrand) {

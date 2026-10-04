@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # Name the repository-only site root once for all artifact checks.
 SITE_ROOT = ROOT / "site" / "tiltseven"
 # Pin the separate governed Casino destination without activating it.
-CASINO_DESTINATION = "https://casino.tiltseven.com/"
+CASINO_DESTINATION = "http://127.0.0.1:8765/"
 # Define the exact locale documents required by the visual matrix.
 LOCALE_DOCUMENTS = {"en-US": SITE_ROOT / "index.html", "ru-RU": SITE_ROOT / "ru" / "index.html"}
 # Define safety phrases that must remain human-readable in each checked locale.

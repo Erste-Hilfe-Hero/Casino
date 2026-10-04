@@ -3801,7 +3801,7 @@ def run_browser_tests(heartbeat_seconds=45.0,stall_seconds=180.0,timeout_seconds
                         # Read the brand title text and its horizontal clip amount for the truncation assertion.
                         brand=page.evaluate("() => { const el=document.getElementById('shell-brand-title'); return {text:el.textContent.trim(), clip: el.scrollWidth - el.clientWidth}; }")
                         # Require the full product name with no ellipsis truncation at every width.
-                        assert brand['text']=='TiltSeven' and brand['clip'] <= 1, f'brand truncated at {viewport_id}: {brand}'
+                        assert brand['text']=='HERO Casino' and brand['clip'] <= 1, f'brand truncated at {viewport_id}: {brand}'
                         # Read each primary-menu label width and its per-label clip for the readability assertion.
                         nav_items=page.evaluate("() => [...document.querySelectorAll('#main-nav .nav-item')].map(el=>({t:el.textContent.trim(), w:Math.round(el.getBoundingClientRect().width), clip: el.scrollWidth-el.clientWidth}))")
                         # Require every route label to stay readable (minimum touch width) and unclipped.

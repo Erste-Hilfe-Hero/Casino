@@ -37,8 +37,14 @@ export function createLobbyView(dependencies) {
     const featured = game.featured ? html`&#9733; ` : html``;
     const kicker = html`${featured}${game.kicker}`;
     // Preserve deterministic art and localized descriptive content.
-    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true"></div>`;
-    const heading = html`<h2 class="game-heading"><span class="game-symbol">${game.symbol}</span>${game.label}</h2>`;
+    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true"><img class="hero-game-art" src="/assets/hero/${game.id}.svg" alt="" loading="lazy" decoding="async"></div>`;
+    // Decode descriptor-owned numeric glyphs as text; the template still escapes markup. (UX-007)
+    const symbol = String(game.symbol ?? '').replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, code) => {
+      const point = code[0].toLowerCase() === 'x' ? parseInt(code.slice(1), 16) : Number(code);
+      return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff)
+        ? String.fromCodePoint(point) : entity;
+    });
+    const heading = html`<h2 class="game-heading"><span class="game-symbol">${symbol}</span>${game.label}</h2>`;
     const playLabel = html`<span>${t('catalog.play', {}, 'shell')}</span>`;
     const play = html`<button class="play-button" data-open-game="${game.id}" data-testid="open-${game.id}">${playLabel}<span aria-hidden="true">&#8250;</span></button>`;
     const content = html`<div class="game-card-content">${heading}<p>${game.description}</p><div class="tag-row">${tags}</div>${play}</div>`;

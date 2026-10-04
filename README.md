@@ -1,4 +1,10 @@
-# Virtual Casino Simulator
+# HERO Casino
+
+HERO Casino is the Erste-Hilfe-Hero downstream version, with a HERO Lounge brand, black surfaces, champagne-gold accents, and a custom H monogram. Upstream source and Apache-2.0 notices are retained.
+
+Brand scope: black web shell, login/signup names, EN/RU resources, original artwork for all 46 games, Admin, API docs, email identity, favicon, PWA icons, and native app names/icons. Historical releases and deployment domains retain their upstream provenance.
+
+Upstream: https://github.com/andreivorobiev/virtual-casino-simulator
 
 Packaged application release: `0.9.5.86`
 

@@ -1,4 +1,4 @@
-# TiltSeven future publication checklist
+# HERO Casino future publication checklist
 
 Status: repository-only planning material. No publication is authorized by
 this file or by the scaffold that contains it.

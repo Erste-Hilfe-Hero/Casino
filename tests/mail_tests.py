@@ -58,7 +58,7 @@ class MailServiceTests(unittest.TestCase):
     # Prove every governed locale uses the single reviewed TiltSeven subject identity.
     def test_subjects_use_the_active_brand_name(self):
         # Require the configured subject identity to match the browser application's active brand.
-        self.assertEqual(BRAND_NAME, "TiltSeven")
+        self.assertEqual(BRAND_NAME, "HERO Casino")
         # Exercise both installed locale template collections.
         for locale, templates in TEMPLATES.items():
             # Require every authorized purpose to include the canonical brand and exclude the retired product label.

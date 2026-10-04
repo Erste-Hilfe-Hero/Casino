@@ -1,18 +1,25 @@
 {
   "id": "/",
-  "name": "TiltSeven",
-  "short_name": "TiltSeven",
-  "description": "TiltSeven is a toy casino simulator that uses play tokens only, with no real money and no cash value.",
+  "name": "HERO Casino",
+  "short_name": "HERO",
+  "description": "HERO Casino: the HERO Lounge. A casino simulator using play tokens with no cash value.",
   "lang": "en-US",
   "dir": "ltr",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui", "browser"],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
   "orientation": "any",
-  "theme_color": "#0a0712",
-  "background_color": "#0a0712",
-  "categories": ["games", "entertainment"],
+  "theme_color": "#080808",
+  "background_color": "#080808",
+  "categories": [
+    "games",
+    "entertainment"
+  ],
   "icons": [
     {
       "src": "/assets/pwa-icon-192.png",

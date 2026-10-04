@@ -6924,7 +6924,7 @@
     {
       "id": "PWA-001",
       "module": "Application",
-      "description": "The restricted-preview browser application publishes a TiltSeven-branded standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.",
+      "description": "The restricted-preview browser application publishes a active-brand standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.",
       "status": "PASS",
       "api_tests": [],
       "browser_tests": [
@@ -6943,8 +6943,8 @@
         "docs/pwa_foundation.md"
       ],
       "introduced_in": "issue-182-pwa-foundation",
-      "changed_in": "pr-425-tiltseven-neon-pit",
-      "notes": "The manifest and browser metadata now share the active TiltSeven ground color, while the native-install boundary remains unchanged. Full issue #182 remains open while #74 and #168 plus representative Android Chrome and iOS Safari/Home Screen install-relaunch evidence are incomplete."
+      "changed_in": "hero-casino-rebrand",
+      "notes": "The downstream HERO Casino manifest, browser metadata, favicon and platform icons share the black HERO Lounge identity. This web foundation does not claim native installation or public deployment."
     },
     {
       "id": "PWA-002",

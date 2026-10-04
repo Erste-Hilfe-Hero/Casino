@@ -6924,7 +6924,7 @@
     {
       "id": "PWA-001",
       "module": "Application",
-      "description": "The restricted-preview browser application publishes a TiltSeven-branded standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.",
+      "description": "The restricted-preview browser application publishes a active-brand standards-valid web manifest, matching theme and favicon metadata, complete 192- and 512-pixel any-purpose and maskable PNG icon sets, safe-area metadata, and a standalone-capable public shell while remaining fully usable in a normal browser; this repository foundation does not claim native Android or iOS installation acceptance, public hosting, or deployment.",
       "status": "PASS",
       "api_tests": [],
       "browser_tests": [
@@ -6943,8 +6943,8 @@
         "docs/pwa_foundation.md"
       ],
       "introduced_in": "issue-182-pwa-foundation",
-      "changed_in": "pr-425-tiltseven-neon-pit",
-      "notes": "The manifest and browser metadata now share the active TiltSeven ground color, while the native-install boundary remains unchanged. Full issue #182 remains open while #74 and #168 plus representative Android Chrome and iOS Safari/Home Screen install-relaunch evidence are incomplete."
+      "changed_in": "hero-casino-rebrand",
+      "notes": "The downstream HERO Casino manifest, browser metadata, favicon and platform icons share the black HERO Lounge identity. This web foundation does not claim native installation or public deployment."
     },
     {
       "id": "PWA-002",
@@ -7710,9 +7710,19 @@
       "module": "Core",
       "description": "After terms-complete registered-account entry, the browser may present one native modal containing at most three server-selected curated updates. It resolves all copy through installed shell dictionaries and fallback before display; unresolved or excessive copy fails closed, raw release keys are never rendered, and only the fixed repository changelog is linkable. Got it closes only after a confirmed self-only empty-body durable acknowledgement. Not now and Escape defer locally without claiming persistence. Optional failures, guests, another open dialog, logout, replacement sessions, and late responses cannot block or repaint the authenticated shell. Locale changes preserve focused controls; all four governed viewports and reduced motion retain semantic keyboard access and containment. Release-coordinator catalog activation remains separately held.",
       "status": "PASS",
-      "api_tests": ["API-TOUR-001"],
-      "browser_tests": ["BR-TOUR-001"],
-      "implementation_files": ["web/views/whats_new.js", "web/app.js", "web/styles.css", "web/i18n/en-US/shell.json", "web/i18n/ru-RU/shell.json"],
+      "api_tests": [
+        "API-TOUR-001"
+      ],
+      "browser_tests": [
+        "BR-TOUR-001"
+      ],
+      "implementation_files": [
+        "web/views/whats_new.js",
+        "web/app.js",
+        "web/styles.css",
+        "web/i18n/en-US/shell.json",
+        "web/i18n/ru-RU/shell.json"
+      ],
       "introduced_in": "issue-165-whats-new-ui",
       "changed_in": "issue-165-whats-new-ui",
       "notes": "Coordinator allocation is recorded on issue #165. This browser continuation does not activate release entries, replace consent, mutate gameplay or ledger state, or change any API/provider contract. Browser fixtures adapt the existing endpoints to the real production eligibility and dismissal functions with isolated JSON persistence; they never edit the shipped catalog."
@@ -7725,7 +7735,9 @@
       "api_tests": [
         "API-TOUR-001"
       ],
-      "browser_tests": ["BR-TOUR-001"],
+      "browser_tests": [
+        "BR-TOUR-001"
+      ],
       "implementation_files": [
         "tests/whats_new_tests.py",
         "tests/unit/whats_new_view.test.mjs",
@@ -13741,9 +13753,23 @@
       "module": "Application",
       "description": "Gunicorn with the production WSGI adapter is the sole production and concurrency-qualification serving stack, with configurable one-through-eight worker processes and one-through-sixty-four gthread request threads, conservative one-worker/sixteen-thread defaults, loopback-only binding, and aggregate connection budgeting against the process-local MySQL pool. The stdlib ThreadingHTTPServer remains local development and ordinary browser-test infrastructure only.",
       "status": "PASS",
-      "api_tests": ["SERVICE-WSGI-001", "GUNICORN-LOAD-JSON-001", "GUNICORN-LOAD-MYSQL-001"],
-      "browser_tests": ["BR-CONCURRENT-138-001"],
-      "implementation_files": ["deploy/gunicorn.conf.py", "tests/production_service_tests.py", "tests/gunicorn_load_smoke.py", ".github/workflows/ci.yml", ".github/workflows/browser-tests.yml", "docs/production_service.md", "docs/concurrent_browser_qualification.md"],
+      "api_tests": [
+        "SERVICE-WSGI-001",
+        "GUNICORN-LOAD-JSON-001",
+        "GUNICORN-LOAD-MYSQL-001"
+      ],
+      "browser_tests": [
+        "BR-CONCURRENT-138-001"
+      ],
+      "implementation_files": [
+        "deploy/gunicorn.conf.py",
+        "tests/production_service_tests.py",
+        "tests/gunicorn_load_smoke.py",
+        ".github/workflows/ci.yml",
+        ".github/workflows/browser-tests.yml",
+        "docs/production_service.md",
+        "docs/concurrent_browser_qualification.md"
+      ],
       "introduced_in": "issue-1040-concurrency-ceilings",
       "changed_in": "issue-1040-concurrency-ceilings",
       "notes": "Ordinary CI proves 32 authenticated JSON and disposable-MySQL sessions; the explicit formal profile proves exactly 100 authenticated MySQL sessions. Both use one Gunicorn worker with 32 request threads for bounded queue pressure, retain a 16-slot pool, complete one synchronized Boule round per session, and emit no identity, credential, request, wager, outcome, target, or exception detail."
@@ -13836,9 +13862,20 @@
       "module": "Core",
       "description": "Authentication sessions are provider-owned first-class rows rather than one shared document. Creation, bearer lookup, activity touch, bearer-and-CSRF rotation, targeted and account-wide revocation, and expiry preserve the existing opaque session id, deterministic cap, generation, absolute lifetime, idle-timeout, guest, provider, and Admin-control semantics while plaintext bearer material exists only in request-local results and cookies.",
       "status": "PASS",
-      "api_tests": ["STORAGE-SESSIONS-001", "API-AUTH-001", "API-MOBILE-CORE-001"],
+      "api_tests": [
+        "STORAGE-SESSIONS-001",
+        "API-AUTH-001",
+        "API-MOBILE-CORE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/auth.py", "casino/core/storage/base.py", "casino/core/storage/sessions.py", "casino/core/storage/sessions_json.py", "casino/core/storage/sessions_mysql.py", "docs/session_storage.md"],
+      "implementation_files": [
+        "casino/core/auth.py",
+        "casino/core/storage/base.py",
+        "casino/core/storage/sessions.py",
+        "casino/core/storage/sessions_json.py",
+        "casino/core/storage/sessions_mysql.py",
+        "docs/session_storage.md"
+      ],
       "introduced_in": "issue-1039-first-class-sessions",
       "changed_in": "issue-1039-first-class-sessions",
       "notes": "The retired aggregate sessions document is importer-only after a one-shot provider-owned migration. No API envelope, cookie name, CSRF policy, signup policy, provider configuration, or production state changes in this compatible storage cutover."
@@ -13848,9 +13885,22 @@
       "module": "Storage",
       "description": "StorageProvider exposes one session lifecycle whose JSON implementation stores one strict atomically published file per bearer digest and whose MySQL implementation stores one independently keyed compatibility document on clean schemas two through four or one indexed native row on clean schema five. Compound cap, rotation, account revocation, replacement, and expiry operations serialize their complete selection and writes, while direct bearer lookup reads only the digest-selected row and every durable representation omits plaintext tokens.",
       "status": "PASS",
-      "api_tests": ["STORAGE-SESSIONS-001", "MYSQL-MIGRATION-001", "MYSQL-MIGRATION-LIVE-001"],
+      "api_tests": [
+        "STORAGE-SESSIONS-001",
+        "MYSQL-MIGRATION-001",
+        "MYSQL-MIGRATION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/storage/base.py", "casino/core/storage/sessions.py", "casino/core/storage/sessions_json.py", "casino/core/storage/sessions_mysql.py", "casino/core/storage/json_provider.py", "casino/core/storage/mysql_provider.py", "casino/core/storage/__init__.py", "docs/session_storage.md"],
+      "implementation_files": [
+        "casino/core/storage/base.py",
+        "casino/core/storage/sessions.py",
+        "casino/core/storage/sessions_json.py",
+        "casino/core/storage/sessions_mysql.py",
+        "casino/core/storage/json_provider.py",
+        "casino/core/storage/mysql_provider.py",
+        "casino/core/storage/__init__.py",
+        "docs/session_storage.md"
+      ],
       "introduced_in": "issue-1039-first-class-sessions",
       "changed_in": "issue-1039-first-class-sessions",
       "notes": "JSON and the held-schema MySQL bridge remove the single hot aggregate immediately without requiring schema activation. Migration application remains held and no provider selector, database, grant, or deployment mutation is included."
@@ -13860,9 +13910,18 @@
       "module": "Storage",
       "description": "Provider-neutral storage configuration exposes immutable PostgreSQL host, TCP port, role, password, and database settings under the dedicated CASINO_POSTGRES namespace, retains JSON as the default and MySQL unchanged, and resolves the PostgreSQL provider only after explicit selection through a lazy optional-driver seam. Malformed configuration and an absent or incomplete PostgreSQL provider fail before connector access through fixed value-free diagnostics.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-CONFIG-001"],
+      "api_tests": [
+        "POSTGRES-CONFIG-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/config.py", "casino/core/storage/base.py", "casino/core/storage/__init__.py", "pyproject.toml", "tests/postgres_registration_tests.py", "tests/cases/api/storage_foundation.py"],
+      "implementation_files": [
+        "casino/config.py",
+        "casino/core/storage/base.py",
+        "casino/core/storage/__init__.py",
+        "pyproject.toml",
+        "tests/postgres_registration_tests.py",
+        "tests/cases/api/storage_foundation.py"
+      ],
       "introduced_in": "issue-1055-postgres-registration",
       "changed_in": "issue-1055-postgres-registration",
       "notes": "This registration lane opens no connector or target and installs no concrete PostgreSQL provider. Explicit PostgreSQL selection remains fail-closed until the separately governed provider-core lane lands; JSON/MySQL startup never dynamically imports PostgreSQL or psycopg."
@@ -13872,9 +13931,15 @@
       "module": "Storage",
       "description": "The connector-neutral PostgreSQL pool lazily bounds each application process to sixteen physical sessions by default with an accepted explicit capacity from one through sixty-four, one bounded checkout deadline, and one bounded physical-connect deadline. Request-scoped leases close cursors, roll back non-idle transactions, reset session state, and require a non-reconnecting wire check before reuse; cleanup, health, fork-generation, connector, or shutdown conflicts discard the physical session through fixed secret-free errors and metrics.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-POOL-001"],
+      "api_tests": [
+        "POSTGRES-POOL-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/postgres_pool.py", "tests/postgres_pool_tests.py", "tests/cases/api/storage_foundation.py"],
+      "implementation_files": [
+        "casino/core/postgres_pool.py",
+        "tests/postgres_pool_tests.py",
+        "tests/cases/api/storage_foundation.py"
+      ],
       "introduced_in": "issue-1056-postgres-pool",
       "changed_in": "issue-1056-postgres-pool",
       "notes": "The pool imports no psycopg or provider implementation and opens no connector during construction. A later provider lane supplies the connector adapter and reuses the existing cached-provider close_pool process-exit hook; this lane adds no global pool registry or production setting."
@@ -13884,9 +13949,24 @@
       "module": "Storage",
       "description": "A checksum-bound PostgreSQL migration catalog defines the exact contiguous schema-one-through-five relational contract for players, ledger, history, documents, action identities, immutable claims and receipts, reset epochs, and first-class sessions. The deployment-only runner applies that catalog only to an explicitly marked disposable PostgreSQL target under a session advisory lock and separate keyed target binding, while ordinary runtime compatibility performs SELECT-only exact-clean version, checksum-prefix, and finite-state verification without reading migration credentials, keys, markers, or environment state.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-MIGRATION-001", "POSTGRES-MIGRATION-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-MIGRATION-001",
+        "POSTGRES-MIGRATION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/postgres_migrations.py", "migrations/postgres/catalog.json", "migrations/postgres/0001_initial.json", "migrations/postgres/0002_action_identity.json", "migrations/postgres/0003_game_action_receipts.json", "migrations/postgres/0004_game_action_claims.json", "migrations/postgres/0005_first_class_sessions.json", "scripts/postgres_migrate.py", "tests/postgres_migration_tests.py", "tests/postgres_migration_live.py", "tests/cases/api/storage_foundation.py"],
+      "implementation_files": [
+        "casino/core/postgres_migrations.py",
+        "migrations/postgres/catalog.json",
+        "migrations/postgres/0001_initial.json",
+        "migrations/postgres/0002_action_identity.json",
+        "migrations/postgres/0003_game_action_receipts.json",
+        "migrations/postgres/0004_game_action_claims.json",
+        "migrations/postgres/0005_first_class_sessions.json",
+        "scripts/postgres_migrate.py",
+        "tests/postgres_migration_tests.py",
+        "tests/postgres_migration_live.py",
+        "tests/cases/api/storage_foundation.py"
+      ],
       "introduced_in": "issue-1057-postgres-migrations",
       "changed_in": "issue-1057-postgres-migrations",
       "notes": "Descriptors use PostgreSQL identity columns, JSONB, separate indexes, bound parameters, ON CONFLICT, RETURNING, and row locks without changing MySQL catalog bytes or runtime behavior. Application is held until a later provider lane; no production target, grant, deployment, or release mutation is included."
@@ -13896,9 +13976,22 @@
       "module": "Storage",
       "description": "PostgresStorageProvider implements the complete ordinary StorageProvider contract for documents, players, cents-exact ledger entries and action-key replay, history, first-class sessions, reset, state visibility, and transaction rollback on the accepted PostgreSQL schema-five catalog. Runtime construction remains explicit and lazy, schema readiness is SELECT-only and fail-closed, wallet and mutable-row operations serialize with PostgreSQL row locks under READ COMMITTED, and every SQL value is bound while native connector and database failures cross only fixed secret-safe application boundaries.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-STORAGE-001", "POSTGRES-STORAGE-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-STORAGE-001",
+        "POSTGRES-STORAGE-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/storage/postgres_provider.py", "casino/core/storage/sessions_postgres.py", "casino/core/storage/__init__.py", "casino/core/postgres_pool.py", "casino/core/postgres_migrations.py", "tests/postgres_provider_tests.py", "tests/postgres_session_provider_tests.py", "tests/postgres_provider_live.py", "tests/cases/api/storage_foundation.py"],
+      "implementation_files": [
+        "casino/core/storage/postgres_provider.py",
+        "casino/core/storage/sessions_postgres.py",
+        "casino/core/storage/__init__.py",
+        "casino/core/postgres_pool.py",
+        "casino/core/postgres_migrations.py",
+        "tests/postgres_provider_tests.py",
+        "tests/postgres_session_provider_tests.py",
+        "tests/postgres_provider_live.py",
+        "tests/cases/api/storage_foundation.py"
+      ],
       "introduced_in": "issue-1058-postgres-provider-core",
       "changed_in": "issue-1058-postgres-provider-core",
       "notes": "This lane adds no whole-game action executor, public API, game, MySQL, JSON, schema, workflow, deployment, or production-target change. Exactly-once game-action claims and receipts remain assigned to STORAGE-024."
@@ -13908,9 +14001,19 @@
       "module": "Storage",
       "description": "PostgresStorageProvider exposes provider-neutral exactly-once game-action execution and resolution on the accepted schema-five catalog. One epoch-prefixed immutable execute-or-uncommitted claim wins through PostgreSQL ON CONFLICT and shared row locks; compatible replay returns the original checksum-bound JSONB receipt without re-planning, changed reuse fails before resources, and execution commits locked wallet and state projections, deterministic ledger rows, and the receipt in one transaction. Resolver contention is finite and only lock timeout or deadlock maps to pending, while reset ownership prevents visibility gaps, preserves immutable prior history, and permits fresh key reuse only in a later ready epoch.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-GAME-ACTION-001", "POSTGRES-GAME-ACTION-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-GAME-ACTION-001",
+        "POSTGRES-GAME-ACTION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/storage/game_actions_postgres.py", "casino/core/storage/postgres_provider.py", "tests/postgres_game_action_provider_tests.py", "tests/postgres_game_action_live.py", "tests/cases/api/storage_foundation.py", "tests/runner.py"],
+      "implementation_files": [
+        "casino/core/storage/game_actions_postgres.py",
+        "casino/core/storage/postgres_provider.py",
+        "tests/postgres_game_action_provider_tests.py",
+        "tests/postgres_game_action_live.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/runner.py"
+      ],
       "introduced_in": "issue-1059-postgres-game-actions",
       "changed_in": "issue-1059-postgres-game-actions",
       "notes": "This lane changes no schema, game, public API, MySQL, JSON, deployment workflow, production target, or migration authority. It uses the schema-four claim and receipt relations under the exact clean schema-five runtime prefix."
@@ -13920,9 +14023,19 @@
       "module": "Storage",
       "description": "One executable provider-independent StorageProvider contract defines backend acceptance with no capability carve-outs. The unchanged A-J inventory covers documents, players, ledger arithmetic and sequencing, exactly-once actions, history, real threaded schedules, transaction visibility, reset fresh-equivalence, and declared secret-safe errors; supports_true_concurrency may size a thread wave but cannot skip any call, case, or assertion.",
       "status": "PASS",
-      "api_tests": ["STORAGE-CONFORMANCE-001"],
+      "api_tests": [
+        "STORAGE-CONFORMANCE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/storage_conformance/cases.py", "tests/storage_conformance/harness.py", "tests/storage_conformance/registry.py", "tests/storage_conformance/test_json_conformance.py", "tests/storage_conformance/test_import_boundaries.py", "tests/cases/api/storage_foundation.py", "scripts/validate_module_boundaries.py"],
+      "implementation_files": [
+        "tests/storage_conformance/cases.py",
+        "tests/storage_conformance/harness.py",
+        "tests/storage_conformance/registry.py",
+        "tests/storage_conformance/test_json_conformance.py",
+        "tests/storage_conformance/test_import_boundaries.py",
+        "tests/cases/api/storage_foundation.py",
+        "scripts/validate_module_boundaries.py"
+      ],
       "introduced_in": "issue-1060-storage-conformance",
       "changed_in": "issue-1060-storage-conformance",
       "notes": "This test-only contract changes no provider implementation, schema, public API, gameplay, production target, deployment workflow, or migration authority. A future backend is complete only after one isolated harness passes the same complete inventory."
@@ -13955,9 +14068,23 @@
       "module": "MySQL",
       "description": "Schema five adds casino_sessions with one binary opaque primary key, one unique lowercase token digest, user-activity and expiry indexes, finite lifecycle and generation checks, and a canonical JSON payload bound to duplicated indexed columns. The migration backfills only keyed schema-two-through-four session bridge rows, never persists plaintext bearer tokens, and removes those bridge rows after insertion; runtime session DML is table-scoped while catalog application remains held.",
       "status": "PASS",
-      "api_tests": ["STORAGE-SESSIONS-001", "MYSQL-MIGRATION-001", "MYSQL-MIGRATION-LIVE-001"],
+      "api_tests": [
+        "STORAGE-SESSIONS-001",
+        "MYSQL-MIGRATION-001",
+        "MYSQL-MIGRATION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/storage/sessions_mysql.py", "casino/core/storage/mysql_provider.py", "migrations/mysql/0005_first_class_sessions.json", "migrations/mysql/catalog.json", "scripts/package_app.py", "tests/mysql_migration_tests.py", "tests/mysql_migration_live.py", "docs/mysql_migrations.md", "docs/session_storage.md"],
+      "implementation_files": [
+        "casino/core/storage/sessions_mysql.py",
+        "casino/core/storage/mysql_provider.py",
+        "migrations/mysql/0005_first_class_sessions.json",
+        "migrations/mysql/catalog.json",
+        "scripts/package_app.py",
+        "tests/mysql_migration_tests.py",
+        "tests/mysql_migration_live.py",
+        "docs/mysql_migrations.md",
+        "docs/session_storage.md"
+      ],
       "introduced_in": "issue-1039-first-class-sessions",
       "changed_in": "issue-1039-first-class-sessions",
       "notes": "Runtime accepts exact clean schema prefixes two through five. Game-action lifecycle remains eligible on the unchanged schema-four prefix and schema five; no schema-five migration or grant change is applied to production by this issue."
@@ -13967,9 +14094,27 @@
       "module": "MySQL",
       "description": "The process-local MySQL pool defaults to sixteen physical sessions, accepts an explicit capacity from one through sixty-four, and publishes only authenticated Admin Operations telemetry for configured capacity, in-use, idle, waiting, cumulative saturation encounters, and checkout timeouts. Readiness remains shape-compatible, JSON reports pool telemetry unavailable, and malformed snapshots fail closed without connector, target, credential, query, request, user, or exception detail.",
       "status": "PASS",
-      "api_tests": ["MYSQL-POOL-001", "API-OPS-001", "MYSQL-MIGRATION-LIVE-001", "GUNICORN-LOAD-MYSQL-001"],
-      "browser_tests": ["BR-OPS-001"],
-      "implementation_files": ["casino/core/mysql_pool.py", "casino/operations/probes.py", "casino/operations/service.py", "casino/operations/api.py", "contracts/openapi/operations.v1.yaml", "web/admin/operations.js", "tests/mysql_pool_tests.py", "tests/operations/test_service.py", "tests/operations/test_api.py", "docs/mysql_connection_pool.md"],
+      "api_tests": [
+        "MYSQL-POOL-001",
+        "API-OPS-001",
+        "MYSQL-MIGRATION-LIVE-001",
+        "GUNICORN-LOAD-MYSQL-001"
+      ],
+      "browser_tests": [
+        "BR-OPS-001"
+      ],
+      "implementation_files": [
+        "casino/core/mysql_pool.py",
+        "casino/operations/probes.py",
+        "casino/operations/service.py",
+        "casino/operations/api.py",
+        "contracts/openapi/operations.v1.yaml",
+        "web/admin/operations.js",
+        "tests/mysql_pool_tests.py",
+        "tests/operations/test_service.py",
+        "tests/operations/test_api.py",
+        "docs/mysql_connection_pool.md"
+      ],
       "introduced_in": "issue-1040-concurrency-ceilings",
       "changed_in": "issue-1040-concurrency-ceilings",
       "notes": "Saturation count is the cumulative number of checkouts that encountered hard capacity and therefore aliases the existing internal wait-count event exactly. Waiting is a current gauge and timeout count is the cumulative bounded checkout failure counter. The telemetry is process-local, not a database-global capacity promise."
@@ -13979,9 +14124,22 @@
       "module": "Tests",
       "description": "Provider-neutral JSON and transaction-faithful MySQL-model evidence proves deterministic per-user and global caps, direct bearer lookup, secret-free durable rows, atomic bearer-and-CSRF generation rotation, idempotent targeted and account revocation, expiry sweeps, one-shot legacy import, and parallel same-user plus different-user login/logout with zero lost sessions, cross-wired CSRF proofs, or hidden worker failures. Disposable MySQL evidence verifies native indexes, schema-four bridge backfill, least-privilege DML, restart compatibility, and the same concurrent lifecycle on real connectors.",
       "status": "PASS",
-      "api_tests": ["STORAGE-SESSIONS-001", "MYSQL-MIGRATION-001", "MYSQL-MIGRATION-LIVE-001"],
+      "api_tests": [
+        "STORAGE-SESSIONS-001",
+        "MYSQL-MIGRATION-001",
+        "MYSQL-MIGRATION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/session_storage_tests.py", "tests/mysql_migration_tests.py", "tests/mysql_migration_live.py", "tests/security/test_policy.py", "tests/admin_session_control_tests.py", "tests/session_timeout_tests.py", "tests/mobile_core_security_tests.py", "tests/cases/api/storage_foundation.py"],
+      "implementation_files": [
+        "tests/session_storage_tests.py",
+        "tests/mysql_migration_tests.py",
+        "tests/mysql_migration_live.py",
+        "tests/security/test_policy.py",
+        "tests/admin_session_control_tests.py",
+        "tests/session_timeout_tests.py",
+        "tests/mobile_core_security_tests.py",
+        "tests/cases/api/storage_foundation.py"
+      ],
       "introduced_in": "issue-1039-first-class-sessions",
       "changed_in": "issue-1039-first-class-sessions",
       "notes": "All rows, bearer tokens, CSRF proofs, users, databases, and files are synthetic and isolated. The listener-free suite opens no network; disposable MySQL remains explicit loopback-only and performs no production operation."
@@ -13991,9 +14149,24 @@
       "module": "Tests",
       "description": "Exact-clean-source load evidence starts the supported loopback-only Gunicorn WSGI command over caller-external temporary state, provisions reserved-domain synthetic players through the Admin API, authenticates every independent session, synchronizes one public Boule round per session, validates provider-specific Admin pool telemetry, closes the exact process and listener, and emits one atomic aggregate report. Ordinary CI requires 32 sessions on JSON and disposable MySQL; the opt-in formal profile requires exactly 100 sessions on disposable MySQL with zero failed sessions, rounds, checkout timeouts, or listener residue.",
       "status": "PASS",
-      "api_tests": ["GUNICORN-LOAD-JSON-001", "GUNICORN-LOAD-MYSQL-001", "MYSQL-MIGRATION-LIVE-001"],
-      "browser_tests": ["BR-CONCURRENT-138-001"],
-      "implementation_files": ["tests/gunicorn_load_smoke.py", "tests/unit/gunicorn_load_smoke_tests.py", "tests/mysql_migration_live.py", "tests/cases/api/storage_foundation.py", "tests/runner.py", ".github/workflows/ci.yml", ".github/workflows/browser-tests.yml", "docs/concurrent_browser_qualification.md"],
+      "api_tests": [
+        "GUNICORN-LOAD-JSON-001",
+        "GUNICORN-LOAD-MYSQL-001",
+        "MYSQL-MIGRATION-LIVE-001"
+      ],
+      "browser_tests": [
+        "BR-CONCURRENT-138-001"
+      ],
+      "implementation_files": [
+        "tests/gunicorn_load_smoke.py",
+        "tests/unit/gunicorn_load_smoke_tests.py",
+        "tests/mysql_migration_live.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/runner.py",
+        ".github/workflows/ci.yml",
+        ".github/workflows/browser-tests.yml",
+        "docs/concurrent_browser_qualification.md"
+      ],
       "introduced_in": "issue-1040-concurrency-ceilings",
       "changed_in": "issue-1040-concurrency-ceilings",
       "notes": "The marker, report-containment, clean-checkout, provider, population, process, and listener gates fail before or cleanly after resource use. Evidence contains only exact source, provider, population, completion counts, aggregate duration and throughput, configured Gunicorn topology, allowlisted pool aggregates, requirement IDs, and terminal listener closure."
@@ -14003,9 +14176,16 @@
       "module": "Tests",
       "description": "Listener-free PostgreSQL registration evidence binds canonical defaults, deterministic environment overrides, complete TCP-port and blank-identifier rejection, fixed secret-free diagnostics, public configuration identity, psycopg keyword translation, explicit lazy future-provider resolution, absent-driver and incomplete-provider failure, JSON/MySQL import isolation, and unchanged unknown-selector behavior.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-CONFIG-001"],
+      "api_tests": [
+        "POSTGRES-CONFIG-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_registration_tests.py", "tests/storage_package_boundary_tests.py", "tests/cases/api/storage_foundation.py", "tests/cicd_deployment_tests.py"],
+      "implementation_files": [
+        "tests/postgres_registration_tests.py",
+        "tests/storage_package_boundary_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/cicd_deployment_tests.py"
+      ],
       "introduced_in": "issue-1055-postgres-registration",
       "changed_in": "issue-1055-postgres-registration",
       "notes": "The focused suite replaces established provider constructors with inert fakes and intercepts the exact dynamic import boundary. It opens no driver, connector, database, listener, provider service, or production target and restores every environment value."
@@ -14015,9 +14195,17 @@
       "module": "Tests",
       "description": "Listener-free PostgreSQL pool evidence proves exact policy defaults and boundaries, lazy hard-cap reservations, fixed checkout and connection failures, waiter wakeup and timeout cleanup, cursor-rollback-reset-check ordering, adapter failure discard, non-reconnecting object reuse, concurrent idempotent lease close, fork-generation isolation, terminal shutdown wakeup, late factory-result closure, defensive secret-free metrics, and unchanged MySQL pool behavior.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-POOL-001"],
+      "api_tests": [
+        "POSTGRES-POOL-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_pool_tests.py", "tests/mysql_pool_tests.py", "tests/cases/api/storage_foundation.py", "tests/api_case_inventory.json", "tests/cicd_deployment_tests.py"],
+      "implementation_files": [
+        "tests/postgres_pool_tests.py",
+        "tests/mysql_pool_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/cicd_deployment_tests.py"
+      ],
       "introduced_in": "issue-1056-postgres-pool",
       "changed_in": "issue-1056-postgres-pool",
       "notes": "All physical sessions, cursors, connector failures, transaction states, process identities, and timing gates are deterministic in-memory fakes. The suite imports no driver, opens no listener or network target, and persists no database, credential, or provider state."
@@ -14027,9 +14215,19 @@
       "module": "Tests",
       "description": "Listener-free PostgreSQL migration evidence validates contiguous descriptors, immutable checksums and catalog identity, PostgreSQL dialect and table inventory, separate migration configuration, target-binding and disposable guards, dry-run read isolation, exact clean runtime verification, hostile missing, gapped, foreign, future, dirty, applying, checksum, transaction, and lock states, fixed secret-free failures, and unchanged MySQL migration behavior. Explicit disposable PostgreSQL 16 evidence applies versions one through five, exercises identity, JSONB, ON CONFLICT, RETURNING, constraints and FOR UPDATE contention, verifies dict-row runtime readiness across restart, and removes the synthetic role, database, cluster, process, and listener.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-MIGRATION-001", "POSTGRES-MIGRATION-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-MIGRATION-001",
+        "POSTGRES-MIGRATION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_migration_tests.py", "tests/postgres_migration_live.py", "tests/mysql_migration_tests.py", "tests/cases/api/storage_foundation.py", "tests/api_case_inventory.json", "tests/runner.py"],
+      "implementation_files": [
+        "tests/postgres_migration_tests.py",
+        "tests/postgres_migration_live.py",
+        "tests/mysql_migration_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/runner.py"
+      ],
       "introduced_in": "issue-1057-postgres-migrations",
       "changed_in": "issue-1057-postgres-migrations",
       "notes": "The live gate requires the exact issue-owned authorization marker and an explicit official PostgreSQL binary root before creating a loopback-only temporary cluster. Evidence is sanitized and all process, listener, role, database, and filesystem residue is checked after cleanup."
@@ -14039,9 +14237,23 @@
       "module": "Tests",
       "description": "Listener-free transaction-faithful PostgreSQL provider evidence covers complete method inventory, lazy connection and readiness, dict-row session sanitation, document defaults and strict corruption, atomic mutation, player normalization and row locking, cents-exact ledger balance transitions and replay conflicts, chronological history, first-class session caps, rotation, revocation, expiry and import, reset isolation, rollback, state visibility, concurrency, fixed native-error translation, and unchanged JSON/MySQL behavior. Explicit disposable PostgreSQL 16 evidence repeats the storage, state, session, contention, and cleanup contract on the accepted schema-five catalog.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-STORAGE-001", "POSTGRES-STORAGE-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-STORAGE-001",
+        "POSTGRES-STORAGE-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_provider_tests.py", "tests/postgres_session_provider_tests.py", "tests/postgres_provider_live.py", "tests/storage_tests.py", "tests/state_store_atomic_tests.py", "tests/session_storage_tests.py", "tests/storage_package_boundary_tests.py", "tests/cases/api/storage_foundation.py", "tests/api_case_inventory.json", "tests/runner.py"],
+      "implementation_files": [
+        "tests/postgres_provider_tests.py",
+        "tests/postgres_session_provider_tests.py",
+        "tests/postgres_provider_live.py",
+        "tests/storage_tests.py",
+        "tests/state_store_atomic_tests.py",
+        "tests/session_storage_tests.py",
+        "tests/storage_package_boundary_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/runner.py"
+      ],
       "introduced_in": "issue-1058-postgres-provider-core",
       "changed_in": "issue-1058-postgres-provider-core",
       "notes": "Listener-free suites open no connector or listener. The live gate requires the exact disposable marker and official PostgreSQL 16 binary root, uses only synthetic target identities, and proves role, database, process, listener and filesystem cleanup on success and failure."
@@ -14051,9 +14263,21 @@
       "module": "Tests",
       "description": "Listener-free transaction-faithful PostgreSQL game-action evidence covers paid and zero-cost execution, compatible replay, conflict-before-resources, executor-first, resolver-first and pending resolution, planner at-most-once and purity, late-receipt rollback, concurrent same-key ownership, reset phase and epoch reuse, fixed parameterized append-only SQL, and unchanged JSON and MySQL behavior. Explicit disposable PostgreSQL 16 evidence repeats paid execution, planner-zero replay and committed resolution through provider restart, zero-cost execution, execute-versus-resolve contention, resolver-first, reset-gap, fresh-epoch reuse, immutable history, and exact cleanup.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-GAME-ACTION-001", "POSTGRES-GAME-ACTION-LIVE-001"],
+      "api_tests": [
+        "POSTGRES-GAME-ACTION-001",
+        "POSTGRES-GAME-ACTION-LIVE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_game_action_provider_tests.py", "tests/postgres_game_action_live.py", "tests/storage_tests.py", "tests/mysql_game_action_provider_tests.py", "tests/cases/api/storage_foundation.py", "tests/api_case_inventory.json", "tests/runner.py", "tests/cicd_deployment_tests.py"],
+      "implementation_files": [
+        "tests/postgres_game_action_provider_tests.py",
+        "tests/postgres_game_action_live.py",
+        "tests/storage_tests.py",
+        "tests/mysql_game_action_provider_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/runner.py",
+        "tests/cicd_deployment_tests.py"
+      ],
       "introduced_in": "issue-1059-postgres-game-actions",
       "changed_in": "issue-1059-postgres-game-actions",
       "notes": "The listener-free suite imports no psycopg and opens no listener. The live gate requires a distinct exact authorization marker and official PostgreSQL 16 binary root, uses only synthetic loopback identities, and proves pool, role, database, process, listener, and filesystem cleanup."
@@ -14063,9 +14287,21 @@
       "module": "Tests",
       "description": "One registered conformance run executes the unchanged A-J storage contract against temporary JSON, disposable MySQL, and disposable PostgreSQL harnesses with per-group timings, hard total budgets below ten seconds for JSON and sixty seconds for each reachable relational provider, real thread calls, complete fresh-state reset comparison, declared error containment, and success/failure cleanup. Central and package boundary gates reject concrete-provider imports or classes anywhere in the case kit; absent reviewed relational reachability skips cleanly, while present malformed reachability fails closed before optional-driver or network access.",
       "status": "PASS",
-      "api_tests": ["STORAGE-CONFORMANCE-001"],
+      "api_tests": [
+        "STORAGE-CONFORMANCE-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/storage_conformance/README.md", "tests/storage_conformance/database_harnesses.py", "tests/storage_conformance/test_database_harnesses.py", "tests/storage_conformance/test_import_boundaries.py", "tests/storage_conformance/test_json_conformance.py", "tests/cases/api/storage_foundation.py", "tests/api_case_inventory.json", "tests/cicd_deployment_tests.py", "scripts/validate_module_boundaries.py"],
+      "implementation_files": [
+        "tests/storage_conformance/README.md",
+        "tests/storage_conformance/database_harnesses.py",
+        "tests/storage_conformance/test_database_harnesses.py",
+        "tests/storage_conformance/test_import_boundaries.py",
+        "tests/storage_conformance/test_json_conformance.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/cicd_deployment_tests.py",
+        "scripts/validate_module_boundaries.py"
+      ],
       "introduced_in": "issue-1060-storage-conformance",
       "changed_in": "issue-1060-storage-conformance",
       "notes": "All targets, roles, accounts, passwords, files, and rows are synthetic. Default execution opens no absent provider; authorized relational runs remain loopback-only, expose no credential, target, SQL, query, or native error detail, and verify database, account, process, listener, and filesystem cleanup."
@@ -14075,9 +14311,20 @@
       "module": "Tests",
       "description": "Listener-free production-bootstrap evidence proves mutually exclusive disposable and production authorization, exact release-manifest SHA binding before connector access, empty-target-only application, least-privilege migration-role rejection, runtime provider and loopback binding, fixed secret-free native failures, atomic cleanup, provider-aware release compatibility, and exact source-bound MySQL and PostgreSQL edge profiles without opening a listener or cloud target.",
       "status": "PASS",
-      "api_tests": ["POSTGRES-MIGRATION-001", "DEPLOY-PULL-001", "EDGE-PREPARATION-001"],
+      "api_tests": [
+        "POSTGRES-MIGRATION-001",
+        "DEPLOY-PULL-001",
+        "EDGE-PREPARATION-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/postgres_migration_tests.py", "tests/postgres_deployment_tests.py", "tests/release_poller_tests.py", "tests/edge_gate_tests.py", "tests/cases/api/storage_foundation.py", "tests/cases/api/delivery_infrastructure.py"],
+      "implementation_files": [
+        "tests/postgres_migration_tests.py",
+        "tests/postgres_deployment_tests.py",
+        "tests/release_poller_tests.py",
+        "tests/edge_gate_tests.py",
+        "tests/cases/api/storage_foundation.py",
+        "tests/cases/api/delivery_infrastructure.py"
+      ],
       "introduced_in": "issue-1078-oci-postgres-preview",
       "changed_in": "issue-1078-oci-postgres-preview",
       "notes": "All target, role, password, manifest, connector, edge, and service inputs are disposable fakes or inert checked-in text. The suite performs no cloud, DNS, certificate, database, service, firewall, release, or production mutation."
@@ -14087,9 +14334,16 @@
       "module": "Tests",
       "description": "Focused Bingo association evidence proves the exact two-field schema and identifier grammar, one-to-one immutability, recursive exact-key public redaction, atomic session/link publication, complete settle_purchase commit-response-loss and finalize-response-loss replay, strict legacy promotion, prohibited inference, fail-closed corrupt or ambiguous recovery, compensation only for a matching prepared marker with no association and no active session, reset/refund and terminal retention, the exact 1,051-row bound, and restart-equivalent behavior on temporary JSON plus explicitly authorized disposable MySQL.",
       "status": "PASS",
-      "api_tests": ["API-BINGO-PURCHASE-ASSOCIATION-001"],
+      "api_tests": [
+        "API-BINGO-PURCHASE-ASSOCIATION-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/bingo_purchase_session_association_tests.py", "tests/cases/api/game_atomic.py", "tests/api_case_inventory.json", "tests/cicd_deployment_tests.py"],
+      "implementation_files": [
+        "tests/bingo_purchase_session_association_tests.py",
+        "tests/cases/api/game_atomic.py",
+        "tests/api_case_inventory.json",
+        "tests/cicd_deployment_tests.py"
+      ],
       "introduced_in": "issue-1087-bingo-purchase-session-association",
       "changed_in": "issue-1087-bingo-purchase-session-association",
       "notes": "JSON evidence always runs. MySQL may run only through the accepted tests.storage_conformance MySQL harness after its exact disposable marker and complete loopback reachability pass. Missing relational authorization skips, malformed authorization fails before driver or network access, and PASS is emitted only after database/account cleanup. The #1087 slice reuses that harness unchanged and edits no provider, migration, workflow, deployment, or production configuration."
@@ -14099,9 +14353,15 @@
       "module": "Core",
       "description": "Challenge Points are strictly separate from play tokens; practice is non-persistent and no transition can create a wallet or ledger movement.",
       "status": "PASS",
-      "api_tests": ["CHALLENGE-POLICY-001"],
+      "api_tests": [
+        "CHALLENGE-POLICY-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/challenges/policy.py", "tests/challenge_policy_tests.py", "tests/cases/api/player_foundation.py"],
+      "implementation_files": [
+        "casino/core/challenges/policy.py",
+        "tests/challenge_policy_tests.py",
+        "tests/cases/api/player_foundation.py"
+      ],
       "introduced_in": "issue-1091-challenge-policy-foundation",
       "changed_in": "issue-1091-challenge-policy-foundation",
       "notes": "The inactive provider-neutral kernel emits immutable append candidates only. It imports no wallet, ledger, storage, route, or game module, and the production rule registry remains empty."
@@ -14111,9 +14371,15 @@
       "module": "Core",
       "description": "Ranked transition policy enforces three starts per player and game per UTC day, deterministic versioned integer scoring from 0 through 1,000, daily-best delta, exact idempotent replay, and fail-closed conflict and journal validation.",
       "status": "PASS",
-      "api_tests": ["CHALLENGE-POLICY-001"],
+      "api_tests": [
+        "CHALLENGE-POLICY-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/challenges/policy.py", "tests/challenge_policy_tests.py", "tests/cases/api/player_foundation.py"],
+      "implementation_files": [
+        "casino/core/challenges/policy.py",
+        "tests/challenge_policy_tests.py",
+        "tests/cases/api/player_foundation.py"
+      ],
       "introduced_in": "issue-1091-challenge-policy-foundation",
       "changed_in": "issue-1091-challenge-policy-foundation",
       "notes": "The kernel validates one transaction snapshot and does not claim provider concurrency, persistence, recovery, season aggregation, or game-formula certification."
@@ -14123,9 +14389,16 @@
       "module": "Core",
       "description": "The Challenge Points kernel is disabled unless a future reviewed provider-atomic integration supplies canonical facts, storage, and a non-empty production rule registry; it has no API or award authority by itself.",
       "status": "PASS",
-      "api_tests": ["CHALLENGE-POLICY-001"],
+      "api_tests": [
+        "CHALLENGE-POLICY-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["casino/core/challenges/__init__.py", "casino/core/challenges/policy.py", "tests/challenge_policy_tests.py", "tests/cases/api/player_foundation.py"],
+      "implementation_files": [
+        "casino/core/challenges/__init__.py",
+        "casino/core/challenges/policy.py",
+        "tests/challenge_policy_tests.py",
+        "tests/cases/api/player_foundation.py"
+      ],
       "introduced_in": "issue-1091-challenge-policy-foundation",
       "changed_in": "issue-1091-challenge-policy-foundation",
       "notes": "No route, provider adapter, storage schema, production rule, catalog entry, game, leaderboard, Admin surface, or browser behavior is enabled by this requirement."
@@ -14135,9 +14408,16 @@
       "module": "Tests",
       "description": "Listener-free synthetic Challenge Points evidence covers score bounds, hostile inputs, ranked attempts, daily-best delta, exact retry and conflict behavior, decoded-journal validation, and negative wallet fields without claiming provider concurrency or restart parity.",
       "status": "PASS",
-      "api_tests": ["CHALLENGE-POLICY-001"],
+      "api_tests": [
+        "CHALLENGE-POLICY-001"
+      ],
       "browser_tests": [],
-      "implementation_files": ["tests/challenge_policy_tests.py", "tests/cases/api/player_foundation.py", "tests/api_case_inventory.json", "tests/cicd_deployment_tests.py"],
+      "implementation_files": [
+        "tests/challenge_policy_tests.py",
+        "tests/cases/api/player_foundation.py",
+        "tests/api_case_inventory.json",
+        "tests/cicd_deployment_tests.py"
+      ],
       "introduced_in": "issue-1091-challenge-policy-foundation",
       "changed_in": "issue-1091-challenge-policy-foundation",
       "notes": "The registered case runs thirteen deterministic unit tests with no listener, provider, external database, wallet mutation, production rule registration, or persistent state."

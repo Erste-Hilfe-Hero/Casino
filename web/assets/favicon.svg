@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="TiltSeven">
-  <defs>
-    <linearGradient id="t7" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ff3b6b"/>
-      <stop offset="1" stop-color="#ff7a2f"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="8" fill="#0a0712"/>
-  <rect x="2.6" y="2.6" width="26.8" height="26.8" rx="6.4" fill="none" stroke="#ff3b6b" stroke-width="1.3" opacity="0.5"/>
-  <text x="16.5" y="24" font-family="'Segoe UI',system-ui,sans-serif" font-size="21" font-weight="900" text-anchor="middle" fill="url(#t7)" transform="skewX(-9)">7</text>
-  <circle cx="24.5" cy="8" r="1.9" fill="#22e0c3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HERO Casino">
+  <!-- Midnight Lounge H monogram: vector geometry remains crisp at favicon size. -->
+  <rect width="64" height="64" rx="14" fill="#080808"/>
+  <rect x="5" y="5" width="54" height="54" rx="10" fill="none" stroke="#d8b979" stroke-width="2"/>
+  <path d="M19 17h7v12h12V17h7v30h-7V35H26v12h-7z" fill="#d8b979"/>
 </svg>

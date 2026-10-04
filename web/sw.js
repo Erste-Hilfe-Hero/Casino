@@ -12,7 +12,7 @@ const SHELL_ASSETS = Object.freeze([
   '/index.html',
   '/styles.css',
   '/app.js',
-  '/brands/tiltseven.js',
+  '/brands/hero.js',
   '/manifest.webmanifest',
   '/assets/favicon.svg',
   '/assets/pwa-icon-192.png',
