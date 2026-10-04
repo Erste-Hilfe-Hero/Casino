@@ -1,0 +1,35 @@
+name: Import complete upstream repository
+on:
+  push:
+    paths: [".github/workflows/import-upstream.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'Erste-Hilfe-Hero/Casino'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import source history, branches and tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git clone --mirror https://github.com/andreivorobiev/virtual-casino-simulator.git source.git
+          git clone https://github.com/andreivorobiev/virtual-casino-simulator.git work
+          cd work
+          git remote rename origin upstream
+          git remote add origin https://github.com/Erste-Hilfe-Hero/Casino.git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
+          git fetch origin main
+          git merge --allow-unrelated-histories origin/main -m "Import complete Virtual Casino Simulator with upstream history"
+          git push origin main
+          cd ../source.git
+          git config credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
+          while read -r ref; do
+            if [ "$ref" != "refs/heads/main" ]; then
+              git push https://github.com/Erste-Hilfe-Hero/Casino.git "$ref:$ref"
+            fi
+          done < <(git for-each-ref --format='%(refname)' refs/heads refs/tags)
