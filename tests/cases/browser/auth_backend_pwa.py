@@ -101,7 +101,7 @@ def run_cases(run_case, browser_shard_owns_group, skip_browser_affinity, browser
                     # Index the exact icon contract for concise assertions.
                     icon_rows={(row['src'],row['sizes'],row['purpose'],row['type']) for row in manifest['icons']}
                     # Require standalone metadata and every reviewed PNG size/purpose pair.
-                    assert manifest['name']=='HERO Casino' and manifest['display']=='standalone' and manifest['scope']=='/' and manifest['theme_color']=='#080808' and icon_rows=={('/assets/pwa-icon-192.png','192x192','any','image/png'),('/assets/pwa-icon-512.png','512x512','any','image/png'),('/assets/pwa-maskable-192.png','192x192','maskable','image/png'),('/assets/pwa-maskable-512.png','512x512','maskable','image/png')},manifest
+                    assert manifest['name']=='NOIRVA Casino' and manifest['display']=='standalone' and manifest['scope']=='/' and manifest['theme_color']=='#080808' and icon_rows=={('/assets/pwa-icon-192.png','192x192','any','image/png'),('/assets/pwa-icon-512.png','512x512','any','image/png'),('/assets/pwa-maskable-192.png','192x192','maskable','image/png'),('/assets/pwa-maskable-512.png','512x512','maskable','image/png')},manifest
                     # Require every icon response to be a nonempty PNG from the exact manifest paths.
                     icon_responses=pwa_page.evaluate("async icons => Promise.all(icons.map(async icon => { const response=await fetch(icon.src); return { src:icon.src, ok:response.ok, type:response.headers.get('content-type'), bytes:(await response.arrayBuffer()).byteLength }; }))",manifest['icons'])
                     # Reject missing, mislabeled, or placeholder icon responses.

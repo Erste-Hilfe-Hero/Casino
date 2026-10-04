@@ -1,6 +1,8 @@
-# HERO Casino
+# NOIRVA Casino
 
-HERO Casino is the Erste-Hilfe-Hero downstream version, with a HERO Lounge brand, black surfaces, champagne-gold accents, and a custom H monogram. Upstream source and Apache-2.0 notices are retained.
+NOIRVA Casino is the Erste-Hilfe-Hero downstream version, with a NOIRVA Lounge brand, black surfaces, champagne-gold accents, and a custom N monogram. Upstream source and Apache-2.0 notices are retained.
+
+The interface centers on a searchable game catalog and uniform artwork cards. Filters and account tools are optional menus; game rules, automation, and telemetry are available through More options.
 
 Brand scope: black web shell, login/signup names, EN/RU resources, original artwork for all 46 games, Admin, API docs, email identity, favicon, PWA icons, and native app names/icons. Historical releases and deployment domains retain their upstream provenance.
 

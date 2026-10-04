@@ -90,7 +90,7 @@ test("CORE-007 preserves the searchable Lobby after extraction", () => {
   // Render the complete catalog and bind its controls.
   renderLobby(view);
   for (const marker of [
-    'data-testid="lobby"', "lobby-trust-rail", "catalog-search", "catalog-categories",
+    'data-testid="lobby"', "catalog-search", "catalog-categories",
     "catalog-capacity", "game-gallery", "card-roulette", "card-slots", "open-roulette",
   ]) {
     // Require every accepted Lobby surface.
@@ -137,7 +137,7 @@ test("CORE-012 keeps the Lobby view boundary reviewable", () => {
     assert.equal(APP_SOURCE.includes(retired), false, retired);
   }
   // Preserve stable catalog and route-action identities in the module.
-  for (const marker of ["catalog-search", "catalog-categories", "data-open-game", "lobby-trust-rail"]) {
+  for (const marker of ["catalog-search", "catalog-categories", "data-open-game"]) {
     // Bind each accepted identity to the Lobby view.
     assert.ok(MODULE_SOURCE.includes(marker), marker);
   }

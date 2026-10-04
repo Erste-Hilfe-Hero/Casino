@@ -1,6 +1,6 @@
 {
   "module": "application",
-  "version": "9.76.0",
+  "version": "9.77.0",
   "paths": [
     "run.py",
     "pyproject.toml",
@@ -39,8 +39,7 @@
     "web/assets/favicon.svg",
     "web/assets/fonts/",
     "web/i18n/",
-    "web/assets/hero/",
-    "site/tiltseven/"
+    "web/assets/noirva/"
   ],
   "requirements_prefixes": [
     "CORE",

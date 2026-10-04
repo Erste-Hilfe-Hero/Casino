@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">HERO Casino</title>
-  <desc id="desc">Gold H monogram on a black rounded square.</desc>
-  <!-- Midnight Lounge H monogram: vector geometry remains crisp at favicon size. -->
-  <rect width="64" height="64" rx="14" fill="#080808"/>
-  <rect x="5" y="5" width="54" height="54" rx="10" fill="none" stroke="#d8b979" stroke-width="2"/>
-  <path d="M19 17h7v12h12V17h7v30h-7V35H26v12h-7z" fill="#d8b979"/>
-</svg>

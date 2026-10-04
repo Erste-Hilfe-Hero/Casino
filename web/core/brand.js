@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 // Active-brand selection and runtime application so the whole app is one config swap.
 
-// Keep the upstream descriptor available while selecting the downstream HERO identity.
-import { hero } from "../brands/hero.js";
+// Keep the upstream descriptor available while selecting the downstream NOIRVA identity.
+import { noirva } from "../brands/noirva.js";
 
 // Expose the single active brand consumed by the shell and PWA metadata.
-export const activeBrand = hero;
+export const activeBrand = noirva;
 
 // Apply one brand's design tokens and identity to the live document.
 export function applyBrand(brand = activeBrand) {

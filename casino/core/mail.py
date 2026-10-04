@@ -53,7 +53,7 @@ PURPOSE_PATHS = {
     "magic_link": "/account/magic-link",
 }
 # Name one brand so every transactional subject line rebrands from a single edit.
-BRAND_NAME = "TiltSeven"
+BRAND_NAME = "NOIRVA Casino"
 # Provide accessible English subject and explanatory copy for every authorized purpose.
 ENGLISH_TEMPLATES = {
     "invitation": (f"Your {BRAND_NAME} invitation", "Use the secure link below to accept your private invitation."),

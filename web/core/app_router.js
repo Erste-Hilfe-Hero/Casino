@@ -16,6 +16,8 @@ export function createAppRouter(dependencies) {
   } = dependencies;
   // Cache loaded game module exports for the application lifetime.
   const loadedGames = new Map();
+  // Keep advanced tools optional without changing a game's state or settlement. (UX-007)
+  let advancedOptions = false;
 
   // Preserve application-root-relative catalog modules after routing moved beneath /core. (CORE-007)
   function applicationModulePath(path) {
@@ -238,8 +240,13 @@ export function createAppRouter(dependencies) {
     const lobbyIcon = html`<span class="nav-icon" aria-hidden="true">&#8962;</span>`;
     const items = [html`<button data-route="lobby" class="nav-item ${active === 'lobby' ? 'active' : ''}" data-testid="nav-lobby">${lobbyIcon}${t('nav.lobby', {}, 'shell')}</button>`];
     items.push(html`<button data-route="settings" class="nav-item ${active === 'settings' ? 'active' : ''}" data-testid="nav-settings">${t('settings.title', {}, 'shell')}</button>`);
-    // Add one escaped button per game so every game stays reachable.
-    getGameDescriptors().forEach(game => items.push(html`<button data-route="${game.id}" class="nav-item ${active === game.id ? 'active' : ''}" data-testid="nav-${game.id}">${game.label}</button>`));
+    // Show only the current game; the catalog is the single place to browse all games. (UX-007)
+    getGameDescriptors().filter(game => game.id === active).forEach(game => items.push(html`<button data-route="${game.id}" class="nav-item ${active === game.id ? 'active' : ''}" data-testid="nav-${game.id}">${game.label}</button>`));
+    if (getGameDescriptors().some(game => game.id === active)) {
+      const label = t(advancedOptions ? 'nav.lessOptions' : 'nav.moreOptions', {}, 'shell');
+      items.push(html`<button class="nav-item" data-game-options="true"
+        aria-pressed="${advancedOptions}" data-testid="game-options-toggle">${label}</button>`);
+    }
     // Expose Admin only when the current-user contract carries that role. (AUTH-008)
     if (getCurrentSession()?.user?.role === 'admin') items.push(html`<button data-admin="true" class="nav-item admin" data-testid="nav-admin">${t('nav.admin', {}, 'shell')}</button>`);
     // Replace contents atomically so active state cannot drift.
@@ -262,6 +269,13 @@ export function createAppRouter(dependencies) {
     revealActiveNav();
     // Wire every route button to shared navigation.
     nav.querySelectorAll('[data-route]').forEach(button => { button.onclick = () => navigate(button.dataset.route); });
+    // Switch presentation only: advanced controls keep their existing listeners and state.
+    const optionsButton = nav.querySelector('[data-game-options]');
+    if (optionsButton) optionsButton.onclick = () => {
+      advancedOptions = !advancedOptions;
+      documentRef.body.classList.toggle('simple-interface', !advancedOptions);
+      renderNav();
+    };
     // Wire the protected Admin destination only when exposed.
     const adminButton = nav.querySelector('[data-admin]');
     if (adminButton) adminButton.onclick = () => { locationRef.href = '/admin'; };
@@ -294,6 +308,9 @@ export function createAppRouter(dependencies) {
       }
       // Unmount the previously active game when it supplied cleanup.
       if (previous && loadedGames.has(previous)) loadedGames.get(previous).unmount?.();
+      // Start every new game with the essentials; same-route updates preserve the chosen mode.
+      if (previous !== targetRoute) advancedOptions = false;
+      documentRef.body.classList.toggle('simple-interface', !advancedOptions);
       // Publish the active route before rendering navigation.
       setActive(targetRoute);
       renderNav();

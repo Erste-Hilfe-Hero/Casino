@@ -37,7 +37,9 @@ export function createLobbyView(dependencies) {
     const featured = game.featured ? html`&#9733; ` : html``;
     const kicker = html`${featured}${game.kicker}`;
     // Preserve deterministic art and localized descriptive content.
-    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true"><img class="hero-game-art" src="/assets/hero/${game.id}.svg" alt="" loading="lazy" decoding="async"></div>`;
+    const illustration = html`<img class="noirva-game-art" src="/assets/noirva/${game.id}.svg"
+      alt="" loading="lazy" decoding="async">`;
+    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true">${illustration}</div>`;
     // Decode descriptor-owned numeric glyphs as text; the template still escapes markup. (UX-007)
     const symbol = String(game.symbol ?? '').replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, code) => {
       const point = code[0].toLowerCase() === 'x' ? parseInt(code.slice(1), 16) : Number(code);
@@ -90,7 +92,10 @@ export function createLobbyView(dependencies) {
     const searchLabel = html`<label class="catalog-search-label" for="catalog-search">${t('catalog.searchLabel', {}, 'shell')}</label>`;
     const searchInput = html`<input id="catalog-search" data-testid="catalog-search" type="search" value="${lobbySearch}" placeholder="${t('catalog.searchPlaceholder', {}, 'shell')}">`;
     const search = html`${searchLabel}${searchInput}`;
-    const categoryRail = html`<div class="catalog-categories" data-testid="catalog-categories" aria-label="${t('catalog.categoriesAria', {}, 'shell')}">${buttons}</div>`;
+    const categoriesHtml = html`<div class="catalog-categories" data-testid="catalog-categories"
+      aria-label="${t('catalog.categoriesAria', {}, 'shell')}">${buttons}</div>`;
+    const categoryRail = html`<details class="catalog-filter-menu">
+      <summary>${t('catalog.filters', {}, 'shell')}</summary>${categoriesHtml}</details>`;
     const capacity = html`<p class="catalog-capacity" data-testid="catalog-capacity">${t('catalog.capacity', { current: gameCount }, 'shell')}</p>`;
     return html`<section class="catalog-controls" data-testid="catalog-controls">${search}${categoryRail}${capacity}</section>`;
   }
@@ -142,11 +147,11 @@ export function createLobbyView(dependencies) {
       : 0;
     // Preserve hero identity and trust rail.
     const eyebrow = html`<p class="eyebrow">${t('lobby.chooseTable', {}, 'shell')}</p>`;
-    const title = html`<h1 class="hero-title">${activeBrand.venue}</h1>`;
+    const title = html`<h1 class="hero-title">${t('lobby.simpleTitle', {}, 'shell')}</h1>`;
     const rule = html`<div class="hero-rule"><span>${activeBrand.mark}</span></div>`;
-    const heroCopy = html`<div>${eyebrow}${title}${rule}</div>`;
+    const heroCopy = html`<div>${title}</div>`;
     const trust = html`<aside class="trust-rail" data-testid="lobby-trust-rail" aria-label="Casino status">${trustRail(gameCount, onlinePlayerCount)}</aside>`;
-    const hero = html`<section class="lobby-hero" aria-label="Lobby introduction">${heroCopy}${trust}</section>`;
+    const hero = html`<section class="lobby-hero" aria-label="Lobby introduction">${heroCopy}</section>`;
     // Preserve catalog controls and gallery as one named region.
     const controls = catalogControls(descriptors, gameCount);
     const gallery = html`<section class="game-gallery" data-testid="game-gallery" aria-label="${t('catalog.galleryAria', {}, 'shell')}">${galleryContents()}</section>`;

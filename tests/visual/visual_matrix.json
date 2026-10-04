@@ -169,7 +169,7 @@
   "surfaces": [
     {
       "id": "marketing_site",
-      "route": "site/tiltseven/index.html",
+      "route": "site/noirva/index.html",
       "selector": "main[data-testid='marketing-site']",
       "states": [
         "landing",
@@ -418,7 +418,7 @@
       "selector": "[data-testid='premium-topbar'], [data-testid='lobby'], [data-testid='my-settings'], [data-testid='guest-conversion']",
       "states": [
         "authenticated",
-        "tiltseven_neon_pit",
+        "noirva_black_gold",
         "catalog_scrolled",
         "keyboard_focused_scroll_region",
         "single_authoritative_count",

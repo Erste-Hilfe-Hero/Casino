@@ -336,7 +336,7 @@ class MobileCoreSecurityTests(unittest.TestCase):
         # Parse the new module descriptor.
         descriptor = json.loads((ROOT / "modules" / "mobile.json").read_text(encoding="utf-8"))
         # Distinguish governed module version from the installable package foundation version.
-        self.assertEqual((descriptor["module"], descriptor["version"], descriptor["paths"]), ("mobile", "1.0.0", ["mobile/"]))
+        self.assertEqual((descriptor["module"], descriptor["version"], descriptor["paths"]), ("mobile", "1.0.1", ["mobile/"]))
         # Parse the generated compatibility requirement registry.
         requirements = json.loads((ROOT / "docs" / "requirements" / "requirements.json").read_text(encoding="utf-8"))["requirements"]
         # Index every permanent id once.
