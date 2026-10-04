@@ -6,26 +6,31 @@ on:
 permissions:
   contents: write
 jobs:
-  import:
+  archive:
     if: github.repository == 'Erste-Hilfe-Hero/Casino'
     runs-on: ubuntu-latest
     steps:
-      - name: Import source history, branches and tags
+      - name: Archive remaining upstream history and restore release tags
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git clone --mirror https://github.com/andreivorobiev/virtual-casino-simulator.git source.git
-          git clone https://github.com/andreivorobiev/virtual-casino-simulator.git work
-          cd work
-          git remote rename origin upstream
-          git remote add origin https://github.com/Erste-Hilfe-Hero/Casino.git
+          cd source.git
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
-          git fetch origin main
-          git merge --allow-unrelated-histories origin/main -m "Import complete Virtual Casino Simulator with upstream history"
-          git push origin main
-          cd ../source.git
-          git config credential.helper '!f() { echo username=x-access-token; echo "password=$GH_TOKEN"; }; f'
-          git push https://github.com/Erste-Hilfe-Hero/Casino.git --tags
+          git fetch https://github.com/Erste-Hilfe-Hero/Casino.git main:refs/target/main
+          # Preserve missing branch history without changing the imported main snapshot.
+          parent_args=(-p refs/target/main)
+          for branch in 'ci-browser-shards' 'claude/281-admin-responsive' 'claude/coordination-audit-handoff' 'claude/guest-conversion' 'claude/release-v0.9.5.10-deploy-repair' 'codex/227-ui-50000-rerun' 'codex/323-process-safety-audit' 'codex/388-session-timeout-core' 'codex/434-suite-loader-foundation' 'codex/435-controlled-runner-deploy' 'codex/441-file-header-foundation' 'codex/overnight-merge-watch' 'codex/tiltseven-site-spin'; do
+            parent_args+=(-p "refs/heads/$branch")
+          done
+          archive_sha=$(git commit-tree refs/target/main^{tree} "${parent_args[@]}" -m "Archive all remaining upstream branch histories")
+          git push https://github.com/Erste-Hilfe-Hero/Casino.git "$archive_sha:refs/heads/upstream/archive"
+          # Restore tag references through the Git data API against imported objects.
+          while read -r ref sha; do
+            if ! gh api "repos/Erste-Hilfe-Hero/Casino/git/ref/${ref#refs/}" >/dev/null 2>&1; then
+              gh api -X POST repos/Erste-Hilfe-Hero/Casino/git/refs -f ref="$ref" -f sha="$sha" >/dev/null
+            fi
+          done < <(git for-each-ref --format='%(refname) %(objectname)' refs/tags)
