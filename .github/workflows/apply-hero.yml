@@ -1,4 +1,4 @@
-name: Apply HERO Casino rebranding
+name: Apply NOIRVA Casino rebranding
 on:
   push:
     branches: [feat/hero-casino-rebrand]
@@ -27,5 +27,5 @@ jobs:
           python scripts/generate_docs.py --check
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Rebrand as black HERO Casino with original artwork for all 46 games"
+          git commit -m "Rebrand as NOIRVA Casino with black artwork and simplified interface"
           git push origin HEAD:feat/hero-casino-rebrand
