@@ -3,6 +3,8 @@
 // Own catalog routing, lazy game mounts, and route accessibility outside app composition. (CORE-007, SESSION-013)
 
 // Import owned-route and escape-by-default rendering helpers from the shared UI boundary.
+// Keep original world assignments identical between catalog and game routes. (UX-014)
+import { noirvaWorldFor } from '../brands/noirva.js';
 import { awaitOwnedRouteEffect, html, mountOwnedRoute } from './ui.js';
 
 // Create one application router around shell-owned state adapters and extracted views.
@@ -316,6 +318,8 @@ export function createAppRouter(dependencies) {
       renderNav();
       // Read the persistent route outlet.
       const view = documentRef.getElementById('view');
+      // Keep a deterministic original world portrait on every game without changing state. (UX-014)
+      view.setAttribute('data-noirva-world', noirvaWorldFor(targetRoute));
       // Render Lobby without loading a game module.
       if (targetRoute === 'lobby') {
         // Apply bounded Lobby semantics without leaving game-specific observers behind.

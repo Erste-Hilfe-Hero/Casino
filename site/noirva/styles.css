@@ -518,3 +518,8 @@ h3 {
     bottom: 20%;
   }
 }
+
+/* Original NOIRVA artwork and black surfaces match the playable casino. */
+body { background: linear-gradient(#08080ca8, #08080ceb), url('assets/cathedral.webp') center top / cover fixed, #080808; }
+.hero-card { overflow: hidden; background: #08080c; border-color: #78644c; }
+.world-portrait { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }

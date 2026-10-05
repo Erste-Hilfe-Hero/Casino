@@ -1,8 +1,8 @@
 {
   "id": "/",
   "name": "NOIRVA Casino",
-  "short_name": "HERO",
-  "description": "NOIRVA Casino: the NOIRVA Lounge. A casino simulator using play tokens with no cash value.",
+  "short_name": "NOIRVA",
+  "description": "NOIRVA Casino: a dark anime, fantasy and gothic casino simulator using play tokens with no cash value.",
   "lang": "en-US",
   "dir": "ltr",
   "start_url": "/?source=pwa",

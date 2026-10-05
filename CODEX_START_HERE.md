@@ -329,6 +329,7 @@ Generated from Git's tracked and non-ignored Markdown inventory. Every repositor
 - [`docs/motion_acceptance_contract.md`](docs/motion_acceptance_contract.md) — Deterministic motion acceptance contract
 - [`docs/mysql_connection_pool.md`](docs/mysql_connection_pool.md) — MySQL connection lifecycle
 - [`docs/mysql_migrations.md`](docs/mysql_migrations.md) — MySQL migration and DDL-free runtime gate
+- [`docs/noirva_art_direction.md`](docs/noirva_art_direction.md) — NOIRVA original artwork
 - [`docs/oauth_invite_only.md`](docs/oauth_invite_only.md) — Invite-only OAuth operations boundary
 - [`docs/oci_postgres_preview.md`](docs/oci_postgres_preview.md) — OCI PostgreSQL restricted preview
 - [`docs/open_ticket_review_2026_08_10.md`](docs/open_ticket_review_2026_08_10.md) — Open-ticket review — 2026-08-10

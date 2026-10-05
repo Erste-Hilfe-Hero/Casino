@@ -5800,18 +5800,19 @@
     {
       "id": "UX-014",
       "module": "UX",
-      "description": "The player-facing NOIRVA Casino brand block, black-and-gold lobby venue, document title, and shared application palette are driven by one immutable active-brand descriptor whose runtime tokens, mark, and browser theme metadata apply before the authenticated shell renders. The en-US and ru-RU safety cue remains locale-owned and free of internal version, validation-stage, build, commit, environment, or debug metadata across authenticated, unauthenticated guest, and restricted-preview login states at every governed viewport; exact build provenance remains available through status and diagnostics rather than the brand block.",
+      "description": "The player-facing NOIRVA Casino brand block, original dark anime, fantasy and gothic lobby world, document title, and shared application palette are driven by one immutable active-brand descriptor whose runtime tokens, mark, and browser theme metadata apply before the authenticated shell renders. The en-US and ru-RU safety cue remains locale-owned and free of internal version, validation-stage, build, commit, environment, or debug metadata across authenticated, unauthenticated guest, and restricted-preview login states at every governed viewport; exact build provenance remains available through status and diagnostics rather than the brand block.",
       "status": "PASS",
       "api_tests": [],
       "browser_tests": [
         "BR-SHELL-BRAND-001",
-        "BR-SHELL-BRAND-GUEST-001"
+        "BR-SHELL-BRAND-GUEST-001",
+        "BR-NOIRVA-ART-001"
       ],
       "implementation_files": [
         "web/index.html",
         "web/app.js",
         "web/styles.css",
-        "web/brands/tiltseven.js",
+        "web/brands/noirva.js",
         "web/core/brand.js",
         "web/assets/favicon.svg",
         "web/i18n/en-US/shell.json",
@@ -5819,8 +5820,8 @@
         "tests/visual/visual_matrix.json"
       ],
       "introduced_in": "issue-321-shell-version-copy",
-      "changed_in": "noirva-rebrand",
-      "notes": "PR #425 retains the issue #321 metadata boundary while centralizing the reviewed NOIRVA Casino name, N monogram, black-and-gold venue, palette tokens, and browser theme color. The restricted-preview guest state keeps the authenticated topbar absent, and the status-rail APP version chip remains the separate #287 provenance surface."
+      "changed_in": "noirva-dark-fantasy",
+      "notes": "NOIRVA uses original generated character and world illustrations plus original vector artifacts. Shared black/gold/crimson surfaces carry this world across all 46 games. Safety and build-provenance boundaries remain intact."
     },
     {
       "id": "TEST-079",

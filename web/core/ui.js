@@ -460,7 +460,7 @@ export function html(strings,...values){
 // Preserve legacy safe() call sites during staged tagged-template migrations without duplicating escape logic. (CORE-033)
 export function escaped(value){ return raw(safe(value)); }
 // Export this symbol so other modules can use it through the public module boundary.
-export function cardHtml(card){ if(!card)return''; if(card==='??') return '<div class="playing-card back">?</div>'; if(typeof card==='string'){ const suit=card.slice(-1), rank=card.slice(0,-1), red=suit==='\u2665'||suit==='\u2666'; return `<div class="playing-card ${red?'red':''}">${safe(rank)}<br>${safe(suit)}</div>`;} const red=card.suit==='\u2665'||card.suit==='\u2666'; return `<div class="playing-card ${red?'red':''}">${safe(card.rank)}<br>${safe(card.suit)}</div>`; }
+export function cardHtml(card){ if(!card)return''; if(card==='??') return '<div class="playing-card back">?</div>'; if(typeof card==='string'){ const suit=card.slice(-1), rank=card.slice(0,-1), red=suit==='\u2665'||suit==='\u2666'; return `<div class="playing-card ${red?'red':''}" data-rank="${safe(rank)}">${safe(rank)}<br>${safe(suit)}</div>`;} const red=card.suit==='\u2665'||card.suit==='\u2666'; return `<div class="playing-card ${red?'red':''}" data-rank="${safe(card.rank)}">${safe(card.rank)}<br>${safe(card.suit)}</div>`; }
 // Export this symbol so later game workers can reuse the approved premium tag markup.
 export function renderPremiumTag(label){ return `<span class="tag">${safe(label)}</span>`; }
 // Export this symbol so later game workers can reuse compact shell rail metrics.

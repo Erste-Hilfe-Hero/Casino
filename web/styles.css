@@ -4163,7 +4163,7 @@ h3 {
   }
 }
 
-/* HERO Midnight Lounge: warm metallic chrome, quiet navy surfaces, and clear red actions.
+/* NOIRVA: warm metallic chrome, quiet black surfaces, and clear red actions.
    The data-brand hook leaves semantic game colors and Admin styling independent. (UX-007) */
 [data-brand="noirva"] .casino-page {
   background: radial-gradient(ellipse at 12% 0%, #202020 0%, transparent 48%),
@@ -4252,7 +4252,7 @@ h3 {
   background: radial-gradient(circle, #d8b979 0 7%, #131313 8% 16%, #ae8747 17% 19%, #171717 20% 65%, #d8b979 66% 69%, #131313 70%);
 }
 
-/* Original HERO artwork covers every catalog game; no inherited illustration is displayed. (UX-007) */
+/* Original NOIRVA artwork covers every catalog game; no inherited illustration is displayed. (UX-007) */
 [data-brand="noirva"] .card-art { background: #080808; }
 [data-brand="noirva"] .card-art::before,
 [data-brand="noirva"] .card-art::after { display: none; }
@@ -4343,3 +4343,215 @@ h3 {
 
 /* The compact utility row uses three real flex items rather than legacy reserved grid tracks. */
 [data-brand="noirva"] .top-actions { display: flex; }
+
+/* NOIRVA: original dark anime / fantasy / goth world, shared by all game routes. (UX-014)
+   Decorative scenes never cover controls, alter hit geometry, or recolor semantic wagers. */
+[data-brand="noirva"] .casino-page {
+  background: linear-gradient(180deg, rgba(5,5,8,.55), rgba(5,5,8,.88)),
+    url('/assets/noirva/world/cathedral.webp') center top / cover fixed, #080808;
+}
+[data-brand="noirva"] .casino-page::before { background: none; }
+[data-brand="noirva"] :is(.casino-topbar, .casino-nav, .status-bar) {
+  background-color: rgba(8,8,12,.94);
+  border-color: rgba(182,165,127,.25);
+}
+[data-brand="noirva"] .hero-title { letter-spacing: .045em; text-shadow: 0 2px 22px #000; }
+[data-brand="noirva"] .game-card { isolation: isolate; border-color: #49403c; }
+[data-brand="noirva"] .game-card::after {
+  background: linear-gradient(180deg, transparent 25%, rgba(6,6,10,.25) 45%, #08080c 86%);
+}
+[data-brand="noirva"] .noirva-game-art { object-fit: cover; object-position: center 55%; }
+[data-brand="noirva"] .noirva-game-emblem {
+  position: absolute; width: 70px; height: 50px; right: 10px; top: 10px;
+  object-fit: cover; border: 1px solid #78644c; border-radius: 6px;
+  box-shadow: 0 3px 18px #000; opacity: .9;
+}
+[data-brand="noirva"] .game-card:hover .noirva-game-art { filter: brightness(1.12); }
+[data-brand="noirva"] .game-screen :is(.panel, [class$="-panel"], .fan-tan__panel, .big-six-wheel__panel, .crown-anchor__panel) {
+  background: linear-gradient(145deg, rgba(21,17,23,.96), rgba(8,8,12,.96)) !important;
+  border-color: #4c3e42;
+}
+/* All catalog families use the same original arcane table surface. Exact stage classes
+   avoid touching number grids, wheel sectors, selected chips, and result colors. */
+[data-brand="noirva"] .game-screen :is(.game-stage, .lg-stage, .mr-stage, .andar-stage,
+  .fan-tan__stage, .teq-stage, .cw-stage, .dwvp-stage, .mhvp-stage, .cp-stage,
+  .lir-stage, .ms-stage, .plinko-stage, .tcp-stage, .sb-stage, .fr-stage, .bl-stage,
+  .rd-stage, .tp-stage, .cal-stage, .pd-stage, .thpt-stage, .crown-anchor__stage,
+  .big-six-wheel__stage, .pgp-stage, .dt-stage, .fcp-stage, .pk-stage, .jobvp-stage,
+  .dd-stage, .cs-stage, .jp-stage, .ou7-stage, .choldem-stage, .acey-stage,
+  .hilo-stage, .db-stage) {
+  background: url('/assets/noirva/table-sigil.svg') center / min(90%, 600px) auto no-repeat,
+    linear-gradient(155deg, rgba(24,18,25,.85), rgba(7,8,12,.91)),
+    var(--noirva-stage-art) center 25% / cover !important;
+  border-color: #78644c !important;
+  box-shadow: inset 0 0 60px #0008, 0 8px 30px #0005;
+}
+[data-brand="noirva"] :is(.pgp-table-felt, .choldem-table-felt, .tcp-table, .cw-table,
+  .blackjack-table, .card-table, .table-felt) {
+  background: url('/assets/noirva/table-sigil.svg') center / contain no-repeat, #17131a !important;
+  border-color: #78644c;
+}
+/* Original deck engraving remains subordinate to the rank and suit. Court portraits
+   live behind a dark veil so black/red suit identities stay legible on small cards. */
+[data-brand="noirva"] .playing-card:not(.placeholder) {
+  color: #f5eee0; border: 1px solid #9d8966;
+  background: linear-gradient(#0b0c10e8, #0b0c10e8),
+    url('/assets/noirva/card-back.svg') center / cover, #0b0c10 !important;
+  text-shadow: 0 1px 3px #000;
+}
+[data-brand="noirva"] .playing-card:is(.red, .playing-card--red) { color: #ff8eab; }
+[data-brand="noirva"] .playing-card:is(.back, .playing-card--back) {
+  color: transparent; background: url('/assets/noirva/card-back.svg') center / cover !important;
+}
+[data-brand="noirva"] .playing-card:is([data-rank="Q"], [aria-label^="Queen of"]) {
+  background: linear-gradient(#08080ca8, #08080ca8), url('/assets/noirva/world/witch.webp') center 25% / cover !important;
+}
+[data-brand="noirva"] .playing-card:is([data-rank="K"], [data-rank="J"], [aria-label^="King of"], [aria-label^="Jack of"]) {
+  background: linear-gradient(#08080ca8, #08080ca8), url('/assets/noirva/world/knight.webp') center 25% / cover !important;
+}
+[data-brand="noirva"] .playing-card:is([data-rank="A"], [aria-label^="Ace of"]) {
+  background: linear-gradient(#08080ca8, #08080ca8), url('/assets/noirva/world/dragon.webp') center 25% / cover !important;
+}
+/* Engraved obsidian dice retain their original pip geometry and roll identity. */
+[data-brand="noirva"] :is(.craps-die, .cal-die, .sb-die, .ou7-die, .pd-die, .dice-face) {
+  color: #f3e5c6; background: linear-gradient(145deg, #35303a, #0c0c12) !important;
+  border: 2px solid #ae9472; box-shadow: inset 0 0 0 3px #121017, 0 8px 20px #0006;
+}
+[data-brand="noirva"] :is(.craps-die, .cal-die, .sb-die, .ou7-die) :is(.pip, [class$="-pip"]) {
+  background: #edddba !important; box-shadow: 0 0 5px #ad876d;
+}
+/* Eclipse cabinet: original seven artifacts on both authoritative cells and decorative strips. */
+[data-brand="noirva"] .slots-cabinet {
+  min-height: 390px;
+  background: linear-gradient(90deg, #08080ce8, #08080cc4, #08080ce8),
+    url('/assets/noirva/world/dragon.webp') center 46% / cover !important;
+  border-color: #9d8966; box-shadow: inset 0 0 0 7px #24202a, inset 0 0 60px #0008, 0 16px 45px #0008;
+}
+[data-brand="noirva"] :is(.slots-control, .slots-stage, .slots-drawer) {
+  background: linear-gradient(145deg, #17131bf5, #08080cf5) !important;
+  border-color: #78644c;
+}
+[data-brand="noirva"] .slots-stage { grid-template-rows: auto minmax(0,1fr) auto; min-height: 0; }
+[data-brand="noirva"] .slots-stage-top { border-color: #78644c; background: #22151c; }
+[data-brand="noirva"] :is(.slots-symbol, .slots-reel-tile) {
+  color: #f3e5c6 !important; background: #0d0d14 !important; border-color: #78644c;
+  box-shadow: inset 0 0 12px #0009;
+}
+[data-brand="noirva"] .slots-symbol-icon { width: 70%; max-width: 72px; filter: none; border-radius: 10px; }
+[data-brand="noirva"] .slots-symbol-caption { color: #f3e5c6; font-size: 9px; }
+[data-brand="noirva"] .slots-result { min-height: 82px; }
+[data-brand="noirva"] .slots-reel-window { border-color: #9d8966; background: #08080c; }
+[data-brand="noirva"] .slots-plan { min-height: 0; }
+[data-brand="noirva"] body.simple-interface :is(.slots-drawer, .slots-bot-panel, .slots-plan) { display: none; }
+@media (min-width: 1181px) {
+  [data-brand="noirva"] body.simple-interface .slots-premium { grid-template-columns: minmax(220px,.65fr) minmax(0,2.4fr); }
+}
+@media (max-width: 1180px) {
+  [data-brand="noirva"] .slots-stage { min-height: 620px; }
+}
+@media (max-width: 640px) {
+  [data-brand="noirva"] .casino-page { background-attachment: scroll; }
+  [data-brand="noirva"] .slots-cabinet { min-height: 360px; }
+  [data-brand="noirva"] .slots-symbol-icon { width: 88%; max-width: 46px; }
+  [data-brand="noirva"] .slots-symbol-caption { font-size: 6px; letter-spacing: 0; }
+  [data-brand="noirva"] .noirva-game-emblem { width: 45px; height: 32px; right: 6px; top: 6px; }
+}
+/* Admin belongs to the same world but keeps dense control-plane data opaque. */
+[data-brand="noirva"] .admin-body {
+  background: linear-gradient(#08080cdc, #08080cf2), url('/assets/noirva/world/cathedral.webp') center top / cover fixed;
+}
+[data-brand="noirva"] .admin-brand .logo { color: var(--gold); background: #141017; border: 1px solid #78644c; }
+/* Keep the complete cabinet and wager controls readable at compact desktop widths. */
+[data-brand="noirva"] .game-card.featured .noirva-game-art { object-fit: cover; }
+[data-brand="noirva"] .slots-metric-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+[data-brand="noirva"] .slots-metric { min-width: 0; padding: 10px; }
+[data-brand="noirva"] .slots-metric :is(input, select) { width: 100%; min-width: 0; max-width: 100%; }
+[data-brand="noirva"] .slots-metric b { font-size: 17px; overflow-wrap: anywhere; }
+[data-brand="noirva"] .slots-cabinet { padding: 18px 24px; min-height: 420px; }
+[data-brand="noirva"] .slots-reel-window { --slots-cell-h: 82px; }
+[data-brand="noirva"] .slots-cabinet-footer { min-height: 50px; display: flex; justify-content: flex-end; }
+[data-brand="noirva"] body.simple-interface :is(.slots-stage-top p, .slots-cabinet-footer p) { display: none; }
+@media (max-width: 640px) {
+  [data-brand="noirva"] .slots-cabinet { padding: 16px 12px; min-height: 350px; }
+  [data-brand="noirva"] .slots-reel-window { --slots-cell-h: 64px; }
+  [data-brand="noirva"] .slots-cabinet-footer { padding-right: 0; }
+}
+/* Each game route inherits a quiet character portrait behind its original table sigil. */
+[data-brand="noirva"] .game-screen[data-noirva-world="witch"] { --noirva-stage-art: url('/assets/noirva/world/witch.webp'); }
+[data-brand="noirva"] .game-screen[data-noirva-world="knight"] { --noirva-stage-art: url('/assets/noirva/world/knight.webp'); }
+[data-brand="noirva"] .game-screen[data-noirva-world="dragon"] { --noirva-stage-art: url('/assets/noirva/world/dragon.webp'); }
+
+[data-brand="noirva"] .game-screen[data-noirva-world="vampire"] { --noirva-stage-art: url('/assets/noirva/world/vampire.webp'); }
+[data-brand="noirva"] .game-screen[data-noirva-world="angel"] { --noirva-stage-art: url('/assets/noirva/world/angel.webp'); }
+[data-brand="noirva"] .game-screen[data-noirva-world="spirit"] { --noirva-stage-art: url('/assets/noirva/world/spirit.webp'); }
+[data-brand="noirva"] .playing-card:is([data-rank="J"], [aria-label^="Jack of"]) {
+  background: linear-gradient(#08080ca8, #08080ca8), url('/assets/noirva/world/angel.webp') center 25% / cover !important;
+}
+[data-brand="noirva"] .playing-card:is(.red[data-rank="Q"], [aria-label="Queen of hearts"], [aria-label="Queen of diamonds"]) {
+  background: linear-gradient(#08080ca8, #08080ca8), url('/assets/noirva/world/vampire.webp') center 25% / cover !important;
+}
+
+[data-brand="noirva"] .game-screen[data-noirva-world="dice"] { --noirva-stage-art: url('/assets/noirva/world/dice.webp'); }
+[data-brand="noirva"] .game-screen[data-noirva-world="arcade"] { --noirva-stage-art: url('/assets/noirva/world/arcade.webp'); }
+/* Artifact captions and the full speed choice fit their reserved cells. */
+[data-brand="noirva"] .slots-symbol-icon { max-width: 62px; }
+[data-brand="noirva"] .slots-metric:has(#slotsSpeed) { grid-column: 1 / -1; }
+[data-brand="noirva"] body.simple-interface .slots-metric:has([data-testid="slots-progressive-status"]) { display: none; }
+@media (max-width: 640px) {
+  [data-brand="noirva"] .slots-symbol-icon { max-width: 46px; }
+}
+/* Original engraved controls replace the inherited slot-button surfaces. (SLOT-039)
+   Art stays decorative; native labels, disabled state, focus and action IDs remain stable. */
+[data-brand="noirva"] .slots-premium button {
+  background-image: url('/assets/noirva/button-frame.svg');
+  background-repeat: no-repeat; background-size: 100% 100%;
+  background-color: #19111a; border-color: #78644c;
+}
+[data-brand="noirva"] :is(.slots-spin-button, .slots-repeat) {
+  position: relative; padding-left: 58px; padding-right: 20px; min-height: 54px;
+  color: #f7eddb; border: 0; border-radius: 14px;
+}
+[data-brand="noirva"] .slots-spin-button {
+  background-image: url('/assets/noirva/button-frame.svg'), linear-gradient(180deg, #702138, #33131f);
+  box-shadow: 0 8px 24px #7e163233, inset 0 0 18px #bb35522b;
+}
+[data-brand="noirva"] :is(.slots-spin-button, .slots-repeat)::before {
+  content: ''; position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 34px; pointer-events: none;
+  background: url('/assets/noirva/button-spin.svg') center / contain no-repeat;
+}
+[data-brand="noirva"] .slots-repeat::before { background-image: url('/assets/noirva/button-repeat.svg'); }
+[data-brand="noirva"] .slots-premium select {
+  appearance: none; padding-right: 36px;
+  background: url('/assets/noirva/selector-chevron.svg') right 10px center / 18px no-repeat, #100d14;
+  border-color: #78644c;
+}
+[data-brand="noirva"] .slots-premium button:disabled { opacity: .65; }
+[data-brand="noirva"] .slots-premium button:focus-visible { outline: 2px solid #f0ddae; outline-offset: 3px; }
+/* Elaborate painted fantasy frame surrounds the live reels, never their hit geometry. */
+[data-brand="noirva"] .slots-cabinet { padding-top: 30px; padding-bottom: 18px; }
+[data-brand="noirva"] .slots-cabinet::before {
+  inset: -18px; border: 0; border-radius: 0; z-index: 4; pointer-events: none;
+  background: url('/assets/noirva/slot-frame.webp') center / 100% 100% no-repeat;
+}
+[data-brand="noirva"] .slots-reel-window { width: 82%; margin-inline: auto; --slots-cell-h: 78px; }
+[data-brand="noirva"] .slots-symbol-icon { width: 90%; max-width: 62px; border-radius: 0; }
+[data-brand="noirva"] .slots-cabinet-footer { position: relative; z-index: 5; }
+[data-brand="noirva"] .slots-lever::before {
+  width: 42px; height: 42px; margin-left: -21px;
+  background: url('/assets/noirva/symbols/wild.webp') center / contain no-repeat;
+  box-shadow: none;
+}
+[data-brand="noirva"] .slots-spin-button::before {
+  background: url('/assets/noirva/symbols/wild.webp') center / 24px no-repeat,
+    url('/assets/noirva/button-spin.svg') center / contain no-repeat;
+}
+@media (max-width: 640px) {
+  [data-brand="noirva"] .slots-cabinet { padding-top: 24px; padding-bottom: 14px; }
+  [data-brand="noirva"] .slots-cabinet::before { inset: -10px; }
+  [data-brand="noirva"] .slots-reel-window { --slots-cell-h: 64px; width: 88%; padding: 8px; }
+  [data-brand="noirva"] .slots-symbol-icon { max-width: 46px; }
+}
+/* The optional paytable shows the same detailed painted artifacts as the live reels. */
+[data-brand="noirva"] .slots-pay-art { width: 48px; height: 48px; object-fit: contain; float: right; margin-left: 6px; }
+[data-brand="noirva"] .slots-symbol-icon { object-fit: contain; }

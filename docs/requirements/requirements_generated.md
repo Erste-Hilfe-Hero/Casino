@@ -6,7 +6,7 @@ Historical source baseline: 9.1.0
 
 ## Independent module revisions
 
-- application: 9.77.0
+- application: 9.78.0
 - core: 10.20.1
 - mobile: 1.0.1
 - ledger: 9.1.2
@@ -14,11 +14,11 @@ Historical source baseline: 9.1.0
 - bots: 1.1.1
 - autoplay: 1.1.6
 - audio: 9.1.3
-- admin: 1.21.1
+- admin: 1.21.2
 - operations: 1.2.0
-- marketing_site: 1.1.0
+- marketing_site: 1.2.0
 - roulette: 9.7.6
-- slots: 9.5.2
+- slots: 9.6.0
 - blackjack: 9.1.13
 - baccarat: 9.2.1
 - keno: 9.4.2
@@ -51,10 +51,10 @@ Historical source baseline: 9.1.0
 - texas_holdem_practice_table: 1.1.5
 - pai_gow_poker: 1.1.6
 - teen_patti: 1.1.7
-- tests: 1.126.4
-- docs: 1.119.2
+- tests: 1.126.6
+- docs: 1.119.3
 - contracts: 1.63.2
-- tooling: 1.50.4
+- tooling: 1.50.5
 - commenting_policy: 2.1.0
 - color_wheel: 1.1.7
 - poker_dice: 1.1.5
@@ -391,7 +391,7 @@ Historical source baseline: 9.1.0
 - **UX-012** (Application) - PASS: The lobby capacity line shows a single authoritative game count (the same catalog size the nav and gallery render) with no contradictory roadmap target clause, in both en-US and ru-RU.
 - **TEST-072** (Tests) - PASS: Browser evidence at all four governed viewports verifies the lobby capacity line renders exactly one authoritative game count in en-US ('{n} available') and ru-RU ('Доступно: {n}'), with no roadmap-target clause, no English leakage in Russian, and named after-pass evidence.
 - **TEST-073** (Tests) - PASS: Browser evidence verifies that placing a Roulette bet debits the shared wallet, navigating away refunds the stake back to the pre-wager balance, and reopening the table shows no lingering open-bet chip.
-- **UX-014** (UX) - PASS: The player-facing NOIRVA Casino brand block, black-and-gold lobby venue, document title, and shared application palette are driven by one immutable active-brand descriptor whose runtime tokens, mark, and browser theme metadata apply before the authenticated shell renders. The en-US and ru-RU safety cue remains locale-owned and free of internal version, validation-stage, build, commit, environment, or debug metadata across authenticated, unauthenticated guest, and restricted-preview login states at every governed viewport; exact build provenance remains available through status and diagnostics rather than the brand block.
+- **UX-014** (UX) - PASS: The player-facing NOIRVA Casino brand block, original dark anime, fantasy and gothic lobby world, document title, and shared application palette are driven by one immutable active-brand descriptor whose runtime tokens, mark, and browser theme metadata apply before the authenticated shell renders. The en-US and ru-RU safety cue remains locale-owned and free of internal version, validation-stage, build, commit, environment, or debug metadata across authenticated, unauthenticated guest, and restricted-preview login states at every governed viewport; exact build provenance remains available through status and diagnostics rather than the brand block.
 - **TEST-079** (Tests) - PASS: Browser evidence verifies the exact runtime NOIRVA Casino identity, N monogram, black-and-gold tokens, browser theme metadata, and locale-owned safety cue in en-US and ru-RU at 1920x1080, 1440x900, 1024x900, and 390x844. Authenticated lobby and representative Roulette surfaces remain unclipped and contained, while unauthenticated restricted-preview guests receive a metadata-free title and login surface with no protected topbar.
 - **TEST-077** (Tests) - PASS: Deterministic browser evidence derives all twenty paths and payouts from the production Slots engine, restores a simultaneous-win outcome through the normal state loader, verifies every transformed SVG point within one CSS pixel of its authoritative cell, checks result/history identity, multi-win distinction, symbol visibility, zoom, reduced motion, and captures EN/RU after-pass evidence at all four governed viewports.
 - **UX-013** (UX) - PASS: The lobby route outlet is one bounded, keyboard-focusable vertical scroll region with a localized accessible name, visible focus and themed scroll affordances, wheel and touch panning, and native Page Down and End behavior, so every filtered catalog card and Play control remains reachable at 1920x1080, 1440x900, 1024x900, and 390x844 without page-level horizontal overflow or fixed-chrome overlap.
@@ -888,6 +888,7 @@ Historical source baseline: 9.1.0
 - **SLOT-036** (Slots) - PASS: Slots uses one server-authoritative paytable, scatter award, four-free-spin feature, and constant-size progressive meter; only a paid spin at exactly twenty lines and a 1.00 line bet contributes to or can win the meter, every free spin preserves it, and an earned feature remains locked to its paid-trigger line and stake basis. The frozen v1 cent stake and line-count vocabulary remains accepted, current debit and payout rows reconcile to one result round, and governed evidence proves house-side best play over at least one million paid spins per approved scenario with complete bonus-chain drainage plus localized responsive presentation.
 - **SLOT-037** (Slots) - PASS: Slots preserves the existing fast 180-millisecond unattended hold while attended normal motion uses five independent deterministic decorative strips with staggered deceleration and bounded anticipation over the authoritative grid, true reduced motion uses a strip-free comfort hold, and route-owned action identity makes API, landing, wallet, sound, voice, teardown, and remount continuation exactly once and stale-safe.
 - **SLOT-038** (Slots) - PASS: Slots publishes the free-spin bank and trusted basis, progressive scalar and qualifier basis, compatible legacy-meter deletion, and bounded spin history through provider-current callbacks that replace only game-owned fields. Competing processes preserve unrelated player-state siblings and fail closed before a stale action or cleanup can overwrite the winning result, while the frozen v1 envelope, reel entropy, paytable, bonus economics, round identity, ledger-only debit and payout, and history behavior remain unchanged.
+- **SLOT-039** (Slots) - PASS: NOIRVA Eclipse uses seven elaborate original fantasy artifact paintings consistently on settled cells and decorative reel strips, localized artifact labels, and an original black fantasy cabinet with a detailed sculpted dragon frame and original engraved button artwork with readable localized action labels while preserving engine symbol IDs, paytable multipliers, authoritative outcomes and reduced-motion behavior.
 - **KENO-001** (Keno) - PASS: Keno supports numbers 1 through 80.
 - **KENO-002** (Keno) - PASS: Keno allows selecting 1 to 20 spots.
 - **KENO-003** (Keno) - PASS: Keno draws 20 unique numbers.

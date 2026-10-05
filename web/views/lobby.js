@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 // Build searchable catalog, trust rail, and game cards behind the Lobby route view. (CORE-007, CORE-012)
 
+// Share deterministic world assignments with the game router. (UX-014)
+import { noirvaWorldFor } from '../brands/noirva.js';
+
 // Bound search coalescing so rapid edits update once without making the catalog feel delayed. (CORE-007)
 const SEARCH_DEBOUNCE_MS = 100;
 
@@ -37,9 +40,11 @@ export function createLobbyView(dependencies) {
     const featured = game.featured ? html`&#9733; ` : html``;
     const kicker = html`${featured}${game.kicker}`;
     // Preserve deterministic art and localized descriptive content.
-    const illustration = html`<img class="noirva-game-art" src="/assets/noirva/${game.id}.svg"
+    const illustration = html`<img class="noirva-game-art" src="/assets/noirva/world/${noirvaWorldFor(game.id)}.webp"
       alt="" loading="lazy" decoding="async">`;
-    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true">${illustration}</div>`;
+    const emblem = html`<img class="noirva-game-emblem"
+      src="/assets/noirva/${game.id}.svg" alt="" loading="lazy">`;
+    const art = html`<div class="card-art ${game.artClass}" aria-hidden="true">${illustration}${emblem}</div>`;
     // Decode descriptor-owned numeric glyphs as text; the template still escapes markup. (UX-007)
     const symbol = String(game.symbol ?? '').replace(/&#(x[0-9a-f]+|[0-9]+);/gi, (entity, code) => {
       const point = code[0].toLowerCase() === 'x' ? parseInt(code.slice(1), 16) : Number(code);
