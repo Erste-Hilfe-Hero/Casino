@@ -55,10 +55,10 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
             page.get_by_test_id('login-gate').wait_for(timeout=WAIT_MS)
         # Record exact HTML and lazy JavaScript parity through the supported development browser adapter.
         run_case('BR-STATIC-CACHE-001',['CORE-026','TEST-068','API-003','TEST-152'],static_cache_parity)
-        # Validate the checked repository-only TiltSeven scaffold without contacting a public host.
+        # Validate the checked repository-only NOIRVA Casino scaffold without contacting a public host.
         def marketing_site_browser():
             # Define the exact local file used for each governed locale.
-            locale_paths={'en-US':ROOT/'site'/'tiltseven'/'index.html','ru-RU':ROOT/'site'/'tiltseven'/'ru'/'index.html'}
+            locale_paths={'en-US':ROOT/'site'/'noirva'/'index.html','ru-RU':ROOT/'site'/'noirva'/'ru'/'index.html'}
             # Define the locale-owned safety text required in visible browser output.
             locale_safety={'en-US':('play tokens','No cash value.'),'ru-RU':('игровыми жетонами','Без денежной ценности.')}
             # Read every governed viewport from the authoritative visual matrix.
@@ -78,7 +78,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
                 # Require the authored locale, title, shared stylesheet, and local mark to load.
                 identity=page.evaluate("""() => ({ lang:document.documentElement.lang, title:document.title, styleSheets:document.styleSheets.length, markComplete:document.querySelector('.brand img')?.complete===true, markWidth:document.querySelector('.brand img')?.naturalWidth||0, scripts:document.scripts.length, forms:document.forms.length })""")
                 # Reject a missing resource, wrong locale, executable script, or collecting form.
-                assert identity['lang']==locale.split('-')[0] and identity['title'].startswith('TiltSeven') and identity['styleSheets']==1 and identity['markComplete'] and identity['markWidth']>0 and identity['scripts']==0 and identity['forms']==0,identity
+                assert identity['lang']==locale.split('-')[0] and identity['title'].startswith('NOIRVA Casino') and identity['styleSheets']==1 and identity['markComplete'] and identity['markWidth']>0 and identity['scripts']==0 and identity['forms']==0,identity
                 # Read the complete visible copy for exact safety and encoding checks.
                 visible_text=page.locator('body').inner_text()
                 # Require both locale-owned safety phrases with no replacement character or unresolved template.
@@ -116,7 +116,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
             # Enumerate every governed viewport because the issue requires the shared entry surface at all four sizes.
             brand_viewports={entry['id']:{'width':entry['width'],'height':entry['height']} for entry in visual_matrix['viewports']}
             # Require the public document title to be the exact approved product name with no release suffix.
-            assert page.title()=='TiltSeven'
+            assert page.title()=='NOIRVA Casino'
             # Exercise the unauthenticated restricted-preview entry state in both installed locales.
             for brand_locale in ('en-US','ru-RU'):
                 # Switch through the visible guest locale control and wait for the canonical locale state.
@@ -879,11 +879,11 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
             # Retain each locale/viewport header height so locale switching cannot silently shift the game stage.
             header_heights={}
             # Require the document title to present the exact approved product name without metadata.
-            assert page.title()=='TiltSeven' and not forbidden.search(page.title())
+            assert page.title()=='NOIRVA Casino' and not forbidden.search(page.title())
             # Read the runtime-applied brand identity, theme metadata, and canonical custom properties from the tested page.
             brand_runtime=page.evaluate("""() => { const root=document.documentElement; const style=getComputedStyle(root); return { id:root.dataset.brand||'', mark:document.querySelector('.brand-mark')?.textContent?.trim()||'', theme:document.querySelector('meta[name="theme-color"]')?.content||'', brand:style.getPropertyValue('--brand').trim(), accent:style.getPropertyValue('--accent').trim(), background:style.getPropertyValue('--bg').trim() }; }""")
-            # Require one coherent TiltSeven/Neon Pit runtime instead of accepting only changed static copy.
-            assert brand_runtime=={'id':'tiltseven','mark':'7','theme':'#0a0712','brand':'#ff3b6b','accent':'#22e0c3','background':'#0a0712'},brand_runtime
+            # Require one coherent NOIRVA Casino/Neon Pit runtime instead of accepting only changed static copy.
+            assert brand_runtime=={'id':'noirva','mark':'N','theme':'#080808','brand':'#d44555','accent':'#d8b979','background':'#080808'},brand_runtime
             # Check the localized authenticated brand block in both installed locales.
             for brand_locale in ('en-US','ru-RU'):
                 # Switch the shell locale through the visible control and wait for the runtime to settle.
@@ -895,7 +895,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
                 # Read the settled rendered player-facing brand subtitle for the metadata checks.
                 rendered_subtitle=page.locator('#shell-brand-subtitle').inner_text().strip()
                 # Require the approved product name to remain exact and resource-key-free.
-                assert page.locator('#shell-brand-title').inner_text().strip()=='TiltSeven'
+                assert page.locator('#shell-brand-title').inner_text().strip()=='NOIRVA Casino'
                 # Require the subtitle to keep the play-token safety cue while carrying no version metadata.
                 assert not forbidden.search(rendered_subtitle), rendered_subtitle
                 # Require the play-token cue to remain present in the locale's own words.
@@ -913,7 +913,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
                     # Record the topbar height for the later cross-locale stability comparison.
                     header_heights[(brand_locale,viewport_id)]=brand_geometry['topbarHeight']
                     # Capture exact-head authenticated lobby evidence with a self-describing sidecar.
-                    game_evidence(f'after-pass-shell-brand-authenticated-{brand_locale.lower()}-{viewport_id}.png','shell_lobby',['authenticated','tiltseven_neon_pit'],brand_locale,viewport_id)
+                    game_evidence(f'after-pass-shell-brand-authenticated-{brand_locale.lower()}-{viewport_id}.png','shell_lobby',['authenticated','noirva_black_gold'],brand_locale,viewport_id)
                 # Open one representative affected game so shared-shell evidence is not limited to the lobby.
                 page.get_by_test_id('nav-roulette').click(); page.get_by_test_id('roulette-premium').wait_for(timeout=WAIT_MS)
                 # Capture the same authenticated header across the representative game at all governed sizes.
@@ -923,7 +923,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
                     # Reject page-level horizontal overflow and require the shared brand lockup to remain visible above Roulette.
                     assert page.locator('.brand-lockup').is_visible() and page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1')
                     # Record one affected game surface alongside the shared lobby acceptance evidence.
-                    game_evidence(f'after-pass-roulette-brand-{brand_locale.lower()}-{viewport_id}.png','roulette',['betting','tiltseven_neon_pit'],brand_locale,viewport_id)
+                    game_evidence(f'after-pass-roulette-brand-{brand_locale.lower()}-{viewport_id}.png','roulette',['betting','noirva_black_gold'],brand_locale,viewport_id)
                 # Return to the lobby before switching locale so the next evidence set starts from the canonical shell route.
                 page.get_by_test_id('nav-lobby').click(); page.get_by_test_id('lobby').wait_for(timeout=WAIT_MS)
             # Compare matching viewport heights so EN/RU switching cannot move the game stage.
@@ -966,7 +966,7 @@ def run_cases(run_case,browser_shard_owns_group,skip_browser_affinity,browser_sh
             # Verify the status/trust rail from the approved lobby is visible.
             assert page.get_by_test_id('lobby-trust-rail').is_visible()
             # Verify the premium lobby headline renders in the first route view.
-            assert page.get_by_text('The Neon Pit').is_visible()
+            assert page.get_by_text('Choose your game').is_visible()
             # Verify the Roulette card still exposes its route action.
             assert page.get_by_test_id('open-roulette').is_visible()
             # Verify the catalog advertises one authoritative game count with no contradictory roadmap target. (issue #235)

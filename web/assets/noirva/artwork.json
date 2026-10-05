@@ -1,0 +1,44 @@
+{
+  "direction": "Dark Anime / Fantasy / Goth",
+  "original_raster_artworks": [
+    "world/cathedral.webp",
+    "world/witch.webp",
+    "world/knight.webp",
+    "world/dragon.webp",
+    "world/vampire.webp",
+    "world/angel.webp",
+    "world/spirit.webp",
+    "world/dice.webp",
+    "world/arcade.webp",
+    "symbols/cherry.webp",
+    "symbols/lemon.webp",
+    "symbols/bar.webp",
+    "symbols/bell.webp",
+    "symbols/seven.webp",
+    "symbols/wild.webp",
+    "symbols/scatter.webp",
+    "slot-frame.webp"
+  ],
+  "original_vectors": [
+    "card-back.svg",
+    "table-sigil.svg",
+    "button-frame.svg",
+    "button-spin.svg",
+    "button-repeat.svg",
+    "selector-chevron.svg"
+  ],
+  "creation": "Created specifically for NOIRVA using original image generation, casino-specific edits and original vector drawing; no stock or franchise artwork.",
+  "semantic_colors": "Roulette pockets, wheel segments, bet selections and results retain game meanings.",
+  "casino_props": {
+    "witch": "playing cards, chips and blackjack table",
+    "vampire": "playing cards, chips and baccarat/poker table",
+    "knight": "roulette wheel and chips",
+    "dragon": "slot cabinet and original rose/gem/crown reels",
+    "dice": "obsidian dice and chips",
+    "angel": "numbered bingo balls and draw cage",
+    "spirit": "keno number board and draw balls",
+    "arcade": "peg-and-ball cabinet and token shelf",
+    "cathedral": "gothic casino hall, roulette, cards, chips and dice"
+  },
+  "slot_art_direction": "Elaborate original fantasy artifacts: engraved metals, faceted ruby and moonstone, sculpted dragon claws, layered raven feathers and a transparent ornamental dragon cabinet frame."
+}

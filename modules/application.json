@@ -1,6 +1,6 @@
 {
   "module": "application",
-  "version": "9.75.0",
+  "version": "9.78.0",
   "paths": [
     "run.py",
     "pyproject.toml",
@@ -38,7 +38,8 @@
     "web/assets/pwa-maskable-512.png",
     "web/assets/favicon.svg",
     "web/assets/fonts/",
-    "web/i18n/"
+    "web/i18n/",
+    "web/assets/noirva/"
   ],
   "requirements_prefixes": [
     "CORE",

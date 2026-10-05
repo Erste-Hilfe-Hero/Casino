@@ -1,6 +1,6 @@
 {
   "appId": "io.github.andreivorobiev.virtualcasino",
-  "appName": "Virtual Casino Simulator",
+  "appName": "NOIRVA Casino",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {

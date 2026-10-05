@@ -467,7 +467,10 @@
       "description": "One session-bound Slots spin commits one authoritative set of reel stops, grid, wins, bonus and progressive state, round, wallet, ledger, history, and telemetry, and repeated input or autoplay cannot overlap or duplicate settlement.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOT-001", "BR-SLOT-ECONOMICS-001"],
+      "browser_tests": [
+        "BR-SLOT-001",
+        "BR-SLOT-ECONOMICS-001"
+      ],
       "implementation_files": [
         "web/games/slots.js",
         "docs/motion_acceptance_contract.md"
@@ -482,7 +485,9 @@
       "description": "Five Slots reels move independently and continuously through input lock, acceleration, full-speed travel, staggered deceleration, final stop, result evaluation, credit reveal, and optional bonus transition with no whole-grid swap, blank seam, backward jump, or frozen placeholder.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOT-001"],
+      "browser_tests": [
+        "BR-SLOT-001"
+      ],
       "implementation_files": [
         "web/games/slots.js",
         "docs/motion_acceptance_contract.md"
@@ -497,7 +502,10 @@
       "description": "Slots reaches the final reel stop in 3.8 to 4.8 seconds for Slow, 2.8 to 3.6 seconds for Medium, 1.6 to 2.2 seconds for Fast, and 400 to 800 ms for reduced motion, with adjacent normal-profile stops staggered by 140 to 240 ms.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOT-001", "BR-SLOT-ECONOMICS-001"],
+      "browser_tests": [
+        "BR-SLOT-001",
+        "BR-SLOT-ECONOMICS-001"
+      ],
       "implementation_files": [
         "web/games/slots.js",
         "docs/motion_acceptance_contract.md"
@@ -512,7 +520,10 @@
       "description": "Each stopped reel aligns its visible symbols within one CSS pixel and remains stationary; win lines and highlights begin only after the final stop, preserve symbol identity, remain bounded and non-blocking, and provide non-celebratory loss and reduced-motion alternatives.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOTS-PAYLINE-001", "BR-SLOT-001"],
+      "browser_tests": [
+        "BR-SLOTS-PAYLINE-001",
+        "BR-SLOT-001"
+      ],
       "implementation_files": [
         "web/games/slots.js",
         "docs/motion_acceptance_contract.md"
@@ -527,7 +538,10 @@
       "description": "Slots autoplay starts only after settlement, Stop prevents a new spin, and free-spin, wallet, route, refresh, locale, history, API-error, and browser-history recovery preserve the authoritative result without duplicate debit, payout, bonus, or stale presentation residue.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOT-001", "BR-SLOT-ECONOMICS-001"],
+      "browser_tests": [
+        "BR-SLOT-001",
+        "BR-SLOT-ECONOMICS-001"
+      ],
       "implementation_files": [
         "web/games/slots.js",
         "docs/motion_acceptance_contract.md"
@@ -542,7 +556,11 @@
       "description": "Slots motion acceptance maps at least 100 committed spins across losses, wins, wilds, scatters, free spins, progressive state, repeated grids, and every speed profile and supplies exact-head transform, stop, alignment, cleanup, EN/RU, four-viewport, normal, and reduced-motion video evidence with independent review.",
       "status": "PASS",
       "api_tests": [],
-      "browser_tests": ["BR-SLOT-001", "BR-SLOT-ECONOMICS-001", "BR-SLOTS-PAYLINE-001"],
+      "browser_tests": [
+        "BR-SLOT-001",
+        "BR-SLOT-ECONOMICS-001",
+        "BR-SLOTS-PAYLINE-001"
+      ],
       "implementation_files": [
         "tests/visual/visual_matrix.json",
         "docs/motion_acceptance_contract.md"
@@ -627,6 +645,29 @@
       "introduced_in": "issue-853-slots-atomic-state",
       "changed_in": "issue-853-slots-atomic-state",
       "notes": "Private optimistic baselines never enter provider bytes or the public state payload. Production multiworker activation stays blocked because wallet and game-state publication remain separate durable boundaries."
+    },
+    {
+      "id": "SLOT-039",
+      "module": "Slots",
+      "description": "NOIRVA Eclipse uses seven elaborate original fantasy artifact paintings consistently on settled cells and decorative reel strips, localized artifact labels, and an original black fantasy cabinet with a detailed sculpted dragon frame and original engraved button artwork with readable localized action labels while preserving engine symbol IDs, paytable multipliers, authoritative outcomes and reduced-motion behavior.",
+      "status": "PASS",
+      "api_tests": [
+        "UI-SLOT-PRESENTATION-001"
+      ],
+      "browser_tests": [
+        "BR-NOIRVA-ART-001"
+      ],
+      "implementation_files": [
+        "web/games/slots.js",
+        "web/styles.css",
+        "web/assets/noirva/symbols/",
+        "web/i18n/en-US/games/slots.json",
+        "web/i18n/ru-RU/games/slots.json",
+        "tests/visual/noirva_artwork_check.py"
+      ],
+      "introduced_in": "noirva-dark-fantasy",
+      "changed_in": "noirva-dark-fantasy",
+      "notes": "Artwork and localized names change presentation only; the frozen v1 symbol IDs remain compatible."
     }
   ]
 }

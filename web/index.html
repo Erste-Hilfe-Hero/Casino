@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>TiltSeven</title>
+  <!-- NOIRVA public identity and install metadata. (UX-007, PWA-001) -->
+  <meta name="description" content="NOIRVA Casino — explore a dark anime, fantasy and gothic world with play tokens. No cash value.">
+  <title>NOIRVA Casino</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="theme-color" content="#0a0712">
+  <meta name="theme-color" content="#080808">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="TiltSeven">
+  <meta name="apple-mobile-web-app-title" content="NOIRVA Casino">
   <link rel="apple-touch-icon" sizes="192x192" href="/assets/pwa-icon-192.png">
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -18,9 +20,9 @@
   <!-- Premium shared shell: brand, route navigation, wallet, and add-token affordance. -->
   <header class="casino-topbar" data-testid="premium-topbar">
     <div class="brand-lockup">
-      <div class="brand-mark" aria-hidden="true">7</div>
+      <div class="brand-mark" aria-hidden="true">N</div>
       <div class="brand-copy">
-        <strong id="shell-brand-title">TiltSeven</strong>
+        <strong id="shell-brand-title">NOIRVA Casino</strong>
         <span id="shell-brand-subtitle">Play tokens only</span>
       </div>
     </div>
@@ -41,6 +43,10 @@
           </div>
         </div>
       </details>
+      <!-- Optional account, language, and session controls share one compact native menu. -->
+      <details class="shell-menu" data-testid="shell-menu">
+        <summary class="icon-button" aria-label="Menu"><span class="menu-lines" aria-hidden="true"></span></summary>
+        <div class="shell-menu-content">
       <select id="shell-locale-select" class="shell-locale" data-testid="shell-locale-select" aria-label="Language"></select>
       <!-- Persistent session-wellness control remains reachable from every authenticated game. (WELL-001) -->
       <button id="wellness-open" class="wellness-open" type="button" data-testid="wellness-open" hidden>Session reminders</button>
@@ -50,6 +56,9 @@
         <div id="oauth-account-popover" class="account-popover" data-testid="oauth-account-popover"></div>
       </details>
       <button id="logout-btn" class="icon-button profile-dot" type="button" aria-label="Logout" data-testid="logout"><span aria-hidden="true"></span></button>
+          <button id="report-problem-btn" class="report-problem-fab" type="button" data-testid="report-problem-open" hidden>Report a problem</button>
+        </div>
+      </details>
     </div>
   </header>
 
@@ -57,7 +66,7 @@
   <main id="view" class="screen lobby-screen"></main>
 
   <!-- Registered-user support affordance stays above game content without competing with gameplay controls. -->
-  <button id="report-problem-btn" class="report-problem-fab" type="button" data-testid="report-problem-open" hidden>Report a problem</button>
+
 
   <!-- Native modal keeps focus, Escape handling, and assistive-technology semantics browser-owned. -->
   <dialog id="report-problem-dialog" class="report-dialog" data-testid="feedback-dialog" aria-labelledby="report-problem-title">

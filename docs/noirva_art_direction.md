@@ -1,0 +1,11 @@
+# NOIRVA original artwork
+
+NOIRVA uses a black, charcoal, silver, antique-gold and crimson world inspired by dark anime, fantasy and gothic fiction. Its sorceress, raven knight, shadow dragon, vampire queen, fallen angel, stag spirit and cathedral are original generated illustrations, created for this project without franchise or stock references. Original source PNGs remain in the working-session image library; the repository ships WebP copies for efficient delivery. The seven slot artifacts and ornate dragon cabinet frame are detailed original fantasy paintings with transparent backgrounds. Card reverse, table sigil, engraved button frames and spin/repeat medallions are newly drawn vectors specific to NOIRVA. Existing licensing and historical upstream attribution remain intact.
+
+Each family illustration contains actual casino props: playing cards and chips, a roulette wheel, slot reels, dice, numbered bingo/keno balls or a peg-and-ball arcade cabinet. Game assignments follow these mechanics rather than random character selection.
+
+The shared shell, login, all 46 catalog entries, game stages, cards, dice, Eclipse slot cabinet, Admin and bilingual marketing site carry this world. Lobby art uses eight casino-themed character families and each game's own vector medallion. Court-card portraits retain readable rank and suit; hidden cards never expose rank. Semantic roulette sectors, wheel colors, dice values, selected bets and outcome colors retain their gameplay meanings.
+
+Eclipse maps compatible engine IDs to original artifacts: CHERRY blood rose, LEMON moon shard, BAR grimoire, BELL raven, SEVEN oath blade, WILD dragon heart, and SCATTER eclipse crown. The same illustrations appear on settled cells and animated reel strips. Paytable multipliers, symbol probabilities, settlement and API identifiers are unchanged. English and Russian labels describe the visible artifacts.
+
+Requirements: UX-007, UX-014, UX-026, UX-027, SLOT-039, PWA-001 and PWA-002. `tests/visual/noirva_artwork_check.py` records every ready game route in both governed locales at all four viewports, checks decoration loading and horizontal containment, and exercises an Eclipse spin. This artwork audit supplements the existing game-specific action tests. Browser evidence belongs to the tested branch and is saved with its commit SHA.

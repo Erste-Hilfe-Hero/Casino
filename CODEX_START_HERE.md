@@ -88,7 +88,7 @@ Generated from Git's tracked and non-ignored Markdown inventory. Every repositor
 - [`ENGINEERING_PRACTICES.md`](ENGINEERING_PRACTICES.md) — Engineering practices
 - [`ENGINEERING_WORKFORCE.md`](ENGINEERING_WORKFORCE.md) — Engineering Workforce Governance
 - [`FIRST_PROMPT_FOR_CODEX.md`](FIRST_PROMPT_FOR_CODEX.md) — First prompt for Codex
-- [`README.md`](README.md) — Virtual Casino Simulator
+- [`README.md`](README.md) — NOIRVA Casino
 - [`RELEASE_NOTES.md`](RELEASE_NOTES.md) — Virtual Casino Simulator v0.9.5.86 Release Notes
 - [`VERSIONING.md`](VERSIONING.md) — Versioning
 
@@ -329,6 +329,7 @@ Generated from Git's tracked and non-ignored Markdown inventory. Every repositor
 - [`docs/motion_acceptance_contract.md`](docs/motion_acceptance_contract.md) — Deterministic motion acceptance contract
 - [`docs/mysql_connection_pool.md`](docs/mysql_connection_pool.md) — MySQL connection lifecycle
 - [`docs/mysql_migrations.md`](docs/mysql_migrations.md) — MySQL migration and DDL-free runtime gate
+- [`docs/noirva_art_direction.md`](docs/noirva_art_direction.md) — NOIRVA original artwork
 - [`docs/oauth_invite_only.md`](docs/oauth_invite_only.md) — Invite-only OAuth operations boundary
 - [`docs/oci_postgres_preview.md`](docs/oci_postgres_preview.md) — OCI PostgreSQL restricted preview
 - [`docs/open_ticket_review_2026_08_10.md`](docs/open_ticket_review_2026_08_10.md) — Open-ticket review — 2026-08-10
@@ -384,6 +385,6 @@ Generated from Git's tracked and non-ignored Markdown inventory. Every repositor
 
 ### site documentation
 
-- [`site/tiltseven/deployment.md`](site/tiltseven/deployment.md) — TiltSeven future publication checklist
-- [`site/tiltseven/README.md`](site/tiltseven/README.md) — TiltSeven marketing site
+- [`site/noirva/deployment.md`](site/noirva/deployment.md) — NOIRVA Casino future publication checklist
+- [`site/noirva/README.md`](site/noirva/README.md) — NOIRVA Casino marketing site
 <!-- END GENERATED MARKDOWN INDEX -->

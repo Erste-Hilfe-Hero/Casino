@@ -1,4 +1,12 @@
-# Virtual Casino Simulator
+# NOIRVA Casino
+
+NOIRVA Casino is the Erste-Hilfe-Hero downstream version, with a NOIRVA Lounge brand, black surfaces, champagne-gold accents, and a custom N monogram. Upstream source and Apache-2.0 notices are retained.
+
+The interface centers on a searchable game catalog and uniform artwork cards. Filters and account tools are optional menus; game rules, automation, and telemetry are available through More options.
+
+Brand scope: black web shell, login/signup names, EN/RU resources, original artwork for all 46 games, Admin, API docs, email identity, favicon, PWA icons, and native app names/icons. Historical releases and deployment domains retain their upstream provenance.
+
+Upstream: https://github.com/andreivorobiev/virtual-casino-simulator
 
 Packaged application release: `0.9.5.86`
 

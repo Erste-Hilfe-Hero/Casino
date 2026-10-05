@@ -1,6 +1,6 @@
 # Copyright 2026 Andrei Vorobiev and Virtual Casino Simulator contributors
 # SPDX-License-Identifier: Apache-2.0
-"""Listener-free TiltSeven repository-scaffold acceptance. (MARKETING-001..003, TEST-107)"""
+"""Listener-free NOIRVA repository-scaffold acceptance. (MARKETING-001..003, TEST-107)"""
 
 # Import the standard HTML parser for dependency-free structure inspection.
 from html.parser import HTMLParser
@@ -18,9 +18,9 @@ from urllib.parse import urlparse
 # Resolve the repository root independently from the caller's working directory.
 ROOT = Path(__file__).resolve().parents[1]
 # Name the repository-only site root once for all artifact checks.
-SITE_ROOT = ROOT / "site" / "tiltseven"
+SITE_ROOT = ROOT / "site" / "noirva"
 # Pin the separate governed Casino destination without activating it.
-CASINO_DESTINATION = "https://casino.tiltseven.com/"
+CASINO_DESTINATION = "http://127.0.0.1:8765/"
 # Define the exact locale documents required by the visual matrix.
 LOCALE_DOCUMENTS = {"en-US": SITE_ROOT / "index.html", "ru-RU": SITE_ROOT / "ru" / "index.html"}
 # Define safety phrases that must remain human-readable in each checked locale.
@@ -167,7 +167,7 @@ class MarketingSiteTests(unittest.TestCase):
     # Require the brand SVG to retain a text alternative without external dependencies.
     def test_brand_mark_is_accessible_and_local(self) -> None:
         # Read the checked vector source.
-        svg = (SITE_ROOT / "assets" / "tiltseven-mark.svg").read_text(encoding="utf-8")
+        svg = (SITE_ROOT / "assets" / "noirva-mark.svg").read_text(encoding="utf-8")
         # Require an image role linked to a title and description.
         self.assertTrue('role="img"' in svg and 'aria-labelledby="title desc"' in svg and "<title " in svg and "<desc " in svg)
         # Reject executable or remotely loaded SVG content while permitting the standard SVG namespace.
@@ -189,7 +189,7 @@ class MarketingSiteTests(unittest.TestCase):
         # Load the dedicated site-module descriptor.
         module = json.loads((ROOT / "modules" / "marketing_site.json").read_text(encoding="utf-8"))
         # Require exact aggregate, descriptor, path, and prefix ownership.
-        self.assertEqual((manifest["modules"]["marketing_site"], module["module"], module["version"], module["paths"], module["requirements_prefixes"]), ("1.0.2", "marketing_site", "1.0.2", ["site/tiltseven/"], ["MARKETING"]))
+        self.assertEqual((manifest["modules"]["marketing_site"], module["module"], module["version"], module["paths"], module["requirements_prefixes"]), ("1.2.0", "marketing_site", "1.2.0", ["site/noirva/"], ["MARKETING"]))
         # Load the executable visual inventory.
         matrix = json.loads((ROOT / "tests" / "visual" / "visual_matrix.json").read_text(encoding="utf-8"))
         # Isolate the marketing row.

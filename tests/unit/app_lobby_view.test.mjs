@@ -56,12 +56,12 @@ test("CORE-007 preserves the searchable Lobby after extraction", () => {
     {
       id: "roulette", label: "Roulette", description: "Wheel game", tags: ["classic"],
       categories: ["table"], featured: true, wide: false, artClass: "roulette-art",
-      symbol: "R", kicker: "Table",
+      symbol: "&#9824;", kicker: "Table",
     },
     {
       id: "slots", label: "Slots", description: "Reel game", tags: ["reels"],
       categories: ["slots"], featured: false, wide: false, artClass: "slots-art",
-      symbol: "S", kicker: "Slots",
+      symbol: "<svg onload=alert(1)>", kicker: "Slots",
     },
   ];
   // Create the production renderer around deterministic catalog and brand seams.
@@ -90,12 +90,16 @@ test("CORE-007 preserves the searchable Lobby after extraction", () => {
   // Render the complete catalog and bind its controls.
   renderLobby(view);
   for (const marker of [
-    'data-testid="lobby"', "lobby-trust-rail", "catalog-search", "catalog-categories",
+    'data-testid="lobby"', "catalog-search", "catalog-categories",
     "catalog-capacity", "game-gallery", "card-roulette", "card-slots", "open-roulette",
   ]) {
     // Require every accepted Lobby surface.
     assert.ok(view.innerHTML.includes(marker), marker);
   }
+  // Catalog entity glyphs render as text while markup-like metadata stays escaped. (UX-007)
+  assert.ok(view.innerHTML.includes('<span class="game-symbol">♠</span>'));
+  assert.ok(view.innerHTML.includes('&lt;svg onload=alert(1)&gt;'));
+  assert.ok(!view.innerHTML.includes('&amp;#9824;'));
   assert.equal(typeof search.oninput, "function");
   assert.equal(typeof category.onclick, "function");
   assert.equal(typeof openGame.onclick, "function");
@@ -133,7 +137,7 @@ test("CORE-012 keeps the Lobby view boundary reviewable", () => {
     assert.equal(APP_SOURCE.includes(retired), false, retired);
   }
   // Preserve stable catalog and route-action identities in the module.
-  for (const marker of ["catalog-search", "catalog-categories", "data-open-game", "lobby-trust-rail"]) {
+  for (const marker of ["catalog-search", "catalog-categories", "data-open-game"]) {
     // Bind each accepted identity to the Lobby view.
     assert.ok(MODULE_SOURCE.includes(marker), marker);
   }

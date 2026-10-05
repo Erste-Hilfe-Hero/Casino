@@ -1381,12 +1381,13 @@ class RequestLatencyBenchmarkTests(unittest.TestCase):
     def test_governance_allocation_is_unique_and_narrow(self) -> None:
         # Parse the canonical requirement source.
         requirements = json.loads((ROOT / "docs" / "requirements" / "requirements.json").read_text(encoding="utf-8"))["requirements"]
-        # Retain all prior allocations plus the Challenge foundation and Bingo association proofs. (CHALLENGE-001, TEST-263, BINGO-029, TEST-265)
-        self.assertEqual(len(requirements), 1136)
+        # Retain prior allocations plus NOIRVA's presentation-only artifact requirement. (SLOT-039)
+        self.assertEqual(len(requirements), 1137)
         # Keep the historical contributor reservation out of the canonical registry so it is never reused.
         self.assertEqual([row for row in requirements if row.get("id") == "TEST-144"], [])
         # Bind every new permanent allocation to its accepted owning module.
         aggregate_allocations = {
+            "SLOT-039": "Slots",  # Keep original artwork presentation in the Slots owner.
             "TOUR-003": "Core",  # Bind optional curated-release presentation to its permanent requirement.
             "BINGO-026": "Bingo",  # Preserve the accepted economics owner.
             "ADMIN-029": "Admin",  # Preserve the diagnostic owner.
