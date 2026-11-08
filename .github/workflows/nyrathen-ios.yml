@@ -50,6 +50,9 @@ jobs:
           tar -czf "$RUNNER_TEMP/app.tar.gz" *.app
           cd "$RUNNER_TEMP"
           ls -l app.tar.gz
+          # the token from the first step expired during the 17 min archive (run 2: 403 on the first part)
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
           split -b 90m -d -a 3 app.tar.gz part-
           i=0
           for f in part-*; do
