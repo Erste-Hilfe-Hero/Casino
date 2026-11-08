@@ -1,0 +1,61 @@
+# Nyrathen iOS compile step. Free macOS minutes of this public repo; no game code and no secret lives here.
+# The Unity Xcode project comes from the Nyrathen build host (gate URL in request.txt), the job proves itself with its
+# GitHub OIDC token, compiles an UNSIGNED app and sends it back. Signing and the TestFlight upload happen on the build host.
+name: Nyrathen iOS compile
+on:
+  push:
+    branches: [nyrathen-ios-ci]
+    paths: [request.txt]
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: nyrathen-ios
+  cancel-in-progress: true
+jobs:
+  compile:
+    runs-on: macos-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Token and gate
+        run: |
+          set -euo pipefail
+          GATE=$(head -n1 request.txt | tr -d '[:space:]')
+          case "$GATE" in https://*) ;; *) echo "request.txt must hold the https gate URL"; exit 1;; esac
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
+          { echo "GATE=$GATE"; echo "TOKEN=$TOKEN"; } >> "$GITHUB_ENV"
+      - name: Fetch Xcode project
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          curl -fsS --retry 3 -H "Authorization: Bearer $TOKEN" "$GATE/xcode.tar.gz" -o "$RUNNER_TEMP/x.tgz"
+          ls -l "$RUNNER_TEMP/x.tgz"
+          tar -xzf "$RUNNER_TEMP/x.tgz" -C build && rm "$RUNNER_TEMP/x.tgz"
+          test -d build/iOS/Unity-iPhone.xcodeproj
+          xcodebuild -version
+      - name: Archive unsigned
+        run: |
+          set -euo pipefail
+          cd build/iOS
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
+            -destination generic/platform=iOS -archivePath "$RUNNER_TEMP/n.xcarchive" archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" -quiet 2>&1 | tail -n 80
+          ls "$RUNNER_TEMP/n.xcarchive/Products/Applications"
+      - name: Send app back
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/n.xcarchive/Products/Applications"
+          tar -czf "$RUNNER_TEMP/app.tar.gz" *.app
+          cd "$RUNNER_TEMP"
+          ls -l app.tar.gz
+          split -b 90m -d -a 3 app.tar.gz part-
+          i=0
+          for f in part-*; do
+            curl -fsS --retry 3 -X PUT -H "Authorization: Bearer $TOKEN" --data-binary "@$f" "$GATE/part/$i"
+            i=$((i+1))
+          done
+          SUM=$(shasum -a 256 app.tar.gz | cut -d' ' -f1)
+          curl -fsS --retry 3 -X POST -H "Authorization: Bearer $TOKEN" "$GATE/done/$i/$SUM"
+          echo "sent $i parts, sha256 $SUM"

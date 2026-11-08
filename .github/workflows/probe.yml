@@ -1,0 +1,11 @@
+name: mac probe
+on:
+  push:
+    branches: [nyrathen-ios-ci]
+    paths: [.github/workflows/probe.yml]
+jobs:
+  probe:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - run: sw_vers; xcodebuild -version; ls /Applications | grep -i xcode; sysctl -n hw.ncpu; df -h / | tail -1
