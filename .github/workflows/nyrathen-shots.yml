@@ -1,0 +1,123 @@
+# Nyrathen App Store screenshots (Apple 2.3.3, 2026-11-20). Free macOS minutes of this public repo; no game code and no secret
+# lives here. The simulator Xcode project comes from the Nyrathen build host (gate URL in shots.txt, OIDC-checked); the app
+# signs in with the review demo account by itself and logs "[Autoplay] shot-NAME"; each line becomes a screenshot on a 6.9"
+# iPhone and a 13" iPad simulator. The PNGs (landscape, App Store sizes) are pushed to branch nyrathen-shots-out/<run>.
+name: Nyrathen App Store screenshots
+on:
+  push:
+    branches: [nyrathen-ios-ci]
+    paths: [shots.txt]
+permissions:
+  contents: write
+  id-token: write
+concurrency:
+  group: nyrathen-shots
+  cancel-in-progress: true
+jobs:
+  shots:
+    runs-on: macos-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Token and gate
+        run: |
+          set -euo pipefail
+          GATE=$(head -n1 shots.txt | tr -d '[:space:]')
+          case "$GATE" in https://*) ;; *) echo "shots.txt must hold the https gate URL"; exit 1;; esac
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
+          { echo "GATE=$GATE"; echo "TOKEN=$TOKEN"; } >> "$GITHUB_ENV"
+      - name: Fetch simulator Xcode project
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/b"
+          curl -fsS --retry 3 -H "Authorization: Bearer $TOKEN" "$GATE/xcode.tar.gz" -o "$RUNNER_TEMP/x.tgz"
+          tar -xzf "$RUNNER_TEMP/x.tgz" -C "$RUNNER_TEMP/b" && rm "$RUNNER_TEMP/x.tgz"
+          test -d "$RUNNER_TEMP/b/iOSSim/Unity-iPhone.xcodeproj"
+          xcodebuild -version
+      - name: Build the simulator app
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/b/iOSSim"
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath "$RUNNER_TEMP/dd" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO -quiet build 2>&1 | tail -n 60
+          APP=$(find "$RUNNER_TEMP/dd/Build/Products" -maxdepth 2 -name '*.app' -type d | head -1)
+          test -n "$APP"; echo "APP=$APP" >> "$GITHUB_ENV"; du -sh "$APP"
+          # the build host's copy of the demo credentials is not needed after the build: keep it out of anything that leaves
+          rm -rf "$RUNNER_TEMP/b"
+      - name: Screenshots on iPhone 6.9" and iPad 13"
+        run: |
+          set -uo pipefail
+          OUTD="$RUNNER_TEMP/out"; mkdir -p "$OUTD"
+          BID=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist")
+          defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool true
+          pick() { xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          d = json.load(sys.stdin)["devices"]
+          rts = sorted((k for k in d if "iOS" in k), key=lambda k: [int(x) for x in k.rsplit("iOS-", 1)[1].split("-")])
+          for want in sys.argv[1:]:
+              for rt in reversed(rts):
+                  for dev in d[rt]:
+                      if dev["name"].startswith(want): print(dev["udid"], dev["name"].replace(" ", "_")); sys.exit()
+          ' "$@"; }
+          run_device() { # $1 tag, $2 width, $3 height, rest: device name prefixes
+            TAG=$1 W=$2 H=$3; shift 3
+            read -r UDID NAME < <(pick "$@")
+            [ -n "${UDID:-}" ] || { echo "::warning::no simulator for $TAG"; return; }
+            echo "== $TAG on $NAME ($UDID)"
+            D="$OUTD/$TAG"; mkdir -p "$D"
+            xcrun simctl boot "$UDID"; xcrun simctl bootstatus "$UDID" -b >/dev/null
+            xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
+            xcrun simctl install "$UDID" "$APP"
+            xcrun simctl launch --console-pty "$UDID" "$BID" > "$D/app.log" 2>&1 & APPPID=$!
+            seen=""
+            for i in $(seq 1 360); do
+              sleep 2
+              for s in $(grep -oE '\[Autoplay\] shot-[a-z0-9-]+' "$D/app.log" | awk '{print $2}'); do
+                case " $seen " in *" $s "*) continue;; esac
+                seen="$seen $s"; sleep 1
+                xcrun simctl io "$UDID" screenshot "$D/raw-$s.png" >/dev/null 2>&1 && echo "shot $TAG $s"
+              done
+              grep -qE '\[Autoplay\] (done|quit)' "$D/app.log" && break
+              kill -0 $APPPID 2>/dev/null || { echo "app exited"; break; }
+            done
+            kill $APPPID 2>/dev/null || true
+            grep -E '\[Autoplay\]|Exception|rror' "$D/app.log" | head -60
+            for f in "$D"/raw-*.png; do [ -f "$f" ] || continue
+              o="$D/${f##*/raw-}"
+              pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
+              cp "$f" "$o"; [ "$pw" -lt "$ph" ] && sips -r 270 "$o" >/dev/null
+              sips -z "$H" "$W" "$o" >/dev/null; rm "$f"
+            done
+            xcrun simctl shutdown "$UDID" || true
+          }
+          run_device iphone69 2868 1320 "iPhone 17 Pro Max" "iPhone 16 Pro Max"
+          run_device ipad13 2752 2064 "iPad Pro 13-inch" "iPad Pro (12.9-inch)"
+          find "$OUTD" -type f | sort
+          echo "OUTD=$OUTD" >> "$GITHUB_ENV"
+      - name: Push screenshots to nyrathen-shots-out
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [ -d "${OUTD:-}" ] || exit 0
+          # never publish a line that could carry the demo password
+          for l in "$OUTD"/*/app.log; do [ -f "$l" ] || continue; grep -E '\[Autoplay\]|Exception|rror|\[Boot\]' "$l" | grep -viE 'password|passwd|shots.json' > "$l.txt" || true; rm -f "$l"; done
+          R="$RUNNER_TEMP/o"; git init -q "$R"; cd "$R"
+          git config user.name "nyrathen-shots"; git config user.email "nyrathen-shots@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q origin nyrathen-shots-out; then git checkout -q -B out FETCH_HEAD; else git checkout -q -b out; fi
+          mkdir -p "run-${GITHUB_RUN_ID}"; cp -R "$OUTD"/* "run-${GITHUB_RUN_ID}/"
+          git add "run-${GITHUB_RUN_ID}"; git commit -qm "shots run ${GITHUB_RUN_ID}"; git push -q origin out:nyrathen-shots-out
+          echo "pushed run-${GITHUB_RUN_ID}"
+      - name: Tell the build host it is done
+        if: always()
+        run: |
+          set -uo pipefail
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
+          echo "run ${GITHUB_RUN_ID}" > done.txt; tar -czf done.tar.gz done.txt
+          curl -fsS --retry 3 -X PUT -H "Authorization: Bearer $TOKEN" --data-binary @done.tar.gz "$GATE/part/0"
+          curl -fsS --retry 3 -X POST -H "Authorization: Bearer $TOKEN" "$GATE/done/1/$(shasum -a 256 done.tar.gz | cut -d' ' -f1)"
