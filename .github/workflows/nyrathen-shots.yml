@@ -49,7 +49,7 @@ jobs:
       - name: Screenshots on iPhone 6.9" and iPad 13"
         run: |
           set -uo pipefail
-          OUTD="$RUNNER_TEMP/out"; mkdir -p "$OUTD"
+          OUTD="$RUNNER_TEMP/out"; mkdir -p "$OUTD"; echo "OUTD=$OUTD" >> "$GITHUB_ENV"
           BID=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist")
           defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool true
           pick() { xcrun simctl list devices available -j | python3 -c '
@@ -87,7 +87,8 @@ jobs:
               kill -0 $APPPID 2>/dev/null || { echo "app exited"; break; }
             done
             kill $APPPID 2>/dev/null || true
-            grep -E '\[Autoplay\]|Exception|rror' "$D/app.log" | head -60
+            # run 44789535168: under pipefail this summary line (head closing the pipe) ended the step and lost every shot
+            grep -E '\[Autoplay\]|Exception|rror' "$D/app.log" | head -60 || true
             for f in "$D"/raw-*.png; do [ -f "$f" ] || continue
               o="$D/${f##*/raw-}"
               pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
