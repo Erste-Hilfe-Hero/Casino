@@ -92,8 +92,10 @@ jobs:
             done
             xcrun simctl shutdown "$UDID" || true
           }
-          run_device iphone69 2868 1320 "iPhone 17 Pro Max" "iPhone 16 Pro Max"
-          run_device ipad13 2752 2064 "iPad Pro 13-inch" "iPad Pro (12.9-inch)"
+          # optional line 2 of shots.txt: the device tags to capture (default both), e.g. "ipad13" to redo one device
+          DEVS=$(sed -n 2p "$GITHUB_WORKSPACE/shots.txt" | tr -d '\r'); DEVS=${DEVS:-iphone69 ipad13}
+          case " $DEVS " in *" iphone69 "*) run_device iphone69 2868 1320 "iPhone 17 Pro Max" "iPhone 16 Pro Max";; esac
+          case " $DEVS " in *" ipad13 "*) run_device ipad13 2752 2064 "iPad Pro 13-inch" "iPad Pro (12.9-inch)";; esac
           find "$OUTD" -type f | sort
           echo "OUTD=$OUTD" >> "$GITHUB_ENV"
       - name: Push screenshots to nyrathen-shots-out
