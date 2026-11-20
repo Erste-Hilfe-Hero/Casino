@@ -1,0 +1,158 @@
+[Boot] awake 28302 ms, since start 65276 ms
+[Boot] first frame 29013 ms after awake, since start 65987 ms
+[Autoplay] login
+[Autoplay] no button a11y-continue
+[Autoplay] shot-01-login
+UnityEngine.Awaitable`1:SetExceptionAndRaiseContinuation(Exception)
+[Autoplay] shot-02-sign-in
+[Autoplay] list
+[Autoplay] cover a11y-continue
+[Autoplay] shot-03-character-list
+[Net] state Connected srtt 0 jitter 0 outliers 0 frames/s in 4.8 out 3.1 bytes/s in 140 out 46 maxDrain 55 maxAge 173 ms superseded 1 seqErrors 0 buffered 0 reconnects 0 interpDelay 100 underruns 0 maxFrozen 0 reconciles 0 horizonHolds 0 busyMuted 0
+[Net] state Connected srtt 1968 jitter 984 outliers 0 frames/s in 11.9 out 1.7 bytes/s in 682 out 34 maxDrain 97 maxAge 5184 ms superseded 2 seqErrors 0 buffered 0 reconnects 1 interpDelay 300 underruns 2 maxFrozen 0 reconciles 1 horizonHolds 2 busyMuted 0
+[Autoplay] world
+[Net] state Connected srtt 848 jitter 726 outliers 0 frames/s in 26.5 out 25.2 bytes/s in 2019 out 464 maxDrain 25 maxAge 1829 ms superseded 22 seqErrors 0 buffered 69 reconnects 1 interpDelay 200 underruns 9 maxFrozen 0 reconciles 5 horizonHolds 5 busyMuted 0
+[Autoplay] shot-04-world-start
+[Net] state Connected srtt 340 jitter 298 outliers 0 frames/s in 21.8 out 22.2 bytes/s in 1840 out 422 maxDrain 47 maxAge 2087 ms superseded 53 seqErrors 0 buffered 0 reconnects 1 interpDelay 200 underruns 22 maxFrozen 0 reconciles 5 horizonHolds 6 busyMuted 0
+[Net] state Connected srtt 230 jitter 92 outliers 0 frames/s in 21.4 out 20.5 bytes/s in 1808 out 389 maxDrain 32 maxAge 1489 ms superseded 57 seqErrors 0 buffered 0 reconnects 1 interpDelay 200 underruns 34 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step dismiss
+[Autoplay] step dismiss
+[Autoplay] step dismiss
+[Net] state Connected srtt 158 jitter 39 outliers 0 frames/s in 21.8 out 30.9 bytes/s in 1797 out 594 maxDrain 3 maxAge 52 ms superseded 59 seqErrors 0 buffered 30 reconnects 1 interpDelay 200 underruns 48 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-05-town
+[Net] state Connected srtt 221 jitter 110 outliers 0 frames/s in 20.6 out 31.0 bytes/s in 1727 out 598 maxDrain 7 maxAge 170 ms superseded 61 seqErrors 0 buffered 20 reconnects 1 interpDelay 300 underruns 86 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-06-menu
+[Net] state Connected srtt 156 jitter 35 outliers 0 frames/s in 21.9 out 31.3 bytes/s in 1834 out 603 maxDrain 3 maxAge 82 ms superseded 63 seqErrors 0 buffered 20 reconnects 1 interpDelay 290 underruns 115 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Net] state Connected srtt 145 jitter 15 outliers 0 frames/s in 22.3 out 28.7 bytes/s in 1879 out 551 maxDrain 4 maxAge 172 ms superseded 66 seqErrors 0 buffered 20 reconnects 1 interpDelay 270 underruns 115 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-07-menu-tab-1
+[Net] state Connected srtt 156 jitter 25 outliers 0 frames/s in 22.0 out 30.4 bytes/s in 1860 out 588 maxDrain 5 maxAge 139 ms superseded 69 seqErrors 0 buffered 20 reconnects 1 interpDelay 250 underruns 115 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-08-menu-tab-2
+[Net] state Connected srtt 163 jitter 31 outliers 0 frames/s in 21.9 out 30.5 bytes/s in 1851 out 589 maxDrain 7 maxAge 55 ms superseded 73 seqErrors 0 buffered 20 reconnects 1 interpDelay 197 underruns 119 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-09-menu-tab-3
+[Net] state Connected srtt 135 jitter 22 outliers 0 frames/s in 22.3 out 31.8 bytes/s in 1876 out 614 maxDrain 3 maxAge 36 ms superseded 75 seqErrors 0 buffered 20 reconnects 1 interpDelay 177 underruns 119 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step bag
+[Autoplay] shot-10-bag
+[Net] state Connected srtt 180 jitter 64 outliers 0 frames/s in 21.0 out 28.1 bytes/s in 1762 out 539 maxDrain 7 maxAge 366 ms superseded 78 seqErrors 0 buffered 0 reconnects 1 interpDelay 200 underruns 159 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 207 jitter 74 outliers 0 frames/s in 21.4 out 28.4 bytes/s in 1804 out 546 maxDrain 5 maxAge 118 ms superseded 80 seqErrors 0 buffered 0 reconnects 1 interpDelay 200 underruns 281 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step quests
+[Autoplay] shot-11-quests
+[Net] state Connected srtt 151 jitter 33 outliers 0 frames/s in 22.2 out 28.7 bytes/s in 1863 out 553 maxDrain 10 maxAge 365 ms superseded 83 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 294 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step close
+[Autoplay] step skills
+[Autoplay] shot-12-skills
+[Net] state Connected srtt 131 jitter 20 outliers 0 frames/s in 22.8 out 26.9 bytes/s in 1884 out 510 maxDrain 15 maxAge 303 ms superseded 85 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 294 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 131 jitter 13 outliers 0 frames/s in 22.5 out 27.7 bytes/s in 1890 out 532 maxDrain 14 maxAge 576 ms superseded 89 seqErrors 0 buffered 20 reconnects 1 interpDelay 150 underruns 294 maxFrozen 0 reconciles 8 horizonHolds 8 busyMuted 0
+[Autoplay] shot-13-mastery
+[Autoplay] step close
+[Net] state Connected srtt 138 jitter 26 outliers 0 frames/s in 21.7 out 25.0 bytes/s in 1896 out 478 maxDrain 40 maxAge 1774 ms superseded 92 seqErrors 0 buffered 0 reconnects 1 interpDelay 160 underruns 296 maxFrozen 0 reconciles 8 horizonHolds 9 busyMuted 0
+[Autoplay] shot-14-achievements
+[Autoplay] step close
+[Net] state Connected srtt 159 jitter 24 outliers 0 frames/s in 21.9 out 26.4 bytes/s in 1838 out 505 maxDrain 11 maxAge 465 ms superseded 102 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 333 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-15-mount
+[Net] state Connected srtt 143 jitter 14 outliers 0 frames/s in 22.4 out 29.4 bytes/s in 1869 out 566 maxDrain 5 maxAge 202 ms superseded 105 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 333 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 127 jitter 17 outliers 0 frames/s in 22.2 out 29.9 bytes/s in 1899 out 575 maxDrain 3 maxAge 116 ms superseded 107 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 334 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-16-codex
+[Autoplay] step close
+[Net] state Connected srtt 129 jitter 12 outliers 0 frames/s in 22.7 out 28.5 bytes/s in 1875 out 542 maxDrain 7 maxAge 166 ms superseded 110 seqErrors 0 buffered 40 reconnects 1 interpDelay 180 underruns 336 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-17-profile
+[Net] state Connected srtt 128 jitter 17 outliers 0 frames/s in 22.5 out 28.2 bytes/s in 1874 out 542 maxDrain 4 maxAge 160 ms superseded 113 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 336 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Autoplay] shot-18-friends
+[Net] state Connected srtt 134 jitter 12 outliers 0 frames/s in 21.9 out 30.0 bytes/s in 1860 out 579 maxDrain 7 maxAge 289 ms superseded 116 seqErrors 0 buffered 29 reconnects 1 interpDelay 140 underruns 336 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 131 jitter 16 outliers 0 frames/s in 22.4 out 28.4 bytes/s in 1867 out 544 maxDrain 10 maxAge 410 ms superseded 118 seqErrors 0 buffered 20 reconnects 1 interpDelay 140 underruns 337 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-19-guild
+[Net] state Connected srtt 125 jitter 21 outliers 0 frames/s in 22.3 out 29.9 bytes/s in 1857 out 574 maxDrain 4 maxAge 186 ms superseded 120 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 365 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Autoplay] shot-20-mail
+[Net] state Connected srtt 136 jitter 12 outliers 0 frames/s in 22.7 out 28.1 bytes/s in 1887 out 539 maxDrain 6 maxAge 148 ms superseded 122 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 366 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 142 jitter 17 outliers 0 frames/s in 22.2 out 29.8 bytes/s in 1875 out 574 maxDrain 5 maxAge 265 ms superseded 124 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 366 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-21-news
+[Autoplay] step close
+[Net] state Connected srtt 129 jitter 26 outliers 0 frames/s in 22.1 out 30.6 bytes/s in 1862 out 590 maxDrain 3 maxAge 50 ms superseded 126 seqErrors 0 buffered 20 reconnects 1 interpDelay 140 underruns 366 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] shot-22-whatsnew
+[Net] state Connected srtt 124 jitter 17 outliers 0 frames/s in 22.2 out 29.6 bytes/s in 1875 out 571 maxDrain 3 maxAge 56 ms superseded 128 seqErrors 0 buffered 20 reconnects 1 interpDelay 130 underruns 366 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step close
+[Autoplay] step shop
+[Autoplay] shot-23-shop
+[Net] state Connected srtt 140 jitter 21 outliers 0 frames/s in 22.0 out 27.3 bytes/s in 1865 out 524 maxDrain 8 maxAge 365 ms superseded 130 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 369 maxFrozen 0 reconciles 10 horizonHolds 10 busyMuted 0
+[Autoplay] step buy
+[Autoplay] shot-24-confirm-dialog
+[Net] state Connected srtt 266 jitter 204 outliers 0 frames/s in 22.4 out 28.4 bytes/s in 1875 out 546 maxDrain 10 maxAge 267 ms superseded 136 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 376 maxFrozen 0 reconciles 10 horizonHolds 12 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 231 jitter 131 outliers 0 frames/s in 22.1 out 28.3 bytes/s in 1869 out 544 maxDrain 20 maxAge 414 ms superseded 144 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 386 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-25-auction
+[Net] state Connected srtt 162 jitter 37 outliers 0 frames/s in 22.3 out 29.1 bytes/s in 1876 out 559 maxDrain 12 maxAge 546 ms superseded 147 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 387 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 151 jitter 40 outliers 0 frames/s in 22.3 out 28.8 bytes/s in 1874 out 550 maxDrain 14 maxAge 602 ms superseded 149 seqErrors 0 buffered 49 reconnects 1 interpDelay 200 underruns 390 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-26-companion
+[Net] state Connected srtt 163 jitter 59 outliers 0 frames/s in 22.2 out 31.0 bytes/s in 1871 out 600 maxDrain 8 maxAge 91 ms superseded 151 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 396 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Autoplay] shot-27-season
+[Net] state Connected srtt 153 jitter 28 outliers 0 frames/s in 23.5 out 26.8 bytes/s in 1854 out 512 maxDrain 21 maxAge 604 ms superseded 154 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 445 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 145 jitter 21 outliers 0 frames/s in 22.2 out 30.2 bytes/s in 1854 out 582 maxDrain 7 maxAge 315 ms superseded 156 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 445 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-28-abyss
+[Net] state Connected srtt 143 jitter 16 outliers 0 frames/s in 22.5 out 27.3 bytes/s in 1888 out 523 maxDrain 13 maxAge 605 ms superseded 160 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 446 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 136 jitter 10 outliers 0 frames/s in 22.4 out 23.8 bytes/s in 1899 out 452 maxDrain 16 maxAge 700 ms superseded 171 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 447 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-29-bounty
+[Autoplay] step close
+[Net] state Connected srtt 132 jitter 12 outliers 0 frames/s in 22.2 out 30.5 bytes/s in 1874 out 587 maxDrain 3 maxAge 55 ms superseded 173 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 447 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-30-party-finder
+[Net] state Connected srtt 156 jitter 37 outliers 0 frames/s in 21.6 out 30.1 bytes/s in 1807 out 580 maxDrain 3 maxAge 132 ms superseded 175 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 460 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 153 jitter 22 outliers 0 frames/s in 22.3 out 29.3 bytes/s in 1869 out 562 maxDrain 14 maxAge 536 ms superseded 181 seqErrors 0 buffered 40 reconnects 1 interpDelay 180 underruns 460 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-31-language
+[Net] state Connected srtt 144 jitter 22 outliers 0 frames/s in 22.6 out 29.1 bytes/s in 1894 out 559 maxDrain 11 maxAge 69 ms superseded 183 seqErrors 0 buffered 80 reconnects 1 interpDelay 190 underruns 463 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 136 jitter 18 outliers 0 frames/s in 22.2 out 30.4 bytes/s in 1873 out 586 maxDrain 6 maxAge 222 ms superseded 185 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 463 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-32-options
+[Net] state Connected srtt 152 jitter 39 outliers 0 frames/s in 22.1 out 27.8 bytes/s in 1866 out 534 maxDrain 8 maxAge 368 ms superseded 187 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 467 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 129 jitter 20 outliers 0 frames/s in 22.1 out 28.4 bytes/s in 1865 out 547 maxDrain 6 maxAge 212 ms superseded 189 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 467 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-33-options
+[Net] state Connected srtt 145 jitter 17 outliers 0 frames/s in 22.2 out 29.4 bytes/s in 1871 out 567 maxDrain 4 maxAge 57 ms superseded 191 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 467 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-34-options-graphics
+[Net] state Connected srtt 140 jitter 20 outliers 0 frames/s in 21.9 out 31.3 bytes/s in 1846 out 604 maxDrain 4 maxAge 38 ms superseded 193 seqErrors 0 buffered 0 reconnects 1 interpDelay 190 underruns 470 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-35-options-audio
+[Net] state Connected srtt 141 jitter 35 outliers 0 frames/s in 22.1 out 28.3 bytes/s in 1853 out 543 maxDrain 6 maxAge 266 ms superseded 195 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 472 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-36-options-accessibility
+[Net] state Connected srtt 134 jitter 16 outliers 0 frames/s in 22.1 out 30.1 bytes/s in 1874 out 581 maxDrain 4 maxAge 164 ms superseded 197 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 472 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 128 jitter 13 outliers 0 frames/s in 22.2 out 29.5 bytes/s in 1875 out 569 maxDrain 3 maxAge 72 ms superseded 199 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 472 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-37-options-language
+[Net] state Connected srtt 128 jitter 12 outliers 0 frames/s in 22.3 out 29.8 bytes/s in 1879 out 573 maxDrain 4 maxAge 122 ms superseded 201 seqErrors 0 buffered 20 reconnects 1 interpDelay 140 underruns 472 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-38-options-game
+[Net] state Connected srtt 132 jitter 17 outliers 0 frames/s in 22.2 out 28.3 bytes/s in 1873 out 543 maxDrain 9 maxAge 357 ms superseded 203 seqErrors 0 buffered 20 reconnects 1 interpDelay 120 underruns 472 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-39-options-help
+[Net] state Connected srtt 156 jitter 29 outliers 0 frames/s in 21.6 out 30.9 bytes/s in 1817 out 597 maxDrain 4 maxAge 74 ms superseded 205 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 485 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Autoplay] step map
+[Autoplay] shot-40-map
+[Net] state Connected srtt 137 jitter 16 outliers 0 frames/s in 22.3 out 30.8 bytes/s in 1868 out 593 maxDrain 3 maxAge 70 ms superseded 207 seqErrors 0 buffered 20 reconnects 1 interpDelay 180 underruns 485 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 136 jitter 12 outliers 0 frames/s in 22.2 out 30.2 bytes/s in 1874 out 582 maxDrain 3 maxAge 61 ms superseded 209 seqErrors 0 buffered 20 reconnects 1 interpDelay 160 underruns 485 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] shot-41-chat
+[Autoplay] step close
+[Net] state Connected srtt 133 jitter 12 outliers 0 frames/s in 22.0 out 29.6 bytes/s in 1869 out 572 maxDrain 5 maxAge 238 ms superseded 211 seqErrors 0 buffered 20 reconnects 1 interpDelay 140 underruns 485 maxFrozen 0 reconciles 10 horizonHolds 13 busyMuted 0
+[Autoplay] step dismiss
+[Autoplay] fight
+[Net] state Connected srtt 131 jitter 17 outliers 0 frames/s in 22.3 out 30.0 bytes/s in 1879 out 580 maxDrain 3 maxAge 101 ms superseded 213 seqErrors 0 buffered 20 reconnects 1 interpDelay 120 underruns 485 maxFrozen 0 reconciles 15 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 129 jitter 15 outliers 0 frames/s in 22.2 out 30.9 bytes/s in 1879 out 601 maxDrain 3 maxAge 58 ms superseded 215 seqErrors 0 buffered 20 reconnects 1 interpDelay 113 underruns 485 maxFrozen 0 reconciles 19 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 144 jitter 34 outliers 0 frames/s in 21.2 out 29.8 bytes/s in 1768 out 575 maxDrain 5 maxAge 108 ms superseded 219 seqErrors 0 buffered 30 reconnects 1 interpDelay 200 underruns 535 maxFrozen 0 reconciles 22 horizonHolds 13 busyMuted 0
+[Autoplay] shot-42-fight-1
+[Net] state Connected srtt 155 jitter 34 outliers 0 frames/s in 20.6 out 31.2 bytes/s in 1715 out 605 maxDrain 6 maxAge 43 ms superseded 223 seqErrors 0 buffered 20 reconnects 1 interpDelay 290 underruns 574 maxFrozen 0 reconciles 27 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 154 jitter 56 outliers 0 frames/s in 21.0 out 30.5 bytes/s in 1775 out 593 maxDrain 8 maxAge 45 ms superseded 225 seqErrors 0 buffered 0 reconnects 1 interpDelay 200 underruns 612 maxFrozen 0 reconciles 32 horizonHolds 13 busyMuted 0
+[Autoplay] shot-43-fight-2
+[Net] state Connected srtt 144 jitter 25 outliers 0 frames/s in 21.4 out 30.0 bytes/s in 1801 out 581 maxDrain 5 maxAge 54 ms superseded 229 seqErrors 0 buffered 30 reconnects 1 interpDelay 200 underruns 649 maxFrozen 0 reconciles 34 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 147 jitter 20 outliers 0 frames/s in 22.2 out 29.7 bytes/s in 1869 out 575 maxDrain 5 maxAge 171 ms superseded 231 seqErrors 0 buffered 30 reconnects 1 interpDelay 190 underruns 650 maxFrozen 0 reconciles 38 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 127 jitter 22 outliers 0 frames/s in 22.0 out 31.6 bytes/s in 1860 out 615 maxDrain 3 maxAge 41 ms superseded 233 seqErrors 0 buffered 30 reconnects 1 interpDelay 170 underruns 650 maxFrozen 0 reconciles 42 horizonHolds 13 busyMuted 0
+[Autoplay] shot-44-fight-3
+[Net] state Connected srtt 138 jitter 16 outliers 0 frames/s in 22.0 out 28.6 bytes/s in 1854 out 550 maxDrain 6 maxAge 277 ms superseded 235 seqErrors 0 buffered 30 reconnects 1 interpDelay 150 underruns 650 maxFrozen 0 reconciles 42 horizonHolds 13 busyMuted 0
+[Net] state Connected srtt 141 jitter 19 outliers 0 frames/s in 21.7 out 27.9 bytes/s in 1813 out 538 maxDrain 12 maxAge 471 ms superseded 237 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 673 maxFrozen 0 reconciles 46 horizonHolds 13 busyMuted 0
+[Autoplay] shot-45-fight-4
+[Autoplay] done
