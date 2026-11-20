@@ -72,12 +72,16 @@ jobs:
             xcrun simctl install "$UDID" "$APP"
             xcrun simctl launch --console-pty "$UDID" "$BID" > "$D/app.log" 2>&1 & APPPID=$!
             seen=""
-            for i in $(seq 1 360); do
-              sleep 2
+            DATA=""
+            # the app waits after each shot until ack-<shot> sits in its Documents folder (DevAutoplay.Shot, the sim draws ~9 fps)
+            for i in $(seq 1 1500); do
+              sleep 1
               for s in $(grep -oE '\[Autoplay\] shot-[a-z0-9-]+' "$D/app.log" | awk '{print $2}'); do
                 case " $seen " in *" $s "*) continue;; esac
-                seen="$seen $s"; sleep 1
+                seen="$seen $s"; sleep 2
                 xcrun simctl io "$UDID" screenshot "$D/raw-$s.png" >/dev/null 2>&1 && echo "shot $TAG $s"
+                [ -n "$DATA" ] || DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data 2>/dev/null || true)
+                [ -n "$DATA" ] && mkdir -p "$DATA/Documents" && touch "$DATA/Documents/ack-$s"
               done
               grep -qE '\[Autoplay\] (done|quit)' "$D/app.log" && break
               kill -0 $APPPID 2>/dev/null || { echo "app exited"; break; }
