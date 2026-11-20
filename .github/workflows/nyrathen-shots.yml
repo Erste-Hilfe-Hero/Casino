@@ -94,11 +94,16 @@ jobs:
               kill -0 $APPPID 2>/dev/null || { echo "app exited"; break; }
             done
             kill $APPPID 2>/dev/null || true
+            # the game's own frame per shot (DevAutoplay ScreenCapture, exact store size, never rotated) beats the simctl capture
+            mkdir -p "$D/u"; [ -n "$DATA" ] && cp "$DATA"/Documents/shot-*.png "$D/u/" 2>/dev/null || true
+            echo "unity frames: $(ls "$D/u" | wc -l)"
             # run 44789535168: under pipefail this summary line (head closing the pipe) ended the step and lost every shot
             grep -E '\[Autoplay\]|Exception|rror' "$D/app.log" | head -60 || true
             for f in "$D"/raw-*.png; do [ -f "$f" ] || continue
               o="$D/${f##*/raw-}"
               pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
+              s="${f##*/raw-}"
+              if [ -f "$D/u/$s" ]; then cp "$D/u/$s" "$o"; sips -z "$H" "$W" "$o" >/dev/null; rm "$f"; continue; fi
               cp "$f" "$o"
               # the game logs "[ui] ios panel ... screen WxH": a window as wide as the portrait screen is the letterboxed 4:3 window
               SW=$(grep -oE 'screen [0-9]+x[0-9]+' "$D/app.log" | head -n1 | awk '{print $2}' | cut -dx -f1 || true)
