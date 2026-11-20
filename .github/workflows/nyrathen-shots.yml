@@ -68,6 +68,13 @@ jobs:
             echo "== $TAG on $NAME ($UDID)"
             D="$OUTD/$TAG"; mkdir -p "$D"
             xcrun simctl boot "$UDID"; xcrun simctl bootstatus "$UDID" -b >/dev/null
+            if [ "$TAG" = ipad13 ]; then
+              # run 44798466544: a headless iPad stays portrait and iPadOS 26 shows the landscape-only game as a letterboxed window;
+              # try the Simulator app in landscape (window orientation pref), else the post step crops the 4:3 window out
+              defaults write com.apple.iphonesimulator DevicePreferences -dict-add "$UDID" '<dict><key>SimulatorWindowOrientation</key><string>LandscapeLeft</string><key>SimulatorWindowRotationAngle</key><real>90</real></dict>' || true
+              open -a Simulator --args -CurrentDeviceUDID "$UDID" || true
+              sleep 20
+            fi
             xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
             xcrun simctl install "$UDID" "$APP"
             xcrun simctl launch --console-pty "$UDID" "$BID" > "$D/app.log" 2>&1 & APPPID=$!
@@ -92,7 +99,11 @@ jobs:
             for f in "$D"/raw-*.png; do [ -f "$f" ] || continue
               o="$D/${f##*/raw-}"
               pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
-              cp "$f" "$o"; [ "$pw" -lt "$ph" ] && sips -r 270 "$o" >/dev/null
+              cp "$f" "$o"
+              # the game logs "[ui] ios panel ... screen WxH": a window as wide as the portrait screen is the letterboxed 4:3 window
+              SW=$(grep -oE 'screen [0-9]+x[0-9]+' "$D/app.log" | head -n1 | awk '{print $2}' | cut -dx -f1 || true)
+              if [ "$TAG" = ipad13 ] && [ "$pw" -lt "$ph" ] && [ "${SW:-0}" = "$pw" ]; then sips -c $((pw * 3 / 4)) "$pw" "$o" >/dev/null; echo "cropped $o"
+              elif [ "$pw" -lt "$ph" ]; then sips -r 270 "$o" >/dev/null; fi
               sips -z "$H" "$W" "$o" >/dev/null; rm "$f"
             done
             xcrun simctl shutdown "$UDID" || true
