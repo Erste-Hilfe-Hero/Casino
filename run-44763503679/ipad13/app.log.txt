@@ -1,0 +1,10 @@
+[Boot] awake 19778 ms, since start 74082 ms
+[Boot] first frame 22681 ms after awake, since start 76984 ms
+[Autoplay] login
+[Autoplay] no button a11y-continue
+[Autoplay] shot-01-login
+[Autoplay] shot-02-sign-in
+[Http] POST v1/login 67752 ms code=0 result=ui.account.error.network
+[Http] GET v1/status 113864 ms code=200 result=ui.account.error.network
+[Http] GET v1/status 109719 ms code=200 result=ui.account.error.network
+UnityEngine.Awaitable`1:SetExceptionAndRaiseContinuation(Exception)
