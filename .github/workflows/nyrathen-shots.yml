@@ -77,6 +77,13 @@ jobs:
             fi
             xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged --batteryLevel 100 --wifiBars 3 --cellularBars 4 || true
             xcrun simctl install "$UDID" "$APP"
+            # optional line 3 of shots.txt: player_settings.json to seed before the first start, e.g. {"qualityTier":2,"hudSizeModel":2}
+            # (the simulator detects the Low tier; 2026-11-21 the hero look has to be checked on High like Ali's phone)
+            SEED=$(sed -n 3p "$GITHUB_WORKSPACE/shots.txt" | tr -d '\r')
+            if [ -n "$SEED" ]; then
+              SD=$(xcrun simctl get_app_container "$UDID" "$BID" data); mkdir -p "$SD/Documents"
+              printf '%s' "$SEED" > "$SD/Documents/player_settings.json"; echo "seeded player_settings.json: $SEED"
+            fi
             xcrun simctl launch --console-pty "$UDID" "$BID" > "$D/app.log" 2>&1 & APPPID=$!
             seen=""
             DATA=""
