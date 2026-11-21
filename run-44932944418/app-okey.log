@@ -1,0 +1,93 @@
+2026-11-21 18:08:28.353 TwoattheTable[15956:48367] Built from '6000.3/staging' branch, Version '6000.3.26f1 (de8167e7440c)', Build type 'Release', Scripting Backend 'il2cpp'
+2026-11-21 18:08:28.355 TwoattheTable[15956:48367] MemoryManager: Using 'Default' Allocator.
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=4194304"
+    "memorysetup-bucket-allocator-block-count=1"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=4194304"
+    "memorysetup-profiler-bucket-allocator-block-count=1"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=4194304"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+-> applicationDidFinishLaunching()
+-> sceneWillEnterForeground()
+GfxDevice: creating device client; kGfxThreadingModeThreaded
+Initializing Metal device caps: Apple iOS simulator GPU
+Apple GPU Family: 2
+MSL Version: 3.0
+Has Float MSAA: 0
+Has Float Filtering: 0
+ReadWrite Texture Tier: 0
+Initialize engine version: 6000.3.26f1 (de8167e7440c)
+UnloadTime: 0.211709 ms
+[TT] start, games 81, screen 2868x1320
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.App:Awake()
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent()
+
+CADisplayLink created
+Player Setting 'Adjust iOS FPS based on thermal state' is ON
+thermalStateDidChange: Nominal
+Thermal state is Nominal/Fair. Setting target frame rate to 60.
+-> applicationWillEnterForeground()
+-> sceneDidBecomeActive()
+-> applicationDidBecomeActive()
+[TT] iap price com.nyrathen.twotable.chips5000
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.chips40000
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.chips15000
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.designs
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.starter
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.chips100000
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+[TT] iap price com.nyrathen.twotable.unlockall
+UnityEngine.DebugLogHandler:Internal_Log(LogType, LogOption, String, Object)
+TwoTable.Iap:Handle(String)
+TwoTable.Table:OnIap(String)
+
+com.nyrathen.twotable: 15956
