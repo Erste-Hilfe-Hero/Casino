@@ -1,0 +1,291 @@
+[Quality] detect ram 7168 gpu 'Apple iOS simulator GPU' api Metal shader 45 screen 2868x1320 score 164 -> Low
+[Quality] thermal source ios
+[ui] CJK fallback fonts 5 for en
+[ui] ios panel by height 412 dp model iPhone18,2 dpi 460 screen 2868x1320
+Nyrathen.World.CharacterPreview:Awake()
+Nyrathen.World.CharacterPreview:Awake()
+[render] CharacterPreview target msaa 4 pipeline Nyrathen-URP tier lowDetail False
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage root mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_4 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_0 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[Boot] awake 15809 ms, since start 37888 ms
+[Boot] first frame 18456 ms after awake, since start 40536 ms
+[ui] safe area l 186 t 0 r 186 b 60 px cutouts 1 dpi 460 orientation LandscapeLeft
+[Autoplay] login
+[ui] inset lean orb 43 column 23 top-right 46 map 38 cutouts 1
+HudArc: w 895 h 412 n 6 scale 1.00 pivot 768,336 R 281 button 62 passed True touch True attack 91 (22.0%) skill 62 (15.0%) ult 70 (17.0%) dodge 54 (13.0%) potion 54 (13.0%) reach 344 row shift 0 potion at 486,336
+HudArc cover 13.3%
+[Autoplay] no button a11y-continue
+[Autoplay] shot-01-login
+UnityEngine.Awaitable`1:SetExceptionAndRaiseContinuation(Exception)
+[Autoplay] shot-02-sign-in
+[Autoplay] list
+[Autoplay] cover a11y-continue
+[Autoplay] shot-03-character-list
+[Quality] texture formats astc False etc2 True dxt False
+HudArc cover 13.9%
+HudArc: w 895 h 412 n 8 scale 1.00 pivot 768,336 R 281 button 62 passed True touch True attack 91 (22.0%) skill 62 (15.0%) ult 70 (17.0%) dodge 54 (13.0%) potion 54 (13.0%) reach 344 row shift 0 potion at 486,336
+HudArc cover 19.8%
+[Net] state Connected srtt 896 jitter 448 outliers 0 frames/s in 10.7 out 3.7 bytes/s in 480 out 56 maxDrain 117 maxAge 971 ms superseded 1 seqErrors 0 buffered 0 reconnects 0 interpDelay 100 underruns 0 maxFrozen 0 reconciles 0 horizonHolds 0 busyMuted 0
+[Net] state Reconnecting srtt 896 jitter 448 outliers 0 frames/s in 7.9 out 0.6 bytes/s in 661 out 10 maxDrain 80 maxAge 5447 ms superseded 43 seqErrors 0 buffered 0 reconnects 1 interpDelay 157 underruns 2 maxFrozen 0 reconciles 0 horizonHolds 1 busyMuted 0
+[Quality] zone load nexus 14890 ms (fetch 2787 ms, build 12102 ms) memory 231 MB reserved 402 MB managed 63 MB over 3000 ms
+[Autoplay] world
+[Net] state Connected srtt 478 jitter 359 outliers 0 frames/s in 23.2 out 24.5 bytes/s in 1590 out 466 maxDrain 27 maxAge 456 ms superseded 46 seqErrors 0 buffered 20 reconnects 1 interpDelay 124 underruns 3 maxFrozen 0 reconciles 5 horizonHolds 5 busyMuted 0
+[Autoplay] shot-04-world-start
+[Net] state Connected srtt 326 jitter 178 outliers 0 frames/s in 17.1 out 26.9 bytes/s in 1442 out 517 maxDrain 12 maxAge 438 ms superseded 52 seqErrors 0 buffered 838 reconnects 1 interpDelay 200 underruns 12 maxFrozen 0 reconciles 5 horizonHolds 7 busyMuted 0
+[Net] state Connected srtt 485 jitter 290 outliers 0 frames/s in 27.2 out 27.1 bytes/s in 2293 out 518 maxDrain 39 maxAge 346 ms superseded 82 seqErrors 0 buffered 20 reconnects 1 interpDelay 290 underruns 20 maxFrozen 0 reconciles 14 horizonHolds 15 busyMuted 0
+[Quality] draws over budget zone nexus avg 496 budget 150
+[Quality] fps zone nexus avg 25.1 p95 59.6 ms worst 916.7 ms min 1.1 fps frames 754 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 496 max 529 setpass 77 batches 451 casters 0 anim posed 0.0 skipped 0.0 eval 2.45 ms anim changes/s 2.9 midfade cuts 10 after load below 30 fps
+[Net] state Connected srtt 280 jitter 130 outliers 0 frames/s in 22.6 out 28.9 bytes/s in 1871 out 553 maxDrain 4 maxAge 101 ms superseded 84 seqErrors 0 buffered 0 reconnects 1 interpDelay 270 underruns 20 maxFrozen 0 reconciles 14 horizonHolds 15 busyMuted 0
+[Autoplay] step dismiss
+[Quality] T3 measured demotion to Low
+[Autoplay] step dismiss
+[Autoplay] step dismiss
+[Net] state Connected srtt 215 jitter 46 outliers 0 frames/s in 21.7 out 26.6 bytes/s in 1832 out 511 maxDrain 8 maxAge 336 ms superseded 86 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 25 maxFrozen 0 reconciles 14 horizonHolds 15 busyMuted 0
+[Autoplay] shot-05-town
+[Net] state Connected srtt 322 jitter 157 outliers 0 frames/s in 20.5 out 27.0 bytes/s in 1706 out 517 maxDrain 14 maxAge 673 ms superseded 92 seqErrors 0 buffered 20 reconnects 1 interpDelay 235 underruns 62 maxFrozen 0 reconciles 14 horizonHolds 15 busyMuted 0
+[Quality] draws over budget zone nexus avg 466 budget 150
+[Quality] fps zone nexus avg 24.6 p95 61.8 ms worst 683.3 ms min 1.5 fps frames 738 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 466 max 484 setpass 74 batches 432 casters 0 anim posed 0.0 skipped 0.0 eval 2.51 ms anim changes/s 2.7 midfade cuts 11 below 30 fps
+[Autoplay] shot-06-menu
+[Net] state Connected srtt 251 jitter 58 outliers 0 frames/s in 20.0 out 22.6 bytes/s in 1642 out 426 maxDrain 14 maxAge 642 ms superseded 106 seqErrors 0 buffered 20 reconnects 1 interpDelay 209 underruns 76 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] shot-07-menu-tab-1
+[Net] state Connected srtt 234 jitter 61 outliers 0 frames/s in 21.2 out 27.6 bytes/s in 1795 out 530 maxDrain 15 maxAge 629 ms superseded 108 seqErrors 0 buffered 20 reconnects 1 interpDelay 210 underruns 98 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Quality] T3 measured demotion to Low
+[Autoplay] shot-08-menu-tab-2
+[Net] state Connected srtt 218 jitter 44 outliers 0 frames/s in 21.6 out 26.1 bytes/s in 1819 out 500 maxDrain 16 maxAge 624 ms superseded 111 seqErrors 0 buffered 81 reconnects 1 interpDelay 190 underruns 123 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Quality] draws over budget zone nexus avg 481 budget 150
+[Quality] fps zone nexus avg 23.6 p95 65.8 ms worst 687.3 ms min 1.5 fps frames 710 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 481 max 501 setpass 75 batches 430 casters 0 anim posed 0.0 skipped 0.0 eval 2.57 ms anim changes/s 2.8 midfade cuts 16 below 30 fps
+[Autoplay] shot-09-menu-tab-3
+[Net] state Connected srtt 193 jitter 20 outliers 0 frames/s in 22.4 out 26.7 bytes/s in 1884 out 511 maxDrain 11 maxAge 457 ms superseded 114 seqErrors 0 buffered 0 reconnects 1 interpDelay 190 underruns 124 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Net] state Connected srtt 213 jitter 37 outliers 0 frames/s in 21.8 out 29.9 bytes/s in 1839 out 577 maxDrain 6 maxAge 213 ms superseded 117 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 127 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step bag
+[Net] state Connected srtt 211 jitter 57 outliers 0 frames/s in 21.0 out 26.8 bytes/s in 1758 out 513 maxDrain 12 maxAge 545 ms superseded 120 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 157 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Quality] draws over budget zone nexus avg 477 budget 150
+[Quality] fps zone nexus avg 25.4 p95 51.8 ms worst 555.0 ms min 1.8 fps frames 764 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 477 max 497 setpass 75 batches 428 casters 0 anim posed 0.0 skipped 0.0 eval 2.44 ms anim changes/s 2.7 midfade cuts 8 below 30 fps
+[Autoplay] shot-10-bag
+[Autoplay] step close
+[Net] state Connected srtt 203 jitter 22 outliers 0 frames/s in 21.8 out 28.7 bytes/s in 1832 out 551 maxDrain 10 maxAge 254 ms superseded 123 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 161 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step quests
+[Autoplay] shot-11-quests
+[Net] state Connected srtt 262 jitter 82 outliers 0 frames/s in 21.2 out 29.0 bytes/s in 1778 out 556 maxDrain 10 maxAge 396 ms superseded 128 seqErrors 0 buffered 20 reconnects 1 interpDelay 200 underruns 204 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 214 jitter 32 outliers 0 frames/s in 22.2 out 30.6 bytes/s in 1878 out 591 maxDrain 3 maxAge 42 ms superseded 130 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 261 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step skills
+CharacterPreview: key light on
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+CharacterPreview: loop skill_chain_lightning|cast_projectile len 1.00
+Nyrathen.World.CharacterPreview:Loop(String[])
+[Quality] draws over budget zone nexus avg 472 budget 150
+[Quality] fps zone nexus avg 27.9 p95 39.7 ms worst 489.6 ms min 2.0 fps frames 847 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 472 max 553 setpass 75 batches 428 casters 0 anim posed 0.0 skipped 0.0 eval 2.34 ms anim changes/s 2.7 midfade cuts 6 below 30 fps
+[Autoplay] shot-12-skills
+[Net] state Connected srtt 207 jitter 22 outliers 0 frames/s in 22.9 out 25.5 bytes/s in 1889 out 480 maxDrain 18 maxAge 509 ms superseded 133 seqErrors 0 buffered 20 reconnects 1 interpDelay 170 underruns 261 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step close
+CharacterPreview: key light off
+[Net] state Connected srtt 207 jitter 51 outliers 0 frames/s in 21.9 out 24.3 bytes/s in 1847 out 463 maxDrain 13 maxAge 612 ms superseded 141 seqErrors 0 buffered 20 reconnects 1 interpDelay 190 underruns 272 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] shot-13-mastery
+[Net] state Connected srtt 234 jitter 68 outliers 0 frames/s in 20.0 out 29.6 bytes/s in 1661 out 570 maxDrain 12 maxAge 545 ms superseded 143 seqErrors 0 buffered 20 reconnects 1 interpDelay 268 underruns 299 maxFrozen 0 reconciles 14 horizonHolds 18 busyMuted 0
+[Autoplay] step close
+[Quality] draws over budget zone nexus avg 496 budget 150
+[Quality] fps zone nexus avg 24.5 p95 59.5 ms worst 629.1 ms min 1.6 fps frames 736 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 496 max 573 setpass 79 batches 457 casters 0 anim posed 0.0 skipped 0.0 eval 2.43 ms anim changes/s 3.1 midfade cuts 10 below 30 fps
+[Net] state Reconnecting srtt 206 jitter 44 outliers 0 frames/s in 13.6 out 12.4 bytes/s in 1148 out 233 maxDrain 53 maxAge 6495 ms superseded 186 seqErrors 0 buffered 0 reconnects 2 interpDelay 200 underruns 300 maxFrozen 0 reconciles 14 horizonHolds 19 busyMuted 0
+[Autoplay] shot-14-achievements
+[Net] state Reconnecting srtt 206 jitter 44 outliers 0 frames/s in 0.0 out 0.2 bytes/s in 0 out 10 maxDrain 0 maxAge 0 ms superseded 186 seqErrors 0 buffered 0 reconnects 2 interpDelay 300 underruns 301 maxFrozen 0 reconciles 14 horizonHolds 19 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 233 jitter 59 outliers 0 frames/s in 21.1 out 22.9 bytes/s in 1437 out 439 maxDrain 27 maxAge 362 ms superseded 190 seqErrors 0 buffered 20 reconnects 2 interpDelay 148 underruns 302 maxFrozen 0 reconciles 16 horizonHolds 21 busyMuted 0
+[Quality] draws over budget zone nexus avg 531 budget 150
+[Quality] fps zone nexus avg 14.7 p95 99.9 ms worst 6499.9 ms min 0.2 fps frames 441 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 531 max 2043 setpass 75 batches 473 casters 0 anim posed 0.0 skipped 0.0 eval 2.20 ms anim changes/s 2.1 midfade cuts 8 below 30 fps
+[Autoplay] shot-15-mount
+[Net] state Connected srtt 661 jitter 343 outliers 0 frames/s in 20.4 out 12.2 bytes/s in 1750 out 223 maxDrain 81 maxAge 2856 ms superseded 267 seqErrors 0 buffered 80 reconnects 2 interpDelay 300 underruns 309 maxFrozen 0 reconciles 16 horizonHolds 23 busyMuted 0
+[Net] state Connected srtt 556 jitter 280 outliers 0 frames/s in 22.6 out 24.6 bytes/s in 1908 out 469 maxDrain 40 maxAge 647 ms superseded 274 seqErrors 0 buffered 80 reconnects 2 interpDelay 300 underruns 322 maxFrozen 0 reconciles 24 horizonHolds 29 busyMuted 0
+[Net] state Connected srtt 472 jitter 178 outliers 0 frames/s in 22.1 out 23.3 bytes/s in 1854 out 442 maxDrain 26 maxAge 567 ms superseded 284 seqErrors 0 buffered 82 reconnects 2 interpDelay 290 underruns 335 maxFrozen 0 reconciles 24 horizonHolds 30 busyMuted 0
+[Quality] draws over budget zone nexus avg 469 budget 150
+[Quality] fps zone nexus avg 16.5 p95 99.9 ms worst 2865.2 ms min 0.3 fps frames 496 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 469 max 483 setpass 76 batches 448 casters 0 anim posed 0.0 skipped 0.0 eval 2.11 ms anim changes/s 2.1 midfade cuts 6 below 30 fps
+[Net] state Connected srtt 439 jitter 195 outliers 0 frames/s in 20.8 out 22.8 bytes/s in 1747 out 432 maxDrain 23 maxAge 583 ms superseded 298 seqErrors 0 buffered 389 reconnects 2 interpDelay 300 underruns 359 maxFrozen 0 reconciles 24 horizonHolds 35 busyMuted 0
+[Net] state Connected srtt 334 jitter 87 outliers 0 frames/s in 21.3 out 23.7 bytes/s in 1781 out 450 maxDrain 13 maxAge 631 ms superseded 311 seqErrors 0 buffered 280 reconnects 2 interpDelay 300 underruns 380 maxFrozen 0 reconciles 24 horizonHolds 37 busyMuted 0
+[Net] state Connected srtt 309 jitter 101 outliers 0 frames/s in 22.7 out 29.6 bytes/s in 1909 out 569 maxDrain 17 maxAge 327 ms superseded 316 seqErrors 0 buffered 49 reconnects 2 interpDelay 200 underruns 388 maxFrozen 0 reconciles 24 horizonHolds 38 busyMuted 0
+[Quality] draws over budget zone nexus avg 466 budget 150
+[Quality] fps zone nexus avg 23.3 p95 63.5 ms worst 647.5 ms min 1.5 fps frames 699 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 466 max 481 setpass 76 batches 446 casters 0 anim posed 0.0 skipped 0.0 eval 2.44 ms anim changes/s 2.7 midfade cuts 5 below 30 fps
+[Autoplay] no ack ack-shot-15-mount
+[Autoplay] step close
+[Net] state Connected srtt 368 jitter 156 outliers 0 frames/s in 22.7 out 30.9 bytes/s in 1908 out 597 maxDrain 13 maxAge 106 ms superseded 320 seqErrors 0 buffered 100 reconnects 2 interpDelay 300 underruns 406 maxFrozen 0 reconciles 24 horizonHolds 40 busyMuted 0
+[Autoplay] shot-16-codex
+[Net] state Connected srtt 404 jitter 155 outliers 0 frames/s in 23.1 out 25.5 bytes/s in 1966 out 484 maxDrain 45 maxAge 554 ms superseded 365 seqErrors 0 buffered 40 reconnects 2 interpDelay 290 underruns 418 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Net] state Connected srtt 264 jitter 71 outliers 0 frames/s in 21.7 out 31.4 bytes/s in 1821 out 607 maxDrain 5 maxAge 36 ms superseded 366 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 429 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Quality] draws over budget zone nexus avg 453 budget 150
+[Quality] fps zone nexus avg 26.7 p95 42.3 ms worst 594.3 ms min 1.7 fps frames 801 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 453 max 474 setpass 77 batches 433 casters 0 anim posed 0.0 skipped 0.0 eval 2.38 ms anim changes/s 2.7 midfade cuts 9 below 30 fps
+[Net] state Connected srtt 215 jitter 50 outliers 0 frames/s in 21.4 out 30.5 bytes/s in 1797 out 587 maxDrain 6 maxAge 65 ms superseded 369 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 477 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Autoplay] step close
+CharacterPreview: key light on
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[Net] state Connected srtt 201 jitter 17 outliers 0 frames/s in 23.0 out 28.8 bytes/s in 1884 out 549 maxDrain 13 maxAge 331 ms superseded 371 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 477 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Autoplay] shot-17-profile
+[Net] state Connected srtt 216 jitter 35 outliers 0 frames/s in 22.1 out 25.3 bytes/s in 1873 out 484 maxDrain 12 maxAge 593 ms superseded 374 seqErrors 0 buffered 60 reconnects 2 interpDelay 190 underruns 479 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Quality] draws over budget zone nexus avg 481 budget 150
+[Quality] fps zone nexus avg 25.6 p95 57.0 ms worst 623.4 ms min 1.6 fps frames 770 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 481 max 624 setpass 76 batches 454 casters 0 anim posed 0.0 skipped 0.0 eval 2.48 ms anim changes/s 2.3 midfade cuts 5 below 30 fps
+[Net] state Connected srtt 223 jitter 24 outliers 0 frames/s in 22.3 out 27.5 bytes/s in 1875 out 527 maxDrain 4 maxAge 134 ms superseded 376 seqErrors 0 buffered 29 reconnects 2 interpDelay 190 underruns 481 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Autoplay] step close
+CharacterPreview: key light off
+[Net] state Connected srtt 200 jitter 16 outliers 0 frames/s in 22.2 out 27.8 bytes/s in 1872 out 535 maxDrain 10 maxAge 417 ms superseded 379 seqErrors 0 buffered 20 reconnects 2 interpDelay 170 underruns 481 maxFrozen 0 reconciles 24 horizonHolds 42 busyMuted 0
+[Autoplay] shot-18-friends
+[Autoplay] step close
+[Net] state Connected srtt 260 jitter 69 outliers 0 frames/s in 21.3 out 26.6 bytes/s in 1797 out 510 maxDrain 29 maxAge 1299 ms superseded 385 seqErrors 0 buffered 20 reconnects 2 interpDelay 251 underruns 489 maxFrozen 0 reconciles 24 horizonHolds 43 busyMuted 0
+[Quality] draws over budget zone nexus avg 481 budget 150
+[Quality] fps zone nexus avg 25.3 p95 54.8 ms worst 1322.2 ms min 0.8 fps frames 759 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 481 max 546 setpass 76 batches 454 casters 0 anim posed 0.0 skipped 0.0 eval 2.57 ms anim changes/s 2.7 midfade cuts 6 below 30 fps
+[Autoplay] shot-19-guild
+[Net] state Connected srtt 249 jitter 51 outliers 0 frames/s in 21.6 out 27.6 bytes/s in 1776 out 526 maxDrain 14 maxAge 692 ms superseded 388 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 507 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Net] state Connected srtt 243 jitter 53 outliers 0 frames/s in 21.6 out 29.7 bytes/s in 1824 out 573 maxDrain 12 maxAge 480 ms superseded 391 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 544 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 237 jitter 47 outliers 0 frames/s in 20.8 out 26.5 bytes/s in 1728 out 505 maxDrain 12 maxAge 630 ms superseded 398 seqErrors 0 buffered 20 reconnects 2 interpDelay 300 underruns 634 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-20-mail
+[Quality] draws over budget zone nexus avg 455 budget 150
+[Quality] fps zone nexus avg 25.1 p95 45.8 ms worst 714.4 ms min 1.4 fps frames 754 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 455 max 481 setpass 74 batches 432 casters 0 anim posed 0.0 skipped 0.0 eval 2.46 ms anim changes/s 2.5 midfade cuts 3 below 30 fps
+[Autoplay] step close
+[Net] state Connected srtt 210 jitter 28 outliers 0 frames/s in 21.5 out 28.3 bytes/s in 1803 out 543 maxDrain 11 maxAge 445 ms superseded 400 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 783 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-21-news
+[Autoplay] step close
+[Net] state Connected srtt 209 jitter 39 outliers 0 frames/s in 21.2 out 27.9 bytes/s in 1779 out 535 maxDrain 13 maxAge 511 ms superseded 411 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 789 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-22-whatsnew
+[Net] state Connected srtt 201 jitter 38 outliers 0 frames/s in 21.5 out 28.2 bytes/s in 1798 out 540 maxDrain 12 maxAge 498 ms superseded 414 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 792 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 451 budget 150
+[Quality] fps zone nexus avg 26.3 p95 51.8 ms worst 520.8 ms min 1.9 fps frames 789 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 451 max 502 setpass 75 batches 429 casters 0 anim posed 0.0 skipped 0.0 eval 2.43 ms anim changes/s 2.8 midfade cuts 11 below 30 fps
+[Autoplay] step close
+[Autoplay] step shop
+[Net] state Connected srtt 193 jitter 22 outliers 0 frames/s in 22.1 out 28.0 bytes/s in 1859 out 537 maxDrain 10 maxAge 410 ms superseded 417 seqErrors 0 buffered 40 reconnects 2 interpDelay 180 underruns 793 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-23-shop
+[Autoplay] step buy
+[Net] state Connected srtt 208 jitter 26 outliers 0 frames/s in 22.0 out 26.4 bytes/s in 1853 out 506 maxDrain 14 maxAge 513 ms superseded 423 seqErrors 0 buffered 0 reconnects 2 interpDelay 160 underruns 793 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-24-confirm-dialog
+[Autoplay] step close
+[Net] state Connected srtt 216 jitter 22 outliers 0 frames/s in 21.7 out 29.0 bytes/s in 1827 out 557 maxDrain 9 maxAge 426 ms superseded 425 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 796 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 451 budget 150
+[Quality] fps zone nexus avg 25.3 p95 54.4 ms worst 490.7 ms min 2.0 fps frames 758 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 451 max 538 setpass 73 batches 428 casters 0 anim posed 0.0 skipped 0.0 eval 2.51 ms anim changes/s 2.8 midfade cuts 8 below 30 fps
+[Autoplay] shot-25-auction
+[Net] state Connected srtt 256 jitter 82 outliers 0 frames/s in 20.9 out 25.6 bytes/s in 1742 out 488 maxDrain 13 maxAge 597 ms superseded 429 seqErrors 0 buffered 72 reconnects 2 interpDelay 278 underruns 811 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Net] state Connected srtt 202 jitter 32 outliers 0 frames/s in 22.1 out 29.4 bytes/s in 1858 out 566 maxDrain 4 maxAge 131 ms superseded 431 seqErrors 0 buffered 20 reconnects 2 interpDelay 280 underruns 830 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Autoplay] shot-26-companion
+[Net] state Connected srtt 212 jitter 17 outliers 0 frames/s in 21.5 out 25.3 bytes/s in 1792 out 481 maxDrain 13 maxAge 472 ms superseded 435 seqErrors 0 buffered 0 reconnects 2 interpDelay 260 underruns 830 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 457 budget 150
+[Quality] fps zone nexus avg 24.1 p95 61.4 ms worst 617.3 ms min 1.6 fps frames 723 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 457 max 495 setpass 74 batches 434 casters 0 anim posed 0.0 skipped 0.0 eval 2.52 ms anim changes/s 2.7 midfade cuts 8 below 30 fps
+[Autoplay] step close
+[Net] state Connected srtt 200 jitter 18 outliers 0 frames/s in 21.4 out 30.1 bytes/s in 1789 out 579 maxDrain 3 maxAge 60 ms superseded 437 seqErrors 0 buffered 30 reconnects 2 interpDelay 200 underruns 869 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-27-season
+[Net] state Connected srtt 195 jitter 14 outliers 0 frames/s in 24.4 out 26.5 bytes/s in 1929 out 503 maxDrain 21 maxAge 590 ms superseded 439 seqErrors 0 buffered 30 reconnects 2 interpDelay 180 underruns 880 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 210 jitter 40 outliers 0 frames/s in 21.7 out 28.5 bytes/s in 1840 out 549 maxDrain 5 maxAge 65 ms superseded 441 seqErrors 0 buffered 0 reconnects 2 interpDelay 180 underruns 881 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 457 budget 150
+[Quality] fps zone nexus avg 25.8 p95 56.6 ms worst 608.6 ms min 1.6 fps frames 776 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 457 max 493 setpass 75 batches 436 casters 0 anim posed 0.0 skipped 0.0 eval 2.64 ms anim changes/s 2.6 midfade cuts 8 below 30 fps
+[Autoplay] shot-28-abyss
+[Net] state Connected srtt 203 jitter 26 outliers 0 frames/s in 22.2 out 26.2 bytes/s in 1853 out 498 maxDrain 15 maxAge 721 ms superseded 446 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 882 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 198 jitter 24 outliers 0 frames/s in 22.3 out 30.2 bytes/s in 1886 out 582 maxDrain 5 maxAge 188 ms superseded 448 seqErrors 0 buffered 40 reconnects 2 interpDelay 160 underruns 882 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-29-bounty
+[Net] state Connected srtt 236 jitter 65 outliers 0 frames/s in 21.6 out 26.5 bytes/s in 1824 out 508 maxDrain 11 maxAge 437 ms superseded 451 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 934 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 457 budget 150
+[Quality] fps zone nexus avg 25.6 p95 54.6 ms worst 757.0 ms min 1.3 fps frames 767 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 457 max 519 setpass 74 batches 434 casters 0 anim posed 0.0 skipped 0.0 eval 2.57 ms anim changes/s 2.9 midfade cuts 8 below 30 fps
+[Autoplay] step close
+[Net] state Connected srtt 235 jitter 60 outliers 0 frames/s in 21.6 out 28.6 bytes/s in 1817 out 549 maxDrain 7 maxAge 343 ms superseded 453 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 994 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-30-party-finder
+[Net] state Connected srtt 206 jitter 27 outliers 0 frames/s in 22.3 out 26.0 bytes/s in 1873 out 495 maxDrain 12 maxAge 509 ms superseded 455 seqErrors 0 buffered 20 reconnects 2 interpDelay 170 underruns 994 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 196 jitter 16 outliers 0 frames/s in 22.7 out 26.4 bytes/s in 1894 out 502 maxDrain 12 maxAge 525 ms superseded 459 seqErrors 0 buffered 20 reconnects 2 interpDelay 150 underruns 994 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 452 budget 150
+[Quality] fps zone nexus avg 23.7 p95 60.8 ms worst 681.6 ms min 1.5 fps frames 728 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 452 max 525 setpass 74 batches 430 casters 0 anim posed 0.0 skipped 0.0 eval 2.63 ms anim changes/s 2.7 midfade cuts 7 below 30 fps
+[Autoplay] shot-31-language
+[Net] state Connected srtt 192 jitter 16 outliers 0 frames/s in 22.3 out 26.5 bytes/s in 1876 out 506 maxDrain 14 maxAge 670 ms superseded 461 seqErrors 0 buffered 20 reconnects 2 interpDelay 150 underruns 995 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] step close
+[Net] state Connected srtt 186 jitter 21 outliers 0 frames/s in 22.0 out 29.9 bytes/s in 1867 out 575 maxDrain 7 maxAge 356 ms superseded 463 seqErrors 0 buffered 81 reconnects 2 interpDelay 130 underruns 995 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-32-options
+[Net] state Connected srtt 186 jitter 18 outliers 0 frames/s in 22.1 out 26.3 bytes/s in 1851 out 503 maxDrain 11 maxAge 484 ms superseded 467 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1005 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 450 budget 150
+[Quality] fps zone nexus avg 25.2 p95 55.2 ms worst 615.5 ms min 1.6 fps frames 757 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 450 max 486 setpass 75 batches 430 casters 0 anim posed 0.0 skipped 0.0 eval 2.53 ms anim changes/s 2.5 midfade cuts 6 below 30 fps
+[Autoplay] step close
+[Net] state Connected srtt 195 jitter 20 outliers 0 frames/s in 21.9 out 25.3 bytes/s in 1833 out 481 maxDrain 15 maxAge 626 ms superseded 481 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1012 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-33-options
+[Net] state Connected srtt 198 jitter 17 outliers 0 frames/s in 22.2 out 28.7 bytes/s in 1879 out 554 maxDrain 14 maxAge 552 ms superseded 483 seqErrors 0 buffered 20 reconnects 2 interpDelay 170 underruns 1012 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-34-options-graphics
+[Net] state Connected srtt 195 jitter 13 outliers 0 frames/s in 22.2 out 26.6 bytes/s in 1868 out 510 maxDrain 13 maxAge 543 ms superseded 486 seqErrors 0 buffered 20 reconnects 2 interpDelay 150 underruns 1012 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Quality] draws over budget zone nexus avg 451 budget 150
+[Quality] fps zone nexus avg 24.9 p95 57.0 ms worst 646.4 ms min 1.5 fps frames 753 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 451 max 466 setpass 74 batches 430 casters 0 anim posed 0.0 skipped 0.0 eval 2.58 ms anim changes/s 2.9 midfade cuts 8 below 30 fps
+[Net] state Connected srtt 185 jitter 12 outliers 0 frames/s in 22.1 out 28.2 bytes/s in 1866 out 540 maxDrain 9 maxAge 493 ms superseded 488 seqErrors 0 buffered 0 reconnects 2 interpDelay 130 underruns 1012 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-35-options-audio
+[Net] state Connected srtt 192 jitter 10 outliers 0 frames/s in 22.1 out 29.2 bytes/s in 1860 out 562 maxDrain 13 maxAge 559 ms superseded 492 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1025 maxFrozen 0 reconciles 24 horizonHolds 45 busyMuted 0
+[Autoplay] shot-36-options-accessibility
+[Net] state Connected srtt 235 jitter 58 outliers 0 frames/s in 18.8 out 27.4 bytes/s in 1548 out 524 maxDrain 14 maxAge 562 ms superseded 495 seqErrors 0 buffered 0 reconnects 2 interpDelay 300 underruns 1075 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Quality] draws over budget zone nexus avg 461 budget 150
+[Quality] fps zone nexus avg 25.8 p95 53.6 ms worst 570.8 ms min 1.8 fps frames 776 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 461 max 479 setpass 75 batches 432 casters 0 anim posed 0.0 skipped 0.0 eval 2.62 ms anim changes/s 2.7 midfade cuts 8 below 30 fps
+[Autoplay] shot-37-options-language
+[Net] state Connected srtt 213 jitter 35 outliers 0 frames/s in 22.1 out 27.0 bytes/s in 1858 out 517 maxDrain 12 maxAge 531 ms superseded 499 seqErrors 0 buffered 20 reconnects 2 interpDelay 280 underruns 1092 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Autoplay] shot-38-options-game
+[Net] state Connected srtt 223 jitter 30 outliers 0 frames/s in 22.1 out 26.4 bytes/s in 1866 out 505 maxDrain 13 maxAge 528 ms superseded 504 seqErrors 0 buffered 20 reconnects 2 interpDelay 260 underruns 1092 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Net] state Connected srtt 205 jitter 21 outliers 0 frames/s in 22.0 out 28.1 bytes/s in 1851 out 540 maxDrain 10 maxAge 422 ms superseded 513 seqErrors 0 buffered 20 reconnects 2 interpDelay 240 underruns 1092 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Quality] draws over budget zone nexus avg 473 budget 150
+[Quality] fps zone nexus avg 25.2 p95 56.8 ms worst 533.2 ms min 1.9 fps frames 758 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 473 max 493 setpass 74 batches 433 casters 0 anim posed 0.0 skipped 0.0 eval 2.62 ms anim changes/s 2.8 midfade cuts 8 below 30 fps
+[Autoplay] shot-39-options-help
+[Autoplay] step close
+[Net] state Connected srtt 207 jitter 23 outliers 0 frames/s in 21.3 out 27.9 bytes/s in 1786 out 534 maxDrain 10 maxAge 490 ms superseded 515 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 1098 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Autoplay] step map
+[Autoplay] shot-40-map
+[Net] state Connected srtt 213 jitter 14 outliers 0 frames/s in 21.5 out 28.1 bytes/s in 1815 out 540 maxDrain 13 maxAge 584 ms superseded 518 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1169 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Autoplay] step close
+[Autoplay] step dismiss
+[Net] state Connected srtt 196 jitter 19 outliers 0 frames/s in 21.5 out 27.8 bytes/s in 1800 out 534 maxDrain 3 maxAge 105 ms superseded 520 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1213 maxFrozen 0 reconciles 24 horizonHolds 46 busyMuted 0
+[Quality] draws over budget zone nexus avg 454 budget 150
+[Quality] fps zone nexus avg 25.3 p95 57.1 ms worst 615.1 ms min 1.6 fps frames 758 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 454 max 507 setpass 75 batches 428 casters 0 anim posed 0.0 skipped 0.0 eval 2.59 ms anim changes/s 2.7 midfade cuts 6 below 30 fps
+[Autoplay] step travel:wueste
+[Autoplay] fight
+[Net] state Connected srtt 188 jitter 8 outliers 0 frames/s in 22.6 out 28.2 bytes/s in 1847 out 541 maxDrain 4 maxAge 93 ms superseded 522 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 1217 maxFrozen 0 reconciles 27 horizonHolds 46 busyMuted 0
+[Net] state Connected srtt 194 jitter 19 outliers 0 frames/s in 22.0 out 30.0 bytes/s in 1863 out 583 maxDrain 5 maxAge 172 ms superseded 525 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1220 maxFrozen 0 reconciles 33 horizonHolds 46 busyMuted 0
+[Net] state Connected srtt 203 jitter 25 outliers 0 frames/s in 21.8 out 30.5 bytes/s in 1841 out 595 maxDrain 3 maxAge 61 ms superseded 527 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1222 maxFrozen 0 reconciles 38 horizonHolds 46 busyMuted 0
+[Quality] draws over budget zone nexus avg 369 budget 150
+[Quality] fps zone nexus avg 27.9 p95 50.1 ms worst 183.2 ms min 5.5 fps frames 837 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 369 max 454 setpass 63 batches 350 casters 0 anim posed 0.0 skipped 0.0 eval 2.45 ms anim changes/s 3.4 midfade cuts 9 below 30 fps
+[Autoplay] shot-41-fight-1
+[Net] state Connected srtt 198 jitter 14 outliers 0 frames/s in 21.6 out 27.6 bytes/s in 1821 out 529 maxDrain 21 maxAge 929 ms superseded 529 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 1230 maxFrozen 0 reconciles 39 horizonHolds 47 busyMuted 0
+[Net] state Connected srtt 186 jitter 15 outliers 0 frames/s in 22.1 out 30.9 bytes/s in 1865 out 598 maxDrain 3 maxAge 56 ms superseded 531 seqErrors 0 buffered 28 reconnects 2 interpDelay 170 underruns 1230 maxFrozen 0 reconciles 39 horizonHolds 47 busyMuted 0
+[Autoplay] shot-42-fight-2
+[Net] state Connected srtt 205 jitter 38 outliers 0 frames/s in 22.0 out 28.6 bytes/s in 1856 out 554 maxDrain 12 maxAge 527 ms superseded 533 seqErrors 0 buffered 20 reconnects 2 interpDelay 150 underruns 1230 maxFrozen 0 reconciles 43 horizonHolds 47 busyMuted 0
+[Quality] draws over budget zone nexus avg 380 budget 150
+[Quality] fps zone nexus avg 27.0 p95 50.6 ms worst 963.3 ms min 1.0 fps frames 810 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 380 max 398 setpass 63 batches 360 casters 0 anim posed 0.0 skipped 0.0 eval 2.32 ms anim changes/s 2.6 midfade cuts 8 below 30 fps
+[Net] state Connected srtt 189 jitter 20 outliers 0 frames/s in 22.2 out 30.3 bytes/s in 1872 out 586 maxDrain 3 maxAge 116 ms superseded 535 seqErrors 0 buffered 20 reconnects 2 interpDelay 130 underruns 1230 maxFrozen 0 reconciles 45 horizonHolds 47 busyMuted 0
+[Net] state Connected srtt 186 jitter 21 outliers 0 frames/s in 22.0 out 30.6 bytes/s in 1860 out 594 maxDrain 3 maxAge 74 ms superseded 537 seqErrors 0 buffered 20 reconnects 2 interpDelay 150 underruns 1232 maxFrozen 0 reconciles 49 horizonHolds 47 busyMuted 0
+[Autoplay] shot-43-fight-3
+[Net] state Connected srtt 185 jitter 22 outliers 0 frames/s in 22.4 out 24.4 bytes/s in 1891 out 467 maxDrain 16 maxAge 620 ms superseded 542 seqErrors 0 buffered 20 reconnects 2 interpDelay 130 underruns 1232 maxFrozen 0 reconciles 51 horizonHolds 47 busyMuted 0
+[Quality] draws over budget zone nexus avg 391 budget 150
+[Quality] fps zone nexus avg 26.3 p95 51.3 ms worst 623.6 ms min 1.6 fps frames 788 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 391 max 410 setpass 64 batches 372 casters 0 anim posed 0.0 skipped 0.0 eval 2.42 ms anim changes/s 2.9 midfade cuts 10 below 30 fps
+[Net] state Connected srtt 183 jitter 13 outliers 0 frames/s in 22.3 out 28.9 bytes/s in 1879 out 558 maxDrain 9 maxAge 351 ms superseded 544 seqErrors 0 buffered 20 reconnects 2 interpDelay 112 underruns 1232 maxFrozen 0 reconciles 56 horizonHolds 47 busyMuted 0
+[Autoplay] shot-44-fight-4
+[Net] state Connected srtt 192 jitter 23 outliers 0 frames/s in 21.8 out 28.2 bytes/s in 1843 out 545 maxDrain 13 maxAge 551 ms superseded 547 seqErrors 0 buffered 0 reconnects 2 interpDelay 190 underruns 1263 maxFrozen 0 reconciles 60 horizonHolds 47 busyMuted 0
+[Autoplay] shot-45-chat-age
+[Net] state Connected srtt 320 jitter 180 outliers 0 frames/s in 21.4 out 28.1 bytes/s in 1794 out 538 maxDrain 13 maxAge 530 ms superseded 550 seqErrors 0 buffered 289 reconnects 2 interpDelay 218 underruns 1275 maxFrozen 0 reconciles 60 horizonHolds 47 busyMuted 0
+[Quality] draws over budget zone nexus avg 394 budget 150
+[Quality] fps zone nexus avg 26.2 p95 53.7 ms worst 583.4 ms min 1.7 fps frames 788 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 394 max 410 setpass 63 batches 373 casters 0 anim posed 0.0 skipped 0.0 eval 2.40 ms anim changes/s 3.4 midfade cuts 20 below 30 fps
+[Autoplay] age OK
+[Net] state Connected srtt 315 jitter 161 outliers 0 frames/s in 23.4 out 30.3 bytes/s in 1961 out 584 maxDrain 13 maxAge 245 ms superseded 555 seqErrors 0 buffered 20 reconnects 2 interpDelay 280 underruns 1283 maxFrozen 0 reconciles 60 horizonHolds 49 busyMuted 0
+[Autoplay] shot-46-chat-reminder
+[Net] state Connected srtt 246 jitter 56 outliers 0 frames/s in 22.1 out 27.2 bytes/s in 1865 out 520 maxDrain 10 maxAge 441 ms superseded 561 seqErrors 0 buffered 29 reconnects 2 interpDelay 270 underruns 1283 maxFrozen 0 reconciles 60 horizonHolds 49 busyMuted 0
+[Autoplay] age no sheet
+[Net] state Connected srtt 203 jitter 32 outliers 0 frames/s in 21.8 out 30.4 bytes/s in 1843 out 588 maxDrain 3 maxAge 73 ms superseded 563 seqErrors 0 buffered 20 reconnects 2 interpDelay 250 underruns 1283 maxFrozen 0 reconciles 60 horizonHolds 49 busyMuted 0
+[Autoplay] shot-47-chat
+[Quality] draws over budget zone nexus avg 388 budget 150
+[Quality] fps zone nexus avg 27.1 p95 45.3 ms worst 479.5 ms min 2.1 fps frames 813 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 388 max 408 setpass 64 batches 367 casters 0 anim posed 0.0 skipped 0.0 eval 2.26 ms anim changes/s 2.5 midfade cuts 6 below 30 fps
+[Autoplay] done
