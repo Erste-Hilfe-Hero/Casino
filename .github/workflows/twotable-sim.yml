@@ -93,7 +93,10 @@ jobs:
           ')
           UD=${UDID%% *}; echo "device ${UDID#* } $UD" | tee -a "$S"
           [ -n "$UD" ] || { echo "FAIL no iPhone simulator" | tee -a "$S"; exit 0; }
-          xcrun simctl boot "$UD"; xcrun simctl bootstatus "$UD" -b >/dev/null
+          set +e
+          xcrun simctl boot "$UD" > "$OUT/boot.log" 2>&1; echo "boot rc=$?" | tee -a "$S"
+          xcrun simctl bootstatus "$UD" -b >> "$OUT/boot.log" 2>&1; echo "bootstatus rc=$?" | tee -a "$S"
+          tail -5 "$OUT/boot.log"
           xcrun simctl status_bar "$UD" override --time 9:41 --batteryState charged --batteryLevel 100 || true
           xcrun simctl install "$UD" "$APP" || { echo "FAIL install" | tee -a "$S"; exit 0; }
           alive() { xcrun simctl spawn "$UD" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; }
