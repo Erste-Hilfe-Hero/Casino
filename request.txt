@@ -1,2 +1,2 @@
-https://tuning-staying-landing-president.trycloudflare.com
-# lifekit export run 235, build 2335 (2026-11-21)
+https://plate-asylum-chance-neil.trycloudflare.com
+# lifekit export run 252, build 2352 (2026-11-21)
