@@ -105,7 +105,9 @@ jobs:
             xcrun simctl launch --console-pty "$UD" "$BID" -ttdemo "$SC" > "$OUT/app-$SC.log" 2>&1 & LP=$!
             sleep 15
             xcrun simctl io "$UD" screenshot "$OUT/raw-$SC.png" >/dev/null 2>&1 || echo "FAIL scene $SC no screenshot" >> "$S"
-            if alive; then echo "scene $SC process alive" >> "$S"; else echo "FAIL scene $SC process gone (crash)" >> "$S"; fi
+            PID=$(grep -oE "$BID: [0-9]+" "$OUT/app-$SC.log" | head -1 | awk '{print $2}')
+            if alive || { [ -n "$PID" ] && kill -0 "$PID" 2>/dev/null; }; then echo "scene $SC process alive (pid ${PID:-?})" >> "$S"
+            else echo "FAIL scene $SC process gone (crash) pid ${PID:-?}" >> "$S"; xcrun simctl spawn "$UD" launchctl list 2>&1 | grep -i "twotable\|UIKitApplication" >> "$OUT/launchctl-$SC.log"; fi
             kill $LP 2>/dev/null || true
             echo "scene $SC: $(grep -c . "$OUT/app-$SC.log") log lines, '[TT] start' lines: $(grep -c '\[TT\] start' "$OUT/app-$SC.log")" >> "$S"
           done
