@@ -1,0 +1,1006 @@
+[Quality] detect ram 7168 gpu 'Apple iOS simulator GPU' api Metal shader 45 screen 2752x2064 score 110 -> Low
+[Quality] thermal source ios
+[ui] CJK fallback fonts 5 for en
+[ui] ios panel by height 560 dp model iPad17,4 dpi 264 screen 2752x2064
+Nyrathen.World.CharacterPreview:Awake()
+Nyrathen.World.CharacterPreview:Awake()
+[render] CharacterPreview target msaa 4 pipeline Nyrathen-URP tier lowDetail False
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage root mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_4 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_0 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[Boot] awake 13057 ms, since start 49227 ms
+[Life] Boot -> Login session Idle
+[Boot] first frame 13946 ms after awake, since start 50115 ms
+[Load] music mu_pk_menu_theme long clips loaded 0
+[Quality] menu cap 30
+[ui] safe area l 0 t 0 r 0 b 50 px cutouts 0 dpi 264 orientation LandscapeLeft
+[Autoplay] login
+[Life] sleep system state Login idle 49 s
+[ui] inset lean orb 0 column 0 top-right 0 map 0 cutouts 0
+HudArc: w 747 h 560 n 6 scale 1.00 pivot 653,484 R 312 button 69 passed True touch True attack 100 (17.9%) skill 69 (12.3%) ult 78 (14.0%) dodge 59 (10.6%) potion 59 (10.6%) reach 344 row shift 0 potion at 648,272 under map
+HudArc cover 19.8%
+[Autoplay] no button a11y-continue
+[Autoplay] shot-01-login
+[Autoplay] shot-02-sign-in
+[Life] Login -> CharacterList session Idle
+[Load] music mu_pk_char_select long clips loaded 1
+[Autoplay] list
+[Autoplay] cover a11y-continue
+[Autoplay] shot-03-character-list
+[Autoplay] no ack ack-shot-03-character-list
+[Life] CharacterList -> Loading session Idle
+[Life] sleep never state Loading idle 192 s
+[Net] state Connecting srtt 0 jitter 0 outliers 0 frames/s in 0.0 out 0.1 bytes/s in 0 out 4 maxDrain 0 maxAge 0 ms superseded 0 seqErrors 0 buffered 54 reconnects 0 interpDelay 100 underruns 0 maxFrozen 0 reconciles 0 horizonHolds 0 busyMuted 0
+[Quality] cap restored 60 state Loading
+[Quality] texture formats astc False etc2 True dxt False
+[Net] bound Connected gap 0 ms resync
+Nyrathen.Game.GameLoop:EnterZone(UInt16, UInt32)
+Nyrathen.Game.GameLoop:EnterZone(UInt16, UInt32)
+HudArc cover 22.6%
+[Net] connect open 3092 seed 3210 reply 3428 keyframe 4546 ms type NEW
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+HudArc: w 747 h 560 n 8 scale 1.00 pivot 653,484 R 312 button 69 passed True touch True attack 100 (17.9%) skill 69 (12.3%) ult 78 (14.0%) dodge 59 (10.6%) potion 59 (10.6%) reach 344 row shift 0 potion at 648,272 under map
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+[Load] world entry 30 rpcs, last answer 1118 ms
+[Net] drain 123 frames superseded 1 in 1708.2 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Load] gear Magier 12 items 263.3 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] snapshot starved True
+[Net] drain 73 frames superseded 40 in 207.3 ms
+[Net] socket closed code 1000  phase Bound state Connected
+[Load] gear Magier 12 items 94.0 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Load] music mu_pk_event_theme long clips loaded 1
+[Net] unsent LadderPage
+[Net] state Reconnecting srtt 1199 jitter 580 outliers 0 frames/s in 19.7 out 4.6 bytes/s in 1183 out 63 maxDrain 123 maxAge 7186 ms superseded 41 seqErrors 0 buffered 0 reconnects 1 interpDelay 137 underruns 2 maxFrozen 0 reconciles 0 horizonHolds 1 busyMuted 0
+Nyrathen.Game.ZoneView:Build()
+ZoneView: key 0.270 ambient eq 0.139,0.121,0.102 env ambient eq.g 1.458 light scale 0.354 zone env 1.00 ambient weight 0.50 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Build()
+ZoneView: atlas CopyTexture support=Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture api=Metal
+Nyrathen.Game.ZoneView:Atlas(Texture2D[], Boolean, Int32)
+Nyrathen.Game.ZoneView:EnsureArtSet(String)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: atlas CopyTexture support=Basic, Copy3D, DifferentTypes, TextureToRT, RTToTexture api=Metal
+Nyrathen.Game.ZoneView:Atlas(Texture2D[], Boolean, Int32)
+Nyrathen.Game.ZoneView:EnsureArtSet(String)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: 7 trail cells, 0 leaf litter cells, 108 wet bank cells (wet 1) in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetSplat(ZoneLook, ZoneInfo)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: ground layers 264/3415/2192/467 cells, 190 crack and 0 soot decal cells in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetSplat(ZoneLook, ZoneInfo)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: 0 flowing water cells in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetShore(CellLook[], Int32, Int32)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: banner cloth of 'Art/Models/Props/banner_pole.obj' sways (Optik D16).
+Nyrathen.Game.ZoneView:PropMesh(String, Boolean)
+Nyrathen.Game.ZoneView:ScatterInto(Dictionary`2, ZoneLook, Part)
+Nyrathen.Game.ZoneView:Build()
+ZoneView: 30 scatter chunks cast shadows (tier High, Haenger-Plan H017)
+Nyrathen.Game.ZoneView:BakeScatter(Dictionary`2)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+ZoneView: light bake 192x160 in nexus: 14 torch pools, 0 camp fire pools, 3 glow prop pools, 1 scattered glow pools, 0 lava rim pools, glow colour #FF8A3A, torch light 1.53 glow light 0.77 (tier High).
+Nyrathen.Game.ZoneView:BakeLight(Int32, Int32, List`1, Int32, List`1, List`1, Int32, Int32, Color)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+ZoneView: 35 props, 541 scatter pieces in 30 chunk meshes, 120 chunk renderers; 28 materials off the zone shaders: Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Smoke:Nyr/VFX, Ambient_Fountain:Nyr/VFX.
+Nyrathen.Game.ZoneView:AuditProps(Int32)
+Nyrathen.Game.ZoneView:Build()
+[Load] zone view build nexus tier High: setup 216 ms artset 2111 ms look 119 ms splat 88 ms shore 9 ms cells 108 ms cliffs 149 ms props 817 ms chunks 7 ms scatter 95 ms glints 28 ms light 15 ms finish 28 ms
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:Build()
+[Load] zone nexus handler ZoneView.Build 3833 ms over 50 ms
+[Net] socket closed code 1000  phase AwaitSeed state Reconnecting
+[Load] slow nexus: missing zoneBuilt
+Nyrathen.Game.GameLoop:Update()
+[Load] zone nexus handler CityView.Build 672 ms over 50 ms
+[Load] zone nexus handler AmbientLife.Build 237 ms over 50 ms
+[Load] zone nexus handler TownCrowd.Build 2904 ms over 50 ms
+[Net] reconnect tries 2 ok 1 gap 12379 ms
+[Net] bound ReconnectSucceeded gap 12379 ms resync
+[Load] gear Magier 12 items 23.8 ms
+[Load] gear Magier 12 items 8.4 ms
+[Load] gear Magier 12 items 9.8 ms
+[Load] gear Magier 12 items 9.0 ms
+[Load] gear Magier 12 items 8.9 ms
+[Load] gear Magier 12 items 12.4 ms
+[Net] connect open 3246 seed 4307 reply 8983 keyframe 8983 ms type RE
+[Net] drain 39 frames superseded 1 in 1889.2 ms
+[Net] state Connected srtt 1199 jitter 580 outliers 0 frames/s in 2.7 out 1.1 bytes/s in 101 out 26 maxDrain 39 maxAge 4421 ms superseded 42 seqErrors 0 buffered 0 reconnects 1 interpDelay 100 underruns 2 maxFrozen 0 reconciles 0 horizonHolds 2 busyMuted 0
+[Net] socket closed code 1000  phase Bound state Connected
+[Net] 5 rpc lost with the socket, answered ERROR
+[ui] hud.layout read failed (Lost)
+[Net] unsent HudLayoutExt
+[Load] stuck nexus: missing zoneBuilt
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Load] ready nav ashen-wilds parse 0.1 ms
+[Quality] zone load nexus 24229 ms (fetch 2573 ms, build 21656 ms) memory 241 MB reserved 418 MB managed 59 MB over 3000 ms
+Nyrathen.Game.GameLoop:LogLoad(String, Single, Single, QualityTier)
+[Load] zone build stages nexus: WorldView.HeroArrive 2 ms <>c__DisplayClass337_0.<Awake>b__6 2 ms HeroNameplates.ShowSelf 2 ms <>c__DisplayClass337_0.<Awake>b__528 2 ms <>c__DisplayClass337_26.<Awake>b__532 2 ms <>c__DisplayClass337_0.<Awake>b__683 5 ms ZoneView.Build 3833 ms ZoneBanner.OnZone 3 ms CityView.Build 672 ms AmbientLife.Build 237 ms WorldMomentsView.<Start>b__47_0 27 ms TownCrowd.Build 2904 ms FieldNpcView.Build 1 ms
+[Load] zone build frames nexus: 13027 ms in 19 frames between handlers, longest 5582 ms after WorldView.HeroArrive
+[Load] steps files 3/3 handlers 19/19 thrown 0 hero 1/1 share 1.00
+[Load] unload skipped reserved 418 MB under 60% of 2200 MB (High)
+[Load] world ready nexus: zone built 0 ms before, ms=220907
+Nyrathen.Game.GameLoop:TryWorldReady()
+Nyrathen.Game.GameLoop:TryWorldReady()
+[Life] Loading -> InWorld session Reconnecting
+Nyrathen.Game.GameLoop:TryWorldReady()
+[Quality] idle cap 30
+[Autoplay] world
+[Load] ready nav gruft parse 0.0 ms
+[Load] ready nav ashen-wilds parse 0.0 ms
+[Load] ready nav gezeitenhoehle parse 0.1 ms
+[Load] ready nav gruft parse 0.0 ms
+[Load] ready nav versunkene-kanaele parse 0.1 ms
+[Load] ready nav gezeitenhoehle parse 0.1 ms
+[Load] ready nav sandgruft parse 0.0 ms
+[Load] ready nav versunkene-kanaele parse 0.0 ms
+[Load] ready nav burg-schwarzwacht parse 0.0 ms
+[Load] ready nav sandgruft parse 0.0 ms
+[Net] reconnect tries 1 ok 1 gap 2718 ms
+[Net] bound ReconnectSucceeded gap 2718 ms keeps interpolation and prediction
+[Load] gear Magier 12 items 17.6 ms
+[Load] gear Magier 12 items 8.5 ms
+[Load] gear Magier 12 items 11.2 ms
+[Load] gear Magier 12 items 18.5 ms
+[Load] gear Magier 12 items 9.0 ms
+[Load] ready nav eisgruft parse 0.0 ms
+[Load] ready nav burg-schwarzwacht parse 0.0 ms
+[Load] gear Magier 12 items 16.0 ms
+[Load] gear Magier 12 items 10.7 ms
+[Load] gear Magier 12 items 10.5 ms
+[Net] connect open 824 seed 991 reply 1195 keyframe 1996 ms type RE
+[Load] ready nav eisgruft parse 0.0 ms
+[Load] ready nav glutgruft parse 0.0 ms
+[Load] ready nav eisgruft parse 0.0 ms
+[Net] snapshot starved False
+[Load] ready nav glutgruft parse 0.0 ms
+[Load] ready nav quiekgruft parse 0.0 ms
+[Load] ready nav glutgruft parse 0.0 ms
+[Load] world entry 22 rpcs, last answer 801 ms
+[Load] ready nav quiekgruft parse 0.0 ms
+[Load] ready nav quiekgruft parse 0.0 ms
+[Net] drain 8 frames superseded 1 in 0.3 ms
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 530 jitter 517 outliers 0 frames/s in 23.5 out 17.7 bytes/s in 1603 out 332 maxDrain 36 maxAge 2016 ms superseded 53 seqErrors 0 buffered 20 reconnects 2 interpDelay 160 underruns 6 maxFrozen 0 reconciles 0 horizonHolds 4 busyMuted 0
+[Net] high latency srtt=515 ms jitter=416 ms
+[Autoplay] shot-04-world-start
+[Net] snapshot starved True
+[Net] drain 27 frames superseded 21 in 13.1 ms
+[Net] snapshot starved False
+[Net] state Connected srtt 390 jitter 312 outliers 0 frames/s in 20.7 out 18.6 bytes/s in 1739 out 350 maxDrain 27 maxAge 1159 ms superseded 76 seqErrors 0 buffered 80 reconnects 2 interpDelay 200 underruns 56 maxFrozen 0 reconciles 3 horizonHolds 10 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+Nyrathen.Game.GameLoop:Update()
+[Net] snapshot starved True
+[Net] drain 36 frames superseded 22 in 0.4 ms
+[Net] snapshot starved False
+Nyrathen.Game.GameLoop:Update()
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] drain 49 frames superseded 41 in 0.3 ms
+[Net] snapshot starved False
+[Net] state Connected srtt 590 jitter 332 outliers 0 frames/s in 23.3 out 19.7 bytes/s in 1954 out 370 maxDrain 49 maxAge 555 ms superseded 143 seqErrors 0 buffered 0 reconnects 2 interpDelay 300 underruns 75 maxFrozen 0 reconciles 3 horizonHolds 14 busyMuted 0
+[Quality] draws over budget zone nexus avg 1111 budget 400
+[Quality] fps zone nexus avg 15.2 p95 105.2 ms worst 1166.9 ms min 0.9 fps frames 458 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1111 max 1190 setpass 112 batches 1085 casters 590 anim posed 0.0 skipped 0.0 eval 3.44 ms anim changes/s 5.8 midfade cuts 19 after load below 30 fps
+[Net] drain 10 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 278 jitter 174 outliers 0 frames/s in 21.9 out 20.4 bytes/s in 1822 out 383 maxDrain 10 maxAge 431 ms superseded 145 seqErrors 0 buffered 20 reconnects 2 interpDelay 290 underruns 78 maxFrozen 0 reconciles 3 horizonHolds 14 busyMuted 0
+[Quality] T3 measured demotion to Mid
+[Net] drain 30 frames superseded 24 in 5.1 ms
+[Net] drain 6 frames superseded 0 in 0.1 ms
+[Net] state Connected srtt 196 jitter 74 outliers 0 frames/s in 22.1 out 16.7 bytes/s in 1881 out 315 maxDrain 30 maxAge 1375 ms superseded 171 seqErrors 0 buffered 20 reconnects 2 interpDelay 270 underruns 78 maxFrozen 0 reconciles 3 horizonHolds 15 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 155 jitter 27 outliers 0 frames/s in 22.3 out 22.5 bytes/s in 1879 out 427 maxDrain 10 maxAge 434 ms superseded 174 seqErrors 0 buffered 100 reconnects 2 interpDelay 250 underruns 78 maxFrozen 0 reconciles 3 horizonHolds 15 busyMuted 0
+[Quality] draws over budget zone nexus avg 1157 budget 250
+[Quality] fps zone nexus avg 17.3 p95 84.0 ms worst 1349.9 ms min 0.7 fps frames 519 cap 30 scale 0.85 shadows 1024 vfx 0.60 draws avg 1157 max 1177 setpass 112 batches 1132 casters 632 anim posed 0.0 skipped 0.0 eval 3.55 ms anim changes/s 4.8 midfade cuts 18 below 30 fps
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Autoplay] step dismiss
+[Autoplay] step dismiss
+[Net] state Connected srtt 144 jitter 34 outliers 0 frames/s in 22.5 out 24.2 bytes/s in 1876 out 460 maxDrain 5 maxAge 79 ms superseded 176 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 79 maxFrozen 0 reconciles 3 horizonHolds 15 busyMuted 0
+[Autoplay] step dismiss
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] shot-05-town
+[Net] state Connected srtt 147 jitter 24 outliers 0 frames/s in 22.2 out 20.7 bytes/s in 1880 out 392 maxDrain 25 maxAge 986 ms superseded 197 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 80 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Quality] T3 measured demotion to Low
+Nyrathen.Game.ZoneView:SetWind(Single)
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+[Net] drain 8 frames superseded 0 in 0.8 ms
+[Net] drain 4 frames superseded 0 in 0.7 ms
+[Net] state Connected srtt 143 jitter 20 outliers 0 frames/s in 21.6 out 23.8 bytes/s in 1825 out 455 maxDrain 8 maxAge 348 ms superseded 199 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 84 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Quality] draws over budget zone nexus avg 887 budget 150
+[Quality] fps zone nexus avg 21.1 p95 71.6 ms worst 1050.2 ms min 1.0 fps frames 632 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 887 max 1148 setpass 95 batches 862 casters 375 anim posed 0.0 skipped 0.0 eval 3.30 ms anim changes/s 5.7 midfade cuts 23 below 30 fps
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 139 jitter 16 outliers 0 frames/s in 22.1 out 25.7 bytes/s in 1868 out 491 maxDrain 8 maxAge 377 ms superseded 201 seqErrors 0 buffered 29 reconnects 2 interpDelay 180 underruns 84 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 139 jitter 17 outliers 0 frames/s in 21.9 out 24.4 bytes/s in 1848 out 467 maxDrain 10 maxAge 399 ms superseded 203 seqErrors 0 buffered 60 reconnects 2 interpDelay 190 underruns 86 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 132 jitter 11 outliers 0 frames/s in 22.3 out 23.0 bytes/s in 1885 out 437 maxDrain 13 maxAge 540 ms superseded 205 seqErrors 0 buffered 0 reconnects 2 interpDelay 170 underruns 86 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Quality] draws over budget zone nexus avg 547 budget 150
+[Quality] fps zone nexus avg 22.8 p95 73.5 ms worst 547.7 ms min 1.8 fps frames 686 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 547 max 594 setpass 66 batches 523 casters 0 anim posed 0.0 skipped 0.0 eval 3.30 ms anim changes/s 5.2 midfade cuts 23 below 30 fps
+[Net] drain 5 frames superseded 0 in 10.4 ms
+[Net] state Connected srtt 136 jitter 17 outliers 0 frames/s in 22.4 out 27.0 bytes/s in 1876 out 518 maxDrain 5 maxAge 121 ms superseded 207 seqErrors 0 buffered 40 reconnects 2 interpDelay 170 underruns 87 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Net] drain 9 frames superseded 0 in 0.2 ms
+[Autoplay] no ack ack-shot-05-town
+[Net] snapshot starved True
+[Net] drain 13 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 142 jitter 19 outliers 0 frames/s in 22.3 out 23.5 bytes/s in 1875 out 446 maxDrain 13 maxAge 518 ms superseded 209 seqErrors 0 buffered 72 reconnects 2 interpDelay 150 underruns 87 maxFrozen 0 reconciles 3 horizonHolds 16 busyMuted 0
+[Net] snapshot starved False
+[Autoplay] shot-06-menu
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 143 jitter 18 outliers 0 frames/s in 22.1 out 22.1 bytes/s in 1873 out 419 maxDrain 28 maxAge 1258 ms superseded 215 seqErrors 0 buffered 79 reconnects 2 interpDelay 151 underruns 88 maxFrozen 0 reconciles 3 horizonHolds 17 busyMuted 0
+[Quality] draws over budget zone nexus avg 526 budget 150
+[Quality] fps zone nexus avg 22.7 p95 65.1 ms worst 1264.7 ms min 0.8 fps frames 681 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 526 max 561 setpass 65 batches 494 casters 0 anim posed 0.0 skipped 0.0 eval 3.46 ms anim changes/s 6.2 midfade cuts 29 below 30 fps
+[Net] drain 4 frames superseded 2 in 0.1 ms
+[Net] drain 4 frames superseded 1 in 1.0 ms
+[Net] state Connected srtt 152 jitter 25 outliers 0 frames/s in 22.4 out 24.0 bytes/s in 1882 out 458 maxDrain 4 maxAge 80 ms superseded 218 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 91 maxFrozen 0 reconciles 3 horizonHolds 17 busyMuted 0
+[Net] drain 4 frames superseded 2 in 0.2 ms
+[Autoplay] shot-07-menu-tab-1
+[Net] state Connected srtt 152 jitter 22 outliers 0 frames/s in 22.0 out 22.3 bytes/s in 1867 out 424 maxDrain 22 maxAge 1051 ms superseded 221 seqErrors 0 buffered 91 reconnects 2 interpDelay 170 underruns 91 maxFrozen 0 reconciles 3 horizonHolds 18 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.4 ms
+[Net] drain 5 frames superseded 0 in 0.1 ms
+[Quality] draws over budget zone nexus avg 543 budget 150
+[Quality] fps zone nexus avg 22.1 p95 70.7 ms worst 1066.6 ms min 0.9 fps frames 664 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 543 max 633 setpass 67 batches 504 casters 0 anim posed 0.0 skipped 0.0 eval 3.63 ms anim changes/s 5.4 midfade cuts 28 below 30 fps
+[Net] state Connected srtt 194 jitter 66 outliers 0 frames/s in 21.7 out 23.4 bytes/s in 1830 out 447 maxDrain 5 maxAge 138 ms superseded 223 seqErrors 0 buffered 0 reconnects 2 interpDelay 200 underruns 103 maxFrozen 0 reconciles 3 horizonHolds 18 busyMuted 0
+[Net] drain 10 frames superseded 0 in 0.5 ms
+[Net] state Connected srtt 176 jitter 51 outliers 0 frames/s in 22.4 out 23.3 bytes/s in 1870 out 441 maxDrain 16 maxAge 358 ms superseded 226 seqErrors 0 buffered 40 reconnects 2 interpDelay 202 underruns 108 maxFrozen 0 reconciles 3 horizonHolds 18 busyMuted 0
+[Net] drain 9 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 157 jitter 31 outliers 0 frames/s in 22.3 out 25.4 bytes/s in 1890 out 485 maxDrain 9 maxAge 423 ms superseded 228 seqErrors 0 buffered 20 reconnects 2 interpDelay 182 underruns 108 maxFrozen 0 reconciles 3 horizonHolds 18 busyMuted 0
+[Net] drain 4 frames superseded 1 in 0.3 ms
+[Autoplay] shot-08-menu-tab-2
+[Net] drain 20 frames superseded 0 in 0.5 ms
+[Quality] draws over budget zone nexus avg 507 budget 150
+[Quality] fps zone nexus avg 21.9 p95 73.7 ms worst 975.5 ms min 1.0 fps frames 656 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 507 max 532 setpass 64 batches 471 casters 0 anim posed 0.0 skipped 0.0 eval 3.44 ms anim changes/s 5.1 midfade cuts 16 below 30 fps
+[Net] state Connected srtt 160 jitter 49 outliers 0 frames/s in 21.9 out 22.6 bytes/s in 1839 out 430 maxDrain 20 maxAge 949 ms superseded 232 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 113 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 153 jitter 29 outliers 0 frames/s in 22.3 out 23.4 bytes/s in 1878 out 445 maxDrain 10 maxAge 451 ms superseded 234 seqErrors 0 buffered 0 reconnects 2 interpDelay 190 underruns 115 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] state Connected srtt 143 jitter 22 outliers 0 frames/s in 21.8 out 26.9 bytes/s in 1836 out 516 maxDrain 3 maxAge 77 ms superseded 236 seqErrors 0 buffered 0 reconnects 2 interpDelay 200 underruns 119 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] shot-09-menu-tab-3
+[Net] drain 5 frames superseded 0 in 0.3 ms
+[Quality] draws over budget zone nexus avg 532 budget 150
+[Quality] fps zone nexus avg 25.0 p95 57.6 ms worst 790.6 ms min 1.3 fps frames 751 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 532 max 534 setpass 65 batches 494 casters 0 anim posed 0.0 skipped 0.0 eval 3.13 ms anim changes/s 5.7 midfade cuts 17 below 30 fps
+[Net] state Connected srtt 145 jitter 25 outliers 0 frames/s in 21.3 out 25.8 bytes/s in 1797 out 494 maxDrain 17 maxAge 757 ms superseded 238 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 179 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 6 frames superseded 0 in 0.2 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] state Connected srtt 157 jitter 30 outliers 0 frames/s in 22.0 out 23.6 bytes/s in 1826 out 447 maxDrain 11 maxAge 501 ms superseded 243 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 182 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] state Connected srtt 145 jitter 32 outliers 0 frames/s in 22.1 out 25.0 bytes/s in 1863 out 478 maxDrain 3 maxAge 88 ms superseded 245 seqErrors 0 buffered 20 reconnects 2 interpDelay 180 underruns 182 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Autoplay] step bag
+[Quality] draws over budget zone nexus avg 528 budget 150
+[Quality] fps zone nexus avg 22.3 p95 71.7 ms worst 538.3 ms min 1.9 fps frames 668 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 528 max 623 setpass 65 batches 489 casters 0 anim posed 0.0 skipped 0.0 eval 3.42 ms anim changes/s 5.6 midfade cuts 24 below 30 fps
+[Net] state Connected srtt 168 jitter 56 outliers 0 frames/s in 21.2 out 22.7 bytes/s in 1791 out 434 maxDrain 6 maxAge 296 ms superseded 247 seqErrors 0 buffered 20 reconnects 2 interpDelay 190 underruns 193 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.2 ms
+[Autoplay] shot-10-bag
+[Net] drain 6 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 178 jitter 40 outliers 0 frames/s in 21.5 out 22.8 bytes/s in 1803 out 431 maxDrain 19 maxAge 947 ms superseded 254 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 214 maxFrozen 0 reconciles 3 horizonHolds 19 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.1 ms
+[Net] state Connected srtt 344 jitter 139 outliers 0 frames/s in 22.1 out 25.0 bytes/s in 1861 out 478 maxDrain 20 maxAge 108 ms superseded 257 seqErrors 0 buffered 29 reconnects 2 interpDelay 300 underruns 228 maxFrozen 0 reconciles 3 horizonHolds 23 busyMuted 0
+[Net] drain 9 frames superseded 0 in 0.3 ms
+[Net] drain 9 frames superseded 0 in 0.1 ms
+[Net] high latency srtt=338 ms jitter=196 ms
+[Quality] draws over budget zone nexus avg 575 budget 150
+[Quality] fps zone nexus avg 23.3 p95 66.8 ms worst 960.4 ms min 1.0 fps frames 699 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 575 max 636 setpass 67 batches 521 casters 0 anim posed 0.0 skipped 0.0 eval 3.53 ms anim changes/s 5.4 midfade cuts 24 below 30 fps
+[Net] state Connected srtt 287 jitter 152 outliers 0 frames/s in 21.5 out 25.2 bytes/s in 1815 out 484 maxDrain 17 maxAge 270 ms superseded 259 seqErrors 0 buffered 20 reconnects 2 interpDelay 290 underruns 235 maxFrozen 0 reconciles 3 horizonHolds 26 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] drain 9 frames superseded 0 in 0.7 ms
+[Net] state Connected srtt 211 jitter 98 outliers 0 frames/s in 22.4 out 22.3 bytes/s in 1872 out 421 maxDrain 11 maxAge 444 ms superseded 262 seqErrors 0 buffered 20 reconnects 2 interpDelay 280 underruns 238 maxFrozen 0 reconciles 3 horizonHolds 26 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.5 ms
+[Net] state Connected srtt 161 jitter 48 outliers 0 frames/s in 21.9 out 24.2 bytes/s in 1852 out 462 maxDrain 8 maxAge 322 ms superseded 264 seqErrors 0 buffered 20 reconnects 2 interpDelay 260 underruns 238 maxFrozen 0 reconciles 3 horizonHolds 26 busyMuted 0
+[Autoplay] step close
+[Autoplay] step quests
+[Net] drain 9 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 147 jitter 35 outliers 0 frames/s in 22.0 out 24.3 bytes/s in 1856 out 463 maxDrain 9 maxAge 408 ms superseded 266 seqErrors 0 buffered 72 reconnects 2 interpDelay 240 underruns 238 maxFrozen 0 reconciles 3 horizonHolds 26 busyMuted 0
+[Quality] draws over budget zone nexus avg 545 budget 150
+[Quality] fps zone nexus avg 22.1 p95 66.9 ms worst 494.7 ms min 2.0 fps frames 671 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 545 max 582 setpass 65 batches 494 casters 0 anim posed 0.0 skipped 0.0 eval 3.60 ms anim changes/s 5.2 midfade cuts 25 below 30 fps
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-11-quests
+[Net] drain 7 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 161 jitter 49 outliers 0 frames/s in 22.5 out 22.7 bytes/s in 1884 out 430 maxDrain 16 maxAge 736 ms superseded 271 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 241 maxFrozen 0 reconciles 3 horizonHolds 26 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 7 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 793 jitter 947 outliers 0 frames/s in 19.2 out 22.8 bytes/s in 1624 out 435 maxDrain 21 maxAge 88 ms superseded 285 seqErrors 0 buffered 60 reconnects 2 interpDelay 200 underruns 254 maxFrozen 0 reconciles 3 horizonHolds 41 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 7 frames superseded 0 in 0.3 ms
+[Quality] draws over budget zone nexus avg 540 budget 150
+[Quality] fps zone nexus avg 21.6 p95 74.1 ms worst 781.8 ms min 1.3 fps frames 647 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 540 max 606 setpass 66 batches 503 casters 0 anim posed 0.0 skipped 0.0 eval 3.65 ms anim changes/s 5.9 midfade cuts 26 below 30 fps
+[Net] state Connected srtt 527 jitter 309 outliers 0 frames/s in 23.8 out 23.3 bytes/s in 1999 out 442 maxDrain 13 maxAge 109 ms superseded 292 seqErrors 0 buffered 20 reconnects 2 interpDelay 300 underruns 266 maxFrozen 0 reconciles 20 horizonHolds 46 busyMuted 0
+[Net] drain 7 frames superseded 0 in 0.4 ms
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 324 jitter 162 outliers 0 frames/s in 22.2 out 26.3 bytes/s in 1853 out 505 maxDrain 10 maxAge 76 ms superseded 296 seqErrors 0 buffered 20 reconnects 2 interpDelay 290 underruns 269 maxFrozen 0 reconciles 20 horizonHolds 46 busyMuted 0
+[Net] drain 10 frames superseded 0 in 10.2 ms
+[Life] sleep system state InWorld idle 600 s
+[Net] snapshot starved True
+[Net] drain 22 frames superseded 17 in 0.4 ms
+[Net] snapshot starved False
+[Net] state Connected srtt 307 jitter 134 outliers 0 frames/s in 22.3 out 25.6 bytes/s in 1884 out 490 maxDrain 22 maxAge 743 ms superseded 315 seqErrors 0 buffered 20 reconnects 2 interpDelay 200 underruns 282 maxFrozen 0 reconciles 20 horizonHolds 48 busyMuted 0
+[Net] drain 10 frames superseded 0 in 0.3 ms
+[Quality] draws over budget zone nexus avg 519 budget 150
+[Quality] fps zone nexus avg 25.6 p95 59.5 ms worst 766.5 ms min 1.3 fps frames 769 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 519 max 542 setpass 67 batches 482 casters 0 anim posed 0.0 skipped 0.0 eval 3.25 ms anim changes/s 5.0 midfade cuts 17 below 30 fps
+[Net] state Connected srtt 621 jitter 513 outliers 0 frames/s in 22.2 out 24.5 bytes/s in 1872 out 467 maxDrain 22 maxAge 416 ms superseded 320 seqErrors 0 buffered 40 reconnects 2 interpDelay 300 underruns 317 maxFrozen 0 reconciles 29 horizonHolds 62 busyMuted 0
+[Autoplay] no ack ack-shot-11-quests
+[Autoplay] step close
+[Net] drain 10 frames superseded 0 in 0.2 ms
+[Autoplay] step skills
+CharacterPreview: key light on
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[Load] gear Magier 12 items 21.1 ms
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] look sun Sun on True i 0.27 c RGBA(1.000, 0.869, 0.737, 1.000) toward-cam -0.26 key i 1.00 toward-cam 0.65 fill 0.35 rim 0.60 directional on 4 ambient Trilight sky RGBA(0.529, 0.506, 0.477, 0.894) x 1.00 nyrAmbSky RGBA(2.907, 2.646, 2.320, 10.747) cam (1.84, -498.05, 1.32) fov 30 target 512x1024
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat hips palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.51, 0.84, 0.45)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat spine palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.30, 0.21, 0.24)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chest palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.57, 0.47, 0.47)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat neck skin shader Nyr/Hero tex none base RGBA(0.890, 0.800, 0.726, 1.000) albedo 1.30 low - layer 0 bounds (0.11, 0.11, 0.11)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat head skin shader Nyr/Hero tex none base RGBA(0.890, 0.800, 0.726, 1.000) albedo 1.30 low - layer 0 bounds (0.29, 0.61, 0.34)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat Gear:Art/Models/ArmorMatched/helm/chain_coif palette Cell shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.38, 0.36, 0.39)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_black chain_coif_blackMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.14, 0.18, 0.11)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_bronze chain_coif_bronzeMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.38, 0.02, 0.39)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_chain chain_coif_chainMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.35, 0.37, 0.38)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_black chain_coif_blackMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.14, 0.17, 0.11)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_bronze chain_coif_bronzeMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.38, 0.02, 0.39)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_chain chain_coif_chainMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.34, 0.36, 0.36)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+CharacterPreview: loop skill_chain_lightning|cast_projectile len 1.00
+Nyrathen.World.CharacterPreview:Loop(String[])
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] state Connected srtt 276 jitter 240 outliers 0 frames/s in 22.9 out 22.0 bytes/s in 1894 out 411 maxDrain 21 maxAge 608 ms superseded 325 seqErrors 0 buffered 81 reconnects 2 interpDelay 280 underruns 317 maxFrozen 0 reconciles 29 horizonHolds 62 busyMuted 0
+[Autoplay] shot-12-skills
+[Net] drain 25 frames superseded 0 in 1.0 ms
+[Autoplay] step close
+CharacterPreview: key light off
+[Net] state Connected srtt 184 jitter 63 outliers 0 frames/s in 21.8 out 23.6 bytes/s in 1843 out 452 maxDrain 25 maxAge 1135 ms superseded 328 seqErrors 0 buffered 20 reconnects 2 interpDelay 260 underruns 317 maxFrozen 0 reconciles 29 horizonHolds 63 busyMuted 0
+[Net] snapshot starved True
+[Net] drain 22 frames superseded 16 in 19.2 ms
+[Net] snapshot starved False
+[Autoplay] shot-13-mastery
+[Quality] draws over budget zone nexus avg 533 budget 150
+[Quality] fps zone nexus avg 19.9 p95 79.0 ms worst 1183.6 ms min 0.8 fps frames 598 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 533 max 614 setpass 67 batches 500 casters 0 anim posed 0.0 skipped 0.0 eval 2.96 ms anim changes/s 5.1 midfade cuts 19 below 30 fps
+[Net] state Connected srtt 162 jitter 36 outliers 0 frames/s in 22.5 out 20.3 bytes/s in 1896 out 382 maxDrain 22 maxAge 948 ms superseded 346 seqErrors 0 buffered 40 reconnects 2 interpDelay 190 underruns 320 maxFrozen 0 reconciles 29 horizonHolds 65 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 155 jitter 38 outliers 0 frames/s in 22.3 out 24.9 bytes/s in 1877 out 475 maxDrain 10 maxAge 414 ms superseded 349 seqErrors 0 buffered 20 reconnects 2 interpDelay 170 underruns 320 maxFrozen 0 reconciles 29 horizonHolds 65 busyMuted 0
+[Net] drain 7 frames superseded 0 in 0.3 ms
+[Autoplay] step close
+[Net] snapshot starved True
+[Net] drain 53 frames superseded 41 in 3.2 ms
+[Net] socket closed code 1000  phase Bound state Connected
+[Net] 2 rpc lost with the socket, answered ERROR
+[Net] state Reconnecting srtt 141 jitter 23 outliers 0 frames/s in 16.9 out 12.4 bytes/s in 1433 out 229 maxDrain 53 maxAge 5271 ms superseded 394 seqErrors 0 buffered 0 reconnects 3 interpDelay 170 underruns 321 maxFrozen 0 reconciles 29 horizonHolds 66 busyMuted 0
+[Autoplay] shot-14-achievements
+[Net] reconnect tries 1 ok 1 gap 2585 ms
+[Net] bound ReconnectSucceeded gap 2585 ms keeps interpolation and prediction
+[Load] gear Magier 12 items 30.3 ms
+[Net] connect open 1283 seed 1407 reply 1572 keyframe 1711 ms type RE
+[Net] snapshot starved False
+[Load] world entry 27 rpcs, last answer 509 ms
+[Net] drain 10 frames superseded 0 in 0.2 ms
+[Quality] draws over budget zone nexus avg 507 budget 150
+[Quality] fps zone nexus avg 16.4 p95 83.4 ms worst 5284.2 ms min 0.2 fps frames 493 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 507 max 569 setpass 64 batches 468 casters 0 anim posed 0.0 skipped 0.0 eval 3.38 ms anim changes/s 4.4 midfade cuts 20 below 30 fps
+[Net] state Connected srtt 178 jitter 67 outliers 0 frames/s in 23.9 out 20.6 bytes/s in 1650 out 390 maxDrain 30 maxAge 371 ms superseded 400 seqErrors 0 buffered 20 reconnects 3 interpDelay 250 underruns 332 maxFrozen 0 reconciles 30 horizonHolds 67 busyMuted 0
+[Autoplay] step close
+[Net] drain 9 frames superseded 0 in 1.8 ms
+[Net] state Connected srtt 162 jitter 47 outliers 0 frames/s in 21.6 out 21.4 bytes/s in 1824 out 408 maxDrain 9 maxAge 357 ms superseded 402 seqErrors 0 buffered 20 reconnects 3 interpDelay 230 underruns 332 maxFrozen 0 reconciles 30 horizonHolds 67 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-15-mount
+[Net] drain 20 frames superseded 0 in 21.5 ms
+[Net] state Connected srtt 168 jitter 48 outliers 0 frames/s in 21.8 out 19.1 bytes/s in 1834 out 358 maxDrain 20 maxAge 944 ms superseded 404 seqErrors 0 buffered 20 reconnects 3 interpDelay 200 underruns 337 maxFrozen 0 reconciles 30 horizonHolds 68 busyMuted 0
+[Net] drain 10 frames superseded 7 in 0.8 ms
+[Autoplay] step close
+[Net] drain 4 frames superseded 0 in 0.1 ms
+[Quality] draws over budget zone nexus avg 535 budget 150
+[Quality] fps zone nexus avg 17.0 p95 100.0 ms worst 955.6 ms min 1.0 fps frames 511 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 535 max 596 setpass 65 batches 500 casters 0 anim posed 0.0 skipped 0.0 eval 3.84 ms anim changes/s 4.9 midfade cuts 18 below 30 fps
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] state Connected srtt 196 jitter 83 outliers 0 frames/s in 22.6 out 18.4 bytes/s in 1925 out 343 maxDrain 15 maxAge 425 ms superseded 417 seqErrors 0 buffered 20 reconnects 3 interpDelay 200 underruns 340 maxFrozen 0 reconciles 30 horizonHolds 68 busyMuted 0
+[Autoplay] shot-16-codex
+[Net] drain 33 frames superseded 0 in 2.6 ms
+[Net] drain 12 frames superseded 0 in 10.9 ms
+[Net] state Connected srtt 240 jitter 119 outliers 0 frames/s in 22.2 out 19.0 bytes/s in 1885 out 359 maxDrain 33 maxAge 1516 ms superseded 420 seqErrors 0 buffered 0 reconnects 3 interpDelay 300 underruns 349 maxFrozen 0 reconciles 30 horizonHolds 69 busyMuted 0
+[Net] drain 7 frames superseded 0 in 0.1 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 45 frames superseded 38 in 10.8 ms
+[Net] state Connected srtt 426 jitter 282 outliers 0 frames/s in 21.5 out 22.5 bytes/s in 1809 out 428 maxDrain 45 maxAge 522 ms superseded 462 seqErrors 0 buffered 180 reconnects 3 interpDelay 300 underruns 358 maxFrozen 0 reconciles 34 horizonHolds 72 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] drain 7 frames superseded 0 in 0.3 ms
+[Net] snapshot starved False
+[Quality] draws over budget zone nexus avg 483 budget 150
+[Quality] fps zone nexus avg 18.8 p95 86.7 ms worst 1550.2 ms min 0.6 fps frames 564 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 483 max 546 setpass 64 batches 462 casters 0 anim posed 0.0 skipped 0.0 eval 3.76 ms anim changes/s 5.4 midfade cuts 26 below 30 fps
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] drain 42 frames superseded 28 in 6.3 ms
+[Net] state Connected srtt 1042 jitter 663 outliers 0 frames/s in 22.9 out 22.9 bytes/s in 1937 out 433 maxDrain 42 maxAge 542 ms superseded 518 seqErrors 0 buffered 82 reconnects 3 interpDelay 300 underruns 367 maxFrozen 0 reconciles 41 horizonHolds 84 busyMuted 0
+[Net] snapshot starved False
+[Net] drain 8 frames superseded 5 in 0.8 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] state Connected srtt 460 jitter 384 outliers 0 frames/s in 22.6 out 22.4 bytes/s in 1911 out 425 maxDrain 15 maxAge 621 ms superseded 529 seqErrors 0 buffered 20 reconnects 3 interpDelay 300 underruns 370 maxFrozen 0 reconciles 41 horizonHolds 85 busyMuted 0
+[Net] drain 5 frames superseded 3 in 0.1 ms
+[Net] state Connected srtt 248 jitter 126 outliers 0 frames/s in 21.4 out 21.4 bytes/s in 1813 out 407 maxDrain 10 maxAge 433 ms superseded 533 seqErrors 0 buffered 120 reconnects 3 interpDelay 200 underruns 371 maxFrozen 0 reconciles 41 horizonHolds 85 busyMuted 0
+[Net] drain 17 frames superseded 0 in 0.6 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Quality] draws over budget zone nexus avg 487 budget 150
+[Quality] fps zone nexus avg 19.4 p95 83.4 ms worst 650.1 ms min 1.5 fps frames 584 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 487 max 520 setpass 64 batches 467 casters 0 anim posed 0.0 skipped 0.0 eval 3.68 ms anim changes/s 5.2 midfade cuts 22 below 30 fps
+[Autoplay] no ack ack-shot-16-codex
+[Net] state Connected srtt 355 jitter 261 outliers 0 frames/s in 23.1 out 22.3 bytes/s in 1943 out 422 maxDrain 49 maxAge 643 ms superseded 569 seqErrors 0 buffered 20 reconnects 3 interpDelay 200 underruns 381 maxFrozen 0 reconciles 41 horizonHolds 87 busyMuted 0
+[Autoplay] step close
+CharacterPreview: key light on
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[Load] gear Magier 12 items 35.1 ms
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] look sun Sun on True i 0.27 c RGBA(1.000, 0.869, 0.737, 1.000) toward-cam -0.19 key i 1.00 toward-cam 0.65 fill 0.35 rim 0.60 directional on 4 ambient Trilight sky RGBA(0.529, 0.506, 0.477, 0.894) x 1.00 nyrAmbSky RGBA(2.907, 2.646, 2.320, 10.747) cam (1.84, -498.05, 1.32) fov 30 target 512x1024
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat hips palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.51, 0.84, 0.45)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat spine palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.30, 0.21, 0.24)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chest palette shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.54, 0.49, 0.42)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat neck skin shader Nyr/Hero tex none base RGBA(0.890, 0.800, 0.726, 1.000) albedo 1.30 low - layer 0 bounds (0.09, 0.11, 0.11)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat head skin shader Nyr/Hero tex none base RGBA(0.890, 0.800, 0.726, 1.000) albedo 1.30 low - layer 0 bounds (0.30, 0.65, 0.42)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat Gear:Art/Models/ArmorMatched/helm/chain_coif palette Cell shader Nyr/Hero tex palette_basecolor base RGBA(1.000, 1.000, 1.000, 1.000) albedo 1.30 low - layer 0 bounds (0.39, 0.41, 0.43)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_black chain_coif_blackMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.15, 0.19, 0.13)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_bronze chain_coif_bronzeMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.38, 0.07, 0.38)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_chain chain_coif_chainMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.36, 0.42, 0.42)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_black chain_coif_blackMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.14, 0.18, 0.13)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_bronze chain_coif_bronzeMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.38, 0.07, 0.38)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[preview] mat chain_coif_chain chain_coif_chainMat Cell shader Nyr/Hero tex none base RGBA(0.787, 0.759, 0.696, 1.000) albedo 1.30 low - layer 0 bounds (0.35, 0.41, 0.41)
+Nyrathen.World.CharacterPreview:LogLook()
+Nyrathen.World.CharacterPreview:Show(Body, UInt16, IReadOnlyList`1, UInt32, IReadOnlyList`1)
+[Net] snapshot starved True
+[Net] drain 21 frames superseded 0 in 258.9 ms
+[Net] snapshot starved False
+[Autoplay] shot-17-profile
+[Net] state Connected srtt 229 jitter 119 outliers 0 frames/s in 21.8 out 18.3 bytes/s in 1783 out 338 maxDrain 25 maxAge 1172 ms superseded 574 seqErrors 0 buffered 140 reconnects 3 interpDelay 300 underruns 388 maxFrozen 0 reconciles 41 horizonHolds 89 busyMuted 0
+[Net] drain 12 frames superseded 0 in 10.5 ms
+[Net] drain 5 frames superseded 0 in 0.6 ms
+[Net] state Connected srtt 197 jitter 65 outliers 0 frames/s in 23.0 out 18.1 bytes/s in 1943 out 340 maxDrain 16 maxAge 718 ms superseded 577 seqErrors 0 buffered 20 reconnects 3 interpDelay 200 underruns 391 maxFrozen 0 reconciles 41 horizonHolds 89 busyMuted 0
+[Quality] draws over budget zone nexus avg 536 budget 150
+[Quality] fps zone nexus avg 17.0 p95 88.3 ms worst 1205.4 ms min 0.8 fps frames 512 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 536 max 650 setpass 67 batches 510 casters 0 anim posed 0.0 skipped 0.0 eval 3.71 ms anim changes/s 5.2 midfade cuts 25 below 30 fps
+[Net] state Connected srtt 165 jitter 27 outliers 0 frames/s in 22.3 out 20.2 bytes/s in 1879 out 382 maxDrain 3 maxAge 82 ms superseded 579 seqErrors 0 buffered 20 reconnects 3 interpDelay 180 underruns 391 maxFrozen 0 reconciles 41 horizonHolds 89 busyMuted 0
+[Net] snapshot starved True
+[Net] drain 11 frames superseded 0 in 10.6 ms
+[Net] snapshot starved False
+[Net] reachability ReachableViaLocalAreaNetwork -> NotReachable state Connected
+[Net] probe ping
+[Net] snapshot starved True
+[Net] socket closed WebSocketException phase Opening state Reconnecting
+[Net] state Reconnecting srtt 148 jitter 15 outliers 0 frames/s in 15.4 out 16.7 bytes/s in 1306 out 318 maxDrain 11 maxAge 463 ms superseded 580 seqErrors 0 buffered 0 reconnects 4 interpDelay 180 underruns 392 maxFrozen 0 reconciles 41 horizonHolds 90 busyMuted 0
+[Net] reachability NotReachable -> ReachableViaLocalAreaNetwork state Reconnecting
+[Net] reconnect tries 2 ok 1 gap 668 ms
+[Net] bound ReconnectSucceeded gap 668 ms keeps interpolation and prediction
+[Load] gear Magier 12 items 41.4 ms
+[Load] gear Magier 12 items 9.4 ms
+[Load] gear Magier 12 items 9.4 ms
+[Load] gear Magier 12 items 8.4 ms
+[Load] gear Magier 12 items 32.4 ms
+[Load] gear Magier 12 items 11.6 ms
+[Net] drain 18 frames superseded 0 in 397.3 ms
+[Load] gear Magier 12 items 8.7 ms
+[Net] connect open 2084 seed 2191 reply 2317 keyframe 2868 ms type RE
+[Net] snapshot starved False
+[Load] world entry 27 rpcs, last answer 551 ms
+[Net] snapshot starved True
+[Net] drain 8 frames superseded 0 in 0.2 ms
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] state Connected srtt 173 jitter 63 outliers 0 frames/s in 16.7 out 17.1 bytes/s in 1049 out 326 maxDrain 35 maxAge 538 ms superseded 583 seqErrors 0 buffered 748 reconnects 4 interpDelay 200 underruns 398 maxFrozen 0 reconciles 42 horizonHolds 92 busyMuted 0
+[Net] snapshot starved False
+[Net] drain 4 frames superseded 2 in 0.2 ms
+[Quality] draws over budget zone nexus avg 556 budget 150
+[Quality] fps zone nexus avg 16.0 p95 99.9 ms worst 683.5 ms min 1.5 fps frames 482 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 556 max 587 setpass 69 batches 527 casters 0 anim posed 0.0 skipped 0.0 eval 3.53 ms anim changes/s 5.1 midfade cuts 21 below 30 fps
+[Net] state Connected srtt 355 jitter 275 outliers 0 frames/s in 26.0 out 18.3 bytes/s in 2184 out 341 maxDrain 43 maxAge 532 ms superseded 622 seqErrors 0 buffered 0 reconnects 4 interpDelay 290 underruns 401 maxFrozen 0 reconciles 48 horizonHolds 95 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Autoplay] no ack ack-shot-17-profile
+[Autoplay] step close
+CharacterPreview: key light off
+[Net] snapshot starved True
+[Net] drain 9 frames superseded 0 in 0.4 ms
+[Net] snapshot starved False
+[Net] state Connected srtt 200 jitter 87 outliers 0 frames/s in 22.0 out 20.3 bytes/s in 1851 out 384 maxDrain 9 maxAge 454 ms superseded 625 seqErrors 0 buffered 20 reconnects 4 interpDelay 270 underruns 401 maxFrozen 0 reconciles 48 horizonHolds 95 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 5 frames superseded 0 in 0.6 ms
+[Autoplay] shot-18-friends
+[Net] state Connected srtt 190 jitter 44 outliers 0 frames/s in 22.0 out 18.1 bytes/s in 1873 out 341 maxDrain 23 maxAge 1067 ms superseded 629 seqErrors 0 buffered 20 reconnects 4 interpDelay 200 underruns 403 maxFrozen 0 reconciles 48 horizonHolds 96 busyMuted 0
+[Net] drain 6 frames superseded 0 in 0.3 ms
+[Quality] draws over budget zone nexus avg 508 budget 150
+[Quality] fps zone nexus avg 18.6 p95 83.4 ms worst 1089.1 ms min 0.9 fps frames 557 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 508 max 551 setpass 66 batches 483 casters 0 anim posed 0.0 skipped 0.0 eval 3.44 ms anim changes/s 4.7 midfade cuts 18 below 30 fps
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] state Connected srtt 165 jitter 27 outliers 0 frames/s in 18.0 out 25.1 bytes/s in 1510 out 482 maxDrain 6 maxAge 281 ms superseded 632 seqErrors 0 buffered 629 reconnects 4 interpDelay 200 underruns 407 maxFrozen 0 reconciles 48 horizonHolds 98 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] silent 2012 ms, probe ping
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] socket closed - phase Opening state Reconnecting
+[Net] state Reconnecting srtt 165 jitter 27 outliers 0 frames/s in 0.6 out 11.9 bytes/s in 46 out 231 maxDrain 1 maxAge 34 ms superseded 632 seqErrors 0 buffered 0 reconnects 5 interpDelay 300 underruns 412 maxFrozen 0 reconciles 48 horizonHolds 103 busyMuted 0
+[Net] reconnect tries 2 ok 1 gap 8471 ms
+[Net] bound ReconnectSucceeded gap 8471 ms resync
+[Load] gear Magier 12 items 21.0 ms
+[Load] gear Magier 12 items 10.0 ms
+[Load] gear Magier 12 items 8.5 ms
+[Load] gear Magier 12 items 17.8 ms
+[Net] drain 9 frames superseded 0 in 288.1 ms
+[Load] gear Magier 12 items 17.3 ms
+[Load] gear Magier 12 items 14.6 ms
+[Net] connect open 2142 seed 2252 reply 2362 keyframe 2836 ms type RE
+[Net] snapshot starved False
+[Load] world entry 27 rpcs, last answer 839 ms
+[Net] drain 9 frames superseded 0 in 0.4 ms
+[Autoplay] step close
+[Net] state Connected srtt 166 jitter 59 outliers 0 frames/s in 25.0 out 23.9 bytes/s in 1746 out 455 maxDrain 27 maxAge 402 ms superseded 638 seqErrors 0 buffered 20 reconnects 5 interpDelay 126 underruns 413 maxFrozen 0 reconciles 49 horizonHolds 104 busyMuted 0
+[Net] snapshot starved True
+[Net] drain 25 frames superseded 0 in 6.7 ms
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Quality] draws over budget zone nexus avg 473 budget 150
+[Quality] fps zone nexus avg 21.1 p95 73.9 ms worst 1150.1 ms min 0.9 fps frames 632 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 473 max 488 setpass 63 batches 448 casters 0 anim posed 0.0 skipped 0.0 eval 3.16 ms anim changes/s 5.2 midfade cuts 13 below 30 fps
+[Autoplay] shot-19-guild
+[Net] state Connected srtt 151 jitter 24 outliers 0 frames/s in 22.9 out 20.1 bytes/s in 1896 out 374 maxDrain 25 maxAge 1115 ms superseded 642 seqErrors 0 buffered 0 reconnects 5 interpDelay 152 underruns 415 maxFrozen 0 reconciles 49 horizonHolds 105 busyMuted 0
+[Net] drain 6 frames superseded 0 in 0.1 ms
+[Net] state Connected srtt 182 jitter 70 outliers 0 frames/s in 21.3 out 25.3 bytes/s in 1792 out 484 maxDrain 11 maxAge 447 ms superseded 645 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 440 maxFrozen 0 reconciles 49 horizonHolds 105 busyMuted 0
+[Net] drain 11 frames superseded 0 in 1.3 ms
+[Autoplay] step close
+[Net] snapshot starved True
+[Net] state Connected srtt 168 jitter 39 outliers 0 frames/s in 22.1 out 22.7 bytes/s in 1875 out 432 maxDrain 17 maxAge 617 ms superseded 648 seqErrors 0 buffered 91 reconnects 5 interpDelay 200 underruns 490 maxFrozen 0 reconciles 49 horizonHolds 105 busyMuted 0
+[Net] snapshot starved False
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-20-mail
+[Quality] draws over budget zone nexus avg 499 budget 150
+[Quality] fps zone nexus avg 21.0 p95 77.1 ms worst 887.6 ms min 1.1 fps frames 643 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 499 max 535 setpass 65 batches 473 casters 0 anim posed 0.0 skipped 0.0 eval 3.33 ms anim changes/s 5.1 midfade cuts 20 below 30 fps
+[Net] drain 5 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 175 jitter 48 outliers 0 frames/s in 23.2 out 21.2 bytes/s in 1934 out 400 maxDrain 20 maxAge 873 ms superseded 662 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 494 maxFrozen 0 reconciles 49 horizonHolds 108 busyMuted 0
+ZoneView: key 0.290 ambient eq 0.163,0.130,0.119 env ambient eq.g 1.370 light scale 0.404 zone env 1.00 ambient weight 0.48 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Autoplay] step close
+[Net] drain 6 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 140 jitter 26 outliers 0 frames/s in 22.0 out 22.6 bytes/s in 1856 out 431 maxDrain 9 maxAge 425 ms superseded 664 seqErrors 0 buffered 60 reconnects 5 interpDelay 170 underruns 494 maxFrozen 0 reconciles 49 horizonHolds 108 busyMuted 0
+[Autoplay] shot-21-news
+[Net] drain 18 frames superseded 0 in 0.7 ms
+[Autoplay] step close
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] drain 4 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 135 jitter 16 outliers 0 frames/s in 21.8 out 22.3 bytes/s in 1842 out 424 maxDrain 18 maxAge 1083 ms superseded 667 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 510 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+[Autoplay] shot-22-whatsnew
+[Net] drain 17 frames superseded 0 in 12.5 ms
+[Quality] draws over budget zone nexus avg 506 budget 150
+[Quality] fps zone nexus avg 21.0 p95 79.2 ms worst 1074.5 ms min 0.9 fps frames 632 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 506 max 565 setpass 66 batches 479 casters 0 anim posed 0.0 skipped 0.0 eval 3.15 ms anim changes/s 5.4 midfade cuts 25 below 30 fps
+[Autoplay] step close
+[Net] state Connected srtt 132 jitter 13 outliers 0 frames/s in 22.3 out 22.6 bytes/s in 1880 out 429 maxDrain 17 maxAge 767 ms superseded 669 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 511 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+ZoneView: key 0.318 ambient eq 0.186,0.142,0.135 env ambient eq.g 1.335 light scale 0.454 zone env 1.00 ambient weight 0.48 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Net] drain 7 frames superseded 0 in 0.5 ms
+[Autoplay] step shop
+[Autoplay] shot-23-shop
+[Net] drain 15 frames superseded 0 in 0.5 ms
+[Net] state Connected srtt 132 jitter 25 outliers 0 frames/s in 21.7 out 25.4 bytes/s in 1815 out 484 maxDrain 15 maxAge 643 ms superseded 674 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 527 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+[Net] drain 9 frames superseded 0 in 0.2 ms
+[Autoplay] step buy
+[Net] state Connected srtt 145 jitter 40 outliers 0 frames/s in 22.5 out 24.2 bytes/s in 1900 out 460 maxDrain 9 maxAge 387 ms superseded 676 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 529 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+[Autoplay] shot-24-confirm-dialog
+[Net] drain 15 frames superseded 0 in 0.5 ms
+[Quality] draws over budget zone nexus avg 542 budget 150
+[Quality] fps zone nexus avg 22.1 p95 66.7 ms worst 716.7 ms min 1.4 fps frames 664 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 542 max 640 setpass 65 batches 511 casters 0 anim posed 0.0 skipped 0.0 eval 3.37 ms anim changes/s 5.0 midfade cuts 18 below 30 fps
+ZoneView: key 0.341 ambient eq 0.209,0.154,0.152 env ambient eq.g 1.300 light scale 0.504 zone env 1.00 ambient weight 0.47 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Net] state Connected srtt 139 jitter 18 outliers 0 frames/s in 22.1 out 20.1 bytes/s in 1864 out 379 maxDrain 15 maxAge 660 ms superseded 679 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 529 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+[Net] drain 10 frames superseded 0 in 10.5 ms
+[Autoplay] step close
+[Net] drain 5 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 155 jitter 37 outliers 0 frames/s in 22.3 out 17.8 bytes/s in 1878 out 333 maxDrain 10 maxAge 399 ms superseded 683 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 530 maxFrozen 0 reconciles 49 horizonHolds 109 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-25-auction
+[Net] drain 19 frames superseded 0 in 0.4 ms
+ZoneView: key 0.364 ambient eq 0.233,0.166,0.169 env ambient eq.g 1.274 light scale 0.554 zone env 1.00 ambient weight 0.47 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Net] state Connected srtt 149 jitter 15 outliers 0 frames/s in 21.9 out 15.8 bytes/s in 1859 out 292 maxDrain 19 maxAge 808 ms superseded 685 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 532 maxFrozen 0 reconciles 49 horizonHolds 111 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.1 ms
+[Autoplay] step close
+[Quality] draws over budget zone nexus avg 534 budget 150
+[Quality] fps zone nexus avg 14.7 p95 117.6 ms worst 892.6 ms min 1.1 fps frames 441 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 534 max 574 setpass 64 batches 503 casters 0 anim posed 0.0 skipped 0.0 eval 4.30 ms anim changes/s 4.7 midfade cuts 15 below 30 fps
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 148 jitter 42 outliers 0 frames/s in 22.4 out 19.5 bytes/s in 1881 out 367 maxDrain 8 maxAge 204 ms superseded 687 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 533 maxFrozen 0 reconciles 49 horizonHolds 111 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-26-companion
+[Net] drain 22 frames superseded 0 in 0.7 ms
+[Net] state Connected srtt 175 jitter 51 outliers 0 frames/s in 22.4 out 18.3 bytes/s in 1885 out 341 maxDrain 22 maxAge 935 ms superseded 690 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 536 maxFrozen 0 reconciles 49 horizonHolds 113 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Autoplay] step close
+[Net] state Connected srtt 179 jitter 66 outliers 0 frames/s in 22.0 out 22.7 bytes/s in 1857 out 432 maxDrain 8 maxAge 359 ms superseded 693 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 538 maxFrozen 0 reconciles 49 horizonHolds 113 busyMuted 0
+[Net] snapshot starved True
+[Net] drain 15 frames superseded 0 in 0.4 ms
+[Net] snapshot starved False
+[Autoplay] shot-27-season
+[Quality] draws over budget zone nexus avg 562 budget 150
+[Quality] fps zone nexus avg 17.6 p95 83.4 ms worst 978.0 ms min 1.0 fps frames 528 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 562 max 612 setpass 65 batches 534 casters 0 anim posed 0.0 skipped 0.0 eval 3.95 ms anim changes/s 5.0 midfade cuts 22 below 30 fps
+[Net] drain 4 frames superseded 0 in 2.6 ms
+[Net] state Connected srtt 244 jitter 110 outliers 0 frames/s in 20.3 out 21.8 bytes/s in 1552 out 410 maxDrain 22 maxAge 948 ms superseded 699 seqErrors 0 buffered 20 reconnects 5 interpDelay 300 underruns 595 maxFrozen 0 reconciles 49 horizonHolds 114 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] step close
+[Net] drain 4 frames superseded 1 in 0.1 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-28-abyss
+[Net] drain 16 frames superseded 0 in 11.1 ms
+[Net] state Connected srtt 224 jitter 71 outliers 0 frames/s in 20.2 out 22.9 bytes/s in 1682 out 433 maxDrain 16 maxAge 700 ms superseded 701 seqErrors 0 buffered 72 reconnects 5 interpDelay 290 underruns 609 maxFrozen 0 reconciles 49 horizonHolds 114 busyMuted 0
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] step close
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 194 jitter 59 outliers 0 frames/s in 19.4 out 21.9 bytes/s in 1626 out 415 maxDrain 12 maxAge 561 ms superseded 706 seqErrors 0 buffered 20 reconnects 5 interpDelay 300 underruns 663 maxFrozen 0 reconciles 49 horizonHolds 115 busyMuted 0
+[Net] drain 8 frames superseded 0 in 0.2 ms
+[Autoplay] shot-29-bounty
+[Quality] draws over budget zone nexus avg 557 budget 150
+[Quality] fps zone nexus avg 21.1 p95 75.9 ms worst 766.8 ms min 1.3 fps frames 633 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 557 max 642 setpass 67 batches 529 casters 0 anim posed 0.0 skipped 0.0 eval 3.62 ms anim changes/s 4.9 midfade cuts 19 below 30 fps
+[Net] state Connected srtt 211 jitter 54 outliers 0 frames/s in 21.3 out 24.3 bytes/s in 1784 out 463 maxDrain 14 maxAge 726 ms superseded 709 seqErrors 0 buffered 20 reconnects 5 interpDelay 290 underruns 689 maxFrozen 0 reconciles 49 horizonHolds 116 busyMuted 0
+[Net] drain 7 frames superseded 0 in 0.2 ms
+[Net] snapshot starved True
+[Autoplay] step close
+[Net] snapshot starved False
+[Net] drain 4 frames superseded 0 in 0.3 ms
+[Net] state Connected srtt 179 jitter 34 outliers 0 frames/s in 21.3 out 24.9 bytes/s in 1773 out 473 maxDrain 9 maxAge 478 ms superseded 712 seqErrors 0 buffered 0 reconnects 5 interpDelay 190 underruns 727 maxFrozen 0 reconciles 49 horizonHolds 116 busyMuted 0
+[Autoplay] shot-30-party-finder
+[Net] drain 5 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 206 jitter 62 outliers 0 frames/s in 21.9 out 21.8 bytes/s in 1828 out 411 maxDrain 16 maxAge 819 ms superseded 716 seqErrors 0 buffered 20 reconnects 5 interpDelay 216 underruns 734 maxFrozen 0 reconciles 49 horizonHolds 117 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] step close
+[Quality] draws over budget zone nexus avg 524 budget 150
+[Quality] fps zone nexus avg 22.9 p95 64.6 ms worst 833.3 ms min 1.2 fps frames 688 cap 30 scale 0.70 shadows 0 vfx 0.30 draws avg 524 max 631 setpass 65 batches 496 casters 0 anim posed 0.0 skipped 0.0 eval 3.57 ms anim changes/s 4.8 midfade cuts 14 below 30 fps
+[Net] drain 6 frames superseded 0 in 0.2 ms
+[Autoplay] shot-31-language
+[Net] state Connected srtt 177 jitter 41 outliers 0 frames/s in 21.9 out 22.2 bytes/s in 1853 out 421 maxDrain 20 maxAge 914 ms superseded 718 seqErrors 0 buffered 91 reconnects 5 interpDelay 196 underruns 734 maxFrozen 0 reconciles 49 horizonHolds 117 busyMuted 0
+[Net] drain 8 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 165 jitter 56 outliers 0 frames/s in 22.4 out 24.6 bytes/s in 1887 out 469 maxDrain 8 maxAge 361 ms superseded 722 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 738 maxFrozen 0 reconciles 49 horizonHolds 118 busyMuted 0
+[Net] drain 8 frames superseded 0 in 0.1 ms
+[Autoplay] step close
+Nyrathen.Game.ZoneView:SetWind(Single)
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: 7 trail cells, 0 leaf litter cells, 108 wet bank cells (wet 1) in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetSplat(ZoneLook, ZoneInfo)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: ground layers 264/3415/2192/467 cells, 190 crack and 0 soot decal cells in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetSplat(ZoneLook, ZoneInfo)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: 0 flowing water cells in art set 'nexus'.
+Nyrathen.Game.ZoneView:SetShore(CellLook[], Int32, Int32)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: 30 scatter chunks cast shadows (tier High, Haenger-Plan H017)
+Nyrathen.Game.ZoneView:BakeScatter(Dictionary`2)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: light bake 192x160 in nexus: 14 torch pools, 0 camp fire pools, 3 glow prop pools, 1 scattered glow pools, 0 lava rim pools, glow colour #FF8A3A, torch light 1.53 glow light 0.77 (tier High).
+Nyrathen.Game.ZoneView:BakeLight(Int32, Int32, List`1, Int32, List`1, List`1, Int32, Int32, Color)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+ZoneView: 35 props, 541 scatter pieces in 30 chunk meshes, 120 chunk renderers; 32 materials off the zone shaders: Ambient_Candle:Nyr/VFX, Ambient_Candle:Nyr/VFX, Ambient_Candle:Nyr/VFX, Ambient_Lantern:Nyr/VFX, Ambient_Lantern:Nyr/VFX, Ambient_Lantern:Nyr/VFX, Ambient_Lantern:Nyr/VFX, Ambient_Insects:Nyr/VFX.
+Nyrathen.Game.ZoneView:AuditProps(Int32)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+[Load] zone view build nexus tier High: setup 1 ms artset 0 ms look 17 ms splat 49 ms shore 6 ms cells 19 ms cliffs 200 ms props 47 ms chunks 50 ms scatter 91 ms glints 26 ms light 4 ms finish 6 ms
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+Nyrathen.Game.ZoneView:Build()
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+[Net] snapshot starved True
+[Net] drain 18 frames superseded 0 in 0.3 ms
+[Net] snapshot starved False
+[Net] state Connected srtt 153 jitter 32 outliers 0 frames/s in 22.0 out 19.1 bytes/s in 1875 out 359 maxDrain 49 maxAge 2073 ms superseded 765 seqErrors 0 buffered 101 reconnects 5 interpDelay 200 underruns 742 maxFrozen 0 reconciles 49 horizonHolds 119 busyMuted 0
+[Autoplay] shot-32-options
+[Net] drain 8 frames superseded 0 in 10.4 ms
+[Quality] draws over budget zone nexus avg 642 budget 400
+[Quality] fps zone nexus avg 18.6 p95 82.7 ms worst 2166.8 ms min 0.5 fps frames 559 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 642 max 1708 setpass 71 batches 603 casters 95 anim posed 0.0 skipped 0.0 eval 3.59 ms anim changes/s 4.4 midfade cuts 13 below 30 fps
+[Autoplay] step close
+[Net] drain 8 frames superseded 0 in 0.5 ms
+[Net] state Connected srtt 150 jitter 32 outliers 0 frames/s in 22.3 out 17.6 bytes/s in 1872 out 329 maxDrain 21 maxAge 891 ms superseded 772 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 745 maxFrozen 0 reconciles 49 horizonHolds 120 busyMuted 0
+[Autoplay] shot-33-options
+[Net] drain 17 frames superseded 12 in 0.1 ms
+ZoneView: key 0.314 ambient eq 0.267,0.163,0.191 env ambient eq.g 1.167 light scale 0.595 zone env 1.00 ambient weight 0.45 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Net] state Connected srtt 159 jitter 35 outliers 0 frames/s in 22.2 out 21.9 bytes/s in 1869 out 416 maxDrain 17 maxAge 815 ms superseded 786 seqErrors 0 buffered 20 reconnects 5 interpDelay 170 underruns 745 maxFrozen 0 reconciles 49 horizonHolds 121 busyMuted 0
+[Net] drain 6 frames superseded 0 in 0.3 ms
+[Autoplay] shot-34-options-graphics
+[Net] drain 9 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 153 jitter 38 outliers 0 frames/s in 21.5 out 18.1 bytes/s in 1821 out 339 maxDrain 17 maxAge 821 ms superseded 788 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 753 maxFrozen 0 reconciles 49 horizonHolds 122 busyMuted 0
+[Quality] draws over budget zone nexus avg 1654 budget 400
+[Quality] fps zone nexus avg 17.3 p95 83.4 ms worst 866.8 ms min 1.2 fps frames 521 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1654 max 1727 setpass 127 batches 1624 casters 1093 anim posed 0.0 skipped 0.0 eval 3.48 ms anim changes/s 4.9 midfade cuts 18 below 30 fps
+[Autoplay] shot-35-options-audio
+[Net] drain 17 frames superseded 0 in 1.0 ms
+[Net] state Connected srtt 144 jitter 16 outliers 0 frames/s in 22.2 out 21.3 bytes/s in 1866 out 404 maxDrain 17 maxAge 762 ms superseded 790 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 754 maxFrozen 0 reconciles 49 horizonHolds 122 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.4 ms
+[Autoplay] shot-36-options-accessibility
+[Net] drain 21 frames superseded 3 in 1.0 ms
+[Net] state Connected srtt 128 jitter 11 outliers 0 frames/s in 22.3 out 16.4 bytes/s in 1878 out 304 maxDrain 21 maxAge 925 ms superseded 798 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 755 maxFrozen 0 reconciles 49 horizonHolds 123 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.6 ms
+[Net] drain 5 frames superseded 0 in 0.4 ms
+[Autoplay] shot-37-options-language
+[Net] state Connected srtt 138 jitter 24 outliers 0 frames/s in 22.0 out 16.0 bytes/s in 1867 out 299 maxDrain 19 maxAge 883 ms superseded 800 seqErrors 0 buffered 29 reconnects 5 interpDelay 170 underruns 755 maxFrozen 0 reconciles 49 horizonHolds 124 busyMuted 0
+[Quality] draws over budget zone nexus avg 1653 budget 400
+[Quality] fps zone nexus avg 14.7 p95 116.5 ms worst 949.7 ms min 1.1 fps frames 441 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1653 max 1712 setpass 126 batches 1615 casters 1110 anim posed 0.0 skipped 0.0 eval 3.94 ms anim changes/s 4.9 midfade cuts 13 below 30 fps
+[Net] drain 5 frames superseded 0 in 3.5 ms
+[Net] state Connected srtt 136 jitter 19 outliers 0 frames/s in 22.2 out 20.8 bytes/s in 1870 out 395 maxDrain 8 maxAge 291 ms superseded 802 seqErrors 0 buffered 20 reconnects 5 interpDelay 150 underruns 755 maxFrozen 0 reconciles 49 horizonHolds 124 busyMuted 0
+[Autoplay] shot-38-options-game
+[Net] drain 19 frames superseded 0 in 0.8 ms
+[Net] drain 8 frames superseded 1 in 0.3 ms
+[Net] state Connected srtt 131 jitter 18 outliers 0 frames/s in 22.1 out 17.0 bytes/s in 1852 out 315 maxDrain 19 maxAge 844 ms superseded 804 seqErrors 0 buffered 82 reconnects 5 interpDelay 130 underruns 755 maxFrozen 0 reconciles 49 horizonHolds 125 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.1 ms
+[Autoplay] shot-39-options-help
+[Autoplay] step close
+[Net] state Connected srtt 165 jitter 39 outliers 0 frames/s in 22.1 out 23.6 bytes/s in 1869 out 450 maxDrain 13 maxAge 593 ms superseded 807 seqErrors 0 buffered 20 reconnects 5 interpDelay 156 underruns 757 maxFrozen 0 reconciles 49 horizonHolds 125 busyMuted 0
+[Quality] draws over budget zone nexus avg 1640 budget 400
+[Quality] fps zone nexus avg 18.1 p95 83.2 ms worst 883.2 ms min 1.1 fps frames 543 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1640 max 1715 setpass 127 batches 1598 casters 1074 anim posed 0.0 skipped 0.0 eval 3.60 ms anim changes/s 4.9 midfade cuts 20 below 30 fps
+[Autoplay] step map
+[Net] drain 4 frames superseded 0 in 12.6 ms
+[Net] snapshot starved True
+[Net] snapshot starved False
+[Autoplay] shot-40-map
+[Net] drain 26 frames superseded 0 in 0.7 ms
+[Net] state Connected srtt 148 jitter 26 outliers 0 frames/s in 22.4 out 18.9 bytes/s in 1889 out 354 maxDrain 26 maxAge 1143 ms superseded 812 seqErrors 0 buffered 20 reconnects 5 interpDelay 136 underruns 757 maxFrozen 0 reconciles 49 horizonHolds 126 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] step close
+[Net] state Connected srtt 146 jitter 25 outliers 0 frames/s in 22.0 out 18.7 bytes/s in 1854 out 352 maxDrain 5 maxAge 165 ms superseded 816 seqErrors 0 buffered 0 reconnects 5 interpDelay 156 underruns 759 maxFrozen 0 reconciles 49 horizonHolds 126 busyMuted 0
+[Autoplay] step dismiss
+[Autoplay] step travel:wueste
+Waypoint: list for route zone=6 status=Ok code=-1
+Quest: waypoint route zone=6 index=2
+[Load] ready nav wueste parse 0.0 ms
+[Load] ready nav faulmoor parse 0.1 ms
+[Load] ready nav frostgrab parse 0.2 ms
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Load] ready nav aschenschlund parse 0.0 ms
+[Load] ready nav kristallschlund parse 0.1 ms
+[Autoplay] step wait
+[Net] state Connected srtt 136 jitter 15 outliers 0 frames/s in 22.9 out 17.9 bytes/s in 1881 out 333 maxDrain 4 maxAge 143 ms superseded 818 seqErrors 0 buffered 20 reconnects 5 interpDelay 147 underruns 759 maxFrozen 0 reconciles 49 horizonHolds 126 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] step wait
+[Quality] draws over budget zone nexus avg 1593 budget 400
+[Quality] fps zone nexus avg 15.0 p95 99.9 ms worst 1150.4 ms min 0.9 fps frames 450 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1593 max 1651 setpass 120 batches 1569 casters 1056 anim posed 0.0 skipped 0.0 eval 4.21 ms anim changes/s 4.8 midfade cuts 9 below 30 fps
+[Autoplay] step wait
+[Autoplay] fight
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 4 frames superseded 0 in 0.3 ms
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 144 jitter 16 outliers 0 frames/s in 22.1 out 15.8 bytes/s in 1863 out 294 maxDrain 7 maxAge 240 ms superseded 820 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 761 maxFrozen 0 reconciles 51 horizonHolds 126 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 4 frames superseded 0 in 0.3 ms
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 5 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 147 jitter 10 outliers 0 frames/s in 22.1 out 17.9 bytes/s in 1873 out 338 maxDrain 6 maxAge 122 ms superseded 824 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 763 maxFrozen 0 reconciles 56 horizonHolds 126 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 4 frames superseded 3 in 0.1 ms
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 148 jitter 23 outliers 0 frames/s in 21.8 out 19.2 bytes/s in 1851 out 365 maxDrain 10 maxAge 397 ms superseded 828 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 763 maxFrozen 0 reconciles 60 horizonHolds 126 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+[Quality] draws over budget zone nexus avg 1504 budget 400
+[Quality] fps zone nexus avg 15.7 p95 122.7 ms worst 433.4 ms min 2.3 fps frames 470 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1504 max 1605 setpass 101 batches 1480 casters 1085 anim posed 0.0 skipped 0.0 eval 4.10 ms anim changes/s 5.9 midfade cuts 27 below 30 fps
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 5 frames superseded 0 in 0.1 ms
+[Autoplay] shot-41-fight-1
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 139 jitter 18 outliers 0 frames/s in 22.0 out 24.1 bytes/s in 1852 out 464 maxDrain 18 maxAge 889 ms superseded 831 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 764 maxFrozen 0 reconciles 64 horizonHolds 127 busyMuted 0
+[Net] drain 5 frames superseded 0 in 0.7 ms
+ZoneView: key 0.263 ambient eq 0.267,0.163,0.191 env ambient eq.g 1.167 light scale 0.595 zone env 1.00 ambient weight 0.45 sun Sun
+Nyrathen.Game.ZoneView:ApplyAtmosphere(Atmosphere&)
+Nyrathen.Game.ZoneView:ApplyClock()
+Nyrathen.Game.ZoneView:Update()
+[Net] state Connected srtt 142 jitter 13 outliers 0 frames/s in 22.2 out 23.0 bytes/s in 1884 out 438 maxDrain 11 maxAge 455 ms superseded 834 seqErrors 0 buffered 29 reconnects 5 interpDelay 160 underruns 764 maxFrozen 0 reconciles 64 horizonHolds 127 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 129 jitter 13 outliers 0 frames/s in 22.1 out 25.8 bytes/s in 1872 out 499 maxDrain 3 maxAge 77 ms superseded 836 seqErrors 0 buffered 20 reconnects 5 interpDelay 140 underruns 764 maxFrozen 0 reconciles 69 horizonHolds 127 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+[Autoplay] shot-42-fight-2
+[Net] drain 18 frames superseded 0 in 2.7 ms
+Nyrathen.Game.GameLoop:Update()
+[Quality] draws over budget zone nexus avg 1529 budget 400
+[Quality] fps zone nexus avg 21.7 p95 66.8 ms worst 947.7 ms min 1.1 fps frames 650 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1529 max 1627 setpass 104 batches 1505 casters 1090 anim posed 0.0 skipped 0.0 eval 3.40 ms anim changes/s 5.6 midfade cuts 26 below 30 fps
+[Net] drain 4 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 142 jitter 19 outliers 0 frames/s in 22.2 out 20.4 bytes/s in 1868 out 385 maxDrain 18 maxAge 812 ms superseded 840 seqErrors 0 buffered 20 reconnects 5 interpDelay 128 underruns 764 maxFrozen 0 reconciles 71 horizonHolds 128 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] drain 4 frames superseded 0 in 0.4 ms
+[Net] state Connected srtt 158 jitter 22 outliers 0 frames/s in 22.2 out 21.9 bytes/s in 1876 out 420 maxDrain 10 maxAge 480 ms superseded 842 seqErrors 0 buffered 20 reconnects 5 interpDelay 144 underruns 765 maxFrozen 0 reconciles 75 horizonHolds 128 busyMuted 0
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Autoplay] shot-43-fight-3
+[Net] drain 28 frames superseded 0 in 3.4 ms
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 166 jitter 26 outliers 0 frames/s in 22.0 out 19.5 bytes/s in 1871 out 371 maxDrain 28 maxAge 1255 ms superseded 845 seqErrors 0 buffered 20 reconnects 5 interpDelay 144 underruns 766 maxFrozen 0 reconciles 81 horizonHolds 129 busyMuted 0
+[Quality] draws over budget zone nexus avg 1575 budget 400
+[Quality] fps zone nexus avg 18.6 p95 83.2 ms worst 1265.8 ms min 0.8 fps frames 558 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1575 max 1627 setpass 107 batches 1550 casters 1124 anim posed 0.0 skipped 0.0 eval 3.45 ms anim changes/s 4.8 midfade cuts 20 below 30 fps
+[Net] drain 4 frames superseded 0 in 0.1 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 147 jitter 28 outliers 0 frames/s in 22.3 out 22.1 bytes/s in 1876 out 421 maxDrain 9 maxAge 425 ms superseded 847 seqErrors 0 buffered 20 reconnects 5 interpDelay 144 underruns 767 maxFrozen 0 reconciles 83 horizonHolds 129 busyMuted 0
+[Net] drain 4 frames superseded 0 in 0.2 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] state Connected srtt 143 jitter 25 outliers 0 frames/s in 21.6 out 22.5 bytes/s in 1828 out 433 maxDrain 4 maxAge 85 ms superseded 849 seqErrors 0 buffered 20 reconnects 5 interpDelay 200 underruns 807 maxFrozen 0 reconciles 87 horizonHolds 129 busyMuted 0
+[Autoplay] shot-44-fight-4
+[Net] drain 20 frames superseded 0 in 0.7 ms
+Nyrathen.Game.GameLoop:Update()
+[Autoplay] shot-45-chat-age
+[Net] drain 12 frames superseded 0 in 0.5 ms
+[Net] state Connected srtt 154 jitter 37 outliers 0 frames/s in 22.1 out 21.2 bytes/s in 1875 out 403 maxDrain 20 maxAge 911 ms superseded 853 seqErrors 0 buffered 20 reconnects 5 interpDelay 180 underruns 809 maxFrozen 0 reconciles 87 horizonHolds 130 busyMuted 0
+[Quality] draws over budget zone nexus avg 1584 budget 400
+[Quality] fps zone nexus avg 19.9 p95 74.6 ms worst 950.1 ms min 1.1 fps frames 596 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1584 max 1634 setpass 105 batches 1559 casters 1133 anim posed 0.0 skipped 0.0 eval 3.22 ms anim changes/s 4.8 midfade cuts 15 below 30 fps
+[Autoplay] age OK
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 138 jitter 13 outliers 0 frames/s in 22.4 out 20.1 bytes/s in 1881 out 378 maxDrain 7 maxAge 288 ms superseded 855 seqErrors 0 buffered 20 reconnects 5 interpDelay 160 underruns 809 maxFrozen 0 reconciles 87 horizonHolds 130 busyMuted 0
+[Autoplay] shot-46-chat-reminder
+[Net] drain 5 frames superseded 0 in 0.1 ms
+[Net] drain 8 frames superseded 0 in 0.2 ms
+[Net] state Connected srtt 143 jitter 12 outliers 0 frames/s in 22.0 out 21.1 bytes/s in 1863 out 400 maxDrain 20 maxAge 897 ms superseded 857 seqErrors 0 buffered 81 reconnects 5 interpDelay 140 underruns 809 maxFrozen 0 reconciles 87 horizonHolds 131 busyMuted 0
+[Autoplay] age no sheet
+[Net] drain 4 frames superseded 0 in 0.2 ms
+[Autoplay] shot-47-chat
+[Net] state Connected srtt 147 jitter 18 outliers 0 frames/s in 21.6 out 21.0 bytes/s in 1813 out 397 maxDrain 15 maxAge 643 ms superseded 861 seqErrors 0 buffered 20 reconnects 5 interpDelay 190 underruns 858 maxFrozen 0 reconciles 87 horizonHolds 131 busyMuted 0
+[Quality] draws over budget zone nexus avg 1489 budget 400
+[Quality] fps zone nexus avg 18.4 p95 92.2 ms worst 934.9 ms min 1.1 fps frames 552 cap 30 scale 1.00 shadows 2048 vfx 1.00 draws avg 1489 max 1563 setpass 106 batches 1463 casters 1043 anim posed 0.0 skipped 0.0 eval 3.48 ms anim changes/s 4.6 midfade cuts 19 below 30 fps
+[Autoplay] done
+Nyrathen.Game.DevAutoplay:Quit(String)
