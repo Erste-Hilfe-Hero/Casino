@@ -1,0 +1,90 @@
+[Quality] detect ram 7168 gpu 'Apple iOS simulator GPU' api Metal shader 45 screen 2752x2064 score 110 -> Low
+[Quality] thermal source ios
+[ui] CJK fallback fonts 5 for en
+[ui] ios panel by height 560 dp model iPad17,4 dpi 264 screen 2752x2064
+Nyrathen.World.CharacterPreview:Awake()
+Nyrathen.World.CharacterPreview:Awake()
+[render] CharacterPreview target msaa 4 pipeline Nyrathen-URP tier lowDetail False
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage root mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage slot_glow_4 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_0 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_1 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_2 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+[matdump] stage torch_flame_3 mat palette shader Shader Graphs/glTF-pbrMetallicRoughness supported True tex palette_basecolor color RGBA(0.000, 0.000, 0.000, 0.000)
+Nyrathen.World.CharacterPreview:Awake()
+Nyrathen.Game.ZoneView:SetWind(Single)
+Nyrathen.Game.ZoneView:SetTier(QualityTier, Boolean)
+[Boot] awake 16032 ms, since start 101392 ms
+[Life] Boot -> Login session Idle
+[Boot] first frame 16811 ms after awake, since start 102171 ms
+[Load] music mu_pk_menu_theme long clips loaded 0
+[ui] safe area l 0 t 0 r 0 b 50 px cutouts 0 dpi 264 orientation LandscapeLeft
+[Autoplay] login
+[Life] sleep system state Login idle 102 s
+[ui] inset lean orb 0 column 0 top-right 0 map 0 cutouts 0
+HudArc: w 747 h 560 n 6 scale 1.00 pivot 653,484 R 312 button 69 passed True touch True attack 100 (17.9%) skill 69 (12.3%) ult 78 (14.0%) dodge 59 (10.6%) potion 59 (10.6%) reach 344 row shift 0 potion at 648,272 under map
+HudArc cover 19.8%
+[Autoplay] no button a11y-continue
+[Autoplay] shot-01-login
+UnityEngine.Awaitable`1:SetExceptionAndRaiseContinuation(Exception)
+[Http] GET v1/status 54153 ms code=200 result=ui.account.error.network
+[Http] GET v1/status 55269 ms code=200 result=ui.account.error.network
+[Autoplay] shot-02-sign-in
+[Net] reachability ReachableViaLocalAreaNetwork -> NotReachable state Idle
+[Net] reachability NotReachable -> ReachableViaLocalAreaNetwork state Idle
+[Life] Login -> CharacterList session Idle
+[Load] music mu_pk_char_select long clips loaded 1
+[Autoplay] list
+[Autoplay] cover a11y-continue
+[Autoplay] shot-03-character-list
+[Life] CharacterList -> Loading session Idle
+[Life] sleep never state Loading idle 222 s
+[Net] state Connecting srtt 0 jitter 0 outliers 0 frames/s in 0.0 out 0.1 bytes/s in 0 out 4 maxDrain 0 maxAge 0 ms superseded 0 seqErrors 0 buffered 54 reconnects 0 interpDelay 100 underruns 0 maxFrozen 0 reconciles 0 horizonHolds 0 busyMuted 0
+[Quality] texture formats astc False etc2 True dxt False
+[Net] bound Connected gap 0 ms resync
+Nyrathen.Game.GameLoop:EnterZone(UInt16, UInt32)
+Nyrathen.Game.GameLoop:EnterZone(UInt16, UInt32)
+[Net] drain 6 frames superseded 0 in 824.9 ms
+HudArc cover 22.6%
+[Net] connect open 2933 seed 3209 reply 3429 keyframe 4419 ms type NEW
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+HudArc: w 747 h 560 n 8 scale 1.00 pivot 653,484 R 312 button 69 passed True touch True attack 100 (17.9%) skill 69 (12.3%) ult 78 (14.0%) dodge 59 (10.6%) potion 59 (10.6%) reach 344 row shift 0 potion at 648,272 under map
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+[Load] gear Generic 12 items 8.7 ms
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:OnSnapshot(Opcode, UInt16, Byte[], Int32)
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Load] gear Magier 12 items 225.4 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Net] snapshot starved True
+[Load] world entry 34 rpcs, last answer 6919 ms
+[Net] drain 72 frames superseded 44 in 55.1 ms
+[Net] socket closed code 1000  phase Bound state Connected
+[Load] gear Magier 12 items 24.2 ms
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+Nyrathen.Game.GameLoop:Update()
+[Load] music mu_pk_event_theme long clips loaded 1
+[Net] unsent LadderPage
