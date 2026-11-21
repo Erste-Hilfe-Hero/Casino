@@ -1,0 +1,175 @@
+# Two at the Table iOS simulator launch check. Free macOS minutes of this public repo; no game code and no secret lives here.
+# The build host (Contabo, "run:twotable-ios-sim ios-N") serves the Unity Xcode tarball through its gate (GitHub OIDC token, audience
+# nyrathen-ios-gate, checked for this repository and this branch). The job compiles it UNSIGNED, copies the .app, re-tags the copy for the
+# iOS simulator (vtool + ad-hoc signature, nothing is rebuilt), launches it with -ttdemo menu|chess|okey, screenshots each scene and
+# fails on a blank or unchanged screen. It sends the untouched unsigned .app plus the results back and pushes PNGs to branch twotable-sim-out/<run>.
+name: Two at the Table simulator check
+on:
+  push:
+    branches: [claude/project-thread-mmwe73]
+    paths: [twotable-sim.txt]
+permissions:
+  contents: write
+  id-token: write
+concurrency:
+  group: twotable-sim
+  cancel-in-progress: true
+jobs:
+  sim:
+    runs-on: macos-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Find the gate
+        run: |
+          set -uo pipefail
+          GATE=""
+          # the build host publishes its tunnel URL at play.nyrathen.com/legal/twotable-sim-gate.txt while its job runs; line 1 of twotable-sim.txt may hold it instead
+          for i in $(seq 1 180); do
+            U=$(head -n1 twotable-sim.txt | tr -d '[:space:]')
+            case "$U" in https://*) ;; *) U=$(curl -fsS --max-time 15 https://play.nyrathen.com/legal/twotable-sim-gate.txt 2>/dev/null | head -n1 | tr -d '[:space:]' || true);; esac
+            if echo "$U" | grep -qE '^https://[a-z0-9-]+\.trycloudflare\.com$'; then
+              C=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$U/xcode.tar.gz" || true)
+              if [ "$C" = 403 ]; then GATE=$U; break; fi
+            fi
+            sleep 10
+          done
+          [ -n "$GATE" ] || { echo "no live gate within 30 min (start run:twotable-ios-sim ios-N on the build host)"; exit 1; }
+          echo "GATE=$GATE" >> "$GITHUB_ENV"
+          echo "gate found"
+      - name: Fetch Xcode project
+        run: |
+          set -euo pipefail
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
+          mkdir -p build
+          curl -fsS --retry 3 -H "Authorization: Bearer $TOKEN" "$GATE/xcode.tar.gz" -o "$RUNNER_TEMP/x.tgz"
+          ls -l "$RUNNER_TEMP/x.tgz"
+          tar -xzf "$RUNNER_TEMP/x.tgz" -C build && rm "$RUNNER_TEMP/x.tgz"
+          test -d build/iOS/Unity-iPhone.xcodeproj
+          xcodebuild -version
+      - name: Archive unsigned
+        run: |
+          set -euo pipefail
+          cd build/iOS
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release -sdk iphoneos \
+            -destination generic/platform=iOS -archivePath "$RUNNER_TEMP/n.xcarchive" archive \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" -quiet 2>&1 | tail -n 80
+          ls "$RUNNER_TEMP/n.xcarchive/Products/Applications"
+          mkdir -p "$RUNNER_TEMP/send"
+          cp -R "$RUNNER_TEMP"/n.xcarchive/Products/Applications/*.app "$RUNNER_TEMP/send/"
+      - name: Launch in the simulator
+        run: |
+          set -uo pipefail
+          pip3 install --break-system-packages -q pillow || pip3 install -q pillow
+          OUT="$RUNNER_TEMP/send/sim-result"; mkdir -p "$OUT"; echo "OUT=$OUT" >> "$GITHUB_ENV"
+          S="$OUT/summary.txt"; echo "casino run $GITHUB_RUN_ID" > "$S"
+          # simulator copy of the unsigned device app: arm64 slices re-tagged as iOS-simulator binaries, ad-hoc signed
+          rm -rf "$RUNNER_TEMP/simapp"; mkdir -p "$RUNNER_TEMP/simapp"
+          cp -R "$RUNNER_TEMP"/send/*.app "$RUNNER_TEMP/simapp/"
+          APP=$(ls -d "$RUNNER_TEMP"/simapp/*.app | head -1)
+          BID=$(plutil -extract CFBundleIdentifier raw "$APP/Info.plist"); EXE=$(plutil -extract CFBundleExecutable raw "$APP/Info.plist")
+          MINOS=$(plutil -extract MinimumOSVersion raw "$APP/Info.plist" 2>/dev/null || echo 16.0)
+          echo "app $(basename "$APP") $BID $(plutil -extract CFBundleShortVersionString raw "$APP/Info.plist") ($(plutil -extract CFBundleVersion raw "$APP/Info.plist"))" | tee -a "$S"
+          SDK=$(xcrun --sdk iphonesimulator --show-sdk-version)
+          find "$APP" -type f | while read -r f; do
+            if file "$f" | grep -q 'Mach-O'; then
+              xcrun vtool -arch arm64 -set-build-version 7 "$MINOS" "$SDK" -replace -output "$f.sim" "$f" 2>>"$OUT/vtool.log" && mv "$f.sim" "$f" || echo "vtool failed $f" >> "$OUT/vtool.log"
+            fi
+          done
+          find "$APP" -name _CodeSignature -type d -prune -exec rm -rf {} +
+          rm -f "$APP/embedded.mobileprovision"
+          find "$APP" \( -name '*.framework' -o -name '*.dylib' \) -prune | while read -r f; do codesign -f -s - "$f" >/dev/null 2>&1; done
+          codesign -f -s - "$APP" 2>&1 | tail -2
+          # device: "iPhone Duo" if present, else the newest Pro Max, else the last iPhone of the newest runtime
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          d = json.load(sys.stdin)["devices"]
+          rts = sorted((k for k in d if "iOS" in k), key=lambda k: [int(x) for x in k.rsplit("iOS-", 1)[1].split("-")], reverse=True)
+          devs = [(x["udid"], x["name"]) for k in rts for x in d[k] if x["name"].startswith("iPhone")]
+          for pick in (lambda n: "Duo" in n, lambda n: "Pro Max" in n, lambda n: True):
+              for u, n in devs:
+                  if pick(n): print(u, n.replace(" ", "_")); sys.exit()
+          ')
+          UD=${UDID%% *}; echo "device ${UDID#* } $UD" | tee -a "$S"
+          [ -n "$UD" ] || { echo "FAIL no iPhone simulator" | tee -a "$S"; exit 0; }
+          xcrun simctl boot "$UD"; xcrun simctl bootstatus "$UD" -b >/dev/null
+          xcrun simctl status_bar "$UD" override --time 9:41 --batteryState charged --batteryLevel 100 || true
+          xcrun simctl install "$UD" "$APP" || { echo "FAIL install" | tee -a "$S"; exit 0; }
+          alive() { xcrun simctl spawn "$UD" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; }
+          for SC in menu chess okey; do
+            xcrun simctl terminate "$UD" "$BID" >/dev/null 2>&1; sleep 2
+            xcrun simctl launch --console-pty "$UD" "$BID" -ttdemo "$SC" > "$OUT/app-$SC.log" 2>&1 & LP=$!
+            sleep 15
+            xcrun simctl io "$UD" screenshot "$OUT/raw-$SC.png" >/dev/null 2>&1 || echo "FAIL scene $SC no screenshot" >> "$S"
+            if alive; then echo "scene $SC process alive" >> "$S"; else echo "FAIL scene $SC process gone (crash)" >> "$S"; fi
+            kill $LP 2>/dev/null || true
+            echo "scene $SC: $(grep -c . "$OUT/app-$SC.log") log lines, '[TT] start' lines: $(grep -c '\[TT\] start' "$OUT/app-$SC.log")" >> "$S"
+          done
+          xcrun simctl terminate "$UD" "$BID" >/dev/null 2>&1; xcrun simctl shutdown "$UD" || true
+          for SC in menu chess okey; do
+            f="$OUT/raw-$SC.png"; [ -f "$f" ] || continue
+            pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
+            cp "$f" "$OUT/$SC.png"; if [ "$pw" -lt "$ph" ]; then sips -r 270 "$OUT/$SC.png" >/dev/null; fi
+          done
+          python3 - "$OUT" >> "$S" <<'PY'
+          import sys
+          from PIL import Image, ImageChops, ImageStat
+          out = sys.argv[1]
+          def load(n):
+              try: im = Image.open(f"{out}/{n}.png").convert("RGB")
+              except Exception: return None
+              im.thumbnail((200, 200)); return im
+          ims = {n: load(n) for n in ("menu", "chess", "okey")}
+          for n, im in ims.items():
+              if im is None: print(f"FAIL scene {n} screenshot missing"); continue
+              q = [(r >> 4, g >> 4, b >> 4) for r, g, b in im.getdata()]
+              top = max(q.count(c) for c in set(q)) / len(q)
+              print(("FAIL blank " if top >= 0.97 else "content ") + f"{n}.png colours={len(set(q))} top={top*100:.1f}%")
+          def diff(a, b):
+              if ims[a] is None or ims[b] is None or ims[a].size != ims[b].size: return 99.0
+              return sum(ImageStat.Stat(ImageChops.difference(ims[a], ims[b])).mean) / 3
+          for a, b in (("menu", "chess"), ("menu", "okey"), ("chess", "okey")):
+              d = diff(a, b)
+              print(("FAIL same screen " if d < 3 else "scene differs ") + f"{a} vs {b} diff={d:.1f} (-ttdemo ignored if equal)")
+          PY
+          if grep -q '^FAIL' "$S"; then echo "RESULT FAIL" >> "$S"; else echo "RESULT OK" >> "$S"; fi
+          cat "$S"
+      - name: Push screenshots to twotable-sim-out
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [ -d "${OUT:-}" ] || exit 0
+          R="$RUNNER_TEMP/o"; git init -q "$R"; cd "$R"
+          git config user.name "twotable-sim"; git config user.email "twotable-sim@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          mkdir -p "run-${GITHUB_RUN_ID}"; cp "$OUT"/*.png "$OUT"/*.txt "$OUT"/*.log "run-${GITHUB_RUN_ID}/" 2>/dev/null || true
+          git add . ; git commit -qm "twotable simulator check run ${GITHUB_RUN_ID}"
+          git push -q -f origin "HEAD:refs/heads/twotable-sim-out/${GITHUB_RUN_ID}"
+          echo "pushed twotable-sim-out/${GITHUB_RUN_ID}"
+      - name: Send app and results back to the build host
+        if: always()
+        run: |
+          set -uo pipefail
+          [ -n "${GATE:-}" ] || exit 0
+          mkdir -p "$RUNNER_TEMP/send/sim-result"
+          cd "$RUNNER_TEMP"
+          rm -f "$RUNNER_TEMP"/send/sim-result/raw-*.png
+          [ -f send/sim-result/summary.txt ] || printf 'FAIL an earlier step failed before the launch check\nRESULT FAIL\n' > send/sim-result/summary.txt
+          tar -czf up.tar.gz -C send .
+          ls -l up.tar.gz
+          TOKEN=$(curl -fsS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=nyrathen-ios-gate" | python3 -c 'import json,sys; print(json.load(sys.stdin)["value"])')
+          echo "::add-mask::$TOKEN"
+          split -b 90m -d -a 3 up.tar.gz part-
+          i=0
+          for f in part-*; do
+            curl -fsS --retry 3 -X PUT -H "Authorization: Bearer $TOKEN" --data-binary "@$f" "$GATE/part/$i"
+            i=$((i+1))
+          done
+          curl -fsS --retry 3 -X POST -H "Authorization: Bearer $TOKEN" "$GATE/done/$i/$(shasum -a 256 up.tar.gz | cut -d' ' -f1)"
+          echo "sent $i parts"
+      - name: Verdict
+        run: |
+          grep '^RESULT' "$OUT/summary.txt" 2>/dev/null | tail -1 | grep -q 'RESULT OK'
