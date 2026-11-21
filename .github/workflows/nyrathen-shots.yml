@@ -111,6 +111,9 @@ jobs:
               elif [ "$pw" -lt "$ph" ]; then sips -r 270 "$o" >/dev/null; fi
               sips -z "$H" "$W" "$o" >/dev/null; rm "$f"
             done
+            # iOS crash reports of the app (simulator crashes land on the host), e.g. run 44935145551 iPad "app exited" on world entry
+            mkdir -p "$D/crash"; find "$HOME/Library/Logs/DiagnosticReports" -newer "$D/app.log" -name '*.ips' -print0 2>/dev/null | xargs -0 grep -l "$BID" 2>/dev/null | while read -r f; do cp "$f" "$D/crash/"; done
+            echo "crash reports: $(ls "$D/crash" | wc -l)"
             xcrun simctl shutdown "$UDID" || true
           }
           # optional line 2 of shots.txt: the device tags to capture (default both), e.g. "ipad13" to redo one device
@@ -127,7 +130,7 @@ jobs:
           set -euo pipefail
           [ -d "${OUTD:-}" ] || exit 0
           # never publish a line that could carry the demo password
-          for l in "$OUTD"/*/app.log; do [ -f "$l" ] || continue; grep -E '\[Autoplay\]|Exception|rror|\[Boot\]|\[ui\]|\[Perf\]|\[Quality\]|CharacterPreview|\[matdump\]|HeroLook|key light|HudArc|waypoint route|Waypoint|\[preview\]|\[Load\]|\[Life\]|\[Net\]|GameLoop:|ZoneView:' "$l" | grep -viE 'password|passwd|shots.json|appreview@' > "$l.txt" || true; rm -f "$l"; done
+          for l in "$OUTD"/*/app.log; do [ -f "$l" ] || continue; grep -E '\[Autoplay\]|Exception|rror|\[Boot\]|\[ui\]|\[Perf\]|\[Quality\]|CharacterPreview|\[matdump\]|HeroLook|key light|HudArc|waypoint route|Waypoint|\[preview\]|\[Load\]|\[Life\]|\[Net\]|GameLoop:|ZoneView:|NullReference|Terminating|Quit|kick|replaced' "$l" | grep -viE 'password|passwd|shots.json|appreview@' > "$l.txt" || true; rm -f "$l"; done
           R="$RUNNER_TEMP/o"; git init -q "$R"; cd "$R"
           git config user.name "nyrathen-shots"; git config user.email "nyrathen-shots@users.noreply.github.com"
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
