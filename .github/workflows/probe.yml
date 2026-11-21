@@ -5,7 +5,15 @@ on:
     paths: [.github/workflows/probe.yml]
 jobs:
   probe:
-    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, macos-26, macos-15]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
-      - run: sw_vers; xcodebuild -version; ls /Applications | grep -i xcode; sysctl -n hw.ncpu; df -h / | tail -1
+      # 2026-11-21: which Xcode / iOS SDK each free image has (Apple ITMS-90725 wants iOS 27 SDK)
+      - run: |
+          sw_vers; xcodebuild -version; xcode-select -p
+          ls -d /Applications/Xcode* || true
+          for x in /Applications/Xcode*.app; do echo "$x: $("$x/Contents/Developer/usr/bin/xcodebuild" -version 2>/dev/null | tr '\n' ' ') sdk=$(DEVELOPER_DIR="$x/Contents/Developer" xcrun --sdk iphoneos --show-sdk-version 2>/dev/null)"; done
