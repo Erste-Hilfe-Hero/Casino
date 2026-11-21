@@ -1,2 +1,2 @@
 https://virginia-upon-conjunction-spas.trycloudflare.com
-# lifekit export run 260, build 2360 (2026-11-21)
+# lifekit export run 260, build 2360 (2026-11-21) retry: run 16 curl 56 reset during xcode.tar.gz
