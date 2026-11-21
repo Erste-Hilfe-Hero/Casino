@@ -1,0 +1,18 @@
+casino run 44894068765
+app TwoattheTable.app com.nyrathen.twotable 2.0.0 (73)
+device iPhone_17_Pro_Max F90353E4-F95D-488C-9F4E-B43F74E385F2
+boot rc=0
+bootstatus rc=0
+FAIL scene menu process gone (crash)
+scene menu: 77 log lines, '[TT] start' lines: 1
+scene chess process alive
+scene chess: 77 log lines, '[TT] start' lines: 1
+scene okey process alive
+scene okey: 78 log lines, '[TT] start' lines: 1
+content menu.png colours=334 top=23.4%
+content chess.png colours=216 top=25.9%
+content okey.png colours=193 top=23.8%
+scene differs menu vs chess diff=45.4 (-ttdemo ignored if equal)
+scene differs menu vs okey diff=42.0 (-ttdemo ignored if equal)
+scene differs chess vs okey diff=42.2 (-ttdemo ignored if equal)
+RESULT FAIL
