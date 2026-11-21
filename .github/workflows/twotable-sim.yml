@@ -37,15 +37,6 @@ jobs:
           [ -n "$GATE" ] || { echo "no live gate within 30 min (start run:twotable-ios-sim ios-N on the build host)"; exit 1; }
           echo "GATE=$GATE" >> "$GITHUB_ENV"
           echo "gate found"
-      # Owner 2026-11-21: build with Xcode 27 (iOS 27 SDK). Fails if the image has no Xcode 27.
-      - name: Select Xcode 27
-        run: |
-          set -euo pipefail
-          ls -d /Applications/Xcode*.app
-          X=$(ls -d /Applications/Xcode_27*.app 2>/dev/null | sort -V | tail -1 || true)
-          [ -n "$X" ] || { echo "::error::no Xcode 27 on this runner image"; exit 1; }
-          sudo xcode-select -s "$X/Contents/Developer"
-          xcodebuild -version; xcrun --sdk iphoneos --show-sdk-version
       - name: Fetch Xcode project
         run: |
           set -euo pipefail
