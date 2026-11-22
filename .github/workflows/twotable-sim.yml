@@ -99,7 +99,8 @@ jobs:
           tail -5 "$OUT/boot.log"
           xcrun simctl status_bar "$UD" override --time 9:41 --batteryState charged --batteryLevel 100 || true
           xcrun simctl install "$UD" "$APP" || { echo "FAIL install" | tee -a "$S"; exit 0; }
-          alive() { xcrun simctl spawn "$UD" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID"; }
+          # retried: one launchctl read can miss a running app (casino run 45081480122: okey "gone" while the dump right after listed it)
+          alive() { for t in 1 2 3; do xcrun simctl spawn "$UD" launchctl list 2>/dev/null | grep -q "UIKitApplication:$BID" && return 0; sleep 2; done; return 1; }
           for SC in menu chess okey; do
             xcrun simctl terminate "$UD" "$BID" >/dev/null 2>&1; sleep 2
             xcrun simctl launch --console-pty "$UD" "$BID" -ttdemo "$SC" > "$OUT/app-$SC.log" 2>&1 & LP=$!
