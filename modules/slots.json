@@ -1,0 +1,80 @@
+{
+  "module": "slots",
+  "version": "9.5.2",
+  "paths": [
+    "casino/games/slots/",
+    "web/games/slots.js",
+    "web/i18n/en-US/games/slots.json",
+    "web/i18n/ru-RU/games/slots.json"
+  ],
+  "requirements_prefixes": [
+    "SLOT",
+    "SLOTS"
+  ],
+  "contracts": [
+    "contracts/openapi/slots.v1.yaml"
+  ],
+  "game": {
+    "id": "slots",
+    "sort_order": 20,
+    "route": "/games/slots",
+    "label": "Slots",
+    "category": "machine",
+    "categories": [
+      "machine",
+      "reels",
+      "instant"
+    ],
+    "backend": {
+      "register": "casino.games.slots.api:register"
+    },
+    "frontend": {
+      "module": "./games/slots.js",
+      "export": "SlotsGame",
+      "ready_testid": "slot-grid",
+      "i18n_domain": "games/slots",
+      "i18n_probe": "history.row"
+    },
+    "tests": {
+      "long_driver": "tests.game_drivers.slots:play"
+    },
+    "translations": {
+      "ru-RU": {
+        "label": "Слоты",
+        "kicker": "Автомат",
+        "description": "Анимированные слоты 5×3 с линиями, дикими символами, скаттерами, бесплатными вращениями и прогрессивными функциями.",
+        "tags": [
+          "Боты",
+          "Автоигра",
+          "Бонусные раунды"
+        ]
+      }
+    },
+    "lobby": {
+      "featured": false,
+      "wide": true,
+      "art_class": "slot-art",
+      "symbol": "&#9638;",
+      "kicker": "Machine",
+      "description": "Animated 5-reel slots with paylines, wilds, scatters, free spins, and progressive features.",
+      "tags": [
+        "Bots",
+        "Autoplay",
+        "Bonus rounds"
+      ]
+    }
+  },
+  "depends_on": [
+    "core",
+    "ledger",
+    "players",
+    "autoplay"
+  ],
+  "may_not_depend_on": [
+    "roulette",
+    "blackjack",
+    "baccarat",
+    "keno",
+    "bingo"
+  ]
+}

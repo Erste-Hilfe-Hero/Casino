@@ -1,0 +1,18 @@
+{
+  "module": "tooling",
+  "version": "1.50.4",
+  "paths": [
+    "scripts/",
+    ".github/",
+    "codex/",
+    "migrations/"
+  ],
+  "requirements_prefixes": [
+    "TOOL"
+  ],
+  "depends_on": [
+    "tests",
+    "contracts",
+    "docs"
+  ]
+}

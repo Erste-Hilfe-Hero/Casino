@@ -1,0 +1,82 @@
+{
+  "game": "four_card_poker",
+  "requirements_prefixes": [
+    "FOURCP"
+  ],
+  "requirements": [
+    {
+      "id": "FOURCP-001",
+      "module": "Four Card Poker",
+      "description": "Four Card Poker is a stateful dealer poker game where the player builds their best four-card hand from five cards and the dealer builds theirs from six, so the dealer wins about two thirds of showdowns in place of any qualification rule. The player posts an ante and an optional Aces Up side bet, sees their cards, then folds or raises with a Play wager of one to three times the ante. On a Play the best four-card hands are compared with ties awarded to the player: a win pays the ante and Play even money and a loss takes both. An Ante Bonus pays on the player's three of a kind or better regardless of the dealer, and the independent Aces Up bet pays on a pair of aces or better whether the player folds or plays. Four-card ranking places three of a kind above a flush and a straight. The disciplined strategy folds every high-card hand and plays a pair or better, leaving a house edge near 4.7 percent under optimal play. Deal and decision commands are exactly-once and reload-safe on the shared ledger and player-scoped state store.",
+      "status": "PASS",
+      "api_tests": [
+        "API-FOUR-CARD-POKER-001"
+      ],
+      "browser_tests": [
+        "BR-CATALOG-EXPANSION-001",
+        "BR-FOUR-CARD-POKER-001"
+      ],
+      "implementation_files": [
+        "casino/games/four_card_poker/engine.py",
+        "casino/games/four_card_poker/service.py",
+        "casino/games/four_card_poker/api.py",
+        "web/games/four_card_poker.js",
+        "web/games/four_card_poker.css",
+        "tests/games/four_card_poker/test_frontend.mjs",
+        "tests/runner.py",
+        "docs/evidence/four_card_poker/README.md",
+        "contracts/openapi/four_card_poker.v1.yaml"
+      ],
+      "introduced_in": "issue-141-four-card-poker",
+      "changed_in": "issue-1027-four-card-poker-lifecycle-slice",
+      "notes": "Allocated for GitHub issue #141, a catalog-expansion poker variant (#73). The service reuses the shared card primitives and ledger with its own four-card evaluator. Issue #1027 delegates route, busy, locale, action-id, and external stylesheet ownership to the shared lifecycle while retaining a mount-specific response-adoption guard for the shell's persistent outlet. Exact-head Browser evidence covers real deal/play settlement, repeat availability, reload restoration, responsive containment, stylesheet reuse, and teardown in EN/RU at all four governed viewports."
+    },
+    {
+      "id": "FOURCP-002",
+      "module": "Four Card Poker",
+      "description": "Four Card Poker inherits the exactly-once, reload-safe orchestration of the shared ledger: one caller-stable action id maps to one deal or decision, a retry replays the identical committed round and payout without moving the wallet again, and an action id reused with different wager content fails closed. The dealer's six cards stay private until the showdown, and a fold reveals only the player's best four-card hand. The additive v1 contract exposes only the game-owned state, rounds, and decisions routes and never alters the frozen shared API. The published rules report the play multipliers and the Ante Bonus and Aces Up paytables.",
+      "status": "PASS",
+      "api_tests": [
+        "API-FOUR-CARD-POKER-001"
+      ],
+      "browser_tests": [
+        "BR-CATALOG-EXPANSION-001",
+        "BR-FOUR-CARD-POKER-001"
+      ],
+      "implementation_files": [
+        "casino/games/four_card_poker/service.py",
+        "casino/games/four_card_poker/api.py",
+        "web/games/four_card_poker.js",
+        "tests/games/four_card_poker/test_api.py",
+        "tests/games/four_card_poker/test_frontend.mjs",
+        "tests/game_drivers/four_card_poker.py"
+      ],
+      "introduced_in": "issue-141-four-card-poker",
+      "changed_in": "issue-1027-four-card-poker-lifecycle-slice",
+      "notes": "Allocated for GitHub issue #141. Issue #1027 preserves the exact state, rounds, and decisions routes; ante and Aces Up payloads; 1x-3x play and fold decisions; unresolved deal and decision action-id reuse; card privacy; reload recovery; settlement; wallet refresh; and one-click repeat behavior while removing duplicate frontend lifecycle helpers."
+    },
+    {
+      "id": "FOURCP-003",
+      "module": "Four Card Poker",
+      "description": "Four Card Poker publishes opening preparation, deal proof, play or fold ownership, terminal archive, settlement proof, and action-owned rollback through provider-current callbacks that replace only the game-owned active round, recent rounds, and action receipts. Competing processes preserve unrelated player-state siblings and fail closed before stale decisions can overwrite or resurrect a terminal round, while lost ledger responses reconcile immutable proof without repeating a debit or credit.",
+      "status": "PASS",
+      "api_tests": [
+        "API-FOUR-CARD-POKER-001",
+        "API-FOUR-CARD-POKER-ATOMIC-001",
+        "PERF-MULTIPROCESS-SAFETY-001"
+      ],
+      "browser_tests": [],
+      "implementation_files": [
+        "casino/games/four_card_poker/service.py",
+        "tests/games/four_card_poker/test_api.py",
+        "tests/unit/multiprocess_safety_audit_tests.py",
+        "tests/game_economics_registry.json",
+        "tests/run_tests.py",
+        "tests/unit/request_latency_benchmark_tests.py"
+      ],
+      "introduced_in": "issue-783-four-card-poker-atomic-state",
+      "changed_in": "issue-783-four-card-poker-atomic-state",
+      "notes": "The frozen v1 routes, cards, ranking, paytables, and ledger vocabulary remain unchanged. Production multiworker activation stays blocked because state, ledger, and history remain separate transaction boundaries."
+    }
+  ]
+}

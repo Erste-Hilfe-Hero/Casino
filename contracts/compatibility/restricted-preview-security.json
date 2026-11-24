@@ -1,0 +1,121 @@
+{
+  "artifact": "restricted-preview-security",
+  "version": 7,
+  "stage": "restricted-preview",
+  "canonical_origin": "https://casino.tiltseven.com",
+  "enrollment_policy": {
+    "route": "/api/v2/auth/enrollment-policy",
+    "modes": ["closed", "invite-only", "self-signup"],
+    "environment_seed": true,
+    "environment_fallback": true,
+    "absent_nonmapping_or_unowned_document": "deployed-environment-baseline",
+    "schema_v1_malformed_document": "fixed-operator-recovery-without-read-side-write",
+    "schema_v1_unknown_mode": "fixed-operator-recovery-without-read-side-write",
+    "public_methods_default_enabled": false,
+    "enforced_routes": ["/api/v2/auth/signup", "/api/v2/auth/redeem-invitation", "/api/v2/auth/oauth/{google|facebook}/start", "/api/v2/auth/oauth/{google|facebook}/callback"],
+    "decision_logging": {
+      "kind": "operational-jsonl",
+      "event": "enrollment_decision",
+      "routes": ["signup", "invitation", "unknown"],
+      "modes": ["closed", "invite-only", "self-signup"],
+      "methods": ["email", "google", "facebook", "unknown"],
+      "decisions": ["allowed", "denied"],
+      "reasons": ["allowed", "mode_closed", "self_signup_disabled", "method_disabled", "invitations_disabled", "unknown_route"],
+      "fail_closed_before_mutation": true,
+      "immutable_actor_change_audit": false,
+      "separate_owner_change_audit": "provider-backed-hash-linked-policy-transaction"
+    },
+    "admin_write": {
+      "routes": ["/api/v2/admin/enrollment-policy", "/api/v2/admin/enrollment-policy/preview"],
+      "authority": "current-active-platform-owner",
+      "ordinary_admin_write": false,
+      "confirmation": "exact-true",
+      "reason": "required-printable-1-through-256",
+      "preview_apply_computation": "shared-resolved-capability-function",
+      "preview_revision": "sha256-canonical-policy-plus-verified-audit-count-and-head",
+      "apply_revision_required": true,
+      "stale_preview": "fixed-conflict-no-state-disclosure-no-write-no-operational-log",
+      "strict_document_read": "missing-default-owned-schema-malformed-operator-recovery-no-read-side-write",
+      "rejected_mutation": "no-policy-audit-or-operational-log-write",
+      "rollback": "exact-prior-policy-plus-current-revision",
+      "audit": {
+        "provider_backed": true,
+        "same_document_transaction": true,
+        "append_only": true,
+        "hash_linked": true,
+        "actor": "canonical-opaque-platform-owner-id",
+        "prior_and_current_policy": true
+      }
+    },
+    "admin_write_available": true,
+    "live_enablement_authorized": false,
+    "api_v1_unchanged": true
+  },
+  "anonymous_routes": [
+    "/api/v2/auth/login",
+    "/api/v2/auth/guest",
+    "/api/v2/auth/redeem-invitation",
+    "/api/v2/auth/enrollment-policy",
+    "/api/v2/auth/signup",
+    "/api/v2/auth/signup/resend",
+    "/api/v2/auth/signup/verify",
+    "/api/v2/auth/signup/cancel",
+    "/api/v2/auth/password-reset/initiate",
+    "/api/v2/auth/password-reset/resend",
+    "/api/v2/auth/password-reset/complete",
+    "/api/v2/auth/oauth/providers",
+    "/api/v2/auth/csrf",
+    "/api/v2/auth/oauth/{google|facebook}/start",
+    "/api/v2/auth/oauth/{google|facebook}/callback",
+    "/healthz"
+  ],
+  "authenticated_routes": [
+    "/readyz"
+  ],
+  "admin_surfaces": [
+    "/admin",
+    "/admin.js",
+    "/api/v2/admin/"
+  ],
+  "disabled_public_actions": [
+    "enabled_signup",
+    "oauth_exchange",
+    "oauth_account_creation",
+    "oauth_email_linking"
+  ],
+  "request_integrity": {
+    "unsafe_methods": ["DELETE", "PATCH", "POST", "PUT"],
+    "origin": "exact",
+    "csrf": "per-session-distinct",
+    "host": "exact-canonical-authority"
+  },
+  "proxy_policy": {
+    "direct_peer": "one-configured-loopback-address",
+    "accepted_headers": ["X-Forwarded-For", "X-Forwarded-Proto"],
+    "forwarded_proto": "https",
+    "reject_lists": true
+  },
+  "cookie_policy": {
+    "host_only": true,
+    "secure": true,
+    "http_only_session": true,
+    "same_site": ["Strict", "Lax"]
+  },
+  "access_policy": {
+    "public_signup": false,
+    "email_signup_requires_verification_before_identity_wallet_or_session": true,
+    "verified_email_starting_balance_ledger_exactly_once": true,
+    "live_oauth": false,
+    "oauth_provider_flags_default_false": true,
+    "oauth_provider_network_release_flags_default_false": true,
+    "oauth_existing_private_invite_accounts_only": true,
+    "oauth_social_signup_supported_but_default_false": true,
+    "oauth_social_signup_requires_terms_privacy_and_fake_money_acknowledgement": true,
+    "oauth_provider_email_auto_linking": false,
+    "admin_requires_admin_session": true,
+    "monitor_bearer_limited_to_operations": true,
+    "guest_trials_restricted_preview_only": true,
+    "guest_browser_context_proof_required": true,
+    "guest_admin_telemetry_deidentified": true
+  }
+}

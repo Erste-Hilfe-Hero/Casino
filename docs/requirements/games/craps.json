@@ -1,0 +1,136 @@
+{
+  "game": "craps",
+  "requirements_prefixes": [
+    "CRAPS"
+  ],
+  "requirements": [
+    {
+      "id": "CRAPS-001",
+      "module": "Craps",
+      "description": "Pass Line and Don't Pass implement come-out, point, win, loss, and bar-12 refund rules with server-authoritative dice.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CRAPS-001"
+      ],
+      "browser_tests": [
+        "BR-CRAPS-001"
+      ],
+      "implementation_files": [
+        "casino/games/craps/engine.py",
+        "casino/games/craps/api.py",
+        "web/games/craps.js"
+      ],
+      "introduced_in": "game-expansion-craps",
+      "changed_in": "game-expansion-craps",
+      "notes": "Issue #77 allocates the permanent bounded rules requirement for issue #90."
+    },
+    {
+      "id": "CRAPS-002",
+      "module": "Craps",
+      "description": "Authenticated sessions own private reload-safe rounds, roll actions, recovery state, history, and canonical route restoration.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CRAPS-001",
+        "API-WALLET-RESTART-001"
+      ],
+      "browser_tests": [
+        "BR-CRAPS-001"
+      ],
+      "implementation_files": [
+        "casino/games/craps/api.py",
+        "web/app.js",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-craps",
+      "changed_in": "game-expansion-craps",
+      "notes": "Session context overrides caller player ids and terminal actions remain replayable after archival."
+    },
+    {
+      "id": "CRAPS-003",
+      "module": "Craps",
+      "description": "Wagers, payouts, and refunds use the shared ledger exactly once under durable request identities.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CRAPS-001"
+      ],
+      "browser_tests": [],
+      "implementation_files": [
+        "casino/games/craps/api.py",
+        "casino/core/ledger.py",
+        "tests/games/craps/test_api.py",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-craps",
+      "changed_in": "game-expansion-craps",
+      "notes": "No game code mutates balances directly and conflicting retries fail closed."
+    },
+    {
+      "id": "CRAPS-004",
+      "module": "Application",
+      "description": "Craps supplies complete English and Russian responsive, accessible, reduced-motion-safe, timer-clean play.",
+      "status": "PASS",
+      "api_tests": [],
+      "browser_tests": [
+        "BR-CRAPS-001"
+      ],
+      "implementation_files": [
+        "web/games/craps.js",
+        "web/i18n/en-US/games/craps.json",
+        "web/i18n/ru-RU/games/craps.json",
+        "tests/visual/visual_matrix.json",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-craps",
+      "changed_in": "game-expansion-craps",
+      "notes": "Evidence covers both locales and every governed viewport."
+    },
+    {
+      "id": "CRAPS-005",
+      "module": "Tests",
+      "description": "Catalog, contract, browser, and long-suite discovery include Craps with requirement, module, version, and visual traceability.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CATALOG-001",
+        "LONG-SUITE-100"
+      ],
+      "browser_tests": [
+        "BR-CATALOG-DISCOVERY-001",
+        "BR-CRAPS-001"
+      ],
+      "implementation_files": [
+        "modules/craps.json",
+        "modules/module-manifest.json",
+        "contracts/compatibility/module-api-matrix.json",
+        "tests/game_drivers/craps.py",
+        "tests/visual/visual_matrix.json",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-craps",
+      "changed_in": "issue-919-craps-browser-durable-roll-wait",
+      "notes": "Descriptor sort order 160 and the catalog-discovered long driver are canonical. BR-CRAPS-001 waits for the committed roll count to advance before requiring decorative presentation to settle, so evidence cannot depend on observing a transient animation class."
+    },
+    {
+      "id": "CRAPS-006",
+      "module": "Craps",
+      "description": "Craps publishes prepared rounds, authoritative rolls and point transitions, durable private history, wager and settlement proof markers, terminal archive, interruption recovery, and action-owned rollback through provider-current callbacks that replace only game-owned fields. Competing processes preserve unrelated player-state siblings and fail closed before stale starts can issue a ledger movement or overwrite a winning round, while lost ledger responses reconcile immutable proof without repeating a wager, payout, or refund.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CRAPS-001",
+        "API-CRAPS-ATOMIC-001",
+        "PERF-MULTIPROCESS-SAFETY-001"
+      ],
+      "browser_tests": [],
+      "implementation_files": [
+        "casino/games/craps/api.py",
+        "tests/games/craps/test_api.py",
+        "tests/unit/multiprocess_safety_audit_tests.py",
+        "tests/game_economics_registry.json",
+        "tests/run_tests.py",
+        "tests/unit/request_latency_benchmark_tests.py"
+      ],
+      "introduced_in": "issue-797-craps-atomic-state",
+      "changed_in": "issue-797-craps-atomic-state",
+      "notes": "The frozen v1 routes, envelopes, server-authoritative dice, line-wager rules, ledger transaction types, retry identities, and private recovery projection remain unchanged. Production multiworker activation stays blocked because player state and wallet/history movements remain separate transaction boundaries."
+    }
+  ]
+}

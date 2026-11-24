@@ -1,0 +1,38 @@
+{
+  "schema": "casino-mysql-migration-catalog-v1",
+  "minimum_runtime_version": 2,
+  "expected_version": 5,
+  "apply_policy": "held",
+  "migrations": [
+    {
+      "version": 1,
+      "name": "initial-storage-schema",
+      "file": "0001_initial.json",
+      "sha256": "f54c288ef95f2df274f6873936969c0d9207ff6f4e1329fe43c3f79cd91e0121"
+    },
+    {
+      "version": 2,
+      "name": "ledger-action-identity",
+      "file": "0002_action_identity.json",
+      "sha256": "c3bf013483a00bddd13cf7a9b3666ea029a0f447e7a04f6dbfa7f9074103c828"
+    },
+    {
+      "version": 3,
+      "name": "game-action-receipts",
+      "file": "0003_game_action_receipts.json",
+      "sha256": "7fcb2a4997796f170c914480b1a10ebc695c4751ed66679d64774373242c0e7b"
+    },
+    {
+      "version": 4,
+      "name": "game-action-claims",
+      "file": "0004_game_action_claims.json",
+      "sha256": "0a5681988f3210b249799f2aa16e8356ec5dc8b2f67ea5df811e2a2c9eb9a8f6"
+    },
+    {
+      "version": 5,
+      "name": "first-class-sessions",
+      "file": "0005_first_class_sessions.json",
+      "sha256": "20f6f29bea836c093b80d7a8b4adfeb81c2f2780a9e22045989ee90640e5a471"
+    }
+  ]
+}

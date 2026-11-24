@@ -1,0 +1,4164 @@
+/* CSS namespace gate (#717): bare `.red`, `.black`, and `.green` rules are forbidden; route and card scopes own semantic game colors. */
+/* Curated release tours own one bounded scroll surface; no animation or game-layout changes. (TOUR-003) */
+.whats-new-dialog {
+  box-sizing: border-box;
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: clamp(18px, 4vw, 28px);
+  overflow: hidden;
+  color: var(--text, #f4f3f8);
+  background: #15101e;
+  border: 1px solid var(--border, #51455f);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
+/* Keep title and actions visible while only the named update list scrolls on compact screens. */
+.whats-new-dialog[open] { display: flex; flex-direction: column; }
+.whats-new-dialog > :not(ul) { flex: none; }
+.whats-new-dialog::backdrop { background: rgb(8 5 14 / 78%); }
+.whats-new-dialog h2 { margin: 0 0 12px; }
+.whats-new-dialog h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.whats-new-dialog p { line-height: 1.55; }
+.whats-new-dialog ul { padding-inline-start: 22px; margin-block: 12px; min-height: 0; overflow-y: auto; flex: 1 1 auto; scrollbar-width: thin; }
+.whats-new-dialog li { padding-block: 10px; }
+.whats-new-dialog a { display: inline-block; color: #d7b9ff; min-height: 44px; line-height: 44px; }
+/* Preserve semantic omission when the server changelog path is not allowlisted. */
+.whats-new-dialog a[hidden] { display: none; }
+.whats-new-dialog [role="alert"]:empty { display: none; }
+.whats-new-dialog [role="alert"] { color: #ffbecb; }
+.whats-new-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.whats-new-actions button { min-height: 44px; min-width: 44px; padding: 10px 18px; white-space: normal; }
+.whats-new-dialog :focus-visible { outline: 3px solid #d7b9ff; outline-offset: 3px; }
+/* Bundled native-label subsets keep the locked localization registry legible without network fonts. */
+@font-face {
+  font-family: "Casino Locale CJK";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-cjk.woff2") format("woff2");
+  unicode-range: U+4E2D, U+4F53, U+5EE3, U+6587, U+65E5, U+672C, U+6771, U+6E2F, U+7B80, U+7E41, U+8A71, U+8A9E, U+9999, U+9AD4, U+FF08-FF09;
+}
+
+@font-face {
+  font-family: "Casino Locale CJK";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-cjk-700.woff2") format("woff2");
+  unicode-range: U+4E2D, U+4F53, U+5EE3, U+6587, U+65E5, U+672C, U+6771, U+6E2F, U+7B80, U+7E41, U+8A71, U+8A9E, U+9999, U+9AD4, U+FF08-FF09;
+}
+
+@font-face {
+  font-family: "Casino Locale Devanagari";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-devanagari.woff2") format("woff2");
+  unicode-range: U+0920, U+0926, U+0928, U+092E, U+0930, U+0939, U+093E-0940, U+094D;
+}
+
+@font-face {
+  font-family: "Casino Locale Devanagari";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-devanagari-700.woff2") format("woff2");
+  unicode-range: U+0920, U+0926, U+0928, U+092E, U+0930, U+0939, U+093E-0940, U+094D;
+}
+
+@font-face {
+  font-family: "Casino Locale Bengali";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-bengali.woff2") format("woff2");
+  unicode-range: U+0982, U+09AC, U+09B2, U+09BE;
+}
+
+@font-face {
+  font-family: "Casino Locale Bengali";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-bengali-700.woff2") format("woff2");
+  unicode-range: U+0982, U+09AC, U+09B2, U+09BE;
+}
+
+@font-face {
+  font-family: "Casino Locale Tamil";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-tamil.woff2") format("woff2");
+  unicode-range: U+0BA4, U+0BAE, U+0BB4, U+0BBF, U+0BCD;
+}
+
+@font-face {
+  font-family: "Casino Locale Tamil";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-tamil-700.woff2") format("woff2");
+  unicode-range: U+0BA4, U+0BAE, U+0BB4, U+0BBF, U+0BCD;
+}
+
+@font-face {
+  font-family: "Casino Locale Telugu";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-telugu.woff2") format("woff2");
+  unicode-range: U+0C17, U+0C24, U+0C32, U+0C41, U+0C46;
+}
+
+@font-face {
+  font-family: "Casino Locale Telugu";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans-locale-telugu-700.woff2") format("woff2");
+  unicode-range: U+0C17, U+0C24, U+0C32, U+0C41, U+0C46;
+}
+
+/* Premium casino foundation: palette, typography, and shared shell tokens. */
+/* TiltSeven "Neon Pit" brand tokens. These are the DEFAULT brand; web/core/brand.js
+   re-applies the active brand's values at boot so a second brand is one token block. */
+:root {
+  /* Brand accents drive every emphasis in the app. */
+  --brand: #ff3b6b;
+  --brand-strong: #e01e52;
+  --accent: #22e0c3;
+  --accent-2: #ff7a2f;
+  --radius: 14px;
+  --glow: 0 0 24px rgba(255, 59, 107, 0.5);
+  /* Grounds and surfaces: violet-black glass. */
+  --bg: #0a0712;
+  --felt: #150a24;
+  --felt2: #23113d;
+  --panel: rgba(20, 10, 34, 0.72);
+  --panel-strong: rgba(14, 7, 24, 0.9);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-soft: rgba(255, 255, 255, 0.09);
+  --text: #f4eeff;
+  --muted: #9e93bc;
+  /* Legacy accent aliases now resolve to the brand so existing var(--gold)/var(--red) reskin. */
+  --gold: var(--brand);
+  --gold-deep: var(--brand-strong);
+  --red: var(--brand);
+  --red-deep: var(--brand-strong);
+  --black: #060310;
+  --green: var(--accent);
+  --ok: #5ef0c8;
+  --bad: #ff8fae;
+  /* Keep metallic gold and casino-felt green game semantics independent from brand chrome aliases. */
+  --metal-gold: #e8c760;
+  --metal-gold-deep: #bf9330;
+  --felt-green: #087a43;
+  --admin-blue: #0b1b2a;
+  --shadow: rgba(6, 2, 16, 0.6);
+  --font-ui: "Segoe UI", Inter, Arial, sans-serif;
+  --font-display: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, sans-serif;
+  --font-locale-native: "Casino Locale CJK", "Casino Locale Devanagari", "Casino Locale Bengali", "Casino Locale Tamil", "Casino Locale Telugu", var(--font-ui);
+}
+
+/* Use the bundled script subsets only for owner-locked native locale names. */
+[data-locale-card] h3,
+[data-testid="admin-locale-registry-entry"] strong {
+  font-family: var(--font-locale-native);
+}
+
+/* Global document and control reset shared by casino and admin pages. */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  color: var(--text);
+  font-family: var(--font-ui);
+  background: var(--bg);
+  letter-spacing: 0;
+}
+
+button,
+input,
+select,
+summary {
+  font: inherit;
+}
+
+button,
+summary.icon-button {
+  cursor: pointer;
+}
+
+button {
+  min-height: 44px;
+  padding: 9px 13px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  color: var(--text);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+button:hover,
+summary.icon-button:hover {
+  filter: brightness(1.12);
+}
+
+button.primary {
+  border-color: var(--brand);
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--brand), var(--brand-strong));
+  font-weight: 900;
+  box-shadow: var(--glow);
+}
+
+button.gold,
+.nav button.active {
+  color: #ffffff;
+  background: linear-gradient(180deg, #ff5c86, #e01e52);
+  font-weight: 900;
+}
+
+button.danger {
+  background: #5d151b;
+}
+
+input,
+select {
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Premium casino canvas and persistent page chrome. */
+.casino-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 680px at 50% -12%, var(--felt2), transparent 60%),
+    radial-gradient(820px 560px at 88% 6%, rgba(34, 224, 195, 0.06), transparent 58%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg) 55%, #05030c 100%);
+  background-attachment: fixed;
+}
+
+.casino-page::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 59, 107, 0.2), transparent 18%),
+    radial-gradient(circle at 75% 10%, rgba(255, 59, 107, 0.12), transparent 18%),
+    linear-gradient(180deg, transparent 0, rgba(0, 0, 0, 0.28) 74%);
+}
+
+.casino-page.auth-locked {
+  overflow: auto;
+  container-name: auth-page;
+  container-type: inline-size;
+}
+
+.auth-locked .casino-topbar,
+.auth-locked .status-bar {
+  display: none;
+}
+
+.casino-topbar {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(230px, 290px) minmax(420px, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 92px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(255, 59, 107, 0.22);
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.brand-lockup,
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+}
+
+.brand-mark,
+.logo {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  /* Keep the 2px outer box identical to the prior mark so the content-sized brand
+     column (and thus the nav auto-scroll geometry) is unchanged across brands. */
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  color: #ffffff;
+  background: linear-gradient(145deg, var(--brand), var(--brand-strong));
+  box-shadow: var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.brand-copy {
+  min-width: 0;
+}
+
+.brand-copy strong,
+.brand strong {
+  display: block;
+  /* Show the full product name at every governed width instead of ellipsis-clipping it. (issue #221, UX-007) */
+  overflow: visible;
+  color: #f4eeff;
+  font-size: 21px;
+  line-height: 1.15;
+  /* Reserve the font's one-pixel overshoot above and below wrapped glyphs so Chromium never clips the product name. */
+  padding-block: 1px;
+  /* Allow the brand to wrap rather than truncate so the mark stays readable when the column is narrow. */
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.brand-copy span,
+.brand small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Reserve the subtitle's historical two-line footprint so switching locales never changes the
+   header height and shifts game layouts below it. (issue #321) */
+#shell-brand-subtitle {
+  min-height: 38px;
+}
+
+.casino-nav {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 4px;
+  /* Bound the primary menu to its column as one horizontal scroll region instead of an unbounded cram. (issue #221, CORE-006) */
+  overflow-x: auto;
+  overflow-y: hidden;
+  border: 1px solid rgba(255, 59, 107, 0.18);
+  border-radius: 24px;
+  background: rgba(20, 10, 34, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  scrollbar-color: rgba(255, 59, 107, 0.52) transparent;
+  scrollbar-width: thin;
+}
+
+/* Give the keyboard-focusable primary menu a visible focus indicator. (issue #221, accessibility) */
+.casino-nav:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Give every route control a visible keyboard focus indicator so the bounded menu is fully accessible. */
+.nav-item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -3px;
+}
+
+.casino-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.casino-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.casino-nav::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.52);
+}
+
+.nav-item {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 98px;
+  min-height: 52px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 18px;
+  color: #f4eeff;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.nav-item.active {
+  color: #ffffff;
+  background: linear-gradient(180deg, #ff5c86, #e01e52);
+  box-shadow: 0 0 0 1px rgba(255, 59, 107, 0.72), 0 0 28px rgba(255, 59, 107, 0.48);
+}
+
+.nav-item.admin {
+  margin-left: auto;
+  min-width: 90px;
+  color: #d7e2d8;
+}
+
+.top-actions {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  min-width: 0;
+}
+
+.shell-locale {
+  width: 126px;
+  height: 52px;
+  min-height: 52px;
+  border-radius: 18px;
+  background: rgba(20, 10, 34, 0.84);
+}
+
+.wallet-pill {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 11px;
+  row-gap: 1px;
+  align-content: center;
+  min-width: 188px;
+  min-height: 52px;
+  padding: 7px 15px 7px 10px;
+  border: 1px solid rgba(255, 59, 107, 0.42);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 59, 107, 0.12), transparent 48%),
+    rgba(20, 10, 34, 0.9);
+  box-shadow: inset 0 0 22px rgba(255, 59, 107, 0.06), 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+/* Layer wallet gains above the stable pill without changing its layout or authoritative number. (UX-023) */
+.wallet-pill.wallet-celebration-gain::after,
+.wallet-pill.wallet-celebration-big::after {
+  position: absolute;
+  z-index: 4;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+  content: "";
+  box-shadow: 0 0 24px 2px rgba(232, 199, 96, 0.58), inset 0 0 16px rgba(232, 199, 96, 0.2);
+  animation: wallet-celebration-glow 1.2s ease-out both;
+}
+
+/* Give reviewed large gains a stronger glow while preserving the same bounded footprint. */
+.wallet-pill.wallet-celebration-big::after {
+  box-shadow: 0 0 38px 4px rgba(232, 199, 96, 0.76), inset 0 0 22px rgba(232, 199, 96, 0.26);
+}
+
+/* Add a scale pulse only to the rendered wallet box, never to surrounding shell tracks. */
+.wallet-pill.wallet-celebration-big {
+  animation: wallet-celebration-pulse 1.2s ease-out both;
+}
+
+/* Keep the exact positive delta inside the wallet's transient presentation layer. */
+.wallet-gain {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  right: 12px;
+  pointer-events: none;
+  color: var(--metal-gold, #e8c760);
+  font-size: 13px;
+  font-weight: 950;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.66);
+  animation: wallet-celebration-rise 1.2s ease-out both;
+}
+
+/* Own every large-gain coin in one fixed noninteractive layer outside shell overflow. */
+.wallet-coin-layer {
+  position: fixed;
+  z-index: 60;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* Render each bounded coin from controller-supplied safe arc variables. */
+.wallet-coin {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 1px solid rgba(255, 243, 194, 0.72);
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 35% 30%, #fff3c2, var(--metal-gold, #e8c760) 55%, #a9791f);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.48);
+  animation: wallet-celebration-coin .98s cubic-bezier(.2, .7, .3, 1) var(--wallet-coin-delay) both;
+}
+
+/* Fade the decorative glow without changing the wallet's persistent base shadow. */
+@keyframes wallet-celebration-glow {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Scale a large gain inside a four-percent bound that does not reflow shell chrome. */
+@keyframes wallet-celebration-pulse {
+  0%, 100% { transform: scale(1); }
+  24% { transform: scale(1.04); }
+}
+
+/* Raise and fade the exact positive delta while leaving the wallet number untouched. */
+@keyframes wallet-celebration-rise {
+  0% { opacity: 0; transform: translateY(6px) scale(.9); }
+  18% { opacity: 1; transform: translateY(-2px) scale(1); }
+  100% { opacity: 0; transform: translateY(-28px) scale(1); }
+}
+
+/* Move each decorative coin through one bounded rise-and-fall arc. */
+@keyframes wallet-celebration-coin {
+  0% { opacity: 0; transform: translate(0, 0) scale(.4) rotate(0deg); }
+  15% { opacity: 1; }
+  42% { transform: translate(var(--wallet-coin-x), var(--wallet-coin-y)) scale(1) rotate(var(--wallet-coin-rotation)); }
+  100% { opacity: 0; transform: translate(var(--wallet-coin-x-final), calc(var(--wallet-coin-y) + 150px)) scale(.9) rotate(var(--wallet-coin-rotation)); }
+}
+
+/* Remove every celebration animation defensively when the controller selects reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .wallet-pill.wallet-celebration-gain::after,
+  .wallet-pill.wallet-celebration-big::after,
+  .wallet-pill.wallet-celebration-big,
+  .wallet-gain,
+  .wallet-coin {
+    animation: none;
+  }
+}
+
+.wallet-pill::before {
+  display: grid;
+  grid-row: 1 / span 2;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 59, 107, 0.7);
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(145deg, #ff5c86, #e01e52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.66), 0 0 18px rgba(255, 59, 107, 0.18);
+  content: "PLAY";
+  font-size: 8px;
+  font-weight: 1000;
+  letter-spacing: .05em;
+}
+
+.wallet-label {
+  align-self: end;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.wallet-amount {
+  align-self: start;
+  color: #f4eeff;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Keep the disposable lifecycle boundary visible beside the temporary wallet without widening the shell. (issue #317) */
+.guest-trial-notice {
+  grid-column: 1 / -1;
+  max-width: 260px;
+  color: #ff5c86;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.wallet-pill.guest-trial-wallet {
+  grid-template-rows: auto auto auto;
+  min-width: 245px;
+}
+
+.wallet-menu {
+  position: relative;
+}
+
+.wallet-menu summary {
+  list-style: none;
+}
+
+.wallet-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.wallet-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 5;
+  display: grid;
+  gap: 10px;
+  width: 260px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(20, 10, 34, 0.97);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
+}
+
+.wallet-add-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid rgba(255, 59, 107, 0.24);
+  border-radius: 18px;
+  color: #f4eeff;
+  background:
+    linear-gradient(180deg, rgba(255, 59, 107, 0.16), rgba(255, 59, 107, 0.04)),
+    rgba(20, 10, 34, 0.84);
+}
+
+.coin-stack {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.coin-stack::before,
+.coin-stack::after {
+  position: absolute;
+  left: 2px;
+  width: 20px;
+  height: 8px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  content: "";
+}
+
+.coin-stack::before {
+  top: 3px;
+  box-shadow: 0 6px 0 -2px var(--gold), 0 12px 0 -2px var(--gold);
+}
+
+.coin-stack::after {
+  top: 9px;
+  opacity: .42;
+}
+
+.profile-dot span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f4eeff;
+}
+
+/* Size the irreversible guest action by its localized label instead of the registered-user glyph box. (issue #317) */
+.profile-dot[data-guest-trial="true"] {
+  width: auto;
+  min-width: 92px;
+  padding: 0 12px;
+  white-space: nowrap;
+}
+
+.screen {
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 92px - 54px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.auth-screen {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  height: auto;
+  padding: 28px;
+  overflow: auto;
+}
+
+.auth-panel {
+  display: grid;
+  gap: 16px;
+  width: min(560px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(255, 59, 107, 0.64);
+  border-radius: 18px;
+  background: rgba(20, 10, 34, 0.92);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.54), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Present logged-out entry as one compact guest-first decision instead of a flat action catalog. (UX-028) */
+.auth-entry {
+  gap: 9px;
+  width: min(500px, 100%);
+  padding: 20px;
+}
+
+/* Keep brand/legal identity and the small locale preference on one stable header row. */
+.auth-entry-header {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+/* Let the product identity shrink before the compact locale control can overflow. */
+.auth-entry-header > div {
+  min-width: 0;
+}
+
+/* Reserve display prominence for the brand without spending mobile height on repeated intro copy. */
+.auth-entry h1 {
+  font-size: clamp(28px, 7vw, 36px);
+}
+
+/* Show one concise always-visible fake-money boundary above every entry path. */
+.auth-legal-line {
+  margin: 3px 0 0;
+  color: #ddd4b7;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+/* Reduce locale choice to a compact preference rather than a credential-weight field. */
+.auth-locale-switch {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+  align-items: center;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Keep the bilingual switch touchable while limiting its visual footprint. */
+.auth-locale-switch select {
+  width: 96px;
+  min-width: 0;
+  padding-inline: 8px;
+}
+
+/* Reserve the primary decision footprint while the public policy resolves without rendering a dead control. */
+.auth-primary-slot {
+  display: grid;
+  gap: 4px;
+  min-height: 90px;
+}
+
+/* Let the guest action occupy the sole primary treatment on this screen. */
+.auth-primary-slot > .primary {
+  width: 100%;
+}
+
+/* Keep async capability progress quiet and noninteractive. */
+.auth-capability-loading,
+.auth-guest-summary,
+.auth-disclosure-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* Present optional detail as a semantic button without a second CTA treatment. */
+.auth-disclosure-button {
+  min-height: 42px;
+  justify-self: start;
+  padding: 3px 0;
+  border: 0;
+  color: #ffd166;
+  background: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Bound expanded lifecycle and invite copy inside the compact card at every locale. */
+.auth-disclosure-copy {
+  overflow-wrap: anywhere;
+}
+
+/* Keep the shared legal decision stable between both entry actions. */
+.auth-terms-row {
+  min-width: 0;
+  line-height: 1.25;
+}
+
+/* Separate returning-user credentials without competing with the guest primary treatment. */
+.auth-signin {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 59, 107, .24);
+}
+
+/* Use a compact section label rather than a second full display heading. */
+.auth-signin h2 {
+  margin: 0;
+  color: #f4eeff;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+/* Place returning-user credentials side by side where space permits. */
+.auth-signin-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 9px;
+}
+
+/* Prevent native credential minimums from widening their compact tracks. */
+.auth-signin-form > label,
+.auth-signin-form input {
+  min-width: 0;
+}
+
+/* Align secondary sign-in and recovery actions on the form's final row. */
+.auth-signin-submit,
+.auth-reset-link {
+  align-self: center;
+}
+
+/* Keep password recovery quiet but preserve a 44-pixel keyboard/touch target. */
+.auth-reset-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Keep policy-aware account and provider actions together as a visually tertiary row. */
+.auth-tertiary,
+.auth-tertiary > div,
+.auth-provider-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Render invite-only state as an explanatory chip, never a disabled destination. */
+.auth-chip,
+.auth-tertiary-link {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 209, 102, .34);
+  border-radius: 999px;
+  color: #ddd4b7;
+  background: rgba(255, 209, 102, .07);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* Preserve a full 42-pixel interactive target when the invite-only chip owns a disclosure. */
+.auth-chip-button {
+  min-height: 42px;
+}
+
+/* Let available providers remain compact and omit all unavailable-provider placeholders. */
+.auth-provider-actions .oauth-provider-button {
+  min-height: 42px;
+  padding-block: 6px;
+}
+
+.auth-panel h1 {
+  margin: 0;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.auth-copy {
+  margin: 0;
+  color: #ddd4b7;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.auth-copy.strong {
+  color: #f4eeff;
+  font-weight: 800;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.check-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  min-height: 42px;
+  color: #ddd4b7;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.check-row input {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  margin-top: 0;
+  accent-color: var(--gold);
+}
+
+.auth-message {
+  min-height: 18px;
+  margin: 0;
+  color: var(--bad);
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+/* Let every invitation enrollment layer shrink inside the governed mobile 200-percent zoom column. */
+[data-testid="invitation-redemption"],
+[data-testid="invitation-redemption"] .auth-form,
+[data-testid="invitation-redemption"] .auth-form > label {
+  min-width: 0;
+}
+
+/* Wrap localized enrollment copy instead of letting a long word widen the anonymous page. */
+[data-testid="invitation-redemption"] :is(h1, p, label, span, a) {
+  overflow-wrap: anywhere;
+}
+
+/* Override native field minimums while retaining the shared 42-pixel control-height floor. */
+[data-testid="invitation-redemption"] .auth-form > label:not(.check-row) > :is(input, select),
+[data-testid="invitation-redemption"] .auth-form > button {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Reclaim fixed auth padding only when zoom or a genuinely narrow window leaves at most 220 CSS pixels. */
+@container auth-page (max-width: 220px) {
+  .auth-screen:has(> [data-testid="invitation-redemption"]) {
+    padding: 4px;
+  }
+
+  /* Preserve a readable invitation card while leaving enough inline space for native fields. */
+  [data-testid="invitation-redemption"] {
+    gap: 8px;
+    padding: 8px 4px;
+  }
+
+  /* Scale the display heading without reducing form labels or 42-pixel controls. */
+  [data-testid="invitation-redemption"] h1 {
+    font-size: 22px;
+  }
+
+  /* Tighten only vertical form rhythm in the effective zoom column. */
+  [data-testid="invitation-redemption"] .auth-form {
+    gap: 8px;
+  }
+}
+
+/* Disabled OAuth controls communicate provider readiness without exposing an action surface. */
+.oauth-provider-status {
+  display: grid;
+  gap: 11px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 59, 107, 0.24);
+}
+
+.oauth-provider-status h2 {
+  margin: 0;
+  color: #f4eeff;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.oauth-provider-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.oauth-provider-button:disabled {
+  cursor: not-allowed;
+  filter: none;
+  opacity: .78;
+  border-color: rgba(255, 59, 107, 0.28);
+  color: #d8d0b7;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+/* Keep enabled provider controls visually distinct while matching the reviewed auth panel. */
+.oauth-provider-button:not(:disabled) {
+  border-color: rgba(255, 59, 107, .58);
+  color: #f4eeff;
+  background: rgba(255, 59, 107, .1);
+}
+
+/* Anchor identity-management controls to the authenticated account affordance. */
+.account-menu {
+  position: relative;
+}
+
+/* Remove the browser disclosure marker from the custom account control. */
+.account-menu summary {
+  list-style: none;
+}
+
+/* Hide the WebKit marker while preserving details keyboard semantics. */
+.account-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Present provider status in a bounded, scroll-safe account popover. */
+.account-popover {
+  position: absolute;
+  z-index: 8;
+  top: calc(100% + 10px);
+  right: 0;
+  display: grid;
+  gap: 12px;
+  width: min(360px, calc(100vw - 28px));
+  max-height: min(560px, calc(100dvh - 120px));
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid rgba(255, 59, 107, .28);
+  border-radius: 18px;
+  background: #150a24;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+}
+
+/* Keep account-control headings compact inside the persistent shell. */
+.account-popover h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Align each provider label and action without clipping localized text. */
+.oauth-account-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Let provider names wrap while keeping the action reachable. */
+.oauth-account-row span {
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-weight: 800;
+}
+
+/* Keep explicit linking consent in normal sentence case. */
+.oauth-link-confirm {
+  text-transform: none;
+}
+
+.oauth-provider-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.lobby-screen {
+  padding: 38px 54px 58px;
+}
+
+.game-screen {
+  padding: 18px 22px 70px;
+}
+
+/* Make the game route outlet a single bounded vertical scroll region so no control is clipped by a
+   fixed-height, hidden-overflow ancestor at 1920/1440/1024/390. (issue #221, CORE-015, UX-004) */
+#view.screen.game-screen {
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Keep the outlet scroll keyboard-driven with a stable landing offset below the sticky chrome. */
+  scroll-padding-top: 12px;
+  scrollbar-color: rgba(255, 59, 107, 0.42) transparent;
+  scrollbar-width: thin;
+}
+
+/* Style the outlet scrollbar to match the shared thin themed scrollbar. */
+#view.screen.game-screen::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Keep the outlet scrollbar track transparent within the premium chrome. */
+#view.screen.game-screen::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Render the outlet scrollbar thumb with the shared gold treatment. */
+#view.screen.game-screen::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.42);
+}
+
+/* Give the keyboard-focusable game outlet a visible focus indicator when it owns the scroll. */
+#view.screen.game-screen:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+
+/* Provide a zero-specificity keyboard focus ring for any in-game control that does not define its own, so every game route stays keyboard-legible on the dark felt. Wrapped in :where() so any game-owned :focus-visible rule still wins. */
+:where(#view.screen.game-screen button, #view.screen.game-screen input, #view.screen.game-screen select, #view.screen.game-screen [tabindex]):focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Preserve Roulette's tested desktop three-panel table layout while other game routes use the outlet scroll. */
+#view.screen.game-screen:has(.roulette-premium) {
+  overflow: hidden;
+}
+
+/* Keep the authenticated lobby shell within one viewport-height flex column so the header and status rail
+   reserve their real responsive heights around the single catalog scroll region. (issue #318, UX-013) */
+.casino-page.lobby-active {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Let responsive header and footer chrome reserve space instead of covering the lobby's focus ring or cards. */
+.casino-page.lobby-active > .casino-topbar,
+.casino-page.lobby-active > .status-bar {
+  flex: 0 0 auto;
+}
+
+/* Keep the lobby status rail visible in normal flex flow so the bounded outlet ends above it at every viewport. */
+.casino-page.lobby-active > .status-bar {
+  position: relative;
+}
+
+/* Make the lobby outlet a single bounded vertical scroll region so every catalog card below the fold is
+   reachable at 1920/1440/1024/390, mirroring the game outlet's fixed-height-ancestor scroll fix. (issue #318, CORE-015, UX-009) */
+#view.screen.lobby-screen {
+  flex: 1 1 0;
+  height: auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Keep the outlet scroll keyboard-driven with a stable landing offset below the sticky chrome. */
+  scroll-padding-block: 12px 18px;
+  /* Prevent wheel and touch gestures at either edge from leaking into a competing page scroll container. */
+  overscroll-behavior-y: contain;
+  /* Preserve native vertical touch panning while reserving horizontal gestures for shell navigation. */
+  touch-action: pan-y;
+  /* Reserve a stable themed scrollbar gutter so catalog width does not jump when filters change overflow. */
+  scrollbar-gutter: stable;
+  scrollbar-color: rgba(255, 59, 107, 0.42) transparent;
+  scrollbar-width: thin;
+}
+
+/* Match the shared thin themed scrollbar used by the game outlet. */
+#view.screen.lobby-screen::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Keep the lobby outlet scrollbar track transparent within the premium chrome. */
+#view.screen.lobby-screen::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Render the lobby outlet scrollbar thumb with the shared gold treatment. */
+#view.screen.lobby-screen::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.42);
+}
+
+/* Give the keyboard-focusable lobby outlet a visible focus indicator when it owns the scroll. */
+#view.screen.lobby-screen:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+
+/* Premium lobby hero, trust rail, and game-card gallery. */
+.lobby {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 22px;
+  min-height: 100%;
+}
+
+.lobby-hero {
+  display: grid;
+  grid-template-columns: minmax(500px, 1fr) minmax(480px, 690px);
+  gap: 36px;
+  align-items: end;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #f4eeff;
+  font-family: var(--font-display);
+  font-size: 31px;
+  line-height: 1.1;
+}
+
+.hero-title {
+  margin: 0;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 1.04;
+  text-shadow: 0 10px 32px rgba(0, 0, 0, 0.58);
+}
+
+.hero-rule {
+  display: flex;
+  align-items: center;
+  width: min(520px, 100%);
+  margin-top: 16px;
+  color: var(--gold);
+}
+
+.hero-rule::before,
+.hero-rule::after {
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(90deg, rgba(255, 59, 107, 0.08), var(--gold-deep));
+  content: "";
+}
+
+.hero-rule::after {
+  background: linear-gradient(90deg, var(--gold-deep), rgba(255, 59, 107, 0.08));
+}
+
+.hero-rule span {
+  padding: 0 12px;
+  font-size: 19px;
+}
+
+.trust-rail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 59, 107, 0.58);
+  border-radius: 22px;
+  background: rgba(20, 10, 34, 0.86);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.36), inset 0 0 38px rgba(255, 59, 107, 0.05);
+  backdrop-filter: blur(14px);
+}
+
+.trust-item {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: center;
+  min-height: 86px;
+  padding: 16px 20px;
+  border-right: 1px solid rgba(255, 59, 107, 0.13);
+}
+
+.trust-item:last-child {
+  border-right: 0;
+}
+
+.round-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--gold);
+  background: rgba(255, 59, 107, 0.11);
+  box-shadow: inset 0 0 12px rgba(255, 59, 107, 0.1);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.trust-item strong {
+  display: block;
+  color: #f4eeff;
+  font-size: 14px;
+}
+
+.trust-item span span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Catalog search and category controls scale without adding shared shell wiring per game. */
+.catalog-region {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.catalog-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr) auto;
+  gap: 12px 18px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 59, 107, 0.35);
+  border-radius: 16px;
+  background: rgba(20, 10, 34, 0.88);
+}
+
+.catalog-search-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.catalog-controls input[type="search"] {
+  min-height: 44px;
+  border-color: rgba(255, 59, 107, 0.45);
+  background: rgba(20, 10, 34, 0.72);
+}
+
+.catalog-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.catalog-category {
+  min-height: 42px;
+  padding: 8px 14px;
+  border-color: rgba(255, 59, 107, 0.26);
+  border-radius: 999px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.catalog-category.active {
+  border-color: var(--gold);
+  color: #0a0712;
+  background: var(--gold);
+}
+
+.catalog-category:focus-visible,
+.catalog-controls input[type="search"]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.catalog-capacity {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.catalog-empty {
+  grid-column: 1 / -1;
+  align-self: start;
+  margin: 0;
+  padding: 28px;
+  border: 1px dashed rgba(255, 59, 107, 0.35);
+  border-radius: 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.game-gallery {
+  display: grid;
+  grid-template-columns: 33% repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(238px, auto);
+  gap: 14px;
+  min-height: 0;
+}
+
+.game-card {
+  position: relative;
+  display: grid;
+  align-content: end;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 59, 107, 0.78);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.42), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.game-card.featured {
+  grid-row: span 2;
+}
+
+.game-card.wide {
+  grid-column: span 2;
+}
+
+.game-card::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0, rgba(20, 10, 34, 0.78) 56%, rgba(20, 10, 34, 0.98)),
+    radial-gradient(circle at 18% 86%, rgba(255, 59, 107, 0.2), transparent 28%);
+}
+
+.card-art {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #23113d, #0a0712);
+}
+
+.roulette-art {
+  background:
+    linear-gradient(180deg, rgba(20, 10, 34, 0.08), rgba(20, 10, 34, 0.72)),
+    radial-gradient(circle at 30% 30%, rgba(255, 59, 107, 0.14), transparent 22%),
+    linear-gradient(135deg, #23113d, #0a0712 72%);
+}
+
+.slot-art {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url("/assets/slot-machine.png") center 35% / cover no-repeat;
+}
+
+.keno-art,
+.bingo-art,
+.blackjack-art,
+.baccarat-art {
+  background:
+    linear-gradient(180deg, rgba(20, 10, 34, 0.08), rgba(20, 10, 34, 0.72)),
+    radial-gradient(circle at 74% 22%, rgba(255, 59, 107, 0.16), transparent 20%),
+    linear-gradient(135deg, #23113d, #0a0712 72%);
+}
+
+.keno-art::before {
+  position: absolute;
+  inset: 28px 28px auto auto;
+  width: 82%;
+  height: 46%;
+  transform: rotate(-6deg);
+  border: 7px solid rgba(138, 93, 34, 0.85);
+  border-radius: 12px;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 220, 125, 0.44) 1px, transparent 1px) 0 0 / 54px 40px,
+    linear-gradient(rgba(255, 220, 125, 0.38) 1px, transparent 1px) 0 0 / 54px 40px,
+    rgba(35, 17, 61, 0.86);
+  box-shadow: inset 0 0 42px rgba(0, 0, 0, 0.4), 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+
+.keno-art::after {
+  position: absolute;
+  top: 58px;
+  right: 86px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  content: "18";
+  color: #2b1900;
+  background: radial-gradient(circle at 35% 28%, #fff4ba, #e4b439 58%, #9a6d11);
+  box-shadow: -84px 26px 0 #3fa263, -178px 58px 0 #dfbc45, 0 74px 0 #b11a1f;
+  font-weight: 900;
+}
+
+.bingo-art::before {
+  position: absolute;
+  inset: 22px 28px auto 28px;
+  height: 46%;
+  transform: rotate(-7deg);
+  border-radius: 18px;
+  content: "";
+  background:
+    radial-gradient(circle at 12% 55%, #e7dcd1 0 18px, transparent 19px),
+    radial-gradient(circle at 30% 34%, #e8d1a2 0 17px, transparent 18px),
+    radial-gradient(circle at 48% 58%, #f0dfbd 0 18px, transparent 19px),
+    radial-gradient(circle at 66% 34%, #d6b333 0 17px, transparent 18px),
+    radial-gradient(circle at 84% 57%, #f3efe4 0 18px, transparent 19px),
+    linear-gradient(90deg, #7f171b, #2d1650);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36);
+}
+
+.blackjack-art::before {
+  position: absolute;
+  top: 42px;
+  left: 42%;
+  width: 104px;
+  height: 144px;
+  transform: rotate(-10deg);
+  border-radius: 11px;
+  content: "A";
+  padding: 14px;
+  color: #101010;
+  background: #f7ead4;
+  box-shadow: -82px 26px 0 -3px #f5ead6, 82px -18px 0 -3px #f6ead7, 0 30px 38px rgba(0, 0, 0, 0.42);
+  font-family: var(--font-display);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.blackjack-art::after {
+  position: absolute;
+  top: 72px;
+  left: 18%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  content: "";
+  background: radial-gradient(circle at 35% 30%, #f7e6a6, #222 31%, #111 59%, #d4a945 60% 66%, #111 67%);
+  box-shadow: 82px 42px 0 #111, 246px -6px 0 #141414, 302px 46px 0 #111;
+}
+
+.baccarat-art::before {
+  position: absolute;
+  inset: 24px;
+  transform: rotate(-5deg);
+  border-radius: 14px;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(255, 220, 135, 0.34) 49.5% 50.5%, transparent 50.5%),
+    linear-gradient(180deg, rgba(255, 59, 107, 0.2), transparent 42%),
+    #23113d;
+  box-shadow: inset 0 0 52px rgba(0, 0, 0, 0.44);
+}
+
+.baccarat-art::after {
+  position: absolute;
+  top: 62px;
+  left: 26%;
+  width: 86px;
+  height: 120px;
+  transform: rotate(-13deg);
+  border-radius: 10px;
+  content: "7";
+  padding: 12px;
+  color: #151515;
+  background: #f8ead8;
+  box-shadow: 212px 15px 0 -1px #f9ead8, 312px -14px 0 -1px #751a19, 0 24px 38px rgba(0, 0, 0, 0.46);
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.game-card-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.featured .game-card-content {
+  padding: 32px 26px 28px;
+}
+
+.game-card:not(.featured):not(.wide) .game-card-content {
+  gap: 10px;
+  padding: 18px 24px;
+}
+
+.game-kicker {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 1;
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 59, 107, 0.38);
+  border-radius: 11px;
+  color: #f4eeff;
+  background: rgba(20, 10, 34, 0.82);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.game-card:not(.featured) .game-kicker {
+  display: none;
+}
+
+.game-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+  color: #f4eeff;
+  font-family: var(--font-display);
+  font-size: 33px;
+  line-height: 1;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.62);
+}
+
+.featured .game-heading {
+  font-size: 49px;
+}
+
+.game-card:not(.featured):not(.wide) .game-heading {
+  font-size: 29px;
+}
+
+.game-symbol {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 1;
+}
+
+.game-card p {
+  max-width: 520px;
+  margin: 0;
+  color: #ddd4b7;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.game-card:not(.featured):not(.wide) p {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.tag-row {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 9px;
+  color: #f4e8c5;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03);
+  font-size: 13px;
+}
+
+.game-card:not(.featured):not(.wide) .tag {
+  min-height: 32px;
+  font-size: 12px;
+}
+
+.play-button {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 119, 100, 0.55);
+  border-radius: 11px;
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--red), var(--red-deep));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 10px 24px rgba(141, 17, 23, 0.36);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.featured .play-button {
+  min-height: 62px;
+  font-size: 24px;
+}
+
+.game-card:not(.featured):not(.wide) .play-button {
+  min-height: 48px;
+}
+
+/* Progressive-web-app connectivity and update banner, kept clear of device safe areas. (issue #182) */
+/* Keep the hidden banner fully removed so its fixed layer never intercepts pointer events. */
+#pwa-banner[hidden] {
+  display: none;
+}
+
+#pwa-banner {
+  position: fixed;
+  z-index: 8;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  right: max(env(safe-area-inset-right, 0px), 12px);
+  left: max(env(safe-area-inset-left, 0px), 12px);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 59, 107, 0.5);
+  border-radius: 12px;
+  color: #f4eeff;
+  font-size: 13px;
+  background: rgba(20, 10, 34, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+/* Style the offline state with a distinct, non-alarming cue. */
+#pwa-banner[data-state="offline"] {
+  border-color: rgba(255, 59, 107, 0.6);
+}
+
+/* Distinguish reconnect work without using motion as the only status cue. */
+#pwa-banner[data-state="reconnecting"] {
+  border-color: rgba(110, 190, 255, 0.7);
+}
+
+/* Keep failures and stale-client warnings visibly separate from successful restoration. */
+#pwa-banner[data-state="update-failed"],
+#pwa-banner[data-state="reconnect-failed"],
+#pwa-banner[data-state="stale-client"],
+#pwa-banner[data-state="expired-session"] {
+  border-color: rgba(255, 112, 126, 0.78);
+  color: #ffe1e5;
+}
+
+/* Mark successful online restoration with the existing safe green vocabulary. */
+#pwa-banner[data-state="online"],
+#pwa-banner[data-state="route-restored"] {
+  border-color: rgba(113, 230, 163, 0.68);
+  color: #dcffea;
+}
+
+/* Give the update reload control a clear, compliant touch target. */
+#pwa-banner button {
+  min-height: 44px;
+  padding: 8px 14px;
+}
+
+/* Preserve stable focus visibility for the explicit update action. */
+#pwa-banner button:focus-visible {
+  outline: 3px solid #f4eeff;
+  outline-offset: 3px;
+}
+
+/* Avoid motion-only state changes when the user requests reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  #pwa-banner {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}
+
+/* Stack long localized status copy safely at the governed mobile width. */
+@media (max-width: 560px) {
+  #pwa-banner {
+    align-items: stretch;
+    flex-direction: column;
+    font-size: 14px;
+  }
+}
+
+.status-bar {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto auto;
+  gap: 28px;
+  align-items: center;
+  min-height: 54px;
+  padding: 0 40px;
+  border-top: 1px solid rgba(255, 59, 107, 0.58);
+  color: #9e93bc;
+  background: linear-gradient(180deg, rgba(20, 10, 34, 0.76), rgba(20, 10, 34, 0.92));
+  backdrop-filter: blur(16px);
+}
+
+.status-item {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.status-item > .gold {
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 59, 107, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.08);
+  font-size: 10px;
+  font-weight: 1000;
+  letter-spacing: .08em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22e0c3;
+  box-shadow: 0 0 12px #22e0c3;
+}
+
+.status-dot.offline {
+  background: var(--bad);
+  box-shadow: 0 0 12px var(--bad);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 70px;
+  z-index: 6;
+  max-width: 420px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .4);
+}
+
+/* Keep problem reporting discoverable without consuming the already dense game header. (CORE-027, issue #349) */
+.report-problem-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 72px;
+  z-index: 5;
+  min-height: 44px;
+  padding: 0 16px;
+  border-color: rgba(255, 59, 107, .7);
+  color: #ffffff;
+  background: linear-gradient(180deg, #ff5c86, #e01e52);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .48);
+  font-weight: 900;
+}
+
+/* Use the native dialog top layer while preserving the simulator's dark premium visual language. */
+.report-dialog {
+  width: min(760px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 59, 107, .72);
+  border-radius: 22px;
+  color: var(--text);
+  background: linear-gradient(155deg, #150a24, #0a0712);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, .72);
+}
+
+/* Dim the game without blurring content, which would obscure the screenshot context a reporter is describing. */
+.report-dialog::backdrop {
+  background: rgba(0, 0, 0, .72);
+}
+
+/* Keep the optional session control compact while retaining the required touch target in every game. (WELL-001) */
+.wellness-open {
+  min-height: 44px;
+  padding: 0 12px;
+  border-color: rgba(57, 211, 83, .48);
+  color: var(--text);
+  background: rgba(57, 211, 83, .08);
+  white-space: nowrap;
+}
+
+/* Use one native top-layer surface for manual settings and due reminders across all routes. */
+.wellness-dialog {
+  width: min(620px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(57, 211, 83, .58);
+  border-radius: 22px;
+  color: var(--text);
+  background: linear-gradient(155deg, #101b1a, #0a0712);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, .72);
+}
+
+/* Preserve visual context behind a reminder without animation or blur. */
+.wellness-dialog::backdrop {
+  background: rgba(0, 0, 0, .72);
+}
+
+/* Let the reminder form scroll independently on short mobile viewports. */
+.wellness-form {
+  display: grid;
+  gap: 14px;
+  max-height: calc(100vh - 34px);
+  padding: 22px;
+  overflow-y: auto;
+}
+
+/* Keep the heading and native close control aligned at every locale width. */
+.wellness-heading {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+/* Remove default heading margins so the modal rhythm remains stable. */
+.wellness-heading :is(h2, p),
+.wellness-summary :is(h3, p) {
+  margin: 0;
+}
+
+/* Give the elapsed fact clear hierarchy without countdown or urgency styling. */
+.wellness-elapsed {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(57, 211, 83, .34);
+  border-radius: 12px;
+  color: #dcffe2;
+  background: rgba(57, 211, 83, .07);
+  font-weight: 800;
+}
+
+/* Present opt-in fields as one readable settings group. */
+.wellness-settings {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .025);
+}
+
+/* Keep the numeric cadence field paired with its label and help text. */
+.wellness-settings > label:not(.check-row) {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) minmax(96px, 140px);
+  gap: 12px;
+  align-items: center;
+  font-weight: 800;
+}
+
+/* Separate neutral totals from editable preferences without evaluative color. */
+.wellness-summary {
+  display: grid;
+  gap: 9px;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .18);
+}
+
+/* Keep the four summary facts scan-friendly for screen magnification. */
+.wellness-summary ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+/* Reserve status height so slow summaries and writes do not shift modal actions. */
+.wellness-message,
+.wellness-suggestion {
+  min-height: 24px;
+  margin: 0;
+}
+
+/* Keep pause and durable stop equally reachable without presenting either as a primary reward action. */
+.wellness-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Preserve the governed minimum touch target inside the modal. */
+.wellness-actions button,
+.wellness-settings button {
+  min-height: 44px;
+}
+
+/* Let the form own scrolling so the dialog frame and actions remain stable on short viewports. */
+.report-form {
+  display: grid;
+  gap: 14px;
+  max-height: calc(100vh - 34px);
+  padding: 22px;
+  overflow-y: auto;
+}
+
+/* Align the modal title and close control without relying on absolute positioning. */
+.report-heading {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.report-heading h2,
+.report-heading p {
+  margin: 0;
+}
+
+/* Use two columns only where both fields retain readable labels and control widths. */
+.report-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, .55fr) minmax(260px, 1.45fr);
+  gap: 12px;
+}
+
+/* Present every report field as a clear label-control pair. */
+.report-form label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  color: #f4eeff;
+  font-weight: 800;
+}
+
+/* Keep prose inputs readable and vertically resizable inside the bounded dialog. */
+.report-form textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+/* Make clipboard, drag, keyboard, and file-picker input share one obvious drop target. */
+.report-dropzone {
+  display: grid;
+  gap: 6px;
+  min-height: 96px;
+  padding: 16px;
+  place-content: center;
+  border: 2px dashed rgba(255, 59, 107, .56);
+  border-radius: 16px;
+  color: var(--muted);
+  background: rgba(255, 59, 107, .055);
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Make keyboard and drag state equally visible. */
+.report-dropzone:focus-visible,
+.report-dropzone.dragging {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  background: rgba(255, 59, 107, .14);
+}
+
+/* Keep evidence previews compact while allowing three screenshots to wrap. */
+.report-previews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.report-preview {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  min-width: 0;
+}
+
+.report-preview img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+}
+
+.report-preview button {
+  min-height: 40px;
+}
+
+/* Keep diagnostic disclosure secondary but inspectable before submission. */
+.report-context {
+  padding: 10px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  color: var(--muted);
+}
+
+.report-context p {
+  margin: 8px 0 0;
+}
+
+/* Reserve status space so submission and validation messages do not move actions. */
+.report-message {
+  min-height: 24px;
+  margin: 0;
+  color: #f4eeff;
+}
+
+.report-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.report-actions button {
+  min-height: 44px;
+  min-width: 132px;
+}
+
+/* Collapse the reporting composition without horizontal overflow at the governed phone viewport. */
+@media (max-width: 640px) {
+  /* Let the wellness surface use the full narrow viewport without horizontal scrolling. */
+  .wellness-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+  }
+
+  /* Tighten modal padding while retaining readable field spacing. */
+  .wellness-form {
+    max-height: calc(100vh - 18px);
+    padding: 16px;
+  }
+
+  /* Stack the cadence input below its translated label at the phone breakpoint. */
+  .wellness-settings > label:not(.check-row) {
+    grid-template-columns: 1fr;
+  }
+
+  /* Fill the available mobile field width without relying on intrinsic number-input sizing. */
+  .wellness-settings input[type="number"] {
+    width: 100%;
+  }
+
+  .report-problem-fab {
+    right: 12px;
+    bottom: 64px;
+    max-width: calc(100vw - 24px);
+  }
+
+  .report-dialog {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 16px);
+  }
+
+  .report-form {
+    max-height: calc(100vh - 18px);
+    padding: 16px;
+  }
+
+  .report-grid,
+  .report-previews {
+    grid-template-columns: 1fr;
+  }
+
+  .report-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .report-actions button {
+    min-width: 0;
+  }
+
+  /* Reserve the fixed report control's 160px mobile lane for Teen Patti's deal action. */
+  body:has(.teenp) .tp-btn.deal {
+    width: calc(100% - 160px);
+    max-width: calc(100% - 160px);
+  }
+
+  /* Reserve the fixed report control's mobile column across the new catalog panels so game actions and
+     localized paytable copy remain visible and operable instead of sitting beneath the shared affordance. */
+  :is(.pd-panel, .bl-panel, .fr-panel, .teq-panel, .pk-panel, .cp-panel, .mr-panel, .lg-panel, .dd-panel, .fcp-panel) {
+    padding-right: 160px;
+  }
+
+  /* Let catalog actions shrink and wrap inside the reserved column instead of honoring an intrinsic label
+     width that can push a flex or grid child back underneath the fixed report control. */
+  :is(.pd-panel, .bl-panel, .fr-panel, .teq-panel, .pk-panel, .cp-panel, .mr-panel, .lg-panel, .dd-panel, .fcp-panel) :is(button, input, select) {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  /* Give the catalog routes one predictable report-control width that matches their reserved column. */
+  body:has(:is(.poker-dice, .boule, .faro, .teq, .pachinko, .coinp, .marble, .pattern, .lucky, .daily, .fourcp)) .report-problem-fab {
+    width: 144px;
+    max-width: 144px;
+    white-space: normal;
+    line-height: 1.1;
+  }
+}
+
+/* Shared game module primitives retained for existing modules and future workers. */
+.game-layout {
+  display: grid;
+  gap: 18px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stable-game {
+  grid-template-rows: 100%;
+  contain: layout paint;
+}
+
+.two-col {
+  grid-template-columns: 320px minmax(0, 1fr);
+}
+
+.three-col {
+  grid-template-columns: 340px minmax(0, 1fr) 355px;
+}
+
+.panel,
+.glass-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid rgba(255, 59, 107, 0.4);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 59, 107, 0.035), transparent 38%),
+    linear-gradient(145deg, rgba(20, 10, 34, 0.94), rgba(20, 10, 34, 0.9));
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.44), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  scrollbar-color: rgba(255, 59, 107, 0.42) transparent;
+  scrollbar-width: thin;
+}
+
+.panel {
+  padding: 18px;
+}
+
+.panel::-webkit-scrollbar,
+.glass-panel::-webkit-scrollbar,
+.scrollbox::-webkit-scrollbar,
+.stable-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.panel::-webkit-scrollbar-track,
+.glass-panel::-webkit-scrollbar-track,
+.scrollbox::-webkit-scrollbar-track,
+.stable-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel::-webkit-scrollbar-thumb,
+.glass-panel::-webkit-scrollbar-thumb,
+.scrollbox::-webkit-scrollbar-thumb,
+.stable-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 59, 107, 0.42);
+}
+
+.panel::-webkit-scrollbar-thumb:hover,
+.glass-panel::-webkit-scrollbar-thumb:hover,
+.scrollbox::-webkit-scrollbar-thumb:hover,
+.stable-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 59, 107, 0.68);
+}
+
+.panel-pad {
+  padding: 18px;
+}
+
+.loading-panel {
+  display: grid;
+  place-content: center;
+  min-height: 280px;
+  text-align: center;
+}
+
+.game-title,
+h2,
+h3 {
+  margin: 0 0 10px;
+}
+
+.control-rail > h2:first-child,
+.control-rail > .game-title:first-child,
+.details-drawer > h2:first-child,
+.details-drawer > .game-title:first-child {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 59, 107, 0.22);
+  color: #fff0b8;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+h2,
+h3 {
+  color: #f4eeff;
+}
+
+h3 {
+  color: var(--gold);
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 15px;
+  color: #f4eeff;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.money {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.badge {
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 59, 107, 0.2);
+  border-radius: 999px;
+  color: #ddd4b7;
+  background: linear-gradient(180deg, rgba(255, 59, 107, 0.09), rgba(255, 255, 255, 0.035));
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.rail-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.mini-stat {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid var(--border-soft);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mini-stat span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mini-stat strong {
+  color: #f4eeff;
+  font-size: 19px;
+}
+
+.control-rail,
+.game-stage,
+.details-drawer {
+  min-height: 0;
+  overflow: auto;
+}
+
+.control-rail,
+.details-drawer {
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+.control-rail:focus-visible,
+.details-drawer:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -5px;
+}
+
+.game-stage {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(255, 59, 107, 0.58);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+  isolation: isolate;
+}
+
+.control-rail {
+  border-top: 2px solid rgba(255, 59, 107, 0.48);
+}
+
+.details-drawer {
+  border-top: 2px solid rgba(156, 255, 188, 0.34);
+}
+
+.action-row {
+  min-height: 48px;
+}
+
+.fixed-result {
+  min-height: 74px;
+  overflow: auto;
+}
+
+.stable-list {
+  min-height: 88px;
+  max-height: 170px;
+  overflow: auto;
+}
+
+.result-box,
+.stat {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .16);
+}
+
+.stat-bars {
+  display: grid;
+  gap: 5px;
+}
+
+.stat-bar {
+  display: grid;
+  grid-template-columns: 42px 1fr 38px;
+  gap: 6px;
+  align-items: center;
+}
+
+.stat-fill {
+  height: 9px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--gold), #fff0b6);
+}
+
+.bet-list {
+  display: grid;
+  gap: 6px;
+}
+
+.bet-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .15);
+}
+
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 5px dashed rgba(255, 255, 255, .75);
+  border-radius: 50%;
+  color: #211600;
+  background: radial-gradient(circle, #fff 0 28%, #e4b12f 29% 56%, #9b6800 57%);
+  font-weight: 1000;
+}
+
+.chip.active {
+  outline: 3px solid white;
+  transform: translateY(-2px);
+}
+
+/* Roulette table, wheel, chips, and statistics primitives. */
+.roulette-stage {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  min-height: 590px;
+}
+
+.wheel-card {
+  min-height: 404px;
+  padding: 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  background: radial-gradient(circle, #2d1650, #0a0712);
+}
+
+.roulette-wheel {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
+  margin: auto;
+}
+
+.wheel-ring,
+.ball-dot {
+  transform-origin: 150px 150px;
+}
+
+.wheel-ring.spinning {
+  animation: wheelSpin 2.8s cubic-bezier(.12, .75, .3, 1);
+}
+
+.ball-dot.spinning {
+  animation: ballSpin 2.8s cubic-bezier(.1, .8, .2, 1);
+}
+
+@keyframes wheelSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1440deg); }
+}
+
+@keyframes ballSpin {
+  0% { transform: rotate(0deg); }
+  80% { transform: rotate(-1980deg); }
+  100% { transform: rotate(-2160deg); }
+}
+
+.roulette-table-board {
+  position: relative;
+  width: min(100%, 760px);
+  height: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, .45);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2d1650, #150a24);
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, .35);
+}
+
+.table-cell,
+.outside-cell {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 1000;
+  text-shadow: 0 1px 2px #000;
+}
+
+.table-cell {
+  font-size: 20px;
+}
+
+.outside-cell {
+  background: rgba(0, 0, 0, .12);
+  font-weight: 900;
+}
+
+.table-cell button,
+.outside-cell button {
+  all: unset;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.spot {
+  position: absolute;
+  z-index: 7;
+  width: 24px;
+  height: 24px;
+  min-height: 0;
+  padding: 0;
+  border: 2px solid rgba(70, 40, 0, .9);
+  border-radius: 50%;
+  background: rgba(255, 59, 107, .88);
+  box-shadow: 0 0 10px rgba(255, 59, 107, .5);
+  font-size: 0;
+}
+
+.spot:hover {
+  transform: scale(1.25);
+  filter: brightness(1.2);
+}
+
+.spot.outside-spot {
+  width: 30px;
+  height: 30px;
+}
+
+.bet-chip {
+  position: absolute;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 4px dashed rgba(70, 40, 0, .75);
+  border-radius: 50%;
+  color: #1e1300;
+  background: radial-gradient(circle, #fff 0 25%, var(--metal-gold) 26% 55%, #9b6800 56%);
+  box-shadow: 0 4px 12px #0009;
+  font-size: 11px;
+  font-weight: 1000;
+  pointer-events: none;
+}
+
+/* Keep premium Roulette chips metallic when the route's later style block resolves the legacy brand-gold alias. */
+.roulette-premium .bet-chip {
+  background: radial-gradient(circle, #fffdf4 0 24%, var(--metal-gold) 25% 54%, var(--metal-gold-deep) 55% 72%, #5d3c03 73%) !important;
+}
+
+.roulette-table-board.hide-spots .spot {
+  opacity: .08;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+
+.stats-num {
+  padding: 4px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .14);
+  text-align: center;
+}
+
+/* Slots, cards, Keno, Bingo, autoplay, and tabular primitives. */
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  max-width: 620px;
+  min-height: 262px;
+  margin: 10px auto;
+}
+
+.slot-symbol {
+  display: grid;
+  place-items: center;
+  height: 82px;
+  border-radius: 16px;
+  color: #1d1300;
+  background: #fff7df;
+  font-size: 30px;
+  font-weight: 1000;
+  transition: transform .2s;
+}
+
+.slot-symbol.spinning {
+  animation: slotPulse .16s linear infinite;
+}
+
+/* Hold the reels steady for players who ask for reduced motion. The spinning state is an infinite
+   ~6Hz oscillation, which is exactly the kind of sustained motion that triggers vestibular symptoms,
+   and it sits in the shared stylesheet so it was not covered by any per-game guard. (issue #421) */
+@media (prefers-reduced-motion: reduce) {
+  .slot-symbol.spinning {
+    animation: none;
+  }
+}
+
+.slot-symbol.win {
+  outline: 4px solid var(--gold);
+  box-shadow: 0 0 18px var(--gold);
+}
+
+@keyframes slotPulse {
+  from { transform: translateY(-2px); }
+  to { transform: translateY(2px); }
+}
+
+.paytable {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  font-size: 12px;
+}
+
+.payrow {
+  padding: 5px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .12);
+}
+
+.playing-card {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 82px;
+  border-radius: 10px;
+  color: #151515;
+  background: #fbf7e9;
+  box-shadow: 0 3px 10px #0006;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.playing-card.red {
+  color: #b10020;
+  background: #fbf7e9;
+}
+
+.playing-card.back {
+  color: #fff;
+  background: #122f89 !important;
+}
+
+.playing-card.placeholder {
+  color: transparent;
+  background: rgba(255, 255, 255, .12) !important;
+  opacity: .15;
+}
+
+.cards {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hand {
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .13);
+}
+
+.hand.active {
+  outline: 2px solid var(--gold);
+}
+
+.card-row-fixed {
+  min-height: 90px;
+}
+
+.keno-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  min-height: 310px;
+}
+
+.keno-num,
+.ball {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .06);
+}
+
+.keno-num.selected {
+  color: #1d1300;
+  background: var(--metal-gold);
+}
+
+.keno-num.drawn {
+  outline: 2px solid var(--ok);
+}
+
+.keno-num.catch {
+  color: #f4eeff;
+  background: var(--felt-green);
+}
+
+.called-balls {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.bingo-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  max-width: 430px;
+  min-height: 258px;
+}
+
+.bingo-head,
+.bingo-cell {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  border: 1px solid var(--border-soft);
+  border-radius: 9px;
+  font-weight: 900;
+}
+
+.bingo-head {
+  color: #1e1300;
+  background: var(--gold);
+}
+
+.bingo-cell {
+  background: rgba(255, 255, 255, .07);
+}
+
+.bingo-cell.marked {
+  color: #0a0712;
+  background: var(--ok);
+}
+
+.bingo-cell.win {
+  outline: 3px solid var(--gold);
+}
+
+.autoplay,
+.bot-panel,
+.voice-settings {
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid rgba(255, 59, 107, .35);
+  border-radius: 16px;
+  background: rgba(255, 59, 107, .07);
+}
+
+.autoplay {
+  min-height: 126px;
+}
+
+.autoplay button.stop:not(:disabled) {
+  color: #fff;
+  background: #5d151b;
+}
+
+.scrollbox {
+  max-height: 210px;
+  overflow: auto;
+}
+
+/* Short-viewport auth: tighten the sign-in panel so its full content fits without page scroll (e.g. 1280x720). (issue #284) */
+/* Keep the account-free guest entry compact so the login panel still fits short viewports. (issue #317) */
+.auth-guest {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.auth-guest .secondary {
+  width: 100%;
+  min-height: 42px;
+}
+
+.auth-guest-copy {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--muted, #b9b09a);
+}
+
+@media (max-height: 760px) {
+  /* Top-align and fix the height so any overflow scrolls inside the screen (base overflow:auto), never growing the page, while the submit stays above the fold. (issue #317) */
+  .auth-screen {
+    align-items: start;
+    height: 100vh;
+    padding: 10px;
+  }
+
+  .auth-panel {
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .auth-panel h1 {
+    font-size: 26px;
+  }
+
+  .auth-form {
+    gap: 8px;
+  }
+
+  /* Preserve the guest-first card's complete primary and returning-user decisions above the fold. */
+  .auth-entry {
+    gap: 6px;
+    padding: 10px 14px;
+  }
+
+  /* Keep the async primary slot stable without retaining desktop whitespace. */
+  .auth-primary-slot {
+    min-height: 78px;
+  }
+
+  .auth-guest {
+    margin-top: 4px;
+    gap: 3px;
+  }
+
+  .auth-guest .secondary {
+    min-height: 40px;
+  }
+
+  /* Reclaim vertical space at short heights; the fake-money disclosure is re-shown when the trial CTA is selected. (issue #317) */
+  .auth-guest-copy {
+    display: none;
+  }
+}
+
+/* Desktop rails own intentional scrolling so nested lists do not create competing primary scroll areas. */
+@media (min-width: 1201px) {
+  .control-rail .scrollbox,
+  .control-rail .stable-list,
+  .details-drawer .scrollbox,
+  .details-drawer .stable-list {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.mini-table td,
+.mini-table th {
+  padding: 4px;
+  border-bottom: 1px solid var(--border-soft);
+  text-align: left;
+}
+
+/* Admin control-plane styles preserved for the existing admin page. */
+.admin-body {
+  color: #edf7ff;
+  background: #08131d;
+  overflow: hidden;
+}
+
+.admin-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  height: 100vh;
+  gap: 0;
+}
+
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  overflow: auto;
+  border-right: 1px solid rgba(255, 255, 255, .12);
+  background: #0b1d2b;
+}
+
+.admin-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.admin-brand h2 {
+  margin: 0;
+}
+
+.admin-sidebar hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* Group the expanded Admin navigation into compact operator-scannable sections. */
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-nav-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, .5);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.admin-nav-section:hover {
+  color: rgba(255, 255, 255, .8);
+}
+
+.admin-nav-chevron {
+  font-size: 12px;
+  transition: transform .15s ease;
+}
+
+.admin-nav-group.collapsed .admin-nav-chevron {
+  transform: rotate(-90deg);
+}
+
+.admin-nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-nav-group.collapsed .admin-nav-items {
+  display: none;
+}
+
+.admin-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.admin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  background: #0d2233;
+}
+
+.admin-top h1 {
+  margin: 0;
+}
+
+.admin-content {
+  padding: 14px;
+  overflow: auto;
+}
+
+.admin-card-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.admin-card {
+  margin-bottom: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 16px;
+  background: #10283a;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .18);
+}
+
+.admin-card h2 {
+  margin: 6px 0 0;
+  color: var(--gold);
+}
+
+/* Bound owner-only delegation fields when a state-rich Browser run supplies long eligible-account labels. (ADMIN-033) */
+[data-testid="admin-administrator-grant"] label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* Keep native delegation controls inside the Admin card without truncating their selected accessible value. */
+[data-testid="admin-administrator-grant"] :is(input, select, button) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Own the dense managed-account table inside one named keyboard-scrollable region. (USER-004) */
+.admin-users-table-scroll {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  scrollbar-color: rgba(255, 59, 107, .42) transparent;
+  scrollbar-width: thin;
+}
+
+/* Retain readable account and action columns without creating page-level horizontal overflow. */
+.admin-users-table-scroll .mini-table {
+  min-width: 1040px;
+}
+
+/* Keep lifecycle and save controls together while privilege delegation lives in Administrators. */
+.admin-user-access-cell {
+  min-width: 330px;
+}
+
+/* Give both localized account controls a readable desktop track without widening the page itself. */
+.admin-user-access-controls {
+  display: grid;
+  grid-template-areas: "status save";
+  grid-template-columns: minmax(112px, 1fr) minmax(172px, 1.4fr);
+  align-items: center;
+  gap: 8px;
+  width: 330px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Let long localized labels wrap inside their assigned grid track instead of widening the table. */
+.admin-user-access-controls > * {
+  min-width: 0;
+}
+
+/* Let the localized save action use normal word boundaries inside its bounded track. */
+.admin-user-access-controls .save-user-account {
+  grid-area: save;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Preserve the native lifecycle selector inside its bounded access group. */
+.admin-user-access-controls .user-status {
+  grid-area: status;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Expose keyboard ownership of the intentional horizontal table scroll. */
+.admin-users-table-scroll:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+
+/* Bound each Create User column before the phone layout stacks the form. (USER-004) */
+[data-testid="admin-user-create"] .grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Let every managed-account form control shrink inside its responsive grid column. */
+[data-testid="admin-user-create"] :is(input:not([type="checkbox"]), select, button) {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Keep the invitation form columns bounded before the phone breakpoint stacks them. (INVITE-005) */
+[data-testid="admin-invitation-create"] .grid3 {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(120px, auto);
+}
+
+/* Let every invitation form control shrink inside its assigned responsive column. */
+[data-testid="admin-invitation-create"] :is(input, select, button) {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Own wide invitation lifecycle tables inside one named keyboard-scrollable region. */
+[data-testid="admin-invitation-list"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  scrollbar-color: rgba(255, 59, 107, .42) transparent;
+  scrollbar-width: thin;
+}
+
+/* Preserve readable columns while preventing their width from escaping the bounded region. */
+[data-testid="admin-invitation-list"] .mini-table {
+  min-width: 680px;
+  table-layout: fixed;
+}
+
+/* Wrap opaque lifecycle values without exposing a page-level horizontal overflow. */
+[data-testid="admin-invitation-list"] :is(th, td) {
+  overflow-wrap: anywhere;
+  vertical-align: top;
+}
+
+/* Make keyboard ownership of the lifecycle scroll region visibly apparent. */
+[data-testid="admin-invitation-list"]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+
+/* Guest Trials controls use bounded low-cardinality filters and keyboard-scrollable tables. */
+.guest-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+/* Bound assisted-conversion columns before the phone layout stacks the form. */
+[data-testid="admin-guest-conversion"] .grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Let every assisted-conversion field shrink inside its responsive grid column. */
+[data-testid="admin-guest-conversion"] :is(input:not([type="checkbox"]), button) {
+  width: 100%;
+  min-width: 0;
+}
+
+.guest-filter-grid label {
+  display: grid;
+  gap: 6px;
+}
+
+.guest-filter-grid select,
+.guest-filter-grid button,
+.guest-detail-button,
+.guest-convert-button {
+  min-height: 42px;
+}
+
+.guest-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.guest-detail-grid div {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 10px;
+}
+
+.guest-detail-grid dd {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
+}
+
+[data-testid="admin-guest-funnel"],
+[data-testid="admin-guest-games"],
+[data-testid="admin-guest-game-detail"],
+[data-testid="admin-guest-recent"],
+[data-testid="admin-guest-timeline"] {
+  overflow-x: auto;
+  scrollbar-color: rgba(255, 59, 107, .42) transparent;
+}
+
+[data-testid="admin-guest-recent"] .mini-table {
+  min-width: 860px;
+}
+
+/* Keep the complete game analytics and event timeline readable inside intentional scroll regions. */
+[data-testid="admin-guest-game-detail"] .mini-table,
+[data-testid="admin-guest-timeline"] .mini-table {
+  min-width: 1180px;
+}
+
+.admin-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bot-edit {
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .14);
+}
+
+.logview {
+  max-height: 70vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+}
+
+.admin-empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 132px;
+  padding: 22px;
+  border: 1px dashed rgba(255, 59, 107, .3);
+  border-radius: 14px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, .12);
+  text-align: center;
+}
+
+.admin-empty-state strong {
+  color: #f4eeff;
+  font-size: 16px;
+}
+
+.admin-event-list {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-event {
+  display: grid;
+  grid-template-columns: minmax(150px, auto) minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .14);
+}
+
+.admin-event strong {
+  color: #ff5c86;
+}
+
+.admin-event p {
+  margin: 0;
+  color: #d7e2d8;
+  overflow-wrap: anywhere;
+}
+
+.admin-event time {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Keep the problem-report inbox filters readable and touch-sized at desktop and compact widths. */
+.feedback-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.feedback-filters label,
+.feedback-triage label,
+.feedback-draft label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.feedback-link {
+  min-height: 38px;
+  padding: 6px 10px;
+  color: var(--gold);
+  text-decoration: underline;
+  background: transparent;
+}
+
+/* Keep the dense inbox table inside one named keyboard-scrollable region on narrow Admin viewports. */
+.feedback-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.feedback-table-scroll:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.feedback-table-scroll .mini-table {
+  min-width: 760px;
+}
+
+.feedback-prose {
+  white-space: pre-wrap;
+}
+
+.feedback-triage,
+.feedback-draft {
+  display: grid;
+  gap: 12px;
+}
+
+.feedback-evidence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.feedback-evidence figure {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.feedback-evidence img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: #000;
+}
+
+.feedback-draft {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .2);
+}
+
+@media (max-width: 900px) {
+  .feedback-filters,
+  .feedback-evidence {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive shell and game behavior for narrow and medium viewports. */
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .casino-topbar {
+    grid-template-columns: minmax(178px, 210px) minmax(0, 1fr) auto;
+    gap: 10px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .brand-mark,
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-copy span,
+  .brand small {
+    display: none;
+  }
+
+  /* Keep the compact-desktop menu a bounded horizontal scroll rail with readable labels
+     instead of a 16-column cram that clipped long game names. (issue #221, CORE-006) */
+  .casino-nav {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .nav-item,
+  .nav-item.admin {
+    /* Keep every route control sized to its full label so no name is truncated at compact desktop. */
+    flex: 0 0 auto;
+    min-width: 96px;
+    min-height: 46px;
+    margin-left: 0;
+    padding: 0 14px;
+    font-size: 13px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .top-actions {
+    gap: 7px;
+  }
+
+  .wallet-pill {
+    min-width: 158px;
+  }
+
+  .shell-locale {
+    width: 104px;
+  }
+}
+
+@media (max-height: 950px) and (min-width: 1201px) {
+  .lobby-screen {
+    padding: 24px 38px 64px;
+  }
+
+  .lobby {
+    gap: 20px;
+  }
+
+  .eyebrow {
+    font-size: 24px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-rule {
+    margin-top: 10px;
+  }
+
+  .trust-item {
+    min-height: 72px;
+    padding: 12px 16px;
+  }
+
+  .game-gallery {
+    grid-auto-rows: minmax(210px, auto);
+  }
+}
+
+@media (max-width: 1350px) {
+  .casino-topbar {
+    grid-template-columns: minmax(210px, 250px) minmax(0, 1fr) auto;
+    gap: 10px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .brand-mark,
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-copy span,
+  .brand small {
+    display: none;
+  }
+
+  .wallet-pill {
+    min-width: 170px;
+  }
+
+  .admin-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .admin-split {
+    grid-template-columns: 1fr;
+  }
+
+  .guest-filter-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  .three-col {
+    grid-template-columns: 288px minmax(0, 1fr) 300px;
+  }
+
+  .roulette-table-board {
+    width: 760px;
+    transform: scale(.86);
+    transform-origin: top left;
+  }
+
+  .roulette-stage {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+}
+
+/* Admin remains usable at the governed phone viewport, including Guest Trials evidence. */
+@media (max-width: 700px) {
+  .admin-body {
+    overflow: auto;
+  }
+
+  .admin-shell {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .admin-sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+  }
+
+  .admin-sidebar button {
+    flex: 0 0 auto;
+    min-height: 42px;
+  }
+
+  /* Flatten grouped navigation into the governed phone tab rail. */
+  .admin-nav,
+  .admin-nav-group,
+  .admin-nav-items {
+    display: contents;
+  }
+
+  .admin-nav-section {
+    display: none;
+  }
+
+  .admin-brand,
+  .admin-sidebar hr {
+    display: none;
+  }
+
+  .admin-main {
+    display: block;
+    overflow: visible;
+  }
+
+  .admin-top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  /* Let the heading copy shrink and wrap beside or above Refresh at 200-percent zoom. */
+  .admin-top > div {
+    flex: 1 1 140px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep long localized one-word headings inside the effective half-width zoom proxy. */
+  .admin-top h1,
+  .admin-top p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Keep the secondary Refresh action inside the zoomed header width. */
+  .admin-top > button {
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
+  .admin-top h1 {
+    font-size: 24px;
+  }
+
+  .admin-content {
+    padding: 10px;
+    overflow: visible;
+  }
+
+  /* Permit localized card copy to wrap inside the effective half-width zoom proxy. */
+  .admin-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-card-grid,
+  .guest-filter-grid,
+  .guest-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack formatter controls before long native locale labels can widen the governed phone viewport. */
+  [data-testid="admin-localization-foundation"] .locale-settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Bound native selects to the localization card even when the selected label has a long intrinsic width. */
+  [data-testid="admin-localization-foundation"] select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Stack the invitation creation form before native input minimums can widen the page. */
+  [data-testid="admin-invitation-create"] .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack managed-account fields so native controls never widen the governed phone viewport. */
+  [data-testid="admin-user-create"] .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack assisted-conversion fields before native inputs can widen the phone viewport. */
+  [data-testid="admin-guest-conversion"] .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stack the complete account-lifecycle group inside the bounded mobile scroll owner. */
+  .admin-user-access-cell {
+    min-width: 280px;
+  }
+
+  /* Give lifecycle and save controls full-width rows without retaining a stale privilege track. */
+  .admin-user-access-controls {
+    grid-template-areas:
+      "status"
+      "save";
+    grid-template-columns: minmax(0, 1fr);
+    width: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Pin account controls to the responsive viewport because the multi-row tablet navigation can
+     place an anchor-relative popover below the fixed status rail. (OAUTH-010) */
+  .account-popover {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+    max-height: calc(100dvh - 88px);
+  }
+
+  .casino-page {
+    overflow: auto;
+    background-attachment: scroll;
+  }
+
+  .casino-topbar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .casino-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .nav-item,
+  .nav-item.admin {
+    min-width: 0;
+    min-height: 42px;
+    margin-left: 0;
+    padding: 0 8px;
+    border: 1px solid rgba(255, 59, 107, 0.13);
+    border-radius: 13px;
+    font-size: 13px;
+  }
+
+  .top-actions {
+    display: grid;
+    /* Reserve one track for wallet, top-up, locale, wellness, account methods, and logout so tablet chrome never wraps. */
+    grid-template-columns: minmax(0, 1fr) auto auto auto auto auto;
+    justify-content: stretch;
+  }
+
+  .wallet-pill {
+    justify-content: space-between;
+  }
+
+  .wallet-pill.guest-trial-wallet,
+  .guest-trial-notice {
+    max-width: none;
+    min-width: 0;
+  }
+
+  .screen {
+    height: auto;
+    min-height: calc(100vh - 210px);
+    overflow: visible;
+  }
+
+  .lobby-screen,
+  .game-screen {
+    padding: 16px 14px 70px;
+  }
+
+  /* The lobby status rail now reserves its own flex-flow height, so keep only content breathing room instead
+     of the legacy overlay allowance that can make a complete card taller than the tablet outlet. (issue #318, UX-013) */
+  #view.screen.lobby-screen {
+    padding-bottom: 16px;
+  }
+
+  .lobby {
+    display: block;
+    height: auto;
+  }
+
+  .lobby-hero,
+  .game-gallery,
+  .two-col,
+  .three-col,
+  .roulette-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .lobby-hero {
+    display: block;
+  }
+
+  .eyebrow {
+    font-size: 21px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .trust-rail {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 18px;
+  }
+
+  .game-gallery {
+    display: grid;
+    gap: 12px;
+    grid-template-rows: none;
+    margin-top: 18px;
+  }
+
+  .catalog-controls {
+    grid-template-columns: 1fr;
+    margin-top: 18px;
+  }
+
+  .catalog-capacity {
+    grid-column: auto;
+  }
+
+  .game-card,
+  .game-card.featured,
+  .game-card.wide {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 178px;
+  }
+
+  .game-card.featured {
+    min-height: 280px;
+  }
+
+  .featured .game-heading,
+  .game-heading {
+    font-size: 29px;
+  }
+
+  .featured .play-button {
+    min-height: 52px;
+    font-size: 18px;
+  }
+
+  .panel {
+    overflow: visible;
+  }
+
+  .game-layout {
+    height: auto;
+    overflow: visible;
+  }
+
+  .game-screen .stable-game.game-layout {
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto;
+    height: auto !important;
+    contain: none !important;
+  }
+
+  .game-screen .stable-game.game-layout > .panel {
+    flex: 0 0 auto;
+    height: auto;
+  }
+
+  .status-bar {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .status-bar .status-item:nth-child(3),
+  .status-bar .status-item:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  /* Keep the scalable route catalog on one native horizontal rail after the thirty-second game is installed,
+     preserving bounded tablet outlet height for game content and fixed shell utilities. (CORE-006, UX-013) */
+  .casino-nav {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  /* Size every tablet route control to its complete label while the rail owns horizontal overflow. */
+  .nav-item,
+  .nav-item.admin {
+    flex: 0 0 auto;
+    min-width: 96px;
+  }
+}
+
+@media (max-width: 560px) {
+  .auth-panel {
+    padding: 22px 18px;
+  }
+
+  /* Keep the complete logged-out decision path inside a 375-by-812 phone viewport. */
+  .auth-entry {
+    gap: 7px;
+    padding: 14px;
+  }
+
+  /* Keep the locale preference compact beside the localized product identity. */
+  .auth-locale-switch {
+    gap: 3px;
+    font-size: 10px;
+  }
+
+  /* Keep the mobile locale name available to assistive technology without colliding with the product wordmark. */
+  .auth-locale-switch > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Use short native locale labels without widening the header. */
+  .auth-locale-switch select {
+    width: 78px;
+    padding-inline: 5px;
+  }
+
+  /* Stack credential fields only when the phone cannot retain two readable tracks. */
+  .auth-signin-form {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  /* Let the tertiary row wrap inside the card without increasing document width. */
+  .auth-tertiary,
+  .auth-tertiary > div,
+  .auth-provider-actions {
+    min-width: 0;
+  }
+
+  .oauth-provider-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-mark,
+  .logo {
+    width: 46px;
+    height: 46px;
+    font-size: 25px;
+  }
+
+  .brand-copy strong,
+  .brand strong {
+    font-size: 17px;
+  }
+
+  .wallet-label {
+    overflow: hidden;
+    font-size: 9px;
+    text-overflow: ellipsis;
+  }
+
+  .wallet-amount {
+    font-size: 17px;
+  }
+
+  .top-actions {
+    grid-template-columns: minmax(0, 1fr) 46px 46px 46px 46px;
+  }
+
+  /* Remove hidden top-up/account tracks while retaining wellness and the localized End-trial action. (issue #317) */
+  .guest-trial-active .top-actions {
+    grid-template-columns: minmax(0, 1fr) 46px auto;
+  }
+
+  .wallet-pill {
+    min-width: 0;
+  }
+
+  .wallet-menu {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .account-menu {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  /* Place the short localized wellness entry beside other persistent utility controls. */
+  .wellness-open {
+    grid-column: 3;
+    grid-row: 1;
+    width: 46px;
+    padding: 0 3px;
+    font-size: 10px;
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  #logout-btn {
+    grid-column: 5;
+    grid-row: 1;
+  }
+
+  /* Keep wellness and the guest action in the two live utility tracks. */
+  .guest-trial-active .wellness-open {
+    grid-column: 2;
+  }
+
+  /* Place the guest action in the final live track so it cannot spill beyond the mobile viewport. */
+  .guest-trial-active #logout-btn {
+    grid-column: 3;
+  }
+
+  .shell-locale {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .icon-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .casino-nav {
+    display: flex;
+    grid-template-columns: none;
+    padding: 4px;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 59, 107, 0.18);
+    border-radius: 18px;
+    background: rgba(20, 10, 34, 0.72);
+  }
+
+  .nav-item,
+  .nav-item.admin {
+    flex: 0 0 auto;
+    min-width: 100px;
+  }
+
+  .status-bar .status-item:nth-child(1) {
+    display: none;
+  }
+
+  .status-bar {
+    gap: 12px;
+    padding: 0 14px;
+  }
+
+  .status-item > span:last-child {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .trust-rail {
+    display: none;
+  }
+
+  .game-card-content,
+  .featured .game-card-content,
+  .game-card:not(.featured):not(.wide) .game-card-content {
+    padding: 16px;
+  }
+
+  .game-kicker {
+    display: none;
+  }
+
+  .game-card p {
+    font-size: 14px;
+  }
+
+  .play-button {
+    min-height: 48px;
+  }
+
+  .wallet-popover {
+    right: -66px;
+    width: min(300px, calc(100vw - 28px));
+  }
+}

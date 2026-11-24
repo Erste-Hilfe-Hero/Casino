@@ -1,0 +1,118 @@
+{
+  "module": "blackjack",
+  "version": "9.1.13",
+  "paths": [
+    "casino/games/blackjack/",
+    "web/games/blackjack.js"
+  ],
+  "requirements_prefixes": [
+    "BJ"
+  ],
+  "contracts": [
+    "contracts/openapi/blackjack.v1.yaml"
+  ],
+  "game": {
+    "id": "blackjack",
+    "rules": {
+      "settings_route": "/api/v1/games/blackjack/settings",
+      "defaults": "casino.games.blackjack.engine:default_state",
+      "defaults_key": "rules",
+      "fields": {
+        "decks": {
+          "kind": "int",
+          "min": 1,
+          "max": 8,
+          "allocates": true
+        },
+        "dealer_hits_soft_17": {
+          "kind": "bool"
+        },
+        "blackjack_payout": {
+          "kind": "enum",
+          "values": [
+            1.5,
+            1.2,
+            1.0
+          ],
+          "settles": true
+        },
+        "max_split_hands": {
+          "kind": "int",
+          "min": 1,
+          "max": 4,
+          "allocates": true
+        },
+        "double_after_split": {
+          "kind": "bool"
+        },
+        "late_surrender": {
+          "kind": "bool"
+        },
+        "split_aces_one_card": {
+          "kind": "bool"
+        }
+      }
+    },
+    "sort_order": 50,
+    "route": "/games/blackjack",
+    "label": "Blackjack",
+    "category": "table",
+    "categories": [
+      "table",
+      "cards",
+      "strategy"
+    ],
+    "backend": {
+      "register": "casino.games.blackjack.api:register"
+    },
+    "frontend": {
+      "module": "./games/blackjack.js",
+      "export": "BlackjackGame",
+      "ready_testid": "blackjack-premium",
+      "i18n_domain": "games/blackjack",
+      "i18n_probe": "drawer.cards"
+    },
+    "tests": {
+      "long_driver": "tests.game_drivers.blackjack:play"
+    },
+    "translations": {
+      "ru-RU": {
+        "label": "Блэкджек",
+        "kicker": "Стол",
+        "description": "Взять, остановиться, удвоить, разделить, сдаться, страховка и настраиваемые правила стола.",
+        "tags": [
+          "Боты",
+          "Автоигра",
+          "Статистика",
+          "Журнал жетонов"
+        ]
+      }
+    },
+    "lobby": {
+      "featured": false,
+      "wide": false,
+      "art_class": "blackjack-art",
+      "symbol": "&#9824;",
+      "kicker": "Table",
+      "description": "Hit, stand, double, split, surrender, insurance, even money, and table rule controls.",
+      "tags": [
+        "Bots",
+        "Autoplay",
+        "Stats",
+        "Ledger-backed"
+      ]
+    }
+  },
+  "depends_on": [
+    "core",
+    "ledger",
+    "players"
+  ],
+  "may_not_depend_on": [
+    "roulette",
+    "slots",
+    "baccarat",
+    "keno",
+    "bingo"
+  ]
+}

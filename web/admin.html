@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Virtual Casino Admin</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-body">
+  <!-- Admin shell: sidebar navigation and dense control-plane workspace. -->
+  <main id="admin" class="admin-shell">
+    <!-- Sidebar: stable Admin tabs with data-i18n hooks for browser-local language switching. -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <div class="logo">A</div>
+        <div>
+          <h2 data-i18n="brand.title" data-i18n-domain="admin">Admin</h2>
+          <small data-i18n="brand.subtitle" data-i18n-domain="admin">Local control plane</small>
+        </div>
+      </div>
+      <!-- Nested navigation is rendered from the reconciled MENU tree in admin.js. -->
+      <nav id="adminNav" class="admin-nav" aria-label="Admin sections"></nav>
+      <hr>
+      <button id="backToCasino" data-i18n="actions.backToCasino">Back to Casino</button>
+    </aside>
+    <!-- Main workspace: current tab heading plus rendered Admin content. -->
+    <section class="admin-main">
+      <div class="admin-top">
+        <div>
+          <h1 id="adminTitle">Dashboard</h1>
+          <p id="adminSubtitle" class="muted">Telemetry and controls for your local play-token casino.</p>
+        </div>
+        <button id="refreshAdmin" data-testid="admin-refresh" data-i18n="actions.refresh">Refresh</button>
+      </div>
+      <div id="adminView" class="admin-content" data-i18n="status.loading">Loading...</div>
+    </section>
+  </main>
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>

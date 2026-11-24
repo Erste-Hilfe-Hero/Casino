@@ -1,0 +1,186 @@
+{
+  "game": "over_under_7",
+  "requirements_prefixes": [
+    "OU7"
+  ],
+  "requirements": [
+    {
+      "id": "OU7-001",
+      "module": "Over/Under 7",
+      "description": "Two server-authoritative dice implement under-seven, exactly-seven, and over-seven outcomes with transparent net and total-return rules.",
+      "status": "PASS",
+      "api_tests": [
+        "API-OU7-001"
+      ],
+      "browser_tests": [
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "casino/games/over_under_7/engine.py",
+        "casino/games/over_under_7/rules.py",
+        "web/games/over_under_7.js",
+        "web/games/over_under_7.css"
+      ],
+      "introduced_in": "game-expansion-over-under-7",
+      "changed_in": "issue-1031-over-under-7-lifecycle-slice",
+      "notes": "Issue #77 allocates the permanent distinct rules requirement for issue #135. Issue #1031 preserves those rules while delegating frontend request identity and busy ownership to the shared lifecycle controller."
+    },
+    {
+      "id": "OU7-002",
+      "module": "Over/Under 7",
+      "description": "Authenticated sessions own private reload-safe plays, settled history, and canonical route restoration.",
+      "status": "PASS",
+      "api_tests": [
+        "API-OU7-001",
+        "API-WALLET-RESTART-001"
+      ],
+      "browser_tests": [
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "casino/games/over_under_7/api.py",
+        "casino/games/over_under_7/service.py",
+        "web/app.js",
+        "web/core/game_lifecycle.js",
+        "web/games/over_under_7.js",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-over-under-7",
+      "changed_in": "issue-1031-over-under-7-lifecycle-slice",
+      "notes": "Session context overrides caller player ids, and the SimpleWagerGame lifecycle adapter keeps prepared dice private until immutable wager proof exists. Shared mount ownership rejects stale initial-state, action, and reveal completions after route teardown or remount."
+    },
+    {
+      "id": "OU7-003",
+      "module": "Over/Under 7",
+      "description": "Aggregate wagers and returned credits use the shared ledger exactly once under durable action identities.",
+      "status": "PASS",
+      "api_tests": [
+        "API-OU7-001"
+      ],
+      "browser_tests": [],
+      "implementation_files": [
+        "casino/games/over_under_7/service.py",
+        "casino/core/ledger.py",
+        "tests/games/over_under_7/test_api.py",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-over-under-7",
+      "changed_in": "issue-865-over-under-7-simple-wager",
+      "notes": "SimpleWagerGame owns both aggregate movements and deterministic proof recovery; no game code mutates balances directly and conflicting retries fail closed."
+    },
+    {
+      "id": "OU7-004",
+      "module": "Application",
+      "description": "Over/Under 7 supplies complete English and Russian responsive, accessible, reduced-motion-safe, timer-clean play.",
+      "status": "PASS",
+      "api_tests": [],
+      "browser_tests": [
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "web/games/over_under_7.js",
+        "web/games/over_under_7.css",
+        "web/i18n/en-US/games/over_under_7.json",
+        "web/i18n/ru-RU/games/over_under_7.json",
+        "tests/games/over_under_7/test_frontend.mjs",
+        "tests/visual/visual_matrix.json",
+        "docs/evidence/over_under_7/README.md",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-over-under-7",
+      "changed_in": "issue-1031-over-under-7-lifecycle-slice",
+      "notes": "Evidence covers both locales and every governed viewport. Issue #1031 adds reusable external stylesheet, computed three-column hierarchy, touch-target, route teardown, and after-pass evidence without changing the visual matrix."
+    },
+    {
+      "id": "OU7-005",
+      "module": "Tests",
+      "description": "Catalog, contract, browser, and long-suite discovery include Over/Under 7 with requirement, module, version, and visual traceability.",
+      "status": "PASS",
+      "api_tests": [
+        "API-CATALOG-001",
+        "LONG-SUITE-100"
+      ],
+      "browser_tests": [
+        "BR-CATALOG-DISCOVERY-001",
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "modules/over_under_7.json",
+        "modules/module-manifest.json",
+        "contracts/compatibility/module-api-matrix.json",
+        "tests/game_drivers/over_under_7.py",
+        "tests/visual/visual_matrix.json",
+        "tests/game_frontend_lifecycle.mjs",
+        "tests/games/over_under_7/test_frontend.mjs",
+        "docs/evidence/over_under_7/README.md",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "game-expansion-over-under-7",
+      "changed_in": "issue-1031-over-under-7-lifecycle-slice",
+      "notes": "Descriptor sort order 220 and the catalog-discovered long driver are canonical. Issue #1031 adds shared lifecycle, external-style, teardown, and visual evidence traceability without changing discovery."
+    },
+    {
+      "id": "OU7-006",
+      "module": "Application",
+      "description": "The Over/Under 7 wager list and paytable present a single payout convention (net odds), so each proposition's advertised odds match across both surfaces and the retired total-return multiplier copy is no longer shown.",
+      "status": "PASS",
+      "api_tests": [],
+      "browser_tests": [
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "web/games/over_under_7.js",
+        "web/games/over_under_7.css",
+        "web/i18n/en-US/games/over_under_7.json",
+        "web/i18n/ru-RU/games/over_under_7.json"
+      ],
+      "introduced_in": "issue-255-over-under-7-payout-convention",
+      "changed_in": "issue-1031-over-under-7-lifecycle-slice",
+      "notes": "Issue #255: paytable rows render net odds sourced from the same backend field the wager list uses, unifying the two conventions. Issue #1031 preserves that rendered convention while moving presentation rules to the external game stylesheet."
+    },
+    {
+      "id": "OU7-007",
+      "module": "Over/Under 7",
+      "description": "Every Over/Under 7 settled-history publication compares its detached game-owned baseline with provider-current state, preserves unrelated sibling fields, accepts an identical result idempotently, and rejects a stale different writer before it can overwrite the authoritative round journal.",
+      "status": "PASS",
+      "api_tests": [
+        "API-OU7-001",
+        "API-OU7-ATOMIC-001",
+        "PERF-MULTIPROCESS-SAFETY-001"
+      ],
+      "browser_tests": [],
+      "implementation_files": [
+        "casino/games/over_under_7/service.py",
+        "tests/games/over_under_7/test_api.py",
+        "tests/unit/multiprocess_safety_audit_tests.py",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "issue-801-over-under-7-atomic-state",
+      "changed_in": "issue-865-over-under-7-simple-wager",
+      "notes": "The SimpleWagerGame lifecycle adapter now owns each provider-current transition without a detached whole-document saver. Multiworker activation stays blocked because wallet and game-state publication remain separate durable boundaries."
+    },
+    {
+      "id": "OU7-008",
+      "module": "Over/Under 7",
+      "description": "Over/Under 7 delegates its prepared wager, committed-dice recovery, optional returned-credit movement, replay lookup, lifecycle finalization, and provider-current history publication to one SimpleWagerGame coordinator while preserving the frozen v1 action_id, ou7_ round identity, direct oldest-to-newest one-hundred-round history, public round, active-state privacy, and historical ledger evidence semantics.",
+      "status": "PASS",
+      "api_tests": [
+        "API-OU7-001",
+        "API-OU7-ATOMIC-001",
+        "API-GAMECORE-005"
+      ],
+      "browser_tests": [
+        "BR-OU7-001"
+      ],
+      "implementation_files": [
+        "casino/games/over_under_7/service.py",
+        "casino/core/simple_game.py",
+        "tests/games/over_under_7/test_api.py",
+        "tests/run_tests.py"
+      ],
+      "introduced_in": "issue-865-over-under-7-simple-wager",
+      "changed_in": "issue-865-over-under-7-simple-wager",
+      "notes": "The game service contains exactly one SimpleWagerGame construction and no direct GameSettlementGateway, CoreLedgerGateway, apply_once call, or game-local settlement lock. Canonical proof fields remain beside the legacy over_under_7_action_key compatibility field without changing the frozen v1 contract."
+    }
+  ]
+}

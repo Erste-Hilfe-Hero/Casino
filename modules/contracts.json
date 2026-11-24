@@ -1,0 +1,14 @@
+{
+  "module": "contracts",
+  "version": "1.63.2",
+  "paths": [
+    "contracts/"
+  ],
+  "requirements_prefixes": [
+    "CONTRACT",
+    "API"
+  ],
+  "depends_on": [
+    "all_public_apis"
+  ]
+}

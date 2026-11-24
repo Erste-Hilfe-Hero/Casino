@@ -1,0 +1,116 @@
+name: Long Suite 100
+on:
+  pull_request:
+  workflow_dispatch:
+
+# Cancel superseded runs for the same pull request; pushes and dispatches keep unique groups.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  # Classify the pull-request diff so documentation-only changes keep the required gate without using four workers. (issue #710)
+  long_suite_scope:
+    name: long_suite_100_scope
+    runs-on: ubuntu-latest
+    outputs:
+      decision: ${{ steps.scope.outputs.decision }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve long-suite scope
+        id: scope
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          set -uo pipefail
+          if [ "${EVENT_NAME}" != "pull_request" ]; then
+            decision=RUN
+          else
+            changed="$(gh api --paginate "repos/${REPO}/pulls/${PR_NUMBER}/files" --jq '.[].filename' || true)"
+            if [ -z "${changed}" ]; then
+              decision=RUN
+            else
+              decision="$(printf '%s\n' "${changed}" | python scripts/long_suite_scope.py 2>/dev/null || echo RUN)"
+            fi
+          fi
+          case "${decision}" in RUN|SKIP) ;; *) decision=RUN ;; esac
+          echo "decision=${decision}" >> "${GITHUB_OUTPUT}"
+          echo "Long Suite 100 scope decision: ${decision}"
+
+  # Split the mandatory suite across parallel isolated workers exactly like the soak lane.
+  long_suite_100_shard:
+    name: long_suite_100_shard_${{ matrix.shard }}
+    needs: long_suite_scope
+    if: ${{ needs.long_suite_scope.outputs.decision == 'RUN' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dev requirements
+        run: python -m pip install -r requirements-dev.txt
+      - name: Install Playwright Chromium
+        run: python -m playwright install chromium
+      # Keep browser audio evidence on shard 0; the remaining shards cover API/gameplay volume.
+      - name: Run mandatory Suite 100 shard
+        shell: bash
+        run: |
+          if [ "${{ matrix.shard }}" = "0" ]; then
+            python tests/long_suites.py --suite 100 --shard-count 4 --shard-index "${{ matrix.shard }}" --copy-deployment
+          else
+            python tests/long_suites.py --suite 100 --shard-count 4 --shard-index "${{ matrix.shard }}" --copy-deployment --skip-browser-audio
+          fi
+      # Run the one-million-paid-spin economics matrix once without multiplying it across shards.
+      - name: Prove Slots economics and best play
+        if: matrix.shard == 1
+        timeout-minutes: 20
+        run: python -m tests.slots_economics_long
+      # Run the exact 230-class Keno proof once and upload its deterministic evidence with shard one.
+      - name: Prove Keno exact economics
+        if: matrix.shard == 1
+        timeout-minutes: 5
+        run: python -m tests.keno_economics_long
+      # Fail closed if the exact Keno evidence identity was not written for artifact upload.
+      - name: Verify Keno exact economics artifact
+        if: matrix.shard == 1
+        run: python scripts/verify_keno_economics_artifact.py logs/test-runs/keno-economics-exact.json
+      # Execute all 46 catalog-owned proofs after the two separately retained deep artifacts exist. (TEST-175)
+      - name: Prove complete game economics registry
+        if: matrix.shard == 1
+        timeout-minutes: 25
+        run: python -m tests.game_economics_registry_tests --execute --artifact logs/test-runs/game-economics-registry.json
+      - name: Upload long-suite shard artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: long-suite-100-shard-${{ matrix.shard }}-artifacts
+          path: logs/test-runs/
+
+  # Keep reporting the exact `long_suite_100` context required by branch protection.
+  long_suite_100:
+    needs:
+      - long_suite_scope
+      - long_suite_100_shard
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      # Accept only a successful full shard matrix or an explicit documentation-only skip decision.
+      - name: Require exact run or skip outcome
+        shell: bash
+        run: |
+          test "${{ needs.long_suite_scope.result }}" = "success"
+          if [ "${{ needs.long_suite_scope.outputs.decision }}" = "RUN" ]; then
+            test "${{ needs.long_suite_100_shard.result }}" = "success"
+          else
+            test "${{ needs.long_suite_scope.outputs.decision }}" = "SKIP"
+            test "${{ needs.long_suite_100_shard.result }}" = "skipped"
+          fi

@@ -1,0 +1,106 @@
+{
+  "module": "roulette",
+  "version": "9.7.6",
+  "paths": [
+    "casino/games/roulette/",
+    "web/games/roulette.js",
+    "web/games/roulette.css",
+    "web/i18n/en-US/games/roulette.json",
+    "web/i18n/ru-RU/games/roulette.json"
+  ],
+  "requirements_prefixes": [
+    "ROU",
+    "ROU-WHEEL"
+  ],
+  "contracts": [
+    "contracts/openapi/roulette.v1.yaml"
+  ],
+  "game": {
+    "id": "roulette",
+    "rules": {
+      "settings_route": "/api/v1/games/roulette/settings",
+      "defaults": "casino.games.roulette.engine:default_state",
+      "defaults_key": "",
+      "fields": {
+        "mode": {
+          "kind": "enum",
+          "values": [
+            "single",
+            "double"
+          ]
+        },
+        "zero_rule": {
+          "kind": "enum",
+          "values": [
+            "normal",
+            "la_partage",
+            "en_prison"
+          ],
+          "settles": true
+        }
+      }
+    },
+    "sort_order": 10,
+    "route": "/games/roulette",
+    "label": "Roulette",
+    "category": "table",
+    "categories": [
+      "table",
+      "wheel",
+      "strategy"
+    ],
+    "backend": {
+      "register": "casino.games.roulette.api:register"
+    },
+    "frontend": {
+      "module": "./games/roulette.js",
+      "export": "RouletteGame",
+      "ready_testid": "roulette-wheel",
+      "i18n_domain": "games/roulette",
+      "i18n_probe": "stats.rolls"
+    },
+    "tests": {
+      "long_driver": "tests.game_drivers.roulette:play"
+    },
+    "translations": {
+      "ru-RU": {
+        "label": "Рулетка",
+        "kicker": "Избранное",
+        "description": "Классическое колесо с внутренними и внешними ставками, особыми ставками, ботами, правилами зеро и статистикой.",
+        "tags": [
+          "Боты",
+          "Автоигра",
+          "Статистика",
+          "Журнал жетонов"
+        ]
+      }
+    },
+    "lobby": {
+      "featured": true,
+      "wide": false,
+      "art_class": "roulette-art",
+      "symbol": "&#9679;",
+      "kicker": "Featured",
+      "description": "Classic wheel with inside and outside bets, racetrack specials, bots, zero rules, and last-1000 stats.",
+      "tags": [
+        "Bots",
+        "Autoplay",
+        "Stats",
+        "Ledger-backed"
+      ]
+    }
+  },
+  "depends_on": [
+    "core",
+    "ledger",
+    "players",
+    "autoplay"
+  ],
+  "may_not_depend_on": [
+    "slots",
+    "blackjack",
+    "baccarat",
+    "keno",
+    "bingo"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "module": "keno",
+  "version": "9.4.2",
+  "paths": [
+    "casino/games/keno/",
+    "web/games/keno.js",
+    "web/games/keno.css",
+    "web/i18n/en-US/games/keno.json",
+    "web/i18n/ru-RU/games/keno.json"
+  ],
+  "requirements_prefixes": [
+    "KENO"
+  ],
+  "contracts": [
+    "contracts/openapi/keno.v1.yaml"
+  ],
+  "game": {
+    "id": "keno",
+    "sort_order": 30,
+    "route": "/games/keno",
+    "label": "Keno",
+    "category": "draw",
+    "categories": [
+      "draw",
+      "numbers",
+      "instant"
+    ],
+    "backend": {
+      "register": "casino.games.keno.api:register"
+    },
+    "frontend": {
+      "module": "./games/keno.js",
+      "export": "KenoGame",
+      "ready_testid": "keno-premium-hero",
+      "i18n_domain": "games/keno",
+      "i18n_probe": "metric.finalDraw.label"
+    },
+    "tests": {
+      "long_driver": "tests.game_drivers.keno:play"
+    },
+    "translations": {
+      "ru-RU": {
+        "label": "Кено",
+        "kicker": "Тираж",
+        "description": "Выберите от 1 до 20 номеров, наблюдайте тираж и сверяйтесь с таблицей выплат и статистикой.",
+        "tags": [
+          "Боты",
+          "Автоигра",
+          "Статистика"
+        ]
+      }
+    },
+    "lobby": {
+      "featured": false,
+      "wide": false,
+      "art_class": "keno-art",
+      "symbol": "18",
+      "kicker": "Draw",
+      "description": "Pick 1-20 spots, draw 20 numbers, paytable display, animations, and bot tickets.",
+      "tags": [
+        "Bots",
+        "Autoplay",
+        "Stats"
+      ]
+    }
+  },
+  "depends_on": [
+    "core",
+    "ledger",
+    "players",
+    "autoplay"
+  ],
+  "may_not_depend_on": [
+    "roulette",
+    "slots",
+    "blackjack",
+    "baccarat",
+    "bingo"
+  ]
+}

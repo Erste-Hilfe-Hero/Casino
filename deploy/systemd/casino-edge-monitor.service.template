@@ -1,0 +1,41 @@
+[Unit]
+# Define the sanitized read-only edge observation job without activating it on any host.
+Description=Casino Simulator restricted-preview edge observation
+After=network-online.target casino.service nginx.service
+Wants=network-online.target
+
+[Service]
+# Run one bounded observation and let the timer own scheduling.
+Type=oneshot
+User=casino-monitor
+Group=casino-monitor
+WorkingDirectory=/opt/casino/current
+# Keep the scheduled observation from writing interpreter caches into the selected immutable release.
+Environment=PYTHONDONTWRITEBYTECODE=1
+# Preserve the existing TiltSeven profile unless a host-owned poller environment selects another reviewed policy.
+Environment=CASINO_EDGE_POLICY_PATH=/opt/casino/current/deploy/edge/restricted-preview.json
+EnvironmentFile=/etc/casino/edge-monitor.env
+EnvironmentFile=-/etc/casino/release-poller.env
+ExecStartPre=/usr/bin/test -L /opt/casino/current
+# Require a root-managed file containing CASINO_EDGE_MONITOR_AUTHORIZATION or the legacy cookie fallback.
+ExecStartPre=/usr/bin/test -r /etc/casino/edge-monitor.env
+ExecStart=/opt/casino/venv/bin/python /opt/casino/current/scripts/edge_gate.py observe --policy ${CASINO_EDGE_POLICY_PATH}
+# Fail the existing monitor timer when a published release remains undelivered for three poll intervals.
+ExecStartPost=+/usr/local/libexec/casino-release-poller check-lag
+TimeoutStartSec=40s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/casino/release-poller
+RestrictAddressFamilies=AF_UNIX AF_INET
+CapabilityBoundingSet=
+AmbientCapabilities=
+LockPersonality=true
+RestrictSUIDSGID=true
+SystemCallArchitectures=native
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=casino-edge-monitor
