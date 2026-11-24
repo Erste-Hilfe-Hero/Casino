@@ -8,11 +8,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-27]
+        os: [xcode-27]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
-      # 2026-11-21: which Xcode / iOS SDK each free image has (Apple ITMS-90725 wants iOS 27 SDK)
+      # 2026-11-25: xcode-27 label (GitHub GA 2026-10-15); 2026-11-21: which Xcode / iOS SDK each free image has (Apple ITMS-90725 wants iOS 27 SDK)
       - run: |
           sw_vers; xcodebuild -version; xcode-select -p
           ls -d /Applications/Xcode* || true
