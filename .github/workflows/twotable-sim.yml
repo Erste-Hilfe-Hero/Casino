@@ -137,6 +137,34 @@ jobs:
           kill -INT $RV; wait $RV 2>/dev/null || true
           echo "video walkthrough.mp4 $(stat -f %z "$OUT/walkthrough.mp4" 2>/dev/null || echo 0) bytes" | tee -a "$S"
           xcrun simctl terminate "$UD" "$BID" >/dev/null 2>&1; xcrun simctl shutdown "$UD" || true
+          # iPad pass (app supports iPad since 2.0.1 build 289): newest iPad Pro 13-inch (else any iPad), menu + chess screenshots
+          PAD=$(xcrun simctl list devices available -j | python3 -c '
+          import json, re, sys
+          d = json.load(sys.stdin)["devices"]
+          ver = lambda k: [int(x) for x in re.findall(r"\d+", k.rsplit("iOS-", 1)[1])] or [0]
+          rts = sorted((k for k in d if "iOS-" in k), key=ver, reverse=True)
+          devs = [(x["udid"], x["name"]) for k in rts for x in d[k] if x["name"].startswith("iPad")]
+          for pick in (lambda n: "13-inch" in n and "Pro" in n, lambda n: "13-inch" in n, lambda n: True):
+              for u, n in devs:
+                  if pick(n): print(u, n.replace(" ", "_")); sys.exit()
+          ')
+          PU=${PAD%% *}; echo "ipad device ${PAD#* } $PU" | tee -a "$S"
+          if [ -n "$PU" ]; then
+            xcrun simctl boot "$PU" >> "$OUT/boot.log" 2>&1; xcrun simctl bootstatus "$PU" -b >> "$OUT/boot.log" 2>&1
+            if xcrun simctl install "$PU" "$APP"; then
+              for SC in menu chess; do
+                xcrun simctl terminate "$PU" "$BID" >/dev/null 2>&1; sleep 2
+                xcrun simctl launch "$PU" "$BID" -ttdemo "$SC" > "$OUT/ipad-app-$SC.log" 2>&1
+                for w in $(seq 1 13); do
+                  sleep 5
+                  xcrun simctl io "$PU" screenshot "$OUT/ipad-$SC.png" >/dev/null 2>&1 || continue
+                  [ $w -ge 3 ] && python3 -c 'import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert("RGB").resize((200, 150)); sys.exit(0 if len(set(im.getdata())) > 50 else 1)' "$OUT/ipad-$SC.png" 2>/dev/null && break
+                done
+                echo "ipad scene $SC content after about $((w * 5)) s" >> "$S"
+              done
+            else echo "FAIL ipad install" >> "$S"; fi
+            xcrun simctl shutdown "$PU" || true
+          fi
           for SC in menu chess okey; do
             f="$OUT/raw-$SC.png"; [ -f "$f" ] || continue
             pw=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}'); ph=$(sips -g pixelHeight "$f" | awk '/pixelHeight/{print $2}')
