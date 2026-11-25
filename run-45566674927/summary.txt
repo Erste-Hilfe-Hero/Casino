@@ -1,0 +1,19 @@
+casino run 45566674927
+app TwoattheTable.app com.nyrathen.twotable 2.0.0 (140)
+device iPhone_18_Pro_Max CAD4F983-CE4C-41E7-84A5-DFFD6F0CF3CA iOS-27-2
+boot rc=0
+bootstatus rc=0
+scene menu process alive (pid ?)
+scene menu: 93 log lines, '[TT] start' lines: 1
+scene chess process alive (pid ?)
+scene chess: 92 log lines, '[TT] start' lines: 1
+scene okey process alive (pid ?)
+scene okey: 93 log lines, '[TT] start' lines: 1
+video walkthrough.mp4 103602567 bytes
+FAIL blank menu.png colours=2 top=100.0%
+content chess.png colours=220 top=19.7%
+content okey.png colours=223 top=17.9%
+scene differs menu vs chess diff=64.7 (-ttdemo ignored if equal)
+scene differs menu vs okey diff=35.4 (-ttdemo ignored if equal)
+scene differs chess vs okey diff=51.3 (-ttdemo ignored if equal)
+RESULT FAIL
