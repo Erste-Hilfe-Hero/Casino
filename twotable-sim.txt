@@ -1,4 +1,4 @@
 auto
-# rerun 2.0.1 (226) after runtime parse fix 2026-11-25
+# rerun 2.0.1 (226) on single-screen iPhone 2026-11-25
 # Change this file in a commit to start a launch check of Two at the Table.
 # 2026-11-25 build 2.0.1 (226) ios-206
