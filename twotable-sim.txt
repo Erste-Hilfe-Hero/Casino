@@ -1,1 +1,3 @@
-build ios-269 (2.0.1 289) iPad + iOS 15, 2026-11-25T15:43:35Z
+auto
+# Change this file in a commit to start a launch check of Two at the Table.
+# 2026-11-25 build 2.0.1 (289) ios-269: iPad, iOS 15, 25 languages
