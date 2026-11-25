@@ -84,18 +84,21 @@ jobs:
           find "$APP" \( -name '*.framework' -o -name '*.dylib' \) -prune | while read -r f; do codesign -f -s - "$f" >/dev/null 2>&1; done
           codesign -f -s - "$APP" 2>&1 | tail -2
           # device: newest Pro Max, else any single-screen iPhone (iPhone Duo has 2 displays: simctl io screenshot/recordVideo refuse without --display)
+          # optional "runtime NN" line in twotable-sim.txt: use only iOS NN.x simulators (diagnosis of iOS-version specific rendering)
+          export RTWANT=$(grep -m1 '^runtime ' twotable-sim.txt | awk '{print $2}' || true)
           UDID=$(xcrun simctl list devices available -j | python3 -c '
-          import json, re, sys
+          import json, os, re, sys
           d = json.load(sys.stdin)["devices"]
           print("runtimes " + " ".join(d), file=sys.stderr)
           ver = lambda k: [int(x) for x in re.findall(r"\d+", k.rsplit("iOS-", 1)[1])] or [0]
-          rts = sorted((k for k in d if "iOS-" in k), key=ver, reverse=True)
+          want = os.environ.get("RTWANT", "")
+          rts = sorted((k for k in d if "iOS-" in k and (not want or k.rsplit("iOS-", 1)[1].startswith(want + "-"))), key=ver, reverse=True)
           devs = [(x["udid"], x["name"]) for k in rts for x in d[k] if x["name"].startswith("iPhone")]
           for pick in (lambda n: "Pro Max" in n, lambda n: "Duo" not in n, lambda n: True):
               for u, n in devs:
                   if pick(n): print(u, n.replace(" ", "_")); sys.exit()
           ')
-          UD=${UDID%% *}; echo "device ${UDID#* } $UD" | tee -a "$S"
+          UD=${UDID%% *}; echo "device ${UDID#* } $UD $(xcrun simctl list devices -j | python3 -c "import json,sys; d=json.load(sys.stdin)[\"devices\"]; print(next((k.rsplit(\".\",1)[1] for k in d for x in d[k] if x[\"udid\"]==\"$UD\"), \"\"))")" | tee -a "$S"
           [ -n "$UD" ] || { echo "FAIL no iPhone simulator" | tee -a "$S"; exit 0; }
           set +e
           xcrun simctl boot "$UD" > "$OUT/boot.log" 2>&1; echo "boot rc=$?" | tee -a "$S"
@@ -113,6 +116,7 @@ jobs:
             PID=$(grep -oE "$BID: [0-9]+" "$OUT/app-$SC.log" | head -1 | awk '{print $2}')
             if alive || { [ -n "$PID" ] && kill -0 "$PID" 2>/dev/null; }; then echo "scene $SC process alive (pid ${PID:-?})" >> "$S"
             else echo "FAIL scene $SC process gone (crash) pid ${PID:-?}" >> "$S"; xcrun simctl spawn "$UD" launchctl list 2>&1 | grep -i "twotable\|UIKitApplication" >> "$OUT/launchctl-$SC.log"; fi
+            [ "$SC" = menu ] && { sleep 20; xcrun simctl io "$UD" screenshot "$OUT/late-menu.png" >/dev/null 2>&1 || true; }
             kill $LP 2>/dev/null || true
             echo "scene $SC: $(grep -c . "$OUT/app-$SC.log") log lines, '[TT] start' lines: $(grep -c '\[TT\] start' "$OUT/app-$SC.log")" >> "$S"
           done
