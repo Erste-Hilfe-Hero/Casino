@@ -1,4 +1,4 @@
 auto
-runtime 26
+# compare: 2.0.0 build on iOS 27.2 sim
 # Change this file in a commit to start a launch check of Two at the Table.
 # 2026-11-25 build 2.0.1 (226) ios-206
