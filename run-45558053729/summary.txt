@@ -1,0 +1,22 @@
+casino run 45558053729
+app TwoattheTable.app com.nyrathen.twotable 2.0.1 (226)
+device iPhone_Duo C898E3E4-5033-4085-B886-963EE2D0C478
+boot rc=0
+bootstatus rc=0
+FAIL scene menu no screenshot
+scene menu process alive (pid ?)
+scene menu: 118 log lines, '[TT] start' lines: 1
+FAIL scene chess no screenshot
+scene chess process alive (pid ?)
+scene chess: 108 log lines, '[TT] start' lines: 1
+FAIL scene okey no screenshot
+scene okey process alive (pid ?)
+scene okey: 109 log lines, '[TT] start' lines: 1
+video walkthrough.mp4 0 bytes
+FAIL scene menu screenshot missing
+FAIL scene chess screenshot missing
+FAIL scene okey screenshot missing
+scene differs menu vs chess diff=99.0 (-ttdemo ignored if equal)
+scene differs menu vs okey diff=99.0 (-ttdemo ignored if equal)
+scene differs chess vs okey diff=99.0 (-ttdemo ignored if equal)
+RESULT FAIL
