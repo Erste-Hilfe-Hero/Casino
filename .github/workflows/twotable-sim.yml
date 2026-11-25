@@ -150,7 +150,9 @@ jobs:
           ')
           PU=${PAD%% *}; echo "ipad device ${PAD#* } $PU" | tee -a "$S"
           if [ -n "$PU" ]; then
-            xcrun simctl boot "$PU" >> "$OUT/boot.log" 2>&1; xcrun simctl bootstatus "$PU" -b >> "$OUT/boot.log" 2>&1
+            # run 45711320645: the iPad boot hung for 20 min until the step was cancelled; free the iPhone sim and cap the wait
+            xcrun simctl shutdown "$UD" >> "$OUT/boot.log" 2>&1 || true
+            xcrun simctl boot "$PU" >> "$OUT/boot.log" 2>&1; perl -e 'alarm shift; exec @ARGV' 600 xcrun simctl bootstatus "$PU" -b >> "$OUT/boot.log" 2>&1; echo "ipad bootstatus rc=$?" | tee -a "$S"
             if xcrun simctl install "$PU" "$APP"; then
               for SC in menu chess; do
                 xcrun simctl terminate "$PU" "$BID" >/dev/null 2>&1; sleep 2
