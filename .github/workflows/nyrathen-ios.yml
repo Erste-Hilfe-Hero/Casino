@@ -14,8 +14,11 @@ concurrency:
   cancel-in-progress: true
 jobs:
   compile:
-    runs-on: macos-latest
+    # Ali 2026-11-25: every iOS build uses Xcode 27 (label xcode-27, iOS 27 SDK for ITMS-90725); 27.2 pinned, the job fails on anything else
+    runs-on: xcode-27
     timeout-minutes: 90
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.2.app/Contents/Developer
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - name: Token and gate
@@ -35,6 +38,8 @@ jobs:
           tar -xzf "$RUNNER_TEMP/x.tgz" -C build && rm "$RUNNER_TEMP/x.tgz"
           test -d build/iOS/Unity-iPhone.xcodeproj
           xcodebuild -version
+          xcodebuild -version | head -n1 | grep -q '^Xcode 27\.' || { echo "not Xcode 27"; exit 1; }
+          echo "iphoneos sdk $(xcrun --sdk iphoneos --show-sdk-version)"
       - name: Archive unsigned
         run: |
           set -euo pipefail
