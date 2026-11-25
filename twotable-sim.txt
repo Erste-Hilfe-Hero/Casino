@@ -1,4 +1,4 @@
 auto
-# Trigger for .github/workflows/twotable-sim.yml. Line 1: "auto" (the job polls the build host's published gate URL) or the https://xxxx.trycloudflare.com gate URL.
+# rerun 2.0.1 (226) after runtime parse fix 2026-11-25
 # Change this file in a commit to start a launch check of Two at the Table.
 # 2026-11-25 build 2.0.1 (226) ios-206
