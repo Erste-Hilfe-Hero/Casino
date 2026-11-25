@@ -111,8 +111,14 @@ jobs:
           for SC in menu chess okey; do
             xcrun simctl terminate "$UD" "$BID" >/dev/null 2>&1; sleep 2
             xcrun simctl launch --console-pty "$UD" "$BID" -ttdemo "$SC" > "$OUT/app-$SC.log" 2>&1 & LP=$!
-            sleep 15
-            xcrun simctl io "$UD" screenshot "$OUT/raw-$SC.png" >/dev/null 2>&1 || echo "FAIL scene $SC no screenshot" >> "$S"
+            # iOS 27 simulator: the first frames can take 30 s+ (casino run 45566674927: flat at 15 s, content at 35 s); wait up to 75 s for content
+            for w in $(seq 1 13); do
+              sleep 5
+              xcrun simctl io "$UD" screenshot "$OUT/raw-$SC.png" >/dev/null 2>&1 || continue
+              [ $w -ge 3 ] && python3 -c 'import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert("RGB").resize((200, 92)); sys.exit(0 if len(set(im.getdata())) > 50 else 1)' "$OUT/raw-$SC.png" 2>/dev/null && break
+            done
+            echo "scene $SC first content after about $((w * 5)) s" >> "$S"
+            [ -f "$OUT/raw-$SC.png" ] || echo "FAIL scene $SC no screenshot" >> "$S"
             PID=$(grep -oE "$BID: [0-9]+" "$OUT/app-$SC.log" | head -1 | awk '{print $2}')
             if alive || { [ -n "$PID" ] && kill -0 "$PID" 2>/dev/null; }; then echo "scene $SC process alive (pid ${PID:-?})" >> "$S"
             else echo "FAIL scene $SC process gone (crash) pid ${PID:-?}" >> "$S"; xcrun simctl spawn "$UD" launchctl list 2>&1 | grep -i "twotable\|UIKitApplication" >> "$OUT/launchctl-$SC.log"; fi
