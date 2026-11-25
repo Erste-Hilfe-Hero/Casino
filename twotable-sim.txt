@@ -1,3 +1,4 @@
-https://luis-statutes-hurricane-further.trycloudflare.com
+auto
 # Trigger for .github/workflows/twotable-sim.yml. Line 1: "auto" (the job polls the build host's published gate URL) or the https://xxxx.trycloudflare.com gate URL.
 # Change this file in a commit to start a launch check of Two at the Table.
+# 2026-11-25 build 2.0.1 (226) ios-206
