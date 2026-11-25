@@ -1,3 +1,3 @@
 auto
 # Change this file in a commit to start a launch check of Two at the Table.
-# 2026-11-25 build 2.0.1 (299) ios-279: iPad, iOS 15, 25 languages (retry 19:09)
+# 2026-11-25 build 2.0.1 (309) ios-289: iPad, iOS 15, 25 languages (retry 22:13)
