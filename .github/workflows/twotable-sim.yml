@@ -153,13 +153,13 @@ jobs:
             # run 45711320645: the iPad boot hung for 20 min until the step was cancelled; free the iPhone sim and cap the wait
             xcrun simctl shutdown "$UD" >> "$OUT/boot.log" 2>&1 || true
             xcrun simctl boot "$PU" >> "$OUT/boot.log" 2>&1; perl -e 'alarm shift; exec @ARGV' 600 xcrun simctl bootstatus "$PU" -b >> "$OUT/boot.log" 2>&1; echo "ipad bootstatus rc=$?" | tee -a "$S"
-            if xcrun simctl install "$PU" "$APP"; then
+            if perl -e 'alarm shift; exec @ARGV' 300 xcrun simctl install "$PU" "$APP"; then echo "ipad installed $(date -u +%T)" | tee -a "$S"
               for SC in menu chess; do
                 xcrun simctl terminate "$PU" "$BID" >/dev/null 2>&1; sleep 2
-                xcrun simctl launch "$PU" "$BID" -ttdemo "$SC" > "$OUT/ipad-app-$SC.log" 2>&1
+                perl -e 'alarm shift; exec @ARGV' 120 xcrun simctl launch "$PU" "$BID" -ttdemo "$SC" > "$OUT/ipad-app-$SC.log" 2>&1; echo "ipad launch $SC rc=$? $(date -u +%T)" | tee -a "$S"
                 for w in $(seq 1 13); do
                   sleep 5
-                  xcrun simctl io "$PU" screenshot "$OUT/ipad-$SC.png" >/dev/null 2>&1 || continue
+                  perl -e 'alarm shift; exec @ARGV' 60 xcrun simctl io "$PU" screenshot "$OUT/ipad-$SC.png" >/dev/null 2>&1 || continue
                   [ $w -ge 3 ] && python3 -c 'import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert("RGB").resize((200, 150)); sys.exit(0 if len(set(im.getdata())) > 50 else 1)' "$OUT/ipad-$SC.png" 2>/dev/null && break
                 done
                 echo "ipad scene $SC content after about $((w * 5)) s" >> "$S"
