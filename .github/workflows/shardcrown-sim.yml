@@ -67,8 +67,10 @@ jobs:
           ' "$@"; }
           run_device() { # $1 tag, $2 width, $3 height, rest: device name prefixes
             TAG=$1 W=$2 H=$3; shift 3
-            read -r UDID NAME < <(pick "$@")
-            [ -n "${UDID:-}" ] || { echo "::warning::no simulator for $TAG"; return; }
+            UDID=""; NAME=""
+            # run 45909796992: an empty pick made read return 1 and bash -e ended the step without a word
+            read -r UDID NAME < <(pick "$@") || true
+            [ -n "${UDID:-}" ] || { echo "::warning::no simulator for $TAG"; xcrun simctl list devices available | grep -E "iPhone|iPad|--" | head -40; return 0; }
             echo "== $TAG on $NAME ($UDID)"
             D="$OUTD/$TAG"; mkdir -p "$D"
             xcrun simctl boot "$UDID"; xcrun simctl bootstatus "$UDID" -b >/dev/null
@@ -124,8 +126,8 @@ jobs:
           }
           # optional line 2 of sc-sim.txt: the device tags to capture (default both), e.g. "ipad13" to redo one device
           DEVS=$(sed -n 2p "$GITHUB_WORKSPACE/sc-sim.txt" | tr -d '\r'); DEVS=${DEVS:-iphone69 ipad13}
-          case " $DEVS " in *" iphone69 "*) run_device iphone69 2868 1320 "iPhone 17 Pro Max" "iPhone 16 Pro Max";; esac
-          case " $DEVS " in *" ipad13 "*) run_device ipad13 2752 2064 "iPad Pro 13-inch" "iPad Pro (12.9-inch)";; esac
+          case " $DEVS " in *" iphone69 "*) run_device iphone69 2868 1320 "iPhone 18 Pro Max" "iPhone 17 Pro Max" "iPhone 16 Pro Max" "iPhone Air";; esac
+          case " $DEVS " in *" ipad13 "*) run_device ipad13 2752 2064 "iPad Pro 13-inch" "iPad Pro (12.9-inch)" "iPad Air 13-inch";; esac
           find "$OUTD" -type f | sort
           echo "OUTD=$OUTD" >> "$GITHUB_ENV"
       - name: Push screenshots to shardcrown-sim-out
