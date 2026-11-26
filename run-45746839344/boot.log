@@ -1,0 +1,8 @@
+Monitoring boot status for iPhone 18 Pro Max (CAD4F983-CE4C-41E7-84A5-DFFD6F0CF3CA).
+Device already booted, nothing to do.
+
+An error was encountered processing the command (domain=com.apple.CoreSimulator.SimError, code=405):
+Unable to shutdown device in current state: Shutdown
+Monitoring boot status for iPad Pro 13-inch (M5) (D03256B1-4569-435F-8D92-E2BDD4ED7058).
+Device already booted, nothing to do.
+
