@@ -55,9 +55,11 @@ jobs:
           BID=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist")
           defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool true
           pick() { xcrun simctl list devices available -j | python3 -c '
-          import json, sys
+          import json, re, sys
           d = json.load(sys.stdin)["devices"]
-          rts = sorted((k for k in d if "iOS" in k), key=lambda k: [int(x) for x in k.rsplit("iOS-", 1)[1].split("-")])
+          # run 45907144190: a runtime key like "...iOS-27-0-iPhone19..." broke the plain int() split
+          ver = lambda k: [int(x) for x in re.search(r"iOS-(\d+)-(\d+)", k).groups()]
+          rts = sorted((k for k in d if re.search(r"iOS-\d+-\d+", k)), key=ver)
           for want in sys.argv[1:]:
               for rt in reversed(rts):
                   for dev in d[rt]:
