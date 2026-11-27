@@ -1,0 +1,21 @@
+[Api] server https://play.nyrathen.com/shardcrown
+[Autoplay] start
+[Api] state failed: auth
+[Autoplay] shot-intro
+[Autoplay] ack intro timeout
+[Autoplay] shot-setup
+[Autoplay] ack setup timeout
+[Autoplay] shot-city
+[Autoplay] ack city timeout
+[Autoplay] shot-forge
+[Autoplay] ack forge timeout
+[Api] state failed: offline
+[Autoplay] shot-world
+[Autoplay] ack world timeout
+[Autoplay] shot-shard
+[Autoplay] ack shard timeout
+[Autoplay] shot-heroes
+[Autoplay] ack heroes timeout
+[Autoplay] shot-shop
+[Autoplay] ack shop timeout
+[Autoplay] done
