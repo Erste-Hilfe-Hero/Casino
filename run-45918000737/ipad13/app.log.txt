@@ -1,0 +1,27 @@
+[Api] server https://play.nyrathen.com/shardcrown
+[Autoplay] start
+[Api] state failed: auth
+[Autoplay] shot-intro
+[Api] state failed: auth
+[Autoplay] ack intro
+[Autoplay] shot-setup
+[Autoplay] ack setup
+[Api] setup failed: name_taken
+[Autoplay] setup failed name_taken
+[Autoplay] shot-city
+[Autoplay] ack city
+[Autoplay] shot-forge
+[Autoplay] ack forge
+NullReferenceException: Object reference not set to an instance of an object.
+[Api] state failed: offline
+[Api] world?x=0&y=0&r=14 failed: offline
+[Api] world?x=0&y=0&r=14 failed: offline
+[Api] world?x=0&y=0&r=14 failed: offline
+[Api] world?x=0&y=0&r=14 failed: offline
+[Api] state failed: offline
+[Api] state failed: offline
+[Api] state failed: offline
+[Api] state failed: offline
+[Api] state failed: offline
+[Api] world?x=0&y=0&r=14 failed: offline
+[Api] state failed: offline
