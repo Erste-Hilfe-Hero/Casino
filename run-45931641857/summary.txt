@@ -1,0 +1,22 @@
+casino run 45931641857
+app AmysTastyIsland.app com.nyrathen.tastyisland 2.0.0 (29)
+device iPhone_18_Pro_Max 2E87A852-7C24-466D-96AE-9F1A90009DE4 iOS-27-2
+boot rc=0
+bootstatus rc=0
+scene intro first content after about 20 s
+scene intro process alive (pid ?)
+scene intro: 61 log lines, '[Tasty] start' lines: 1
+scene board first content after about 15 s
+scene board process alive (pid ?)
+scene board: 62 log lines, '[Tasty] start' lines: 1
+scene shop first content after about 15 s
+scene shop process alive (pid ?)
+scene shop: 62 log lines, '[Tasty] start' lines: 1
+video walkthrough.mp4 37369498 bytes
+content intro.png colours=110 top=11.4%
+content board.png colours=887 top=9.3%
+content shop.png colours=406 top=19.4%
+scene differs intro vs board diff=60.9 (-tishot ignored if equal)
+scene differs intro vs shop diff=66.1 (-tishot ignored if equal)
+scene differs board vs shop diff=60.8 (-tishot ignored if equal)
+RESULT OK
