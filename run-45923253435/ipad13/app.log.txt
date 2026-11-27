@@ -1,0 +1,20 @@
+[Api] server https://play.nyrathen.com/shardcrown
+[Autoplay] start
+[Autoplay] shot-intro
+[Autoplay] ack intro
+[Autoplay] shot-setup
+[Autoplay] ack setup
+[Autoplay] shot-city
+[Autoplay] ack city
+[Autoplay] shot-forge
+[Autoplay] ack forge
+[Autoplay] shot-world
+[Autoplay] ack world
+[Autoplay] shot-shard
+[Api] world?x=59&y=76&r=14 failed: offline
+[Autoplay] ack shard
+[Autoplay] shot-heroes
+[Autoplay] ack heroes
+[Autoplay] shot-shop
+[Autoplay] ack shop
+[Autoplay] done
